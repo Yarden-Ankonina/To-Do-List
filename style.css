@@ -1,3 +1,35 @@
+/* 
+#242582
+#553D67
+#F64C72
+#99738E
+#2F2FA2
+ */
+ html{
+     height: 100%;
+ }
+body{
+    background: linear-gradient(to bottom, white,rgba(85, 61, 103, 0.534));
+    height: 100%;
+}
 .header {
     display: flex;
+    justify-content: center;
+    background-color: #242582;
+    color: white;
+    padding: 8rem 0px;
+
 }
+
+.header__title{
+    font-size: 30rem;
+}
+.todo__container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+
+
