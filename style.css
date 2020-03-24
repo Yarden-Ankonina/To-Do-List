@@ -14,15 +14,15 @@ body{
 }
 .header {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     background-color: #242582;
     color: white;
-    padding: 8rem 0px;
-
+    padding: 1em 0px;
 }
-
 .header__title{
-    font-size: 30rem;
+    font-size: 2rem;
 }
 .todo__container{
     display: flex;
@@ -30,6 +30,8 @@ body{
     align-items: center;
     height: 100%;
 }
+
+
 
 
 
