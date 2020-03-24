@@ -24,7 +24,11 @@ body{
 .header__title{
     font-size: 30rem;
 }
-.header__subtitle{
+.todo__container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
 }
 
 
