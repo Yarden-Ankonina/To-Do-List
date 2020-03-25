@@ -12,59 +12,80 @@
       <title>TO-DO</title>
    </head>
    <body>
+      <!--header-->
       <div class="header">
          <div class="header__title">To-Do List</div>
          <div class="header__subtitle">By Marcos and Yarden</div>
       </div>
-      </div>
-      <br>    
-      <form id="form">
-         <label for="name">Title</label>
-         <input type="text" name="name"/>
-         <label for="url">Url</label>
-         <input type="text" name="url"/>
-         <label for="options">Column</label>
-         <select name="column">
-            <option value="vanilla">Vanilla</option>
-            <option value="framework">Framework</option>
-            <option value="other">Other</option>
-         </select>
-         <br>
-         <button id="addButton" type="button">Add</button>
+      <!--header-->
+
+
+      <!--form-->
+      <form id="form" class="form center">
+         <div class="form__container">
+            <div class="form__options__container center">
+               <div class="form__title__container">
+                  <label for="name"  class="form__title">Title</label>
+                  <input type="text" name="name"/>
+               </div><!--form__title__container-->
+               <div class="form__url__container">
+                  <label for="url">Url</label>
+                  <input type="text" name="url"/>
+               </div><!--form__url__container-->
+               <div class="form__column__container">
+                  <label for="options">Column</label>
+                  <select name="column">
+                     <option value="vanilla">Vanilla</option>
+                     <option value="framework">Framework</option>
+                     <option value="other">Other</option>
+                  </select>
+               </div><!--form__column__container-->
+                 
+            </div><!--form__options__container-->
+            
+            <button id="addButton" class="form__button__add" type="button">Add</button>
+         </div><!--fomr__container-->
       </form>
-      <br>
+      <!--form-->
+
+      <!-- table-->
+      <!-- <br>
       <div class="table">
-         <div class="table__column column1">
-            <h1>Vanilla</h1>
-            <div id="vanilla" class="table__column__items">
-               <div class="table__column__item">
-                  <a href="https://css-tricks.com/tips-for-creating-great-web-forms/">Forms</a>
-                  <a href="#" class="far fa-trash-alt"></a>
+         <div class="table__container">
+            <div class="table__column column1">
+               <h1>Vanilla</h1>
+               <div id="vanilla" class="table__column__items">
+                  <div class="table__column__item">
+                     <a href="https://css-tricks.com/tips-for-creating-great-web-forms/">Forms</a>
+                     <a href="#" class="far fa-trash-alt"></a>
+                  </div>
+                  <div class="table__column__item">
+                     <a href="https://css-tricks.com/tips-for-creating-great-web-forms/">Forms</a>
+                     <a href="#" class="far fa-trash-alt"></a>
+                  </div>
                </div>
-               <div class="table__column__item">
-                  <a href="https://css-tricks.com/tips-for-creating-great-web-forms/">Forms</a>
-                  <a href="#" class="far fa-trash-alt"></a>
+            </div>
+            <div class="table__column column2">
+               <h1>Framework</h1>
+               <div id="framework" class="table__column__items">
+                  <div class="table__column__item">
+                     <a href="https://css-tricks.com/tips-for-creating-great-web-forms/">Forms</a>
+                     <a href="#" class="far fa-trash-alt"></a>
+                  </div>
+               </div>
+            </div>
+            <div id="other" class="table__column column3">
+               <h1>Other</h1>
+               <div id="others" class="table__column__items">
+                  <div class="table__column__item">
+                     <a href="https://css-tricks.com/tips-for-creating-great-web-forms/">Forms</a>
+                     <a href="#" class="far fa-trash-alt"></a>
+                  </div>
                </div>
             </div>
          </div>
-         <div class="table__column column2">
-            <h1>Framework</h1>
-            <div id="framework" class="table__column__items">
-               <div class="table__column__item">
-                  <a href="https://css-tricks.com/tips-for-creating-great-web-forms/">Forms</a>
-                  <a href="#" class="far fa-trash-alt"></a>
-               </div>
-            </div>
-         </div>
-         <div id="other" class="table__column column3">
-            <h1>Other</h1>
-            <div id="others" class="table__column__items">
-               <div class="table__column__item">
-                  <a href="https://css-tricks.com/tips-for-creating-great-web-forms/">Forms</a>
-                  <a href="#" class="far fa-trash-alt"></a>
-               </div>
-            </div>
-         </div>
-      </div>
+      </div> -->
+      <!--table -->
+
    </body>
 </html>
