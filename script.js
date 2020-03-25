@@ -6,32 +6,34 @@ const ADDBUTTON = document.getElementById('addButton');
 ADDBUTTON.addEventListener('click',AddHandler);
 
 
-//ADD A NEW TODOITEM TO AN ESPECIFIC COLUMN
+/* addNew() receives as parameter column destination, title and url
+creates and HTML element and insert to the column
+*/
 function addNew(column,title,url){
-//THE ELEMENT WILL BE ADDED TO THE column
 const div = document.createElement('div');
 div.setAttribute('class','table__column__item');
-//DELETE ICON
+
 const deleteIcon = document.createElement('a');
 deleteIcon.setAttribute('class','far fa-trash-alt');
 deleteIcon.setAttribute('href','#');
-//CUSTOMIZE THE ITEM
+
 const a= document.createElement('a');
 a.setAttribute('href',url);
 a.setAttribute('target','_blank');
 a.innerHTML = title;
-//ADD As TO THE ITEM
+
 div.appendChild(a);
 div.appendChild(deleteIcon);
-//ADD TO THE COLUMN
+
 column.appendChild(div);
 }
 
+/*AddHandler is a eventHandler that process the user inputs 
+and call to AddNew with the processed inputs*/ 
 function AddHandler(){
-   const userInputs= document.querySelectorAll('input');3
+   const userInputs= document.querySelectorAll('input');
    const title = userInputs[0].value;
    const url= userInputs[1].value;
-
 
    const columnInput =  document.querySelector('select');
     let column;
