@@ -1,64 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/resets/normalize.css"> 
-    <link rel="stylesheet" href="/resets/reset.local.css"> 
-    <link rel="stylesheet" href="/resets/typography.css">
-    <link rel="stylesheet" href="/bulma/css/bulma.css"> 
-    <link rel="stylesheet" href="/style.css"> 
-    <title>TO-DO</title>
-</head>
-<body>
-    <div class="header">
-            <div class="header__title">To-Do List</div>
-            <div class="header__subtitle">By Marcos and Yarden</div>
-        </div>
-    </div>
-<br>
-<div class="columns">
-    <div class="column is-two-fifths is-offset-one-quarter">
-        <div class="field">
-        <label class="label">Title</label>
-        <div class="control">
-            <input class="input" type="text" placeholder="Insert the title...">
-        </div>
-        <br>
-        <label class="label">Url</label>
-        <div class="control">
-            <input class="input" type="text" placeholder="Insert the Url...">
-        </div>
-        <br>
-        <div class="container has-text-centered">
-        <div class="select">
-            <select>
-              <option>CSS</option>
-              <option>JavaScript</option>
-              <option>Other</option>
-            </select>
-          </div>
-          <input class="button is-link" type="submit" value="Submit input">
-        </div>
-        </div>  
-</div>
-</div>
-
-    <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
-        <div class="thead">
-        <tr>
-            <th>CSS</th>
-            <th>JavaScript</th>
-            <th>Others</th>
-        </tr>
-        </div>
-        <div class="tbody">
-        <tr>
-            <th><a href="https://css-tricks.com/snippets/css/complete-guide-grid/">Grid</a><a class="delete is-small"></a></th>
-            <th>B</th>
-            <th>C</th>
-        </tr>
-        </div>
-    </table>
-</body>
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="/resets/normalize.css">
+      <link rel="stylesheet" href="/resets/reset.local.css">
+      <link rel="stylesheet" href="/resets/typography.css">
+      <!-- <link rel="stylesheet" href="/fontawesome-free-5.13.0-web/css/all.css"> -->
+      <link rel="stylesheet" href="/style.css">
+      <script src="/script.js" defer></script>
+      <title>TO-DO</title>
+   </head>
+   <body>
+      <div class="header">
+         <div class="header__title">To-Do List</div>
+         <div class="header__subtitle">By Marcos and Yarden</div>
+      </div>
+      </div>
+      <form class="form">
+         <label for="name">Title</label>
+         <input type="text" name="name"/>
+         <label for="url">Url</label>
+         <input type="text" name="url"/>
+         <label for="options">Column</label>
+         <select id="column">
+            <option value="vanilla">Vanilla</option>
+            <option value="frameWork">Framework</option>
+            <option value="other">Other</option>
+         </select>
+         <br>
+         <input type="submit" name="submit" value="Add" class="submit-button"/>
+      </form>
+      <div class="table">
+         <div class="table__column column1">
+            <h1>Vanilla</h1>
+            <div id="vanilla" class="table__column__items">
+               <div class="table__column__item">
+                  <a href="https://css-tricks.com/tips-for-creating-great-web-forms/">Forms</a>
+                  <a href="#" class="far fa-trash-alt"></a>
+               </div>
+               <div class="table__column__item">
+                  <a href="https://css-tricks.com/tips-for-creating-great-web-forms/">Forms</a>
+                  <a href="#" class="far fa-trash-alt"></a>
+               </div>
+            </div>
+         </div>
+         <div class="table__column column2">
+            <h1>Framework</h1>
+            <div class="table__column__items framework">
+               <div class="table__column__item">
+                  <a href="https://css-tricks.com/tips-for-creating-great-web-forms/">Forms</a>
+                  <a href="#" class="far fa-trash-alt"></a>
+               </div>
+            </div>
+         </div>
+         <div class="table__column column3">
+            <h1>Other</h1>
+            <div class="table__column__items others">
+               <div class="table__column__item">
+                  <a href="https://css-tricks.com/tips-for-creating-great-web-forms/">Forms</a>
+                  <a href="#" class="far fa-trash-alt"></a>
+               </div>
+            </div>
+         </div>
+      </div>
+   </body>
 </html>
