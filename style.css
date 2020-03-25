@@ -19,19 +19,34 @@ body{
     align-items: center;
     background-color: #242582;
     color: white;
-    padding: 1em 0px;
 }
 .header__title{
-    font-size: 2rem;
+    font-size: 30rem;
 }
-.todo__container{
+.form {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
+    flex-direction: column;
+}
+.table {
+    display : flex;
+    justify-content: space-around;
 }
 
+.table__column {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    border: 1rem solid black;
+}
+.table__column h1 {
+    border-bottom: 1rem solid black;
+    text-align: center;
+    font-weight: 600;
+}
 
-
+.table__column__items{
+    display: flex;
+    flex-direction: column;
+}
 
 
