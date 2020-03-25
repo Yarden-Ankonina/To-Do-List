@@ -48,7 +48,7 @@ body{
     justify-content: center;
     align-items: center;
     height: 10vh;
-    background-color: rgba(245, 245, 220, 0.644);
+    background-color: rgba(245, 245, 220, 0.753);
 
 }
 
@@ -59,7 +59,7 @@ body{
     justify-content: space-around;
     align-items: center;
     font-weight: bold;
-    color: #505050;
+    color: #444444;
 }
 
 .form__options__container{
