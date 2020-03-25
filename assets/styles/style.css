@@ -88,6 +88,9 @@ body{
     display: flex;
 }
 
+.form__label{
+    margin-right: 5rem;
+}
 @media (max-width: 1300px)
 {
     .form__container{
