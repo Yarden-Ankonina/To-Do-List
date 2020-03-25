@@ -18,6 +18,7 @@ deleteIcon.setAttribute('href','#');
 //CUSTOMIZE THE ITEM
 const a= document.createElement('a');
 a.setAttribute('href',url);
+a.setAttribute('target','_blank');
 a.innerHTML = title;
 //ADD As TO THE ITEM
 div.appendChild(a);
