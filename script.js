@@ -1,4 +1,9 @@
-const COLUMN1 = document.getElementById('vanilla');
+const VANILLAELEMENT = document.getElementById('vanilla');
+const FRAMEWORKELEMENT = document.getElementById('framework');
+const OTHERELEMENT = document.getElementById('other');
+
+const ADDBUTTON = document.getElementById('addButton');
+ADDBUTTON.addEventListener('click',AddHandler);
 
 
 //ADD A NEW TODOITEM TO AN ESPECIFIC COLUMN
@@ -19,4 +24,28 @@ div.appendChild(a);
 div.appendChild(deleteIcon);
 //ADD TO THE COLUMN
 column.appendChild(div);
+}
+
+function AddHandler(){
+   const userInputs= document.querySelectorAll('input');3
+   const title = userInputs[0].value;
+   const url= userInputs[1].value;
+
+
+   const columnInput =  document.querySelector('select');
+    let column;
+   switch(columnInput.value){
+       case 'vanilla':
+        column= VANILLAELEMENT;
+        break;
+
+       case'framework':
+       column= FRAMEWORKELEMENT;
+        break;
+
+        case 'other':
+        column= OTHERELEMENT;
+        break;
+   }  
+        addNew(column,title,url);
 }

@@ -37,6 +37,7 @@ body{
     display: flex;
     flex-direction: column;
     border: 1rem solid black;
+    text-align: center;
 }
 .table__column h1 {
     border-bottom: 1rem solid black;

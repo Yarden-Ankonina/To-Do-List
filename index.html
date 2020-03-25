@@ -6,7 +6,7 @@
       <link rel="stylesheet" href="/resets/normalize.css">
       <link rel="stylesheet" href="/resets/reset.local.css">
       <link rel="stylesheet" href="/resets/typography.css">
-      <!-- <link rel="stylesheet" href="/fontawesome-free-5.13.0-web/css/all.css"> -->
+      <link rel="stylesheet" href="/fontawesome-free-5.13.0-web/css/all.css">
       <link rel="stylesheet" href="/style.css">
       <script src="/script.js" defer></script>
       <title>TO-DO</title>
@@ -17,20 +17,22 @@
          <div class="header__subtitle">By Marcos and Yarden</div>
       </div>
       </div>
-      <form class="form">
+      <br>    
+      <form id="form">
          <label for="name">Title</label>
          <input type="text" name="name"/>
          <label for="url">Url</label>
          <input type="text" name="url"/>
          <label for="options">Column</label>
-         <select id="column">
+         <select name="column">
             <option value="vanilla">Vanilla</option>
-            <option value="frameWork">Framework</option>
+            <option value="framework">Framework</option>
             <option value="other">Other</option>
          </select>
          <br>
-         <input type="submit" name="submit" value="Add" class="submit-button"/>
+         <button id="addButton" type="button">Add</button>
       </form>
+      <br>
       <div class="table">
          <div class="table__column column1">
             <h1>Vanilla</h1>
@@ -47,16 +49,16 @@
          </div>
          <div class="table__column column2">
             <h1>Framework</h1>
-            <div class="table__column__items framework">
+            <div id="framework" class="table__column__items">
                <div class="table__column__item">
                   <a href="https://css-tricks.com/tips-for-creating-great-web-forms/">Forms</a>
                   <a href="#" class="far fa-trash-alt"></a>
                </div>
             </div>
          </div>
-         <div class="table__column column3">
+         <div id="other" class="table__column column3">
             <h1>Other</h1>
-            <div class="table__column__items others">
+            <div id="others" class="table__column__items">
                <div class="table__column__item">
                   <a href="https://css-tricks.com/tips-for-creating-great-web-forms/">Forms</a>
                   <a href="#" class="far fa-trash-alt"></a>
