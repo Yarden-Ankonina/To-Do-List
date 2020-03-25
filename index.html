@@ -24,17 +24,23 @@
       <form id="form" class="form center">
          <div class="form__container">
             <div class="form__options__container center">
-               <div class="form__title__container">
-                  <label for="name"  class="form__title">Title</label>
+               <div class="form__title__container form__line__container">
+                  <span class="form__label">
+                     <label for="name"  class="form__title ">Title</label>
+                  </span>
                   <input type="text" name="name"/>
                </div><!--form__title__container-->
-               <div class="form__url__container">
-                  <label for="url">Url</label>
+               <div class="form__url__container form__line__container">
+                  <span class="form__label">
+                     <label for="url" >Url</label>
+                  </span>
                   <input type="text" name="url"/>
                </div><!--form__url__container-->
-               <div class="form__column__container">
-                  <label for="options">Column</label>
-                  <select name="column">
+               <div class="form__column__container form__line__container">
+                  <span class="form__label form__label__column">
+                     <label for="options" >Column</label>
+                  </span>
+                  <select name="column" class="form__column__options">
                      <option value="vanilla">Vanilla</option>
                      <option value="framework">Framework</option>
                      <option value="other">Other</option>
