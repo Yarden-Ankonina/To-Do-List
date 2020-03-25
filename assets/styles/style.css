@@ -202,13 +202,14 @@ body{
 }
 
 .table__head{
-    background-color: rgba(199, 176, 129, 0.562);
+    background-color: rgba(255, 247, 232, 0.699);
     font-size: 1.4em;
 
 
 }
 
 tbody{
+    background-color: rgb(243, 217, 162);
     color: #5a4517;
     text-align: center;
 }
