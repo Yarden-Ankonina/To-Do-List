@@ -5,7 +5,6 @@ const OTHERELEMENT = document.getElementsByClassName('other')[0];
 const ADDBUTTON = document.getElementById('addButton');
 ADDBUTTON.addEventListener('click',AddHandler);
 
-
 /* addNew() receives as parameter column destination, title and url
 creates and HTML element and insert to the column
 */
@@ -17,7 +16,9 @@ const Span = document.createElement('span');
 Span.setAttribute('class','list__body__item__trash');
 
 const deleteIcon = document.createElement('i');
-deleteIcon.setAttribute('class', 'fas', 'fa-trash-alt');
+deleteIcon.setAttribute('class', 'fas fa-trash-alt');
+
+autoReplaceSvg = false;
 
 
 const a= document.createElement('a');
