@@ -12,13 +12,13 @@ function addNew(column,title,url){
 const div = document.createElement('div');
 div.setAttribute('class','list__body__item center');
 
-const Span = document.createElement('span');
-Span.setAttribute('class','list__body__item__trash');
+const span = document.createElement('span');
+span.setAttribute('class','list__body__item__trash');
 
 const deleteIcon = document.createElement('i');
 deleteIcon.setAttribute('class', 'fas fa-trash-alt');
 
-autoReplaceSvg = false;
+// Span
 
 
 const a= document.createElement('a');
@@ -26,8 +26,11 @@ a.setAttribute('href',url);
 a.setAttribute('target','_blank');
 a.innerHTML = title;
 
-Span.appendChild(deleteIcon);
-div.appendChild(Span);
+span.appendChild(deleteIcon);
+span.addEventListener('click',(e)=>{deleteHandler(e)}); //Adding event handler
+
+
+div.appendChild(span);
 div.appendChild(a);
 
 column.appendChild(div);
@@ -56,4 +59,14 @@ function AddHandler(){
         break;
    }  
         addNew(column,title,url);
+        clearInput(userInputs);
+}
+
+//Takes InputArrays and clean them in the DOM
+function clearInput(userInputs){
+     userInputs.forEach(element => element.value= '');
+}
+
+function deleteHandler(e){
+     console.log(e.path[3].remove());
 }
