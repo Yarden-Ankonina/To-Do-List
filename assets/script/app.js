@@ -1,6 +1,6 @@
-const VANILLAELEMENT = document.getElementById('vanilla');
-const FRAMEWORKELEMENT = document.getElementById('framework');
-const OTHERELEMENT = document.getElementById('other');
+const VANILLAELEMENT = document.getElementsByClassName('vanilla')[0];
+const FRAMEWORKELEMENT = document.getElementsByClassName('framework')[0];
+const OTHERELEMENT = document.getElementsByClassName('other')[0];
 
 const ADDBUTTON = document.getElementById('addButton');
 ADDBUTTON.addEventListener('click',AddHandler);
@@ -11,19 +11,23 @@ creates and HTML element and insert to the column
 */
 function addNew(column,title,url){
 const div = document.createElement('div');
-div.setAttribute('class','table__column__item');
+div.setAttribute('class','list__body__item center');
 
-const deleteIcon = document.createElement('a');
-deleteIcon.setAttribute('class','far fa-trash-alt');
-deleteIcon.setAttribute('href','#');
+const Span = document.createElement('span');
+Span.setAttribute('class','list__body__item__trash');
+
+const deleteIcon = document.createElement('i');
+deleteIcon.setAttribute('class', 'fas', 'fa-trash-alt');
+
 
 const a= document.createElement('a');
 a.setAttribute('href',url);
 a.setAttribute('target','_blank');
 a.innerHTML = title;
 
+Span.appendChild(deleteIcon);
+div.appendChild(Span);
 div.appendChild(a);
-div.appendChild(deleteIcon);
 
 column.appendChild(div);
 }
