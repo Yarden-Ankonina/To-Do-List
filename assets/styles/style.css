@@ -85,18 +85,20 @@ body{
     justify-content: space-evenly;
 }
 .form__button__add{
-    background-color: rgb(124, 117, 107);
-    color: rgb(207, 207, 178);
+    background-color: rgb(121, 96, 62);
+    color: rgb(211, 211, 181);
     border: none;
     border-radius: 5%;
-    box-shadow: 0px 1px 1px 0.5px rgb(94, 74, 50);
+    box-shadow: 0px 1px 1px 1px rgb(105, 72, 28);
     padding: 10rem 20rem;
+    font-size: 1.5em;
+    font-weight: bold;
     outline: none;
 }
 
 .form__button__add:hover{
-    color: rgb(216, 216, 192);
-    box-shadow: 0px 1px 1px 0.5px rgb(148, 117, 79);
+    color: rgb(245, 245, 207);
+    box-shadow: 0px 1px 3px 1px rgb(36, 21, 3);
 
 }
 
@@ -108,6 +110,9 @@ body{
 .form__label{
     font-size: 1.2em;
     margin-right: 5rem;
+    padding: 8rem;
+    box-shadow: 0px 1px 1px 0.1px rgb(80, 55, 2);
+    background-color: #f5f4f4e3;
 }
 @media (max-width: 1300px)
 {
