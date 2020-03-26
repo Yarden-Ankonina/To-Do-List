@@ -187,6 +187,7 @@ body{
 @media (max-width:300px){
     .header{
         font-size: 1em;
+        
     }
     .form{
         height: 45vh;
@@ -281,7 +282,7 @@ body{
     background-color: #857764e5;
     cursor: pointer;
 
-
+    
 }
 
 
@@ -364,6 +365,11 @@ body{
     }
 }
 
+.pressed{
+    text-decoration: line-through;
+    color: #727272;
+    background-color: #b8b8b8ab;
+}
 /* list media */
 
 
