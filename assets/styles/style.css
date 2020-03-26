@@ -42,13 +42,18 @@ body{
 /* header */
 .header {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     font-size: 1.5em;
     background-color: #353535;
     height: 15vh;
     color: rgb(155, 154, 146);
+}
+
+.header__container{
+    display: flex;
+    flex-direction: column;
 }
 
 .header__title{
