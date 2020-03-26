@@ -14,6 +14,7 @@ body{
     background-color: #2c2108;
     vertical-align: middle;
     text-align: center;
+    
 }
 
 /* all */
@@ -276,11 +277,20 @@ body{
     font-size: 1.5em;
     font-weight: bold;
 }
+.list__body__item__trash{
+    padding-right:  15rem;
+}
+.pressed{
+    text-decoration: line-through;
+    color: #727272;
+    background-color: #b8b8b8ab;
+}
 
 .list__body__item:hover{
     box-shadow: 0px 0px 0px 2px black;
     background-color: #857764e5;
     cursor: pointer;
+    z-index: 9999;
 
     
 }
@@ -365,11 +375,7 @@ body{
     }
 }
 
-.pressed{
-    text-decoration: line-through;
-    color: #727272;
-    background-color: #b8b8b8ab;
-}
+
 /* list media */
 
 
