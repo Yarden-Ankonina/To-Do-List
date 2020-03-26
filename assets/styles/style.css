@@ -34,6 +34,17 @@ body{
     width: 100%;
 }
 
+.red{
+    background-color: red;
+}
+.blue{
+    background-color: blue;
+}.green{
+    background-color: green;
+}.yellow{
+    background-color: yellow;
+}
+
 
 
 /* all */
@@ -383,90 +394,4 @@ body{
 
 /* list media */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* form */
-
-/* ================ */
-/* table
-.table__hero{
-    width: 100%;
-}
-
-
-.table__container{
-    display: flex;
-    justify-content: center;
-    width: 60%;
-    border: none;
-    background-color: aliceblue;
-    margin-top: 15vh;
-    font-size: 1.1em;
-    font-weight: bold;
-
-}
-
-.table {
-    width: 100%;
-    height: 50vh;
-}
-
-.table__head{
-    background-color: rgba(255, 247, 232, 0.699);
-    font-size: 1.4em;
-
-
-}
-
-tbody{
-    background-color: rgb(243, 217, 162);
-    color: #5a4517;
-    text-align: center;
-}
-
-.tbody__row{
-    height: 10%
-}
-
-
-a:hover{
-    color: rgb(62, 146, 202);
-    }
- */
-
-/* table */
-
-/* 
-
-
-.table__column {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    border: 1rem solid black;
-    text-align: center;
-}
-.table__column h1 {
-    border-bottom: 1rem solid black;
-    text-align: center;
-    font-weight: 600;
-}
-
-.table__column__items{
-    display: flex;
-    flex-direction: column;
-}
-
- */
 
