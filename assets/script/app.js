@@ -27,7 +27,15 @@ creates and HTML element and insert to the column
 */
 function addNew(column, title, url) {
     const li = document.createElement('li');
-
+    li.draggable= true;
+    li.classList = 'draggable';
+    li.addEventListener('dragstart', () => {
+        li.classList.add('dragging')
+      })
+      li.addEventListener('dragend', () => {
+        li.classList.remove('dragging')
+        })
+    
     const span = document.createElement('span');
     span.classList = 'trash';
 
