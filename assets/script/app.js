@@ -1,72 +1,77 @@
-const VANILLAELEMENT = document.getElementsByClassName('vanilla')[0];
-const FRAMEWORKELEMENT = document.getElementsByClassName('framework')[0];
-const OTHERELEMENT = document.getElementsByClassName('other')[0];
-
-const ADDBUTTON = document.getElementById('addButton');
-ADDBUTTON.addEventListener('click',AddHandler);
+/* HTML ELEMENTS */
+const FORM = document.getElementById('form');
+const VANILLACOLUMN = document.getElementById('vanilla');
+const FRAMEWORKCOLUMN = document.getElementById('framework');
+const OTHERCOLUMN = document.getElementById('other');
+const ERRORELEMNT = document.getElementById('error');
+const USERINPUTS = document.querySelectorAll('input');
+const URLINPUT = document.getElementById('url');
+/* OBJECT OF HTML ELEMNTS */
+const COLUMNS = {
+    'vanilla': VANILLACOLUMN,
+    'framework': FRAMEWORKCOLUMN,
+    'other': OTHERCOLUMN
+}
+/* FORM EVENT*/
+FORM.addEventListener('submit', (e) => {
+    e.preventDefault();
+    AddHandler()
+})
+/* CLEAN THE URL INPUT AFTER AN ERROR */
+URLINPUT.addEventListener('input', () => {
+    ERRORELEMNT.innerHTML = '';
+})
 
 /* addNew() receives as parameter column destination, title and url
 creates and HTML element and insert to the column
 */
-function addNew(column,title,url){
-const div = document.createElement('div');
-div.setAttribute('class','list__body__item center');
+function addNew(column, title, url) {
+    const li = document.createElement('li');
 
-const span = document.createElement('span');
-span.setAttribute('class','list__body__item__trash');
+    const span = document.createElement('span');
+    span.classList = 'trash';
 
-const deleteIcon = document.createElement('i');
-deleteIcon.setAttribute('class', 'fas fa-trash-alt');
+    const a = document.createElement('a');
+    a.href = url;
+    a.target = '_blank';
+    a.innerHTML = title;
 
-// Span
+    span.appendChild(a);
+    // span.addEventListener('click',(e)=>{deleteHandler(e)}); //Adding event handler
 
+    li.appendChild(span);
+    li.appendChild(a);
 
-const a= document.createElement('a');
-a.setAttribute('href',url);
-a.setAttribute('target','_blank');
-a.innerHTML = title;
+    column.appendChild(li);
 
-span.appendChild(deleteIcon);
-span.addEventListener('click',(e)=>{deleteHandler(e)}); //Adding event handler
-
-
-div.appendChild(span);
-div.appendChild(a);
-
-column.appendChild(div);
 }
 
 /*AddHandler is a eventHandler that process the user inputs 
-and call to AddNew with the processed inputs*/ 
-function AddHandler(){
-   const userInputs= document.querySelectorAll('input');
-   const title = userInputs[0].value;
-   const url= userInputs[1].value;
-
-   const columnInput =  document.querySelector('select');
-    let column;
-   switch(columnInput.value){
-       case 'vanilla':
-        column= VANILLAELEMENT;
-        break;
-
-       case'framework':
-       column= FRAMEWORKELEMENT;
-        break;
-
-        case 'other':
-        column= OTHERELEMENT;
-        break;
-   }  
-        addNew(column,title,url);
+and call to AddNew with the processed inputs*/
+function AddHandler() {
+    const title = USERINPUTS[0].value;
+    const url = USERINPUTS[1].value;
+    const columnInput = document.querySelector('select').value;
+    const userInputs = document.querySelectorAll('input');
+    if (isValidURl(url)) {
+        addNew(COLUMNS[columnInput], title, url);
         clearInput(userInputs);
+    } else {
+        ERRORELEMNT.innerHTML = 'Invalid URL';
+    }
 }
 
 //Takes InputArrays and clean them in the DOM
-function clearInput(userInputs){
-     userInputs.forEach(element => element.value= '');
+function clearInput() {
+    USERINPUTS.forEach(input =>{ input.value = '';})
 }
 
-function deleteHandler(e){
-     console.log(e.path[3].remove());
+function isValidURl(url) {
+    const pattern = new RegExp('^(https?:\\/\\/)?' + // protocol
+        '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|' + // domain name
+        '((\\d{1,3}\\.){3}\\d{1,3}))' + // OR ip (v4) address
+        '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*' + // port and path
+        '(\\?[;&a-z\\d%_.~+=-]*)?' + // query string
+        '(\\#[-a-z\\d_]*)?$', 'i'); // fragment locator
+    return pattern.test(url);
 }
