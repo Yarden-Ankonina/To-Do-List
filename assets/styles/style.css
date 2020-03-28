@@ -14,51 +14,45 @@ body{
     background-color: #2c2108;
     vertical-align: middle;
     text-align: center;
-    
 }
+/*header*/
+@media all and (min-width: 320px){
+    header{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: #353535;
+        height: 10vh;
+        color: beige;
+        }
+    .toggle h1 {
+        font-size: 1.8em;
+        color: beige;
+    }
+    .toggle {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0.6em;
+    }
+    .sun{
+        padding-left: 0.75em;
+    }
+    .sun:hover{
+        color: yellow;
+        font-size: 1.1em;
+    }
+    .moon {
+        padding-right: 0.75em;
+    }
+    .moon:hover {
+        color: yellow;
+        font-size: 1.1em;
 
-/* shared */
-.center{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    }
 }
+/*header*/
 
-.half__size{
-    width: 50%;
-    height: 50%;
-}
-
-.full__size{
-    height: 100%;
-    width: 100%;
-}
-
-/* header */
-.header {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.5em;
-    background-color: #353535;
-    height: 15vh;
-    color: rgb(155, 154, 146);
-}
-
-.header__container{
-    display: flex;
-    flex-direction: column;
-}
-
-.header__title{
-    font-size: 1.8em;
-    color: beige;
-}
-/* header */
-
-/* ============================= */
-/* form */
+/*form*/
 @media all and (min-width: 320px) {
     form {
         display: flex;
@@ -72,8 +66,12 @@ body{
         display: flex;
         flex-direction: column;
     }
+    form:last-child{
+        display: flex;
+        align-items: center;
+    }
     label {
-        font-size: 1.2em;
+        font-size: 1em;
         box-shadow: 0px 1px 1px 0.1px rgb(80, 55, 2);
         background-color: #f5f4f4e3;
     }
@@ -88,7 +86,7 @@ body{
         color: rgb(211, 211, 181);
         border-radius: 5%;
         box-shadow: 0px 1px 1px 1px rgb(105, 72, 28);
-        font-size: 1.3em;
+        font-size: 1em;
         font-weight: bold;
         outline: none;
         margin-top: 0.5em;
@@ -118,7 +116,18 @@ body{
         width: 40vw;
     }
 }
+/*form*/
 
+/*footer*/
+@media all and (min-width: 320px){
+    footer {
+        background: white;
+        position: fixed;
+        bottom:0;
+        width: 100vw;
+    }
+}
+/*footer*/
 /* form */
 
 
