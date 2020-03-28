@@ -34,12 +34,6 @@ body{
     width: 100%;
 }
 
-
-
-
-/* all */
-
-
 /* header */
 .header {
     display: flex;
@@ -64,6 +58,68 @@ body{
 /* header */
 
 /* ============================= */
+/* form */
+@media all and (min-width: 320px) {
+    form {
+        display: flex;
+        flex-direction: column;
+        font-weight: bold;
+        color: #444444;
+        background-color: rgba(235, 220, 189, 0.705);
+        padding: 1vh 1vh 1vh 1vh;
+    }
+    form section {
+        display: flex;
+        flex-direction: column;
+    }
+    label {
+        font-size: 1.2em;
+        box-shadow: 0px 1px 1px 0.1px rgb(80, 55, 2);
+        background-color: #f5f4f4e3;
+    }
+    input {
+        border: none;
+        box-shadow: 0px 1px 1px 0.1px rgb(80, 55, 2);
+        margin-bottom: 0.5em;
+    }
+        
+    input[type="submit"]{
+        background-color: rgb(121, 96, 62);
+        color: rgb(211, 211, 181);
+        border-radius: 5%;
+        box-shadow: 0px 1px 1px 1px rgb(105, 72, 28);
+        font-size: 1.3em;
+        font-weight: bold;
+        outline: none;
+        margin-top: 0.5em;
+        width: 290px;
+        height: 23px;
+        align-self: center;
+    }
+    input[type="submit"]:hover{
+        color: rgb(245, 245, 207);
+        box-shadow: 0px 1px 3px 1px rgb(36, 21, 3);
+    }
+}
+@media all and (min-width: 480px) {
+    form { 
+        align-items: center;
+    }
+    form section {
+        width: 60%;
+    }
+}
+
+@media all and (min-width: 768px) {
+    form { 
+        align-items: center;
+    }
+    form section {
+        width: 40vw;
+    }
+}
+
+/* form */
 
 
 

@@ -13,7 +13,8 @@
       <!-- <link rel="stylesheet" href="/assets/styles/debug.css"> -->
       <script src="/assets/script/app.js" defer> </script>
       <script src="/assets/script/list.js" defer></script>
-      <title>TO-DO</title>
+
+     <title>TO-DO</title>
    </head>
    <body>
       <!--header-->
@@ -25,40 +26,25 @@
          </div>
       </div>
       <!--header-->
-
-
-      <!--form-->
-      <form id="form" class="form center">
-         <div class="form__container">
-            <div class="form__options__container center">
-               <div class="form__title__container form__line__container">
-                  <span class="form__label">
-                     <label for="name"  class="form__title ">Title</label>
-                  </span>
-                  <input type="text" name="name"/>
-               </div><!--form__title__container-->
-               <div class="form__url__container form__line__container">
-                  <span class="form__label">
-                     <label for="url" >Url</label>
-                  </span>
-                  <input type="text" name="url"/>
-               </div><!--form__url__container-->
-               <div class="form__column__container form__line__container">
-                  <span class="form__label form__label__column">
-                     <label for="options" >Column</label>
-                  </span>
-                  <select name="column" class="form__column__options">
-                     <option value="vanilla">Vanilla</option>
-                     <option value="framework">Framework</option>
-                     <option value="other">Other</option>
-                  </select>
-               </div><!--form__column__container-->
-                 
-            </div><!--form__options__container-->
-            
-            <button id="addButton" class="form__button__add" type="button">Add</button>
-         </div><!--fomr__container-->
+      <!-- form -->
+      <form>
+         <section>
+         <label>Title</label>
+         <input type="text" id="title" name="title">
+         <label for="url">Url</label>
+         <input type="text" id="url" name="url">
+         <select>
+            <option value="vanilla">Vanilla</option>
+            <option value="framework">Framework</option>
+            <option value="other">Other</option>
+         </select>
+         </section>
+         <section>
+         <input type="submit" value="Submit">
+         </section>
       </form>
+     
+     
       <!--form-->
 
 
@@ -95,6 +81,5 @@
 
 
 
-      
    </body>
 </html>
