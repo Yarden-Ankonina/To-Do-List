@@ -56,8 +56,12 @@ function AddHandler() {
     if (isValidURl(url)) {
         addNew(COLUMNS[columnInput], title, url);
         clearInput(userInputs);
-    } else {
-        ERRORELEMNT.innerHTML = 'Invalid URL';
+    } else if (!url) {
+        addNew(COLUMNS[columnInput], title, '#');
+        clearInput(userInputs);
+    }
+    else {
+        ERRORELEMNT.innerHTML = 'Invalid Url. Please follow the format => https://google.com';
     }
 }
 
