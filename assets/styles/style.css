@@ -142,7 +142,7 @@ body{
         display: flex;
         justify-content: space-around;
         align-items: flex-start;
-        margin: 2vh 2vw;
+        margin: 5vh 10vw;
     }   
     
     .todo-list ul{
@@ -150,19 +150,27 @@ body{
         flex-direction: column;
         flex-grow: 1;
         justify-content: center;
-        background-color: rgb(189, 142, 32);
         font-size: 0.9em;
+
         
     }
     
     .todo-list ul h2{
         padding: 8rem 0;
+        font-weight: bold;
+        color: rgb(218, 198, 172);
+        background-color: rgba(95, 69, 9, 0.877);
+
     }
     
     ul li{
-        background-color: rgba(241, 205, 158, 0.863);
+        background-color: rgba(240, 228, 192, 0.705);
         flex-grow: 1;
         padding: 5rem 5rem;
+        border-radius: 2%;
+        font-weight: bold;
+        color:rgb(112, 59, 15);
+
     }
     
     ul li:hover{
@@ -179,6 +187,7 @@ body{
         width: 1em;
         height: 1.2em;
         content: url(/icon/Trash-icon.png);
+        
         
     }
     
