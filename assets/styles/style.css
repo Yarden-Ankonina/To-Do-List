@@ -33,6 +33,7 @@ body{
     height: 100%;
     width: 100%;
 }
+
 /* header */
 .header {
     display: flex;
@@ -118,4 +119,64 @@ body{
     }
 }
 
+/* form */
 
+
+
+/* todolist */
+
+@media all and (min-width:320px){
+
+    .todo-list{
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-start;
+        margin: 2vh 2vw;
+    }   
+    
+    .todo-list ul{
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        justify-content: center;
+        background-color: rgb(189, 142, 32);
+        font-size: 0.9em;
+        
+    }
+    
+    .todo-list ul h2{
+        padding: 8rem 0;
+    }
+    
+    ul li{
+        background-color: rgba(241, 205, 158, 0.863);
+        flex-grow: 1;
+        padding: 5rem 5rem;
+    }
+    
+    ul li:hover{
+        cursor: pointer;
+        
+    }
+    
+    li i{
+        padding: 5rem;
+        color: red;;
+    }
+    
+    li .trash{
+        width: 1em;
+        height: 1.2em;
+        content: url(/icon/Trash-icon.png);
+        
+    }
+    
+    
+}
+
+@media all and (min-width:480px){
+    .todo-list ul{
+        font-size: 1em;
+    }
+    
+}
