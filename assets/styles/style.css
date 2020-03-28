@@ -231,3 +231,49 @@ body{
         font-size: 0.7em;
     }
 }
+
+
+
+
+
+/* todolist */
+
+.todo-list{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin: 2vh 2vw;
+}
+
+.todo-list ul{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: center;
+    background-color: rgb(189, 142, 32);
+    
+}
+
+.todo-list ul h2{
+    padding: 8rem 0;
+}
+
+ul li{
+    background-color: rgba(241, 205, 158, 0.863);
+    flex-grow: 1;
+    padding: 5rem 5rem;
+}
+
+ul li:hover{
+    cursor: pointer;
+    
+}
+
+
+
+@media (max-width:480px){
+    .columns{
+        font-size: 0.9em;
+    }
+    
+}
