@@ -8,13 +8,13 @@
       <link rel="stylesheet" href="/resets/reset.local.css">
       <link rel="stylesheet" href="/resets/typography.css">
       <!-- <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>      -->
-      <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" ></script>
+      <!-- <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" ></script> -->
       <link rel="stylesheet" href="/assets/styles/style.css">
       <!-- <link rel="stylesheet" href="/assets/styles/debug.css"> -->
-      <script src="/assets/script/app.js" defer>
+      <!-- <script src="/assets/script/app.js" defer>
        window.FontAwesomeConfig = { autoReplaceSvg: false }
-      </script>
-      <script src="/assets/script/list.js" defer></script>
+      </script> -->
+      <!-- <script src="/assets/script/list.js" defer></script> -->
       <title>TO-DO</title>
    </head>
    <body>
@@ -26,84 +26,24 @@
          </div>
       </div>
       <!--header-->
-
-
-      <!--form-->
-      <form id="form" class="form center">
-         <div class="form__container">
-            <div class="form__options__container center">
-               <div class="form__title__container form__line__container">
-                  <span class="form__label">
-                     <label for="name"  class="form__title ">Title</label>
-                  </span>
-                  <input type="text" name="name"/>
-               </div><!--form__title__container-->
-               <div class="form__url__container form__line__container">
-                  <span class="form__label">
-                     <label for="url" >Url</label>
-                  </span>
-                  <input type="text" name="url"/>
-               </div><!--form__url__container-->
-               <div class="form__column__container form__line__container">
-                  <span class="form__label form__label__column">
-                     <label for="options" >Column</label>
-                  </span>
-                  <select name="column" class="form__column__options">
-                     <option value="vanilla">Vanilla</option>
-                     <option value="framework">Framework</option>
-                     <option value="other">Other</option>
-                  </select>
-               </div><!--form__column__container-->
-                 
-            </div><!--form__options__container-->
-            
-            <button id="addButton" class="form__button__add" type="button">Add</button>
-         </div><!--fomr__container-->
+      <!-- form -->
+      <form>
+         <section>
+         <label>Title</label>
+         <input type="text" id="title" name="title">
+         <label for="url">Url</label>
+         <input type="text" id="url" name="url">
+         <select>
+            <option value="vanilla">Vanilla</option>
+            <option value="framework">Framework</option>
+            <option value="other">Other</option>
+         </select>
+         </section>
+         <section>
+         <input type="submit" value="Submit">
+         </section>
       </form>
-      <!--form-->
+      <!-- form -->
 
-
-
-
-     <!-- list -->
-     <div class="list__container center">
-        <div class="list half__size ">
-           <!-- head -->
-          <div class="list__head__container">
-               <div class="list__head center">
-                  <div class="list__head__item"><h1>Vanilla</h1></div>
-                  <div class="list__head__item"><h1>Framework</h1></div>
-                  <div class="list__head__item "><h1>Other</h1></div>
-               </div><!--list head-->
-            </div><!--list__head__container-->
-           <!-- head -->
-            
-           <!-- body -->
-            <div class="list__body center">
-               <div class="list__body__items  vanilla">
-               </div><!--list__body__items-->
-               <div class="list__body__items framework">
-               </div><!--list__body__items-->
-               <div class="list__body__items css other">
-               </div><!--list__body__items-->
-            </div><!--list body-->
-           <!-- body -->
-
-         </div><!--list-->
-    </div><!--list conatiner-->
-
-
-
-     <!-- list -->
-
-
-
-
-
-
-
-
-
-      
    </body>
 </html>
