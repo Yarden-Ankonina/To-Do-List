@@ -1,12 +1,15 @@
 @import "./variables";
+@import "./resets/normalize";
+@import "./resets/reset.local";
+@import "./resets/typography";
+
+
 @mixin flexCenter($direction){
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: $direction;
 }
-
-
 
 
 
@@ -54,7 +57,6 @@ header{
 
 
 @mixin day{
-    font-size: 16px;
     header{
         background-color: $dayBackground;
         color : $dayDarkFont;
@@ -71,6 +73,9 @@ header{
         h1{
         color : rgb(221, 221, 219);
         }
+    }
+    body{
+        background-color: $nightBackground;
     }
 }
 body{
