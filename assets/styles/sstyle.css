@@ -1,0 +1,101 @@
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+  text-align: center;
+  color: #dac9dd;
+}
+
+header .toggle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  margin: 15rem 5rem;
+  margin-bottom: 0;
+}
+
+header h1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-size: 2em;
+  padding-bottom: 5vh;
+}
+
+header i {
+  font-size: 1.8em;
+  color: #b48be4;
+}
+
+header i:hover {
+  font-size: 1.85em;
+  cursor: pointer;
+}
+
+header h2 {
+  padding: 2rem 8rem;
+}
+
+body header {
+  background-color: #17033a;
+  color: #a295f1;
+}
+
+body header h1 {
+  color: #dddddb;
+}
+
+.toggleOnDay {
+  font-size: 16px;
+}
+
+.toggleOnDay header {
+  background-color: lightblue;
+  color: #1b0542;
+}
+
+.toggleOnDay header h1 {
+  color: #1b0542;
+}
+
+.toggleOnNight header {
+  background-color: #17033a;
+  color: #a295f1;
+}
+
+.toggleOnNight header h1 {
+  color: #dddddb;
+}
+/*# sourceMappingURL=sstyle.css.map */
