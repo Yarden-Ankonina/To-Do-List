@@ -12,6 +12,9 @@
 }
 
 
+body{
+    background-color: $nightBackground;
+}
 
 header{
     @include flexCenter(column-reverse);
@@ -46,6 +49,23 @@ header{
     header{
         font-size: 0.8em;
     }
+    form{
+        @include flexCenter(row);
+        justify-content: center;
+        flex-wrap: wrap;
+        color: $darkPurple200;
+        section{
+            @include flexCenter(column);
+        }
+        label{
+            margin-bottom:2rem;
+            margin-top: 5rem;
+        }
+        select{
+            margin-top: 5vh;
+            margin-bottom: 3vh;
+        }
+    }
     
 }
 
@@ -53,8 +73,13 @@ header{
     header{
         font-size: 1em;
     }
+    form{
+    }
 }
 
+
+
+//day night
 
 @mixin day{
     header{
@@ -68,10 +93,17 @@ header{
 
 @mixin night{
     header{
-        background-color: $nightBackground;
-        color : $nightLightFont;
+        background-color: $nightBlack;
+        color : $darkPurple200;
         h1{
-        color : rgb(221, 221, 219);
+        color : $darkPurple100;
+        }
+        .toggle{
+            i{
+            color: $darkPurple200;
+                
+            }
+            color: $darkPurple200;
         }
     }
     body{

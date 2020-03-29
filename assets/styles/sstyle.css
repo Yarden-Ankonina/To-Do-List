@@ -434,6 +434,10 @@ body {
   color: #222;
 }
 
+body {
+  background-color: #282828;
+}
+
 header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -509,6 +513,48 @@ header h2 {
   header {
     font-size: 0.8em;
   }
+  form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    justify-content: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    color: #BB86FC;
+  }
+  form section {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  form label {
+    margin-bottom: 2rem;
+    margin-top: 5rem;
+  }
+  form select {
+    margin-top: 5vh;
+    margin-bottom: 3vh;
+  }
 }
 
 @media (min-width: 768px) {
@@ -518,12 +564,20 @@ header h2 {
 }
 
 body header {
-  background-color: #282828;
-  color: #a295f1;
+  background-color: #000000;
+  color: #BB86FC;
 }
 
 body header h1 {
-  color: #dddddb;
+  color: #D7B7FD;
+}
+
+body header .toggle {
+  color: #BB86FC;
+}
+
+body header .toggle i {
+  color: #BB86FC;
 }
 
 body body {
@@ -540,12 +594,20 @@ body body {
 }
 
 .toggleOnNight header {
-  background-color: #282828;
-  color: #a295f1;
+  background-color: #000000;
+  color: #BB86FC;
 }
 
 .toggleOnNight header h1 {
-  color: #dddddb;
+  color: #D7B7FD;
+}
+
+.toggleOnNight header .toggle {
+  color: #BB86FC;
+}
+
+.toggleOnNight header .toggle i {
+  color: #BB86FC;
 }
 
 .toggleOnNight body {
