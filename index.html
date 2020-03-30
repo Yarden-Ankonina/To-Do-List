@@ -1,49 +1,43 @@
-<!--26/3/2020 7:07 Marcos-->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="/assets/styles/style.css"> -->
     <link rel="stylesheet" href="/assets/styles/style.css">
     <script src="https://kit.fontawesome.com/a05612df27.js" crossorigin="anonymous"></script>
     <!-- <link rel="stylesheet" href="/assets/styles/debug.css"> -->
-    <!-- <script src="/assets/script/app.js" defer></script> -->
-    <!-- <script src="/assets/script/localstorage.js" defer></script> -->
-    <script src="/assets/script/draganddrop.js" defer></script>
     <script src="/assets/script/style.js" defer></script>
-    <script src="/assets/script/todo.js" defer></script>
-
+    <script src="/assets/script/newapp.js" defer></script>
     <title>TO-DO</title>
 </head>
 
-<body >
-
-      <!--header-->
-      <header>
-        <div ><h1>To-Do List</h1></div>
-        <div class="toggle"><h2>DAY</h2><i class="fas fa-toggle-on"></i><h2>NIGHT</h2></div>
+<body>
+    <!--header-->
+    <header>
+        <div>
+            <h1>To-Do List</h1></div>
+        <div class="toggle">
+            <h2>DAY</h2><i class="fas fa-toggle-on"></i>
+            <h2>NIGHT</h2></div>
     </header>
     <!--header-->
 
-
-    <section id="body" class="body"> <!--new body-->
-        
+    <!--new body-->
+    <section id="body" class="body">
         <!-- menu -->
-    <menu id="menu">
-        <h2>Menu</h2>
-        <!--footer -->
-        <footer>
-             <h4>By Marcos and Yarden</h4>
-        </footer>
-        <!--footer -->
-    </menu>
+        <menu id="menu">
+            <h2>Menu</h2>
+            <!--footer -->
+            <footer>
+                <h4>By Marcos and Yarden</h4>
+            </footer>
+            <!--footer -->
+        </menu>
         <!-- menu -->
-
-
 
         <!-- todo -->
+<<<<<<< HEAD
     <section class="todo">
 
     <!-- form -->
@@ -64,23 +58,37 @@
 
     <!-- todo list -->
 
+=======
+        <section class="todo">
+>>>>>>> parent of e284d1d... Revert "asd"
 
-    <section class="todo-list">
-        <ul id="todo__column">
-            <h2>Todo's</h2>
-        </ul>
-    </section>
+            <!-- form -->
+            <section class="container">
+                <form id='form' autocomplete="off">
+                    <section>
+                        <label for='title'>Title</label>
+                        <input type="text" id="title" name="title" maxlength="12" placeholder="Insert title" required>
+                        <label for="url">Url</label>
+                        <input type="text" id="url" name="url" placeholder="Insert full url">
 
+                        <button type="submit" id="submit-button">Submit</button>
+                    </section>
+                </form>
 
-    <!-- todo list -->
+                <!-- todo list -->
 
-    
+                <section class="todo-list">
+                    <ul id="tasks">
+                    </ul>
+                </section>
+            </section>
 
+            <!-- todo list -->
 
-    </section>
+        </section>
         <!-- todo -->
 
-</section>
+    </section>
     <!--new body  -->
 
 </body>
