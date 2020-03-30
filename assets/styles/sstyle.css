@@ -435,7 +435,9 @@ body {
 }
 
 #body {
-  height: 100vh;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
 }
 
 header {
@@ -558,14 +560,37 @@ header h2 {
   form input {
     width: 60vw;
     text-align: center;
+    padding-bottom: 10rem;
+    outline: none;
+    padding-top: 0.5em;
+    border-radius: 0.1em;
+    background-color: #282828;
+    -webkit-box-shadow: 0px 6px 7px -7px #D7B7FD;
+            box-shadow: 0px 6px 7px -7px #D7B7FD;
+  }
+  form input:hover {
+    -webkit-box-shadow: 0px 6px 7px -6px #D7B7FD;
+            box-shadow: 0px 6px 7px -6px #D7B7FD;
   }
   form select {
     margin-top: 5vh;
     margin-bottom: 3vh;
     width: 30vw;
+    padding: 7rem;
+    border: none;
+    border-radius: 0.6em;
+    font-weight: bold;
+  }
+  form select:focus {
+    outline: none;
+    font-weight: bold;
   }
   form button {
     width: 50vw;
+    margin-top: 1em;
+    padding: 1em;
+    border-radius: 0.6em;
+    font-size: 1.5em;
   }
 }
 
@@ -666,46 +691,24 @@ header h2 {
 
 .toggleOnNight form input {
   color: white;
-  padding-bottom: 10rem;
-  outline: none;
-  -webkit-box-shadow: 0px 1.5rem 0.5px #D7B7FD;
-          box-shadow: 0px 1.5rem 0.5px #D7B7FD;
-  background-color: #282828;
   border-bottom: 1px solid white;
-  padding-top: 0.5em;
-  border-radius: 0.1em;
 }
 
 .toggleOnNight form input:focus {
   background-color: #424242;
 }
 
-.toggleOnNight form input:hover {
-  -webkit-box-shadow: 0px 1rem 0.1px #D7B7FD;
-          box-shadow: 0px 1rem 0.1px #D7B7FD;
-}
-
 .toggleOnNight form select {
-  padding: 7rem;
-  border: none;
-  border-radius: 0.6em;
-  font-weight: bold;
   color: #282828;
   background-color: #D7B7FD;
 }
 
 .toggleOnNight form select:focus {
-  outline: none;
   -webkit-box-shadow: 1px 1px 1px #9E55FC;
           box-shadow: 1px 1px 1px #9E55FC;
-  font-weight: bold;
 }
 
 .toggleOnNight form button {
   background-color: #424242;
-  margin-top: 1em;
-  padding: 1em;
-  border-radius: 0.6em;
-  font-size: 1.5em;
 }
 /*# sourceMappingURL=sstyle.css.map */
