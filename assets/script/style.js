@@ -1,6 +1,9 @@
 let toggle = document.querySelector("header i");
 let body = document.querySelector("body");
 
+//reset
+body.classList.add("toggleOnNight");
+
 toggle.addEventListener('click',function(){
  if(toggle.classList[1] === "fa-toggle-on"){
     toggle.classList.remove("fa-toggle-on");
@@ -17,5 +20,4 @@ toggle.addEventListener('click',function(){
     body.classList.add("toggleOnNight");
 
  }
- console.log(body.classList[0]);
 });

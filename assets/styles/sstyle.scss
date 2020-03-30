@@ -11,7 +11,9 @@
     flex-direction: $direction;
 }
 
-
+#body{
+    height: 100vh;
+}
 
 header{
     @include flexCenter(column-reverse);
@@ -46,41 +48,150 @@ header{
     header{
         font-size: 0.8em;
     }
+    form{
+        @include flexCenter(row);
+        justify-content: center;
+        flex-wrap: wrap;
+        font-size: 1.2em;
+        section{
+            @include flexCenter(column);
+            width: 30vw;
+
+        }
+        label{
+            margin-bottom:5rem;
+            margin-top: 8rem;
+            font-size: 1.2em;
+            font-weight: bold;
+
+            
+        }
+        input{
+            width: 60vw;
+        }
+        select{
+            margin-top: 5vh;
+            margin-bottom: 3vh;
+            width: 22vw;
+
+        }
+    }
     
+}
+
+@media (min-width: $phoneSize){
+   form{
+       input{
+           width : 30vw;
+       }
+       select{
+        width: 10vw;
+       }
+   }
+   
 }
 
 @media (min-width: $tabletSize){
     header{
         font-size: 1em;
     }
+    form{
+        input{
+            width : 20vw;
+        }
+    }
+    
 }
 
 
+
+//day night
+
 @mixin day{
+    #body{
+        background-color: white;
+    }
     header{
         background-color: $dayBackground;
         color : $dayDarkFont;
         h1{
         color : $dayDarkFont;
         }
+
     }
+   
 }
 
+
 @mixin night{
-    header{
+    #body{
         background-color: $nightBackground;
-        color : $nightLightFont;
+    }
+    header{
+        background-color: $nightBlack;
+        color : $darkPurple200;
         h1{
-        color : rgb(221, 221, 219);
+        color : $darkPurple100;
+        }
+        .toggle{
+            i{
+            color: $darkPurple200;
+                
+            }
+            color: $darkPurple200;
+        }
+
+    }
+    form{
+        color: $darkPurple200;
+
+        label{
+            color: $darkPurple100;
+            margin-bottom: 1em;
+            margin-top: 1em;
+        }
+        input{
+            color : white;
+            padding-bottom: 10rem;
+            outline: none;
+            box-shadow: 0px 1.5rem  0.5px $darkPurple100;
+            background-color: $nightBackground;
+            border-bottom: 1px solid white;
+            padding-left: 5.5em;
+            padding-top: 0.5em;
+            border-radius: 0.1em;
+
+        }
+        input:focus{
+            background-color: $night800;
+        }
+        input:hover{
+            box-shadow: 0px 1rem  0.1px $darkPurple100;
+        }
+        select{
+            padding: 7rem;
+            border: none;
+            border-radius: 0.6em;
+            font-weight: bold;
+            color: $nightBackground;
+            background-color: $darkPurple100;
+        }
+        select:focus{
+            outline: none;
+            box-shadow: 1px 1px 1px $darkPurple300;
+            font-weight: bold;
+        }
+        button{
+            background-color: $night800;
+            margin-top: 1em;
+            padding: 1em;
+            border-radius: 0.6em;
+            font-size: 1.5em;
         }
     }
-    body{
-        background-color: $nightBackground;
-    }
+   
 }
-body{
-    @include night;
-}
+
 
 .toggleOnDay{
     @include day;
@@ -88,6 +199,7 @@ body{
 
 .toggleOnNight{
     @include night;
+    
 
 }
 
