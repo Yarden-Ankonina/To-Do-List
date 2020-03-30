@@ -434,8 +434,8 @@ body {
   color: #222;
 }
 
-body {
-  background-color: #282828;
+#body {
+  height: 100vh;
 }
 
 header {
@@ -530,7 +530,7 @@ header h2 {
     justify-content: center;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-    color: #BB86FC;
+    font-size: 1.2em;
   }
   form section {
     display: -webkit-box;
@@ -546,14 +546,30 @@ header h2 {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    width: 30vw;
   }
   form label {
-    margin-bottom: 2rem;
-    margin-top: 5rem;
+    margin-bottom: 5rem;
+    margin-top: 8rem;
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+  form input {
+    width: 60vw;
   }
   form select {
     margin-top: 5vh;
     margin-bottom: 3vh;
+    width: 22vw;
+  }
+}
+
+@media (min-width: 480px) {
+  form input {
+    width: 30vw;
+  }
+  form select {
+    width: 10vw;
   }
 }
 
@@ -561,27 +577,13 @@ header h2 {
   header {
     font-size: 1em;
   }
+  form input {
+    width: 20vw;
+  }
 }
 
-body header {
-  background-color: #000000;
-  color: #BB86FC;
-}
-
-body header h1 {
-  color: #D7B7FD;
-}
-
-body header .toggle {
-  color: #BB86FC;
-}
-
-body header .toggle i {
-  color: #BB86FC;
-}
-
-body body {
-  background-color: #282828;
+.toggleOnDay #body {
+  background-color: white;
 }
 
 .toggleOnDay header {
@@ -591,6 +593,10 @@ body body {
 
 .toggleOnDay header h1 {
   color: #1b0542;
+}
+
+.toggleOnNight #body {
+  background-color: #282828;
 }
 
 .toggleOnNight header {
@@ -610,7 +616,51 @@ body body {
   color: #BB86FC;
 }
 
-.toggleOnNight body {
+.toggleOnNight form {
+  color: #BB86FC;
+}
+
+.toggleOnNight form label {
+  color: #D7B7FD;
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+
+.toggleOnNight form input {
+  color: white;
+  padding-bottom: 10rem;
+  outline: none;
+  -webkit-box-shadow: 0px 1.5rem 0.5px #D7B7FD;
+          box-shadow: 0px 1.5rem 0.5px #D7B7FD;
   background-color: #282828;
+  border-bottom: 1px solid white;
+  padding-left: 5.5em;
+  padding-top: 0.5em;
+  border-radius: 0.1em;
+}
+
+.toggleOnNight form input:focus {
+  background-color: #424242;
+}
+
+.toggleOnNight form input:hover {
+  -webkit-box-shadow: 0px 1rem 0.1px #D7B7FD;
+          box-shadow: 0px 1rem 0.1px #D7B7FD;
+}
+
+.toggleOnNight form select {
+  padding: 7rem;
+  border: none;
+  border-radius: 0.6em;
+  font-weight: bold;
+  color: #270096;
+  background-color: #D7B7FD;
+}
+
+.toggleOnNight form select:focus {
+  outline: none;
+  -webkit-box-shadow: 1px 1px 1px white;
+          box-shadow: 1px 1px 1px white;
+  font-weight: bold;
 }
 /*# sourceMappingURL=sstyle.css.map */
