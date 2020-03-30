@@ -639,6 +639,9 @@ header h2 {
     font-size: 1.5em;
     outline: none;
   }
+  .todo-list ul {
+    width: 50vw;
+  }
 }
 
 @media (min-width: 480px) {
@@ -665,6 +668,9 @@ header h2 {
   }
   form button {
     width: 20vw;
+  }
+  .todo-list ul {
+    width: 30vw;
   }
 }
 
