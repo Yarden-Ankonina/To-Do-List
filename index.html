@@ -9,10 +9,11 @@
     <link rel="stylesheet" href="/assets/styles/style.css">
     <script src="https://kit.fontawesome.com/a05612df27.js" crossorigin="anonymous"></script>
     <!-- <link rel="stylesheet" href="/assets/styles/debug.css"> -->
-    <script src="/assets/script/app.js" defer></script>
-    <script src="/assets/script/localstorage.js" defer></script>
+    <!-- <script src="/assets/script/app.js" defer></script> -->
+    <!-- <script src="/assets/script/localstorage.js" defer></script> -->
     <script src="/assets/script/draganddrop.js" defer></script>
     <script src="/assets/script/style.js" defer></script>
+    <script src="/assets/script/todo.js" defer></script>
 
     <title>TO-DO</title>
 </head>
@@ -34,18 +35,18 @@
             <input type="text" id="title" name="title" maxlength="12" placeholder="Insert title" required>
             <label for="url">Url</label>
             <input type="text" id="url" name="url" placeholder="Insert full url">
-            <select>
+            <!-- <select>
                 <option value="vanilla">Vanilla</option>
                 <option value="framework">Framework</option>
                 <option value="other">Other</option>
-            </select>
+            </select> -->
             <button type="submit" id="submit-button">Submit</button>
         </section>
     </form>
     <!--form-->
 
     <!-- todo list -->
-    <section class="todo-list">
+    <!-- <section class="todo-list">
         <ul id="vanilla">
             <h2>VANILLA</h2>
         </ul>
@@ -54,6 +55,14 @@
         </ul>
         <ul id="other">
             <h2>OTHER</h2>
+        </ul>
+    </section> -->
+
+
+
+    <section class="todo-list">
+        <ul id="todo__column">
+            <h2>Todo's</h2>
         </ul>
     </section>
     <!-- todo list -->

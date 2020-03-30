@@ -13,11 +13,21 @@
 //todo list
 .todo-list{
     @include flexCenter(column);
+    justify-content: flex-start;
     background-color: $white200;
-    margin-top: 5em;
+    margin-top: 2em;
+    padding-top: 2em;
     height: 100vh;
-    li{
+    ul{
+        padding:0.7em;
+        border-radius: 0.2em;
+        font-size: 1.5em;
+        font-weight: bold;
         background-color: $black50;
+        color: $darkPurple200;
+        li{
+            background-color: $darkPurple100;
+        }
     }
 }
 
@@ -84,9 +94,8 @@
       
        
         button{
-            width: 50vw;
             margin-top: 1em;
-            padding: 1em;
+            padding: 0.8em;
             border-radius: 0.6em;
             font-size: 1.5em;
 
@@ -139,7 +148,7 @@
             width: 10vw;
            }
         button{
-            width: 14vw;
+            width: 12.5vw;
            }
     }
 }
@@ -153,7 +162,7 @@
             width: 8vw;
            }
         button{
-            width: 12vw;
+            width: 10vw;
            }
     }
 }
@@ -195,7 +204,11 @@
             background-color: $blueGreen200;
             font-weight: bold;
         }
-       
+    }
+    .todo-list{
+        ul{
+            color: $blueGreen200;
+        }
     }
 
    

@@ -525,13 +525,26 @@ header h2 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   background-color: #cccaca;
-  margin-top: 5em;
+  margin-top: 2em;
+  padding-top: 2em;
   height: 100vh;
 }
 
-.todo-list li {
+.todo-list ul {
+  padding: 0.7em;
+  border-radius: 0.2em;
+  font-size: 1.5em;
+  font-weight: bold;
   background-color: #5d5d5d;
+  color: #BB86FC;
+}
+
+.todo-list ul li {
+  background-color: #D7B7FD;
 }
 
 @media (min-width: 320px) {
@@ -613,9 +626,8 @@ header h2 {
     font-weight: bold;
   }
   form button {
-    width: 50vw;
     margin-top: 1em;
-    padding: 1em;
+    padding: 0.8em;
     border-radius: 0.6em;
     font-size: 1.5em;
   }
@@ -656,7 +668,7 @@ header h2 {
     width: 10vw;
   }
   form button {
-    width: 14vw;
+    width: 12.5vw;
   }
 }
 
@@ -668,7 +680,7 @@ header h2 {
     width: 8vw;
   }
   form button {
-    width: 12vw;
+    width: 10vw;
   }
 }
 
@@ -707,6 +719,10 @@ header h2 {
 .toggleOnDay form button {
   background-color: lightblue;
   font-weight: bold;
+}
+
+.toggleOnDay .todo-list ul {
+  color: lightblue;
 }
 
 .toggleOnNight #body {
