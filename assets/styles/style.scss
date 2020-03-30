@@ -7,7 +7,28 @@
 
 #body{
     height: max-content;
+    @include flexCenter(row);
+    justify-content: space-between;
 }
+
+#menu{
+    @include flexCenter(column);
+    justify-content: space-between;
+    align-self: stretch;
+    margin: 0 0;
+    width: 30vw;
+
+    h2{
+        padding-top: 1em;
+        font-size: 1.4em;
+    }
+    footer{
+        display: flex;
+        padding-bottom: 1em;
+
+    }
+}
+
 
 
 //todo list
@@ -15,7 +36,6 @@
     @include flexCenter(column);
     justify-content: flex-start;
     background-color: $white200;
-    margin-top: 2em;
     padding-top: 2em;
     height: 100vh;
     text-align: center;
@@ -52,6 +72,7 @@
         flex-wrap: wrap;
         font-size: 1.2em;
         text-align: center;
+        width: 70vw;
         
         section{
             @include flexCenter(column);
@@ -186,106 +207,6 @@
     }
 }
 
-
-//day night
-
-@mixin day{
-    #body{
-        background-color:$white50;
-    }
-    header{
-        background-color: $dayBackground;
-        color : $dayDarkFont;
-        h1{
-        color : $dayDarkFont;
-        }
-       
-
-    }
-    form{
-        label{
-            color : $blue400;
-        }
-        input{
-        box-shadow: 0px 6px 7px -7px $blue800;
-        background-color: $white200;
-
-        }
-        input:focus{
-        background-color: $white100;
-
-        }
-        select{
-            background-color: $blueGreen200;
-            color: $black400;
-        }
-        button{
-            background-color: $blueGreen200;
-            font-weight: bold;
-        }
-    }
-    .todo-list{
-        ul{
-            color: $blueGreen200;
-            li{
-            background-color: $blue200;
-
-            }
-        }
-    }
-
-   
-}
-
-
-@mixin night{
-    #body{
-        background-color: $nightBackground;
-    }
-    header{
-        background-color: $nightBlack;
-        color : $darkPurple200;
-        h1{
-        color : $darkPurple100;
-        }
-        .toggle{
-            i{
-            color: $darkPurple200;
-                
-            }
-            color: $darkPurple200;
-        }
-
-    }
-    form{
-        color: $darkPurple200;
-
-        label{
-            color: $darkPurple100;
-            
-        }
-        input{
-            color : white;
-            border-bottom: 1px solid white;
-
-        }
-        input:focus{
-            background-color: $night800;
-        }
-        select{
-            color: $nightBackground;
-            background-color: $darkPurple100;
-        }
-        select:focus{
-            box-shadow: 1px 1px 1px $darkPurple300;
-        }
-        button{
-            background-color: $night800;
-            
-        }
-    }
-   
-}
 
 
 .toggleOnDay{

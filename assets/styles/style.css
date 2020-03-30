@@ -450,7 +450,6 @@ header {
           flex-direction: column-reverse;
   text-align: center;
   color: #dac9dd;
-  margin-bottom: 5vh;
 }
 
 header .toggle {
@@ -509,6 +508,57 @@ header h2 {
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-item-align: stretch;
+      align-self: stretch;
+  margin: 0 0;
+  width: 30vw;
+}
+
+#menu h2 {
+  padding-top: 1em;
+  font-size: 1.4em;
+}
+
+#menu footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-bottom: 1em;
 }
 
 .todo-list {
@@ -529,7 +579,6 @@ header h2 {
       -ms-flex-pack: start;
           justify-content: flex-start;
   background-color: #cccaca;
-  margin-top: 2em;
   padding-top: 2em;
   height: 100vh;
   text-align: center;
@@ -577,6 +626,7 @@ header h2 {
         flex-wrap: wrap;
     font-size: 1.2em;
     text-align: center;
+    width: 70vw;
   }
   form section {
     display: -webkit-box;
@@ -704,13 +754,21 @@ header h2 {
   background-color: #f3f3f3;
 }
 
-.toggleOnDay header {
+.toggleOnDay #menu {
   background-color: lightblue;
+}
+
+.toggleOnDay header {
+  background-color: #247883;
   color: #1b0542;
 }
 
 .toggleOnDay header h1 {
   color: #1b0542;
+}
+
+.toggleOnDay header i {
+  color: #f3f3f3;
 }
 
 .toggleOnDay form label {
@@ -733,8 +791,12 @@ header h2 {
 }
 
 .toggleOnDay form button {
-  background-color: lightblue;
+  background-color: #247883;
   font-weight: bold;
+}
+
+.toggleOnDay .todo-list {
+  background-color: #f3f3f3;
 }
 
 .toggleOnDay .todo-list ul {
@@ -746,7 +808,7 @@ header h2 {
 }
 
 .toggleOnNight #body {
-  background-color: #282828;
+  background-color: #5d5d5d;
 }
 
 .toggleOnNight header {
@@ -767,6 +829,7 @@ header h2 {
 }
 
 .toggleOnNight form {
+  background-color: #282828;
   color: #BB86FC;
 }
 
@@ -795,5 +858,9 @@ header h2 {
 
 .toggleOnNight form button {
   background-color: #424242;
+}
+
+.toggleOnNight .todo-list {
+  background-color: #282828;
 }
 /*# sourceMappingURL=style.css.map */

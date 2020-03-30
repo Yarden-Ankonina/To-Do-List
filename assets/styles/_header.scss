@@ -4,7 +4,6 @@ header{
     @include flexCenter(column-reverse);
     text-align: center;
     color: rgb(218, 201, 221);
-    margin-bottom: 5vh;
     .toggle{
         @include flexCenter(row);
         align-self: flex-end;
