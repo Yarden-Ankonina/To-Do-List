@@ -547,9 +547,11 @@ header h2 {
       align-self: stretch;
   margin: 0 0;
   width: 30vw;
+  font-size: 1.3em;
 }
 
 #menu h2 {
+  font-weight: bold;
   padding-top: 1em;
   font-size: 1.4em;
 }
