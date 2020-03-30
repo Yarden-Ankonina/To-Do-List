@@ -18,7 +18,9 @@
     margin-top: 2em;
     padding-top: 2em;
     height: 100vh;
+    text-align: center;
     ul{
+        text-align: center;
         padding:0.7em;
         border-radius: 0.2em;
         font-size: 1.5em;
@@ -26,7 +28,12 @@
         background-color: $black50;
         color: $darkPurple200;
         li{
+            text-align: center;
             background-color: $darkPurple100;
+            margin-top: 1em;
+            padding: 0px 1em;
+            font-weight: normal;
+            color: $black400;
         }
     }
 }
@@ -98,7 +105,7 @@
             padding: 0.8em;
             border-radius: 0.6em;
             font-size: 1.5em;
-
+            outline: none;
         }
     }
     
@@ -208,6 +215,10 @@
     .todo-list{
         ul{
             color: $blueGreen200;
+            li{
+            background-color: $blue200;
+
+            }
         }
     }
 

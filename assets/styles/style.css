@@ -532,9 +532,11 @@ header h2 {
   margin-top: 2em;
   padding-top: 2em;
   height: 100vh;
+  text-align: center;
 }
 
 .todo-list ul {
+  text-align: center;
   padding: 0.7em;
   border-radius: 0.2em;
   font-size: 1.5em;
@@ -544,7 +546,12 @@ header h2 {
 }
 
 .todo-list ul li {
+  text-align: center;
   background-color: #D7B7FD;
+  margin-top: 1em;
+  padding: 0px 1em;
+  font-weight: normal;
+  color: #292929;
 }
 
 @media (min-width: 320px) {
@@ -630,6 +637,7 @@ header h2 {
     padding: 0.8em;
     border-radius: 0.6em;
     font-size: 1.5em;
+    outline: none;
   }
 }
 
@@ -723,6 +731,10 @@ header h2 {
 
 .toggleOnDay .todo-list ul {
   color: lightblue;
+}
+
+.toggleOnDay .todo-list ul li {
+  background-color: #a7c5f1;
 }
 
 .toggleOnNight #body {
