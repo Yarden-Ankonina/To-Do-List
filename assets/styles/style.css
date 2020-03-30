@@ -585,7 +585,6 @@ header h2 {
       -ms-flex-pack: start;
           justify-content: flex-start;
   background-color: #cccaca;
-  padding-top: 2em;
   height: 100vh;
   text-align: center;
 }
@@ -596,7 +595,6 @@ header h2 {
   border-radius: 0.2em;
   font-size: 1.5em;
   font-weight: bold;
-  background-color: #5d5d5d;
   color: #BB86FC;
 }
 
@@ -650,17 +648,20 @@ header h2 {
             flex-direction: column;
     width: 30vw;
   }
+  form .search {
+    width: 70vw;
+    padding-bottom: 0.5em;
+  }
   form label {
     font-size: 1.2em;
     font-weight: bold;
     color: #019592;
-    margin-bottom: 1em;
     margin-top: 1em;
   }
   form input {
     width: 60vw;
     text-align: center;
-    padding-bottom: 10rem;
+    padding-bottom: 5rem;
     outline: none;
     padding-top: 0.5em;
     border-radius: 0.1em;
@@ -689,8 +690,11 @@ header h2 {
     font-weight: bold;
   }
   form button {
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
     margin-top: 1em;
-    padding: 0.8em;
+    padding: 0.5em;
     border-radius: 0.6em;
     font-size: 1.5em;
     outline: none;
@@ -777,6 +781,10 @@ header h2 {
   color: #f3f3f3;
 }
 
+.toggleOnDay form .search {
+  background-color: #292929;
+}
+
 .toggleOnDay form label {
   color: #3d65a1;
 }
@@ -839,6 +847,10 @@ header h2 {
   color: #BB86FC;
 }
 
+.toggleOnNight form .search {
+  background-color: #ececec;
+}
+
 .toggleOnNight form label {
   color: #D7B7FD;
 }
@@ -867,6 +879,6 @@ header h2 {
 }
 
 .toggleOnNight .todo-list {
-  background-color: #282828;
+  background-color: #292929;
 }
 /*# sourceMappingURL=style.css.map */
