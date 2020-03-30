@@ -173,13 +173,20 @@ header{
             border: none;
             border-radius: 0.6em;
             font-weight: bold;
-            color: $darkPurple800;
+            color: $nightBackground;
             background-color: $darkPurple100;
         }
         select:focus{
             outline: none;
-            box-shadow: 1px 1px 1px white;
+            box-shadow: 1px 1px 1px $darkPurple300;
             font-weight: bold;
+        }
+        button{
+            background-color: $night800;
+            margin-top: 1em;
+            padding: 1em;
+            border-radius: 0.6em;
+            font-size: 1.5em;
         }
     }
    

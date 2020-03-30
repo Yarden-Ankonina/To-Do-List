@@ -653,14 +653,22 @@ header h2 {
   border: none;
   border-radius: 0.6em;
   font-weight: bold;
-  color: #270096;
+  color: #282828;
   background-color: #D7B7FD;
 }
 
 .toggleOnNight form select:focus {
   outline: none;
-  -webkit-box-shadow: 1px 1px 1px white;
-          box-shadow: 1px 1px 1px white;
+  -webkit-box-shadow: 1px 1px 1px #9E55FC;
+          box-shadow: 1px 1px 1px #9E55FC;
   font-weight: bold;
+}
+
+.toggleOnNight form button {
+  background-color: #424242;
+  margin-top: 1em;
+  padding: 1em;
+  border-radius: 0.6em;
+  font-size: 1.5em;
 }
 /*# sourceMappingURL=sstyle.css.map */
