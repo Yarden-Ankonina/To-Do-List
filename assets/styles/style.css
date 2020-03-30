@@ -504,6 +504,10 @@ header h2 {
   padding: 2rem 8rem;
 }
 
+body {
+  height: 100vh;
+}
+
 #body {
   height: -webkit-max-content;
   height: -moz-max-content;
@@ -585,7 +589,7 @@ header h2 {
       -ms-flex-pack: start;
           justify-content: flex-start;
   background-color: #cccaca;
-  height: 100vh;
+  height: 40vh;
   text-align: center;
 }
 

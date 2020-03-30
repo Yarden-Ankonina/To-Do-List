@@ -5,6 +5,9 @@
 @import "./header";
 @import "./mixin";
 
+body{
+    height: 100vh;
+}
 #body{
     height: max-content;
     @include flexCenter(row);
@@ -41,7 +44,7 @@
     @include flexCenter(column);
     justify-content: flex-start;
     background-color: $white200;
-    height: 100vh;
+    height: 40vh;
     text-align: center;
     ul{
         text-align: center;
