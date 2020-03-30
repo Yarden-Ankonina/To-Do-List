@@ -61,11 +61,11 @@ header{
 
         }
         label{
-            margin-bottom:5rem;
-            margin-top: 8rem;
             font-size: 1.2em;
             font-weight: bold;
-
+            color: $darkGreen600;
+            margin-bottom: 1em;
+            margin-top: 1em;
             
         }
         input{
@@ -77,6 +77,7 @@ header{
             border-radius: 0.1em;
             background-color: $nightBackground;
             box-shadow: 0px 6px 7px -7px $darkPurple100;
+            font-weight: bold;
 
         }
         input:hover{
@@ -92,6 +93,8 @@ header{
             border: none;
             border-radius: 0.6em;
             font-weight: bold;
+            background-color: $nightBackground;
+            color: $darkGreen600;
 
         }
         select:focus{
@@ -106,6 +109,7 @@ header{
             padding: 1em;
             border-radius: 0.6em;
             font-size: 1.5em;
+
         }
     }
     
@@ -179,7 +183,7 @@ header{
 
 @mixin day{
     #body{
-        background-color: white;
+        background-color:$white50;
     }
     header{
         background-color: $dayBackground;
@@ -187,8 +191,33 @@ header{
         h1{
         color : $dayDarkFont;
         }
+       
 
     }
+    form{
+        label{
+            color : $blue400;
+        }
+        input{
+        box-shadow: 0px 6px 7px -7px $blue800;
+        background-color: $white200;
+
+        }
+        input:focus{
+        background-color: $white100;
+
+        }
+        select{
+            background-color: $blueGreen200;
+            color: $black400;
+        }
+        button{
+            background-color: $blueGreen200;
+            font-weight: bold;
+        }
+       
+    }
+
    
 }
 
@@ -217,8 +246,7 @@ header{
 
         label{
             color: $darkPurple100;
-            margin-bottom: 1em;
-            margin-top: 1em;
+            
         }
         input{
             color : white;

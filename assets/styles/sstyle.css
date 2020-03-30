@@ -552,10 +552,11 @@ header h2 {
     width: 30vw;
   }
   form label {
-    margin-bottom: 5rem;
-    margin-top: 8rem;
     font-size: 1.2em;
     font-weight: bold;
+    color: #019592;
+    margin-bottom: 1em;
+    margin-top: 1em;
   }
   form input {
     width: 60vw;
@@ -567,6 +568,7 @@ header h2 {
     background-color: #282828;
     -webkit-box-shadow: 0px 6px 7px -7px #D7B7FD;
             box-shadow: 0px 6px 7px -7px #D7B7FD;
+    font-weight: bold;
   }
   form input:hover {
     -webkit-box-shadow: 0px 6px 7px -6px #D7B7FD;
@@ -580,6 +582,8 @@ header h2 {
     border: none;
     border-radius: 0.6em;
     font-weight: bold;
+    background-color: #282828;
+    color: #019592;
   }
   form select:focus {
     outline: none;
@@ -646,7 +650,7 @@ header h2 {
 }
 
 .toggleOnDay #body {
-  background-color: white;
+  background-color: #f3f3f3;
 }
 
 .toggleOnDay header {
@@ -656,6 +660,30 @@ header h2 {
 
 .toggleOnDay header h1 {
   color: #1b0542;
+}
+
+.toggleOnDay form label {
+  color: #3d65a1;
+}
+
+.toggleOnDay form input {
+  -webkit-box-shadow: 0px 6px 7px -7px #0f2649;
+          box-shadow: 0px 6px 7px -7px #0f2649;
+  background-color: #cccaca;
+}
+
+.toggleOnDay form input:focus {
+  background-color: #ececec;
+}
+
+.toggleOnDay form select {
+  background-color: lightblue;
+  color: #292929;
+}
+
+.toggleOnDay form button {
+  background-color: lightblue;
+  font-weight: bold;
 }
 
 .toggleOnNight #body {
@@ -685,8 +713,6 @@ header h2 {
 
 .toggleOnNight form label {
   color: #D7B7FD;
-  margin-bottom: 1em;
-  margin-top: 1em;
 }
 
 .toggleOnNight form input {
