@@ -6,16 +6,19 @@ const OTHERCOLUMN = document.getElementById('other');
 const ERRORELEMNT = document.getElementById('error');
 const USERINPUTS = document.querySelectorAll('input');
 const URLINPUT = document.getElementById('url');
+let MY_STORAGE = window.localStorage;
 /* OBJECT OF HTML ELEMNTS */
 const COLUMNS = {
     'vanilla': VANILLACOLUMN,
     'framework': FRAMEWORKCOLUMN,
     'other': OTHERCOLUMN
 }
+
+
 /* FORM EVENT*/
 FORM.addEventListener('submit', (e) => {
     e.preventDefault();
-    AddHandler()
+    submitHandler()
 })
 /* CLEAN THE URL INPUT AFTER AN ERROR */
 URLINPUT.addEventListener('input', () => {
@@ -56,15 +59,17 @@ function addNew(column, title, url) {
 
 /*AddHandler is a eventHandler that process the user inputs 
 and call to AddNew with the processed inputs*/
-function AddHandler() {
+function submitHandler() {
     const title = USERINPUTS[0].value;
     const url = USERINPUTS[1].value;
     const columnInput = document.querySelector('select').value;
     const userInputs = document.querySelectorAll('input');
     if (isValidURl(url)) {
+        pushToArray(columnInput,title,url)
         addNew(COLUMNS[columnInput], title, url);
         clearInput(userInputs);
     } else if (!url) {
+        pushToArray(columnInput,title,'#')
         addNew(COLUMNS[columnInput], title, '#');
         clearInput(userInputs);
     }
@@ -86,4 +91,8 @@ function isValidURl(url) {
         '(\\?[;&a-z\\d%_.~+=-]*)?' + // query string
         '(\\#[-a-z\\d_]*)?$', 'i'); // fragment locator
     return pattern.test(url);
+}
+
+function addOnLoad(column,title,url) {
+    addNew(COLUMNS[column],title,url);
 }
