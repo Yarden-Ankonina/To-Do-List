@@ -2,47 +2,27 @@
 @import "./resets/normalize";
 @import "./resets/reset.local";
 @import "./resets/typography";
-
-
-@mixin flexCenter($direction){
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: $direction;
-}
+@import "./header";
+@import "./mixin";
 
 #body{
     height: max-content;
 }
 
-header{
-    @include flexCenter(column-reverse);
-    text-align: center;
-    color: rgb(218, 201, 221);
-    margin-bottom: 5vh;
-    .toggle{
-        @include flexCenter(row);
-        align-self: flex-end;
-        margin: 15rem 5rem;
-        margin-bottom: 0;
+
+//todo list
+.todo-list{
+    @include flexCenter(column);
+    background-color: $white200;
+    margin-top: 5em;
+    height: 100vh;
+    li{
+        background-color: $black50;
     }
-    h1{
-        @include flexCenter(column);
-        font-size: 2.5em;
-        padding-bottom: 5vh;
-    }
-    i{
-        font-size: 1.8em;
-        color : rgb(180, 139, 228);
-    }
-    i:hover{
-        font-size: 1.85em;
-        cursor: pointer;
-    }
-    h2{
-        padding: 2rem 8rem;
-    }
-} 
+}
+
+
+
 
 @media (min-width: $minScreenSize){
     header{
