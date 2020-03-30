@@ -806,7 +806,7 @@ header h2 {
 }
 
 .toggleOnDay .todo-list ul li {
-  background-color: #a7c5f1;
+  background-color: lightblue;
 }
 
 .toggleOnNight #body {
