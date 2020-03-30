@@ -545,9 +545,12 @@ header h2 {
           justify-content: space-between;
   -ms-flex-item-align: stretch;
       align-self: stretch;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   margin: 0 0;
   width: 30vw;
   font-size: 1.3em;
+  padding: 0 0;
 }
 
 #menu h2 {
@@ -561,6 +564,7 @@ header h2 {
   display: -ms-flexbox;
   display: flex;
   padding-bottom: 1em;
+  padding: 0.5em 0.5em;
 }
 
 .todo-list {

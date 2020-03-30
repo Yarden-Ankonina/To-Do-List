@@ -15,18 +15,21 @@
     @include flexCenter(column);
     justify-content: space-between;
     align-self: stretch;
+    flex-wrap: wrap;
     margin: 0 0;
     width: 30vw;
     font-size: 1.3em;
-
+    padding: 0 0;
     h2{
         font-weight: bold;
         padding-top: 1em;
         font-size: 1.4em;
+
     }
     footer{
         display: flex;
         padding-bottom: 1em;
+        padding: 0.5em 0.5em ;
 
     }
 }
