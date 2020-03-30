@@ -2,49 +2,29 @@
 @import "./resets/normalize";
 @import "./resets/reset.local";
 @import "./resets/typography";
-@import "./header";
 @import "./mixin";
 
+
+html{
+    min-height: 100%;
+}
 body{
-    height: 100vh;
+    min-height: 100vh;
 }
-#body{
-    height: max-content;
-    @include flexCenter(row);
-    justify-content: space-between;
+.mainContainer{
+    min-height: 84vh;
 }
-
-#menu{
-    @include flexCenter(column);
-    justify-content: space-between;
-    align-self: stretch;
-    flex-wrap: wrap;
-    margin: 0 0;
-    width: 30vw;
-    font-size: 1.3em;
-    padding: 0 0;
-    h2{
-        font-weight: bold;
-        padding-top: 1em;
-        font-size: 1.4em;
-
-    }
-    footer{
-        display: flex;
-        padding-bottom: 1em;
-        padding: 0.5em 0.5em ;
-
-    }
+.main{
+    height: 83vh;
 }
 
 
 
 //todo list
-.todo-list{
+.main__todoList{
     @include flexCenter(column);
     justify-content: flex-start;
     background-color: $white200;
-    height: 40vh;
     text-align: center;
     ul{
         text-align: center;
@@ -70,39 +50,77 @@ body{
 
 @media (min-width: $minScreenSize){
     header{
+        @include flexCenter(column);
+        color: rgb(218, 201, 221);
         font-size: 0.8em;
-    }
-    form{
+        height: 18%;
+        .header__toggle{
+            @include flexCenter(row);
+            align-self: flex-end;
+            margin: 15rem 5rem;
+            margin-bottom: 0;
+        }
+        h1{
+            font-size: 2.5em;
+            padding-bottom: 3vh;
+        }
+        h2{
+            padding: 2rem 8rem;
+        }
+        i{
+            font-size: 1.8em;
+            color : rgb(180, 139, 228);
+        }
+        i:hover{
+            font-size: 1.85em;
+            cursor: pointer;
+        }
+    } 
+    .mainContainer{
         @include flexCenter(row);
-        justify-content: center;
-        flex-wrap: wrap;
-        font-size: 1.2em;
-        text-align: center;
-        width: 70vw;
-        
-        section{
-            @include flexCenter(column);
-            width: 30vw;
-
-        }
-        .search{
-            width: 70vw;
-            padding-bottom: 0.5em;;
-
-        }
-        label{
-            font-size: 1.2em;
+    }
+   
+    
+    .menu{
+        @include flexCenter(column);
+        align-self: stretch;
+        justify-content: space-between;
+        flex-grow: 1;
+        h2{
             font-weight: bold;
-            color: $darkGreen600;
-            margin-top: 1em;
+            padding-top: 0.2em;
+            font-size: 1.2em;
+
+        }
+        h6{
+            padding: 1em 1em ;
+            font-size: 0.8em;
+            
+        }
+    }
+
+    main{
+        flex-grow: 3;
+            .main__searchForm__input{
+                width: 100%;
+                text-align: center;
+            }
+        
+       
+    .main__todoForm{
+        @include flexCenter(column);
+        font-size: 1.2em;
+        
+        label{
+            font-size: 1em;
+            font-weight: bold;
+            margin-top: 0.6em;
             
         }
         input{
-            width: 60vw;
             text-align: center;
-            padding-bottom: 5rem;
+            padding: 0.5rem 0;
             outline: none;
-            padding-top: 0.5em;
             border-radius: 0.1em;
             background-color: $nightBackground;
             box-shadow: 0px 6px 7px -7px $darkPurple100;
@@ -113,40 +131,17 @@ body{
             box-shadow: 0px 6px 7px -6px $darkPurple100;
 
         }
-        
-        select{
-            margin-top: 5vh;
-            margin-bottom: 3vh;
-            width: 30vw;
-            padding: 7rem;
-            border: none;
-            border-radius: 0.6em;
-            font-weight: bold;
-            background-color: $nightBackground;
-            color: $darkGreen600;
-
-        }
-        select:focus{
-            outline: none;
-            font-weight: bold;
-        }
-      
        
         button{
-            width: max-content;
+            margin-bottom:  0.6em ;
             margin-top: 1em;
-            padding: 0.5em;
+            padding: 0.6em;
+            font-size: 0.7em;
             border-radius: 0.6em;
-            font-size: 1.5em;
             outline: none;
         }
     }
-    
-    .todo-list{
-        ul{
-        width: fit-content;
-        }
-    }
+
     
 }
 
@@ -231,3 +226,4 @@ body{
 }
 
 
+}

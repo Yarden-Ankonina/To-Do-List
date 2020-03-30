@@ -10,10 +10,10 @@
 //day night
 
 @mixin day{
-    #body{
+    .mainContainer{
         background-color:$white50;
     }
-    #menu{
+    .menu{
         background-color: $dayBackground;
 
     }
@@ -30,7 +30,7 @@
 
     }
     form{
-        .search{
+        .main__searchForm{
             background-color: $black400;
         }
         label{
@@ -70,7 +70,7 @@
 
 
 @mixin night{
-    #body{
+    .mainContainer{
         background-color: $black50;
     }
     header{
@@ -87,11 +87,15 @@
             color: $darkPurple200;
         }
 
+        
+    }
+    .main{
+        background-color: $black400;
     }
     form{
         background-color: $nightBackground;
         color: $darkPurple200;
-        .search{
+        .main__searchForm{
             background-color: $white100;
         }
         label{

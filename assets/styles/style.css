@@ -434,144 +434,23 @@ body {
   color: #222;
 }
 
-header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: column-reverse;
-          flex-direction: column-reverse;
-  text-align: center;
-  color: #dac9dd;
-}
-
-header .toggle {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-item-align: end;
-      align-self: flex-end;
-  margin: 15rem 5rem;
-  margin-bottom: 0;
-}
-
-header h1 {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  font-size: 2.5em;
-  padding-bottom: 5vh;
-}
-
-header i {
-  font-size: 1.8em;
-  color: #b48be4;
-}
-
-header i:hover {
-  font-size: 1.85em;
-  cursor: pointer;
-}
-
-header h2 {
-  padding: 2rem 8rem;
+html {
+  min-height: 100%;
 }
 
 body {
-  height: 100vh;
+  min-height: 100vh;
 }
 
-#body {
-  height: -webkit-max-content;
-  height: -moz-max-content;
-  height: max-content;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+.mainContainer {
+  min-height: 84vh;
 }
 
-#menu {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -ms-flex-item-align: stretch;
-      align-self: stretch;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  margin: 0 0;
-  width: 30vw;
-  font-size: 1.3em;
-  padding: 0 0;
+.main {
+  height: 83vh;
 }
 
-#menu h2 {
-  font-weight: bold;
-  padding-top: 1em;
-  font-size: 1.4em;
-}
-
-#menu footer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  padding-bottom: 1em;
-  padding: 0.5em 0.5em;
-}
-
-.todo-list {
+.main__todoList {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -589,11 +468,10 @@ body {
       -ms-flex-pack: start;
           justify-content: flex-start;
   background-color: #cccaca;
-  height: 40vh;
   text-align: center;
 }
 
-.todo-list ul {
+.main__todoList ul {
   text-align: center;
   padding: 0.7em;
   border-radius: 0.2em;
@@ -602,7 +480,7 @@ body {
   color: #BB86FC;
 }
 
-.todo-list ul li {
+.main__todoList ul li {
   text-align: center;
   background-color: #D7B7FD;
   margin-top: 1em;
@@ -613,30 +491,6 @@ body {
 
 @media (min-width: 320px) {
   header {
-    font-size: 0.8em;
-  }
-  form {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    justify-content: center;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    font-size: 1.2em;
-    text-align: center;
-    width: 70vw;
-  }
-  form section {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -650,67 +504,146 @@ body {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    width: 30vw;
+    color: #dac9dd;
+    font-size: 0.8em;
+    height: 18%;
   }
-  form .search {
-    width: 70vw;
-    padding-bottom: 0.5em;
+  header .header__toggle {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+    margin: 15rem 5rem;
+    margin-bottom: 0;
   }
-  form label {
-    font-size: 1.2em;
+  header h1 {
+    font-size: 2.5em;
+    padding-bottom: 3vh;
+  }
+  header h2 {
+    padding: 2rem 8rem;
+  }
+  header i {
+    font-size: 1.8em;
+    color: #b48be4;
+  }
+  header i:hover {
+    font-size: 1.85em;
+    cursor: pointer;
+  }
+  .mainContainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-item-align: stretch;
+        align-self: stretch;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+  }
+  .menu h2 {
     font-weight: bold;
-    color: #019592;
-    margin-top: 1em;
+    padding-top: 0.2em;
+    font-size: 1.2em;
   }
-  form input {
-    width: 60vw;
+  .menu h6 {
+    padding: 1em 1em;
+    font-size: 0.8em;
+  }
+  main {
+    -webkit-box-flex: 3;
+        -ms-flex-positive: 3;
+            flex-grow: 3;
+  }
+  main .main__searchForm__input {
+    width: 100%;
     text-align: center;
-    padding-bottom: 5rem;
+  }
+  main .main__todoForm {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    font-size: 1.2em;
+  }
+  main .main__todoForm label {
+    font-size: 1em;
+    font-weight: bold;
+    margin-top: 0.6em;
+  }
+  main .main__todoForm input {
+    text-align: center;
+    padding: 0.5rem 0;
     outline: none;
-    padding-top: 0.5em;
     border-radius: 0.1em;
     background-color: #282828;
     -webkit-box-shadow: 0px 6px 7px -7px #D7B7FD;
             box-shadow: 0px 6px 7px -7px #D7B7FD;
     font-weight: bold;
   }
-  form input:hover {
+  main .main__todoForm input:hover {
     -webkit-box-shadow: 0px 6px 7px -6px #D7B7FD;
             box-shadow: 0px 6px 7px -6px #D7B7FD;
   }
-  form select {
-    margin-top: 5vh;
-    margin-bottom: 3vh;
-    width: 30vw;
-    padding: 7rem;
-    border: none;
-    border-radius: 0.6em;
-    font-weight: bold;
-    background-color: #282828;
-    color: #019592;
-  }
-  form select:focus {
-    outline: none;
-    font-weight: bold;
-  }
-  form button {
-    width: -webkit-max-content;
-    width: -moz-max-content;
-    width: max-content;
+  main .main__todoForm button {
+    margin-bottom: 0.6em;
     margin-top: 1em;
-    padding: 0.5em;
+    padding: 0.6em;
+    font-size: 0.7em;
     border-radius: 0.6em;
-    font-size: 1.5em;
     outline: none;
-  }
-  .todo-list ul {
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
-    width: fit-content;
   }
 }
 
-@media (min-width: 480px) {
+@media (min-width: 320px) and (min-width: 480px) {
   form input {
     width: 40vw;
   }
@@ -722,7 +655,7 @@ body {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 320px) and (min-width: 768px) {
   header {
     font-size: 1em;
   }
@@ -740,7 +673,7 @@ body {
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 320px) and (min-width: 1024px) {
   form input {
     width: 25vw;
   }
@@ -752,7 +685,7 @@ body {
   }
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 320px) and (min-width: 1280px) {
   form input {
     width: 30vw;
   }
@@ -764,125 +697,103 @@ body {
   }
 }
 
-.toggleOnDay #body {
-  background-color: #f3f3f3;
-}
-
-.toggleOnDay #menu {
-  background-color: lightblue;
-}
-
-.toggleOnDay header {
-  background-color: #247883;
-  color: #1b0542;
-}
-
-.toggleOnDay header h1 {
-  color: #1b0542;
-}
-
-.toggleOnDay header i {
-  color: #f3f3f3;
-}
-
-.toggleOnDay form .search {
-  background-color: #292929;
-}
-
-.toggleOnDay form label {
-  color: #3d65a1;
-}
-
-.toggleOnDay form input {
-  -webkit-box-shadow: 0px 6px 7px -7px #0f2649;
-          box-shadow: 0px 6px 7px -7px #0f2649;
-  background-color: #cccaca;
-}
-
-.toggleOnDay form input:focus {
-  background-color: #ececec;
-}
-
-.toggleOnDay form select {
-  background-color: lightblue;
-  color: #292929;
-}
-
-.toggleOnDay form button {
-  background-color: #247883;
-  font-weight: bold;
-}
-
-.toggleOnDay .todo-list {
-  background-color: #f3f3f3;
-}
-
-.toggleOnDay .todo-list ul {
-  color: lightblue;
-}
-
-.toggleOnDay .todo-list ul li {
-  background-color: lightblue;
-}
-
-.toggleOnNight #body {
-  background-color: #5d5d5d;
-}
-
-.toggleOnNight header {
-  background-color: #000000;
-  color: #BB86FC;
-}
-
-.toggleOnNight header h1 {
-  color: #D7B7FD;
-}
-
-.toggleOnNight header .toggle {
-  color: #BB86FC;
-}
-
-.toggleOnNight header .toggle i {
-  color: #BB86FC;
-}
-
-.toggleOnNight form {
-  background-color: #282828;
-  color: #BB86FC;
-}
-
-.toggleOnNight form .search {
-  background-color: #ececec;
-}
-
-.toggleOnNight form label {
-  color: #D7B7FD;
-}
-
-.toggleOnNight form input {
-  color: white;
-  border-bottom: 1px solid white;
-}
-
-.toggleOnNight form input:focus {
-  background-color: #424242;
-}
-
-.toggleOnNight form select {
-  color: #282828;
-  background-color: #D7B7FD;
-}
-
-.toggleOnNight form select:focus {
-  -webkit-box-shadow: 1px 1px 1px #9E55FC;
-          box-shadow: 1px 1px 1px #9E55FC;
-}
-
-.toggleOnNight form button {
-  background-color: #424242;
-}
-
-.toggleOnNight .todo-list {
-  background-color: #292929;
+@media (min-width: 320px) {
+  .toggleOnDay .mainContainer {
+    background-color: #f3f3f3;
+  }
+  .toggleOnDay .menu {
+    background-color: lightblue;
+  }
+  .toggleOnDay header {
+    background-color: #247883;
+    color: #1b0542;
+  }
+  .toggleOnDay header h1 {
+    color: #1b0542;
+  }
+  .toggleOnDay header i {
+    color: #f3f3f3;
+  }
+  .toggleOnDay form .main__searchForm {
+    background-color: #292929;
+  }
+  .toggleOnDay form label {
+    color: #3d65a1;
+  }
+  .toggleOnDay form input {
+    -webkit-box-shadow: 0px 6px 7px -7px #0f2649;
+            box-shadow: 0px 6px 7px -7px #0f2649;
+    background-color: #cccaca;
+  }
+  .toggleOnDay form input:focus {
+    background-color: #ececec;
+  }
+  .toggleOnDay form select {
+    background-color: lightblue;
+    color: #292929;
+  }
+  .toggleOnDay form button {
+    background-color: #247883;
+    font-weight: bold;
+  }
+  .toggleOnDay .todo-list {
+    background-color: #f3f3f3;
+  }
+  .toggleOnDay .todo-list ul {
+    color: lightblue;
+  }
+  .toggleOnDay .todo-list ul li {
+    background-color: lightblue;
+  }
+  .toggleOnNight .mainContainer {
+    background-color: #5d5d5d;
+  }
+  .toggleOnNight header {
+    background-color: #000000;
+    color: #BB86FC;
+  }
+  .toggleOnNight header h1 {
+    color: #D7B7FD;
+  }
+  .toggleOnNight header .toggle {
+    color: #BB86FC;
+  }
+  .toggleOnNight header .toggle i {
+    color: #BB86FC;
+  }
+  .toggleOnNight .main {
+    background-color: #292929;
+  }
+  .toggleOnNight form {
+    background-color: #282828;
+    color: #BB86FC;
+  }
+  .toggleOnNight form .main__searchForm {
+    background-color: #ececec;
+  }
+  .toggleOnNight form label {
+    color: #D7B7FD;
+  }
+  .toggleOnNight form input {
+    color: white;
+    border-bottom: 1px solid white;
+  }
+  .toggleOnNight form input:focus {
+    background-color: #424242;
+  }
+  .toggleOnNight form select {
+    color: #282828;
+    background-color: #D7B7FD;
+  }
+  .toggleOnNight form select:focus {
+    -webkit-box-shadow: 1px 1px 1px #9E55FC;
+            box-shadow: 1px 1px 1px #9E55FC;
+  }
+  .toggleOnNight form button {
+    background-color: #424242;
+  }
+  .toggleOnNight .todo-list {
+    background-color: #292929;
+  }
 }
 /*# sourceMappingURL=style.css.map */

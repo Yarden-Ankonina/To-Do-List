@@ -8,63 +8,63 @@
     <script src="https://kit.fontawesome.com/a05612df27.js" crossorigin="anonymous"></script>
     <!-- <link rel="stylesheet" href="/assets/styles/debug.css"> -->
     <script src="/assets/script/style.js" defer></script>
-    <script src="/assets/script/newapp.js" defer></script>
+    <!-- <script src="/assets/script/newapp.js" defer></script> -->
     <title>TO-DO</title>
 </head>
 
 <body>
     <!--header-->
     <header>
-        <div>
-            <h1>To-Do List</h1></div>
-        <div class="toggle">
+        <div class="header__toggle">
             <h2>DAY</h2><i class="fas fa-toggle-on"></i>
-            <h2>NIGHT</h2></div>
+            <h2>NIGHT</h2>
+        </div>
+            <h1>To-Do List</h1>
+        
     </header>
     <!--header-->
 
     <!--new body-->
-    <section id="body" class="body">
+    <section class="mainContainer">
+
         <!-- menu -->
-        <menu id="menu">
-            <h2>Menu</h2>
-            <!--footer -->
-            <footer>
-                <h4>By Marcos and Yarden</h4>
-            </footer>
-            <!--footer -->
-        </menu>
+        <aside class="menu">
+                <h2>Menu</h2>
+                <h6>By Marcos and Yarden</h6>
+        </aside>
         <!-- menu -->
 
         <!-- todo -->
-    <section class="todo">
 
-    <!-- form -->
-    <form id='form' autocomplete="off">
-        <section>
-            <input type="search" class="search" placeholder="Search Todos">
-            <div id='error'></div>
-            <label for='title'>Title</label>
-            <input type="text" id="title" name="title" maxlength="12" placeholder="Insert title" required>
-            <label for="url">Url</label>
-            <input type="text" id="url" name="url" placeholder="Insert full url">
+        <main class="main">
 
-            <button type="submit" id="submit-button">Submit</button>
-        </section>
-    </form>
-    
+            <form class="main__searchForm">
+                <input type="search"  class="main__searchForm__input" placeholder="Search Todos">
+            </form>
 
-                <!-- todo list -->
+            <!--form #main__todoForm -->
+            <form class="main__todoForm" autocomplete="off">
+                    <label for='title'>Title</label>
+                    <input type="text" id="title" name="title" maxlength="12" placeholder="Insert title" required>
+                    <label for="url">Url</label>
+                    <input type="text" id="url" name="url" placeholder="Insert full url">
+                    <button type="submit" id="submitButton">Submit</button>
+            </form>
+            <!-- form #main__todoForm -->
 
-                <section class="todo-list">
-                    <ul id="tasks">
-                    </ul>
-                </section>
+            <!-- todo-list -->
 
-            <!-- todo list -->
+            <section class="main__todoList">
+                <ul class="main__todoList__tasks">
+                </ul>
+            </section>
 
-        </section>
-        <!-- todo -->
+            <!-- todo-list -->
+
+        </main>
+
+    </section>
+    <!-- todo -->
 
     </section>
     <!--new body  -->
