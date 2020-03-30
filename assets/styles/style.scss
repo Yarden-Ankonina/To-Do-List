@@ -41,7 +41,6 @@
     @include flexCenter(column);
     justify-content: flex-start;
     background-color: $white200;
-    padding-top: 2em;
     height: 100vh;
     text-align: center;
     ul{
@@ -50,7 +49,6 @@
         border-radius: 0.2em;
         font-size: 1.5em;
         font-weight: bold;
-        background-color: $black50;
         color: $darkPurple200;
 
         li{
@@ -84,18 +82,22 @@
             width: 30vw;
 
         }
+        .search{
+            width: 70vw;
+            padding-bottom: 0.5em;;
+
+        }
         label{
             font-size: 1.2em;
             font-weight: bold;
             color: $darkGreen600;
-            margin-bottom: 1em;
             margin-top: 1em;
             
         }
         input{
             width: 60vw;
             text-align: center;
-            padding-bottom: 10rem;
+            padding-bottom: 5rem;
             outline: none;
             padding-top: 0.5em;
             border-radius: 0.1em;
@@ -128,8 +130,9 @@
       
        
         button{
+            width: max-content;
             margin-top: 1em;
-            padding: 0.8em;
+            padding: 0.5em;
             border-radius: 0.6em;
             font-size: 1.5em;
             outline: none;
