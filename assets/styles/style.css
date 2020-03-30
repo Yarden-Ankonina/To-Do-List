@@ -640,7 +640,9 @@ header h2 {
     outline: none;
   }
   .todo-list ul {
-    width: 50vw;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
   }
 }
 
