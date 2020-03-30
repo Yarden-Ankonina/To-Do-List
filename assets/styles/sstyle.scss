@@ -53,6 +53,8 @@ header{
         justify-content: center;
         flex-wrap: wrap;
         font-size: 1.2em;
+        text-align: center;
+        
         section{
             @include flexCenter(column);
             width: 30vw;
@@ -68,12 +70,17 @@ header{
         }
         input{
             width: 60vw;
+            text-align: center;
+
         }
         select{
             margin-top: 5vh;
             margin-bottom: 3vh;
-            width: 22vw;
+            width: 30vw;
 
+        }
+        button{
+            width: 50vw;
         }
     }
     
@@ -82,12 +89,16 @@ header{
 @media (min-width: $phoneSize){
    form{
        input{
-           width : 30vw;
+           width : 40vw;
        }
        select{
-        width: 10vw;
+        width: 22vw;
        }
+   
+   button{
+    width: 30vw;
    }
+}
    
 }
 
@@ -97,12 +108,45 @@ header{
     }
     form{
         input{
-            width : 20vw;
+            width : 30vw;
         }
+        select{
+            width: 15vw;
+           }
+        button{
+            width: 20vw;
+           }
     }
     
 }
 
+@media (min-width: $laptop){
+    form{
+        input{
+            width : 25vw;
+        }
+        select{
+            width: 10vw;
+           }
+        button{
+            width: 14vw;
+           }
+    }
+}
+
+@media (min-width: $desktop){
+    form{
+        input{
+            width : 30vw;
+        }
+        select{
+            width: 8vw;
+           }
+        button{
+            width: 12vw;
+           }
+    }
+}
 
 
 //day night

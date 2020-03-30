@@ -531,6 +531,7 @@ header h2 {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     font-size: 1.2em;
+    text-align: center;
   }
   form section {
     display: -webkit-box;
@@ -556,20 +557,27 @@ header h2 {
   }
   form input {
     width: 60vw;
+    text-align: center;
   }
   form select {
     margin-top: 5vh;
     margin-bottom: 3vh;
-    width: 22vw;
+    width: 30vw;
+  }
+  form button {
+    width: 50vw;
   }
 }
 
 @media (min-width: 480px) {
   form input {
-    width: 30vw;
+    width: 40vw;
   }
   form select {
-    width: 10vw;
+    width: 22vw;
+  }
+  form button {
+    width: 30vw;
   }
 }
 
@@ -578,7 +586,37 @@ header h2 {
     font-size: 1em;
   }
   form input {
+    width: 30vw;
+  }
+  form select {
+    width: 15vw;
+  }
+  form button {
     width: 20vw;
+  }
+}
+
+@media (min-width: 1024px) {
+  form input {
+    width: 25vw;
+  }
+  form select {
+    width: 10vw;
+  }
+  form button {
+    width: 14vw;
+  }
+}
+
+@media (min-width: 1280px) {
+  form input {
+    width: 30vw;
+  }
+  form select {
+    width: 8vw;
+  }
+  form button {
+    width: 12vw;
   }
 }
 
