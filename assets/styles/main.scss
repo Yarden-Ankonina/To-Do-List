@@ -38,11 +38,6 @@ body,section{
 @media #{$break1}{
    .main-flex{
        @include flexCenter(flexCenter);
-       aside{
-           flex-grow: 1;
-           align-self: stretch;
-           background-color: red;
-       }
        main{
            flex-grow: 1;
            height: 100%;
