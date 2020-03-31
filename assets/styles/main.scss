@@ -1,0 +1,49 @@
+// abstracts
+@import "./abstracts/mixin";
+@import "./abstracts/variables";
+@import "./abstracts/colors";
+// base
+@import "./base/normalize";
+@import "./base/reset.local";
+@import "./base/typography";
+
+// components
+@import "./components/buttons";
+
+//layout
+@import "./layout/header";
+@import "./layout/footer";
+@import "./layout/forms";
+@import "./layout/sidebar";
+
+//themes
+@import "./themes/day";
+@import "./themes/night";
+
+
+.toggleOnDay{
+    @include day;
+}
+
+.toggleOnNight{
+    @include night;
+}
+
+body{
+    background-color: white;
+}
+@media #{$break1}{
+    body{
+        background-color: red;
+    }
+}
+@media #{$break2}{
+    body{
+        background-color: blue;
+    }
+}
+@media #{$break3}{
+    body{
+        background-color: greenyellow;
+    }
+}

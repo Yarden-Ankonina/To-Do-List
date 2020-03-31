@@ -4,72 +4,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/assets/styles/style.css">
+    <link rel="stylesheet" href="/assets/styles/main.css">
     <script src="https://kit.fontawesome.com/a05612df27.js" crossorigin="anonymous"></script>
     <!-- <link rel="stylesheet" href="/assets/styles/debug.css"> -->
     <script src="/assets/script/style.js" defer></script>
     <!-- <script src="/assets/script/newapp.js" defer></script> -->
     <title>TO-DO</title>
 </head>
-
 <body>
-    <!--header-->
-    <header>
-        <div class="header__toggle">
-            <h2>DAY</h2><i class="fas fa-toggle-on"></i>
-            <h2>NIGHT</h2>
-        </div>
+    <section class="main-flex">
+
+        <!-- header -->
+        <header class="main-header">
+            <div class="main-header-toggle">
+                <p>DAY</p><i class="fas fa-toggle-on"></i>
+                <p>NIGHT</p>
+            </div>
             <h1>To-Do List</h1>
-        
-    </header>
-    <!--header-->
+        </header>
 
-    <!--new body-->
-    <section class="mainContainer">
+        <!-- sidebar -->
+    <aside class="main-side">
+        <h2>Menu</h2>
+        <p>By Marcos and Yarden</p>
+    </aside>
+        <!-- sidebar -->
 
-        <!-- menu -->
-        <aside class="menu">
-                <h2>Menu</h2>
-                <h6>By Marcos and Yarden</h6>
-        </aside>
-        <!-- menu -->
 
-        <!-- todo -->
+    <main class="main-content">
 
-        <main class="main">
-
-            <form class="main__searchForm">
-                <input type="search"  class="main__searchForm__input" placeholder="Search Todos">
+        <section class="main-content-forms">
+            <!-- searchTodo -->
+            <form class="main-content-searchForm">
+                <input type="search" id="search-input" placeholder="Search Todos">
             </form>
+            <!-- searchTodo -->
 
-            <!--form #main__todoForm -->
-            <form class="main__todoForm" autocomplete="off">
-                    <label for='title'>Title</label>
-                    <input type="text" id="title" name="title" maxlength="12" placeholder="Insert title" required>
-                    <label for="url">Url</label>
-                    <input type="text" id="url" name="url" placeholder="Insert full url">
-                    <button type="submit" id="submitButton">Submit</button>
+            <!-- AddTodo -->
+
+            <form class="main-content-todoForm" autocomplete="off">
+                <label for='title'>Title</label>
+                <input type="text" id="title-input" name="title" maxlength="12" placeholder="Insert title" required>
+                <label for="url">Url</label>
+                <input type="text" id="url-input" name="url" placeholder="Insert full url">
+                <button type="submit" id="submit-button">Submit</button>
             </form>
-            <!-- form #main__todoForm -->
+            <!-- AddTodo -->
 
-            <!-- todo-list -->
+        </section>
 
-            <section class="main__todoList">
-                <ul class="main__todoList__tasks">
-                    <h3>My Todo's</h3>
-                </ul>
-            </section>
+        <!-- todoList -->
+            <ul class="todo-list">
+                <li>
+                    <a href="#">Google</a>
+                    <span div="delete-button">❌</span>
+                    <span class="edit-button">🔎</span>
+                </li>
+            </ul>
+        <!-- todoList -->
 
-            <!-- todo-list -->
-
-        </main>
-
+    </main>
     </section>
-    <!-- todo -->
-
-    </section>
-    <!--new body  -->
-
 </body>
 
 </html>

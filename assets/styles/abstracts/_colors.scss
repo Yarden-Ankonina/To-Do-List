@@ -3,6 +3,8 @@
 $white : white;
 $white50 : rgb(243, 243, 243);
 $white100 : rgb(236, 236, 236);
+$white150 : rg
+b(219, 226, 225);
 $white200 : rgb(204, 202, 202);
 
 $whiteYellow50 : rgb(240, 239, 231);
@@ -47,20 +49,15 @@ $nightBackground :  #282828;
 $night600 :  #757575;
 $night800 : #424242;
 
+//purple
+$darkPurple50 :rgb(224, 209, 241);
+
 $darkPurple100 :#D7B7FD;
 $darkPurple200 :#BB86FC;
 $darkPurple300 :#9E55FC;
+$darkPurple350 :rgb(138, 94, 197);
 $darkPurple400 :#4B00D1;
 $darkPurple800 :#270096;
 
 $darkGreen200 :#03DAC5;
 $darkGreen600 : #019592;
-
-
-//media
-$minScreenSize : 320px;
-$phoneSize: 480px;
-$tabletSize : 768px;
-$laptop : 1024px;
-$desktop : 1280px;
-
