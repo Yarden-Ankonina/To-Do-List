@@ -3,35 +3,48 @@ header{
     @include flexCenter(column);
     background-color: $black400;
     color: white;
-    .main-header-toggle{
-        @include flexCenter(row);
-        align-self: flex-end;
-        p{
-            font-size: 0.8em;
-            @include paddItem();
-        }
-        i{
-            font-size: 1.2em;
-            cursor: pointer;
-        }
-    }
-    h1{
-        font-size: 1.4em;
-    }
 }
 
 //mobile and tablet
 @media #{$break1}, #{$break2}{
-    header{
-        
-    }
-
 
 }
 
 //only mobile
 @media #{$break1}{
-    
+    header{
+        .main-header-toggle{
+            p{
+                display: none;
+            }
+            i{
+                display: none;
+            }
+        }
+        h1{
+            display: none;
+        }
+        .header-mobile{
+            width: 100%;
+            display: flex;
+           justify-content: space-between;
+            font-size: 1.3em;
+             padding: 0.7em;
+
+            .fa-bars{
+                align-self: flex-start;
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+            .fa-cog{
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+      
+    }
 }
 
 //only tablet

@@ -452,36 +452,37 @@ header {
   color: white;
 }
 
-header .main-header-toggle {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-item-align: end;
-      align-self: flex-end;
-}
-
-header .main-header-toggle p {
-  font-size: 0.8em;
-  padding: 0.3em;
-}
-
-header .main-header-toggle i {
-  font-size: 1.2em;
-  cursor: pointer;
-}
-
-header h1 {
-  font-size: 1.4em;
+@media (max-width: 47.8125em) {
+  header .main-header-toggle p {
+    display: none;
+  }
+  header .main-header-toggle i {
+    display: none;
+  }
+  header h1 {
+    display: none;
+  }
+  header .header-mobile {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    font-size: 1.3em;
+    padding: 0.7em;
+  }
+  header .header-mobile .fa-bars {
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+  }
+  header .header-mobile .fa-bars:hover {
+    cursor: pointer;
+  }
+  header .header-mobile .fa-cog:hover {
+    cursor: pointer;
+  }
 }
 
 body {
