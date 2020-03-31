@@ -1,0 +1,34 @@
+//comon style
+
+//mobile and tablet
+@media #{$break1}, #{$break2}{
+
+}
+
+//only mobile
+@media #{$break1}{
+ .main-content-forms{
+     display: flex;
+     flex-direction: column;
+     .main-content-searchForm{
+         flex-grow: 1;
+         padding: 0.2em 0;
+         margin-bottom: 1em;
+         background-color: white;
+     }
+     .main-content-todoForm{
+         flex-grow: 1;
+         @include flexCenter(column);
+     }
+ }
+}
+
+//only tablet
+@media #{$break2}{
+    
+}
+
+//only desktop
+@media #{$break3}{
+    
+}

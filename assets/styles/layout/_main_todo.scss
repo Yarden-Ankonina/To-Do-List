@@ -1,0 +1,32 @@
+//comon style
+
+//mobile and tablet
+@media #{$break1}, #{$break2}{
+
+}
+
+//only mobile
+@media #{$break1}{
+    .main-flex{
+        main{
+            display: flex;
+            flex-direction: column;
+            padding-top: 3em;
+            flex-grow: 4;
+            height: 100%;
+            background-color: blue;
+            
+            
+        }
+    }
+}
+
+//only tablet
+@media #{$break2}{
+    
+}
+
+//only desktop
+@media #{$break3}{
+    
+}

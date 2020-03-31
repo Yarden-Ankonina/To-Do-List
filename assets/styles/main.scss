@@ -15,12 +15,13 @@
 @import "./layout/footer";
 @import "./layout/forms";
 @import "./layout/sidebar";
+@import "./layout/main_todo";
 
 //themes
 @import "./themes/day";
 @import "./themes/night";
 
-
+//comon style
 .toggleOnDay{
     @include day;
 }
@@ -32,24 +33,29 @@ html{
     height: 100%;
 }
 
-body,section{
+body,.main-flex{
     height: 100%;
 }
-@media #{$break1}{
-   .main-flex{
-       @include flexCenter(flexCenter);
-       main{
-           flex-grow: 1;
-           height: 100%;
-           background-color: blue;
-       }
-   }
+
+//mobile and tablet
+@media #{$break1}, #{$break2}{
+
 }
+
+//only mobile
+@media #{$break1}{
+    .main-flex{
+        @include flexCenter(row);
+        height: 100%;
+    }
+}
+//only tablet
 @media #{$break2}{
     body{
         background-color: blue;
     }
 }
+//only desktop
 @media #{$break3}{
     body{
         background-color: greenyellow;
