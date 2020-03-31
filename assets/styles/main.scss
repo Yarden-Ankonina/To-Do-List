@@ -28,14 +28,27 @@
 .toggleOnNight{
     @include night;
 }
+html{
+    height: 100%;
+}
 
-body{
-    background-color: white;
+body,section{
+    height: 100%;
 }
 @media #{$break1}{
-    body{
-        background-color: red;
-    }
+   .main-flex{
+       @include flexCenter(flexCenter);
+       aside{
+           flex-grow: 1;
+           align-self: stretch;
+           background-color: red;
+       }
+       main{
+           flex-grow: 1;
+           height: 100%;
+           background-color: blue;
+       }
+   }
 }
 @media #{$break2}{
     body{

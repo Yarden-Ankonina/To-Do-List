@@ -1,0 +1,22 @@
+//comon style
+
+
+//mobile and tablet
+@media #{$break1}, #{$break2}{
+    
+}
+
+//only mobile
+@media #{$break1}{
+   
+}
+
+//only tablet
+@media #{$break2}{
+    
+}
+
+//only desktop
+@media #{$break3}{
+    
+}

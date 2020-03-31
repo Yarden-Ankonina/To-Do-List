@@ -1,8 +1,11 @@
 //comon style
 header{
+    align-self: flex-start;
+    width: 100%;
     @include flexCenter(column);
     background-color: $black400;
     color: white;
+    position: fixed;
 }
 
 //mobile and tablet

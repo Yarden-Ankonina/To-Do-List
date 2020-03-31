@@ -435,6 +435,9 @@ body {
 }
 
 header {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -450,6 +453,7 @@ header {
           flex-direction: column;
   background-color: #292929;
   color: white;
+  position: fixed;
 }
 
 @media (max-width: 47.8125em) {
@@ -485,13 +489,45 @@ header {
   }
 }
 
-body {
-  background-color: white;
+html {
+  height: 100%;
+}
+
+body, section {
+  height: 100%;
 }
 
 @media (max-width: 47.8125em) {
-  body {
+  .main-flex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: flexCenter;
+            flex-direction: flexCenter;
+  }
+  .main-flex aside {
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    -ms-flex-item-align: stretch;
+        -ms-grid-row-align: stretch;
+        align-self: stretch;
     background-color: red;
+  }
+  .main-flex main {
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    height: 100%;
+    background-color: blue;
   }
 }
 
