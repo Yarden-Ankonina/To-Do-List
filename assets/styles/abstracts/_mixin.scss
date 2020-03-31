@@ -1,0 +1,10 @@
+@mixin flexCenter($direction){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $direction;
+}
+
+@mixin paddItem(){
+    padding: 0.3em;
+}

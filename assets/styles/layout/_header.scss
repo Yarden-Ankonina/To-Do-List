@@ -1,0 +1,45 @@
+//comon style
+header{
+    @include flexCenter(column);
+    background-color: $black400;
+    color: white;
+    .main-header-toggle{
+        @include flexCenter(row);
+        align-self: flex-end;
+        p{
+            font-size: 0.8em;
+            @include paddItem();
+        }
+        i{
+            font-size: 1.2em;
+            cursor: pointer;
+        }
+    }
+    h1{
+        font-size: 1.4em;
+    }
+}
+
+//mobile and tablet
+@media #{$break1}, #{$break2}{
+    header{
+        
+    }
+
+
+}
+
+//only mobile
+@media #{$break1}{
+    
+}
+
+//only tablet
+@media #{$break2}{
+    
+}
+
+//only desktop
+@media #{$break3}{
+    
+}
