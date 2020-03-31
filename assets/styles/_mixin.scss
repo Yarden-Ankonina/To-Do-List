@@ -29,7 +29,7 @@
        
 
     }
-    form{
+    .main__todoForm{
         .main__searchForm{
             background-color: $black400;
         }
@@ -54,7 +54,7 @@
             font-weight: bold;
         }
     }
-    .todo-list{
+    .main__todoList{
         background-color: $white50;
         ul{
             color: $blueGreen200;

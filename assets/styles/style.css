@@ -447,7 +447,7 @@ body {
 }
 
 .main {
-  height: 83vh;
+  height: 84vh;
 }
 
 .main__todoList {
@@ -714,35 +714,35 @@ body {
   .toggleOnDay header i {
     color: #f3f3f3;
   }
-  .toggleOnDay form .main__searchForm {
+  .toggleOnDay .main__todoForm .main__searchForm {
     background-color: #292929;
   }
-  .toggleOnDay form label {
+  .toggleOnDay .main__todoForm label {
     color: #3d65a1;
   }
-  .toggleOnDay form input {
+  .toggleOnDay .main__todoForm input {
     -webkit-box-shadow: 0px 6px 7px -7px #0f2649;
             box-shadow: 0px 6px 7px -7px #0f2649;
     background-color: #cccaca;
   }
-  .toggleOnDay form input:focus {
+  .toggleOnDay .main__todoForm input:focus {
     background-color: #ececec;
   }
-  .toggleOnDay form select {
+  .toggleOnDay .main__todoForm select {
     background-color: lightblue;
     color: #292929;
   }
-  .toggleOnDay form button {
+  .toggleOnDay .main__todoForm button {
     background-color: #247883;
     font-weight: bold;
   }
-  .toggleOnDay .todo-list {
+  .toggleOnDay .main__todoList {
     background-color: #f3f3f3;
   }
-  .toggleOnDay .todo-list ul {
+  .toggleOnDay .main__todoList ul {
     color: lightblue;
   }
-  .toggleOnDay .todo-list ul li {
+  .toggleOnDay .main__todoList ul li {
     background-color: lightblue;
   }
   .toggleOnNight .mainContainer {
