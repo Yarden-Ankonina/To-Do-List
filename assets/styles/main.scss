@@ -30,7 +30,8 @@
     @include night;
 }
 html{
-    height: 100%;
+    min-height: 100%;
+    height: max-content;
 }
 
 body,.main-flex{
@@ -46,6 +47,8 @@ body,.main-flex{
 @media #{$break1}{
     .main-flex{
         @include flexCenter(column);
+        main{
+        }
     }
 }
 //only tablet

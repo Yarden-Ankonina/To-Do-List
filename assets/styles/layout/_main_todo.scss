@@ -1,5 +1,7 @@
 //comon style
-
+body{
+    background-color: black;
+}
 //mobile and tablet
 @media #{$break1}, #{$break2}{
 
@@ -17,6 +19,7 @@
         }
         .todo-list{
             text-align: center;
+            display: inline-block;
                 h2{
                     background-color: pink;
                     font-weight: bold;

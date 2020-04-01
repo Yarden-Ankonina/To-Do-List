@@ -614,6 +614,10 @@ footer {
   }
 }
 
+body {
+  background-color: black;
+}
+
 @media (max-width: 47.8125em) {
   .main-flex main {
     display: -webkit-box;
@@ -629,6 +633,7 @@ footer {
   }
   .main-flex .todo-list {
     text-align: center;
+    display: inline-block;
   }
   .main-flex .todo-list h2 {
     background-color: pink;
@@ -642,7 +647,10 @@ footer {
 }
 
 html {
-  height: 100%;
+  min-height: 100%;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
 }
 
 body, .main-flex {
