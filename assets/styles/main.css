@@ -656,6 +656,35 @@ body {
   }
 }
 
+@media (max-width: 47.8125em) {
+  .main-content-date {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding: 0.4em;
+  }
+  .main-content-date h3 {
+    font-size: 1.4em;
+    font-weight: bold;
+    -webkit-box-flex: 2;
+        -ms-flex-positive: 2;
+            flex-grow: 2;
+    color: #333;
+  }
+  .main-content-date p {
+    padding-right: 0.5em;
+  }
+  .main-content-date i:hover {
+    cursor: pointer;
+  }
+}
+
 html {
   min-height: 100%;
   height: -webkit-max-content;
