@@ -3,11 +3,14 @@ let body = document.querySelector("body");
 let mainHeaderMenu = document.querySelector(".main-header-menu");
 let seachBar = document.querySelector(".main-content-searchForm");
 let mainContentTodoForm = document.querySelector(".main-content-todoForm");
+let landingPage = document.querySelector(".landing-page");
+let mainFlex = document.querySelector(".main-flex");
 
 const BARS = document.querySelector(".fa-bars");
 const SEARCH = document.querySelector(".fa-search");
 const ADD_TODO = document.querySelector(".fa-plus");
 const GITHUB_PROJECT = document.querySelector(".fa-github");
+const landingPageButton = document.querySelector(".landing-page-button");
 
 //reset
 body.classList.add("toggleOnNight");
@@ -61,4 +64,9 @@ ADD_TODO.addEventListener('click',function(){
    else  
       mainContentTodoForm.style.display = "none";
 
+});
+
+landingPageButton.addEventListener('click',function(){
+   landingPage.style.display = "none";
+   mainFlex.style.display = "flex";
 });

@@ -1,0 +1,54 @@
+@mixin landingPage(){
+
+//comon style
+.main-flex{
+    display: none;
+}
+.landing-page{
+    @include flexCenter(column);
+    background-color: rgb(236, 206, 206);
+    height: 100vh;
+    div{
+        text-align: center;
+        padding: 15em 2em;
+        background-color: rgba(145, 64, 64, 0.459);
+        border: 5px solid rgba(102, 41, 41, 0.445);
+    }
+    
+    h1{
+        font-size: 1.3em;
+        font-weight: bold;
+        padding: 1em;
+        text-transform: uppercase;
+        color: rgb(99, 17, 17);
+
+    }
+    button{
+        padding: 1em;
+        background-color: salmon;
+        border-radius: 1.5em;
+        font-size: 1.2em;
+        font-weight: bold;
+        color: rgb(122, 41, 41);
+        box-shadow: 0px 2px 5px -2px black;
+    }
+}
+
+//mobile and tablet
+@media #{$break1}, #{$break2}{
+
+}
+
+//only mobile
+@media #{$break1}{
+   
+}
+//only tablet
+@media #{$break2}{
+   
+}
+//only desktop
+@media #{$break3}{
+  
+}
+}

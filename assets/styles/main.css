@@ -738,4 +738,52 @@ body, .main-flex {
     background-color: greenyellow;
   }
 }
+
+.main-flex {
+  display: none;
+}
+
+.landing-page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #eccece;
+  height: 100vh;
+}
+
+.landing-page div {
+  text-align: center;
+  padding: 15em 2em;
+  background-color: rgba(145, 64, 64, 0.459);
+  border: 5px solid rgba(102, 41, 41, 0.445);
+}
+
+.landing-page h1 {
+  font-size: 1.3em;
+  font-weight: bold;
+  padding: 1em;
+  text-transform: uppercase;
+  color: #631111;
+}
+
+.landing-page button {
+  padding: 1em;
+  background-color: salmon;
+  border-radius: 1.5em;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #7a2929;
+  -webkit-box-shadow: 0px 2px 5px -2px black;
+          box-shadow: 0px 2px 5px -2px black;
+}
 /*# sourceMappingURL=main.css.map */

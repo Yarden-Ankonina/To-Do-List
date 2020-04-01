@@ -17,6 +17,7 @@
 @import "./layout/sidebar";
 @import "./layout/main_todo";
 @import "./layout/date";
+@import "./layout/landingPage";
 
 //themes
 @import "./themes/day";
@@ -65,3 +66,6 @@ body,.main-flex{
         background-color: greenyellow;
     }
 }
+
+//landing page
+@include landingPage();
