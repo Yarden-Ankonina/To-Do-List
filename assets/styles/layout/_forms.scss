@@ -14,6 +14,7 @@
          @include flexCenter(row);
          padding: 0.2em 0;
          background-color: white;
+         display: none;
          input{
              text-align: center;
          }
@@ -21,6 +22,7 @@
      .main-content-todoForm{
          @include flexCenter(column);
          color :white;
+         display: none;
          label{
              padding: 0.2em;
          }

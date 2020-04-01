@@ -555,6 +555,7 @@ footer {
             flex-direction: row;
     padding: 0.2em 0;
     background-color: white;
+    display: none;
   }
   .main-content-forms .main-content-searchForm input {
     text-align: center;
@@ -574,6 +575,7 @@ footer {
         -ms-flex-direction: column;
             flex-direction: column;
     color: white;
+    display: none;
   }
   .main-content-forms .main-content-todoForm label {
     padding: 0.2em;
