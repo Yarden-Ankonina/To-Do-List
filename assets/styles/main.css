@@ -488,6 +488,10 @@ body {
             flex-grow: 1;
     text-align: center;
   }
+  .main-header .main-header-mobile .main-header-mobile-container h1 i {
+    padding-right: 0.5em;
+    font-size: 1.3em;
+  }
   .main-header .main-header-mobile .main-header-mobile-container i:hover {
     cursor: pointer;
   }
@@ -527,6 +531,10 @@ footer {
   text-align: center;
   font-size: 0.8em;
   margin-top: 1em;
+}
+
+footer a {
+  padding: 0.2em 0.2em;
 }
 
 @media (max-width: 47.8125em) {

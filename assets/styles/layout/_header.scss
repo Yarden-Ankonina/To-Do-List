@@ -39,6 +39,10 @@
                 h1{
                     flex-grow: 1;
                     text-align: center;
+                    i{
+                        padding-right: 0.5em;
+                        font-size: 1.3em;
+                    }
                 }
                 i{
                     &:hover {

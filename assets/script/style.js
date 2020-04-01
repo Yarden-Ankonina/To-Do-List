@@ -7,6 +7,8 @@ let mainContentTodoForm = document.querySelector(".main-content-todoForm");
 const BARS = document.querySelector(".fa-bars");
 const SEARCH = document.querySelector(".fa-search");
 const ADD_TODO = document.querySelector(".fa-plus");
+const GITHUB_PROJECT = document.querySelector(".fa-github");
+
 //reset
 body.classList.add("toggleOnNight");
 
