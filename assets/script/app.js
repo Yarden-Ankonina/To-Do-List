@@ -24,14 +24,14 @@ class UI {
     <a href="#">${task.title}</a>
     <i class="far fa-edit"></i>`;
 
-    li.firstElementChild.nextElementSibling.addEventListener('click', (event) => {
+    li.firstElementChild.addEventListener('click', (event) => {
       UI.removeTaskFromList(event); })
     // edit feature must be added
     list.appendChild(li);
   }
   
   static removeTaskFromList(event) {
-    const title = event.target.previousElementSibling.textContent;
+    const title = event.target.nextElementSibling.textContent;
     const element = event.target.parentNode;
     Store.removeTask(title);
     element.remove();
@@ -51,8 +51,10 @@ class UI {
 
   static updateTask() {
     const tasks = Store.getTasks();
-
     tasks.sort(UI.compare);
+    console.log(tasks[0].priority)
+    console.log(tasks[1].priority)
+
     Store.updateTasks(tasks);
 
     const elements = Array.from(document.getElementsByClassName('todo-list')[0].children);
@@ -67,7 +69,7 @@ class UI {
     if (a.priority === b.priority) {
       return 0;
     } else {
-    return a.parameter > b.parameter ? 1: -1;
+    return a.priority > b.priority ? 1: -1;
   }
 }
 }
@@ -122,6 +124,6 @@ document.querySelector('.main-content-todoForm').addEventListener('submit', (e) 
   UI.clearFields();
 });
 
-document.querySelector('#a').addEventListener('click',(e)=>
+document.querySelector('#a').addEventListener('click',()=>
 {
   UI.updateTask();})
