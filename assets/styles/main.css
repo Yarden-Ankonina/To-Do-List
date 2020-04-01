@@ -541,6 +541,16 @@ footer a {
   padding: 0.2em 0.2em;
 }
 
+input {
+  outline: none;
+}
+
+input:focus {
+  font-size: 1em;
+  color: #4E4E50;
+  font-weight: bold;
+}
+
 @media (max-width: 47.8125em) {
   .main-content-forms {
     display: -webkit-box;
@@ -565,12 +575,16 @@ footer a {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    padding: 0.2em 0;
-    background-color: white;
     display: none;
+    width: 100%;
   }
   .main-content-forms .main-content-searchForm input {
+    width: 100%;
+    padding: 0.5em 2em;
     text-align: center;
+  }
+  .main-content-forms .main-content-searchForm input:focus {
+    font-size: 1.2em;
   }
   .main-content-forms .main-content-todoForm {
     display: -webkit-box;
@@ -586,17 +600,26 @@ footer a {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    color: white;
+    color: #fff2f2;
     display: none;
   }
   .main-content-forms .main-content-todoForm label {
-    padding: 0.2em;
+    padding: 0.5em;
+    font-size: 1.4em;
+  }
+  .main-content-forms .main-content-todoForm input {
+    padding: 0.5em;
+    border-radius: 0.4em;
   }
   .main-content-forms .main-content-todoForm button {
-    padding: 0.5em;
+    padding: 0.8em;
     margin: 0.7em 0;
     border-radius: 0.5em;
-    background-color: green;
+    outline: none;
+    font-weight: bold;
+  }
+  .main-content-forms .main-content-todoForm button:hover {
+    font-size: 1.05em;
   }
 }
 
@@ -636,12 +659,12 @@ footer a {
   }
 }
 
-body {
-  background-color: #333;
+.todo-list {
+  height: 100%;
 }
 
 @media (max-width: 47.8125em) {
-  .main-flex main {
+  .main-flex .main-content {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -649,24 +672,51 @@ body {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    height: 100%;
     width: 100%;
-    background-color: gray;
+    overflow: auto;
   }
   .main-flex .todo-list {
     text-align: center;
     display: inline-block;
   }
   .main-flex .todo-list h2 {
-    background-color: pink;
     font-weight: bold;
-    padding: 0.3em 0;
+    font-size: 1.2em;
+    padding: 0.5em 0;
   }
   .main-flex .todo-list li {
-    background-color: #f0f07e;
-    padding: 0.9em 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 0.9em 1.2em;
     border-radius: 0.4em;
     margin: 2em;
+  }
+  .main-flex .todo-list li a {
+    text-align: center;
+    width: 100%;
+    font-size: 1.1em;
+    padding: 0 0.5em;
+  }
+  .main-flex .todo-list li i {
+    opacity: 0;
+    -webkit-transition-property: opacity;
+    transition-property: opacity;
+    -webkit-transition-duration: 0.6s;
+            transition-duration: 0.6s;
+  }
+  .main-flex .todo-list li i:hover {
+    cursor: pointer;
+    font-size: 1.05em;
+  }
+  .main-flex .todo-list li:hover i {
+    opacity: 1;
   }
 }
 
@@ -681,7 +731,7 @@ body {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
-    padding: 0.4em;
+    padding: 1em;
   }
   .main-content-date h3 {
     font-size: 1.4em;
@@ -706,6 +756,8 @@ body {
 
 .toggleOnNight .main-header .main-header-menu {
   background-color: #4e131f;
+  -webkit-box-shadow: 0px 7px 12px -8px #1A1A1D;
+          box-shadow: 0px 7px 12px -8px #1A1A1D;
 }
 
 .toggleOnNight .main-header .fa-suse {
@@ -728,21 +780,33 @@ body {
   background-color: #6F2232;
 }
 
+.toggleOnNight .main-content .main-content-forms .main-content-searchForm input {
+  -webkit-box-shadow: 0px 7px 10px -7px #1A1A1D;
+          box-shadow: 0px 7px 10px -7px #1A1A1D;
+}
+
+.toggleOnNight .main-content .main-content-forms .main-content-todoForm input {
+  -webkit-box-shadow: 0px 7px 10px -7px #1A1A1D;
+          box-shadow: 0px 7px 10px -7px #1A1A1D;
+}
+
 .toggleOnNight .main-content .main-content-forms .main-content-todoForm button {
   background-color: #C3073F;
+  -webkit-box-shadow: 0px 7px 10px -7px #1A1A1D;
+          box-shadow: 0px 7px 10px -7px #1A1A1D;
 }
 
 .toggleOnNight .main-content .todo-list h2 {
   background-color: #1A1A1D;
   color: #fff2f2;
+  -webkit-box-shadow: 0px 7px 10px -7px #ff4f75;
+          box-shadow: 0px 7px 10px -7px #ff4f75;
 }
 
 .toggleOnNight .main-content .todo-list li {
   background-color: #ffdada;
-}
-
-.toggleOnNight .main-content .todo-list li:hover {
-  cursor: pointer;
+  -webkit-box-shadow: 0px 0px 3px 1px #e4265f;
+          box-shadow: 0px 0px 3px 1px #e4265f;
 }
 
 html {
