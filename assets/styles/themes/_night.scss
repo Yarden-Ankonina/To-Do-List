@@ -4,7 +4,7 @@
         background-color: $black1;
         color: $white1;
         .main-header-menu{
-        background-color: $red1;
+        background-color: $red1d;
         }
         .fa-suse{
             color: $red4;
@@ -14,7 +14,7 @@
 
     // }
     .main-content{
-        background-color: $black2;
+        background-color: $red1;
         .main-content-date{
             color: $white2;
             h3{
@@ -44,7 +44,7 @@
                 &:hover{
                     cursor: pointer;
                 }
-        background-color: $red3;
+        background-color: $red3o;
         border: 2px solid $black3;
             }
 
