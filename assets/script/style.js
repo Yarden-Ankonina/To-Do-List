@@ -67,6 +67,7 @@ ADD_TODO.addEventListener('click',function(){
 });
 
 landingPageButton.addEventListener('click',function(){
-   landingPage.style.display = "none";
-   mainFlex.style.display = "flex";
+      landingPage.style.display = "none";
+      mainFlex.style.display = "flex";
+   
 });

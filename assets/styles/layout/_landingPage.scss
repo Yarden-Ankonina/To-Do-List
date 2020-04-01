@@ -4,6 +4,7 @@
 .main-flex{
     display: none;
 }
+
 .landing-page{
     @include flexCenter(column);
     background-color: rgb(236, 206, 206);
