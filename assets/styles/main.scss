@@ -33,15 +33,15 @@
     @include night;
 }
 
-
 html{
     min-height: 100%;
     height: max-content;
 }
 
 body,.main-flex{
-    height: 100%;
+    height: 100vh;
 }
+
 
 //mobile and tablet
 @media #{$break1}, #{$break2}{
@@ -56,15 +56,11 @@ body,.main-flex{
 }
 //only tablet
 @media #{$break2}{
-    body{
-        background-color: blue;
-    }
+   
 }
 //only desktop
 @media #{$break3}{
-    body{
-        background-color: greenyellow;
-    }
+    
 }
 
 //landing page

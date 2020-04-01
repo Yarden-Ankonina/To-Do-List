@@ -2,12 +2,14 @@
 
 //comon style
 .main-flex{
-    display: none;
+    // display: none;
 }
+
 .landing-page{
     @include flexCenter(column);
     background-color: rgb(236, 206, 206);
     height: 100vh;
+    display: none;
     div{
         text-align: center;
         padding: 15em 2em;

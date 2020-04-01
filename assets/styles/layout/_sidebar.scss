@@ -3,11 +3,6 @@
 
 //mobile and tablet
 @media #{$break1}, #{$break2}{
-
-}
-
-//only mobile
-@media #{$break1}{
     .main-flex{
         aside{
           display: none;
@@ -17,22 +12,14 @@
     }
 }
 
+//only mobile
+@media #{$break1}{
+   
+}
+
 //only tablet
 @media #{$break2}{
-    .main-flex{
-        aside{
-            flex-grow: 1;
-            align-self: stretch;
-            background-color: red;
-            padding-top: 3.5em;
-            text-align: center;
-            padding-bottom: 0.5em;
-            @include flexCenter(column);
-            justify-content: space-between;
- 
-        }
-        
-    }
+    
 }
 
 //only desktop

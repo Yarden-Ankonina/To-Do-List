@@ -4,19 +4,18 @@
 .main-header{
     width: 100%;
     @include flexCenter(column);
-    background-color: rgb(162, 218, 240);
     position: sticky;
     top: 0;
+
     
+}
+//only mobile
+@media #{$break1}{
+
 }
 
 //mobile and tablet
 @media #{$break1}, #{$break2}{
-
-}
-
-//only mobile
-@media #{$break1}{
     .main-header{
         .main-header-toggle{
             p{
@@ -80,7 +79,20 @@
 //only tablet
 @media #{$break2}{
     .main-header{
-        position: fixed;
+        font-size: 1.1em;
+        .main-header-mobile-container{
+           margin: 0.5em;
+            .fa-search{
+                font-size: 0.9em;
+            }
+           
+        }
+        .main-header-menu{
+            i{
+                padding: 0.5em;
+            }
+        }
+        
     }
     
 }

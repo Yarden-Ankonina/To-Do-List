@@ -1,18 +1,18 @@
 //comon style
 
+//only mobile
 
-//mobile and tablet
-@media #{$break1}, #{$break2}{
+@media #{$break1}{
 
 }
+//mobile and tablet
 
-//only mobile
-@media #{$break1}{
+@media #{$break1}, #{$break2}{
     .main-content-date{
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 0.4em;
+        padding: 1em;
 
         h3{
             font-size: 1.4em;

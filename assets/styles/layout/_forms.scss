@@ -1,5 +1,12 @@
 //comon style
-
+input{
+    outline: none;
+    &:focus{
+        font-size: 1em;
+        color: $black2;
+        font-weight: bold;
+    }
+}
 //mobile and tablet
 @media #{$break1}, #{$break2}{
 
@@ -12,28 +19,43 @@
      flex-direction: column;
      .main-content-searchForm{
          @include flexCenter(row);
-         padding: 0.2em 0;
-         background-color: white;
          display: none;
+         width: 100%;
+
          input{
+             width: 100%;
+             padding: 0.5em 2em;
              text-align: center;
+             &:focus{
+                 font-size: 1.2em;
+             }
          }
      }
      .main-content-todoForm{
          @include flexCenter(column);
-         color :white;
+         color :$white1;
          display: none;
          label{
-             padding: 0.2em;
+             padding: 0.5em;
+             font-size: 1.4em;
+         }
+         input{
+             padding: 0.5em;
+             border-radius: 0.4em;
+             
          }
          button{
-             padding: 0.5em;
+             padding: 0.8em;
              margin:0.7em 0;
              border-radius: 0.5em;
-             background-color: green;
-         }
-     }
- }
+             outline: none;
+             font-weight: bold;
+             &:hover{
+                 font-size: 1.05em;
+                 }
+             }
+        }
+    }
 }
 
 //only tablet

@@ -449,13 +449,12 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-color: #a2daf0;
   position: -webkit-sticky;
   position: sticky;
   top: 0;
 }
 
-@media (max-width: 47.8125em) {
+@media (max-width: 47.8125em), (min-width: 47.875em) and (max-width: 74.9375em) {
   .main-header .main-header-toggle p {
     display: none;
   }
@@ -524,7 +523,16 @@ body {
 
 @media (min-width: 47.875em) and (max-width: 74.9375em) {
   .main-header {
-    position: fixed;
+    font-size: 1.1em;
+  }
+  .main-header .main-header-mobile-container {
+    margin: 0.5em;
+  }
+  .main-header .main-header-mobile-container .fa-search {
+    font-size: 0.9em;
+  }
+  .main-header .main-header-menu i {
+    padding: 0.5em;
   }
 }
 
@@ -540,6 +548,16 @@ footer {
 
 footer a {
   padding: 0.2em 0.2em;
+}
+
+input {
+  outline: none;
+}
+
+input:focus {
+  font-size: 1em;
+  color: #4E4E50;
+  font-weight: bold;
 }
 
 @media (max-width: 47.8125em) {
@@ -566,12 +584,16 @@ footer a {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    padding: 0.2em 0;
-    background-color: white;
     display: none;
+    width: 100%;
   }
   .main-content-forms .main-content-searchForm input {
+    width: 100%;
+    padding: 0.5em 2em;
     text-align: center;
+  }
+  .main-content-forms .main-content-searchForm input:focus {
+    font-size: 1.2em;
   }
   .main-content-forms .main-content-todoForm {
     display: -webkit-box;
@@ -587,62 +609,41 @@ footer a {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    color: white;
+    color: #fff2f2;
     display: none;
   }
   .main-content-forms .main-content-todoForm label {
-    padding: 0.2em;
+    padding: 0.5em;
+    font-size: 1.4em;
+  }
+  .main-content-forms .main-content-todoForm input {
+    padding: 0.5em;
+    border-radius: 0.4em;
   }
   .main-content-forms .main-content-todoForm button {
-    padding: 0.5em;
+    padding: 0.8em;
     margin: 0.7em 0;
     border-radius: 0.5em;
-    background-color: green;
+    outline: none;
+    font-weight: bold;
+  }
+  .main-content-forms .main-content-todoForm button:hover {
+    font-size: 1.05em;
   }
 }
 
-@media (max-width: 47.8125em) {
+@media (max-width: 47.8125em), (min-width: 47.875em) and (max-width: 74.9375em) {
   .main-flex aside {
     display: none;
   }
 }
 
-@media (min-width: 47.875em) and (max-width: 74.9375em) {
-  .main-flex aside {
-    -webkit-box-flex: 1;
-        -ms-flex-positive: 1;
-            flex-grow: 1;
-    -ms-flex-item-align: stretch;
-        align-self: stretch;
-    background-color: red;
-    padding-top: 3.5em;
-    text-align: center;
-    padding-bottom: 0.5em;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-  }
-}
-
-body {
-  background-color: #333;
+.todo-list {
+  height: 100%;
 }
 
 @media (max-width: 47.8125em) {
-  .main-flex main {
+  .main-flex .main-content {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -650,26 +651,56 @@ body {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    height: 100%;
     width: 100%;
-    background-color: gray;
+    overflow: auto;
   }
   .main-flex .todo-list {
     text-align: center;
     display: inline-block;
   }
   .main-flex .todo-list h2 {
-    background-color: pink;
     font-weight: bold;
-    padding: 0.3em 0;
+    font-size: 1.2em;
+    padding: 0.5em 0;
   }
   .main-flex .todo-list li {
-    background-color: #f0f07e;
-    padding: 1em 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    font-weight: bold;
+    padding: 0.9em 1.2em;
+    border-radius: 0.4em;
+    margin: 2em;
+  }
+  .main-flex .todo-list li a {
+    text-align: center;
+    width: 60%;
+    font-size: 1.1em;
+    padding: 0 0.5em;
+  }
+  .main-flex .todo-list li i {
+    opacity: 0;
+    -webkit-transition-property: opacity;
+    transition-property: opacity;
+    -webkit-transition-duration: 0.6s;
+            transition-duration: 0.6s;
+  }
+  .main-flex .todo-list li i:hover {
+    cursor: pointer;
+    font-size: 1.05em;
+  }
+  .main-flex .todo-list li:hover i {
+    opacity: 1;
   }
 }
 
-@media (max-width: 47.8125em) {
+@media (max-width: 47.8125em), (min-width: 47.875em) and (max-width: 74.9375em) {
   .main-content-date {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -680,7 +711,7 @@ body {
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
-    padding: 0.4em;
+    padding: 1em;
   }
   .main-content-date h3 {
     font-size: 1.4em;
@@ -698,6 +729,66 @@ body {
   }
 }
 
+.toggleOnNight .main-header {
+  background-color: #1A1A1D;
+  color: #fff2f2;
+}
+
+.toggleOnNight .main-header .main-header-menu {
+  background-color: #4e131f;
+  -webkit-box-shadow: 0px 7px 12px -8px #1A1A1D;
+          box-shadow: 0px 7px 12px -8px #1A1A1D;
+}
+
+.toggleOnNight .main-header .fa-suse {
+  color: #e4265f;
+}
+
+.toggleOnNight .main-content {
+  background-color: #6F2232;
+}
+
+.toggleOnNight .main-content .main-content-date {
+  color: #f5e2e2;
+}
+
+.toggleOnNight .main-content .main-content-date h3 {
+  color: #f5e2e2;
+}
+
+.toggleOnNight .main-content .main-content-forms {
+  background-color: #6F2232;
+}
+
+.toggleOnNight .main-content .main-content-forms .main-content-searchForm input {
+  -webkit-box-shadow: 0px 7px 10px -7px #1A1A1D;
+          box-shadow: 0px 7px 10px -7px #1A1A1D;
+}
+
+.toggleOnNight .main-content .main-content-forms .main-content-todoForm input {
+  -webkit-box-shadow: 0px 7px 10px -7px #1A1A1D;
+          box-shadow: 0px 7px 10px -7px #1A1A1D;
+}
+
+.toggleOnNight .main-content .main-content-forms .main-content-todoForm button {
+  background-color: #C3073F;
+  -webkit-box-shadow: 0px 7px 10px -7px #1A1A1D;
+          box-shadow: 0px 7px 10px -7px #1A1A1D;
+}
+
+.toggleOnNight .main-content .todo-list h2 {
+  background-color: #1A1A1D;
+  color: #fff2f2;
+  -webkit-box-shadow: 0px 7px 10px -7px #ff4f75;
+          box-shadow: 0px 7px 10px -7px #ff4f75;
+}
+
+.toggleOnNight .main-content .todo-list li {
+  background-color: #ffdada;
+  -webkit-box-shadow: 0px 0px 3px 1px #e4265f;
+          box-shadow: 0px 0px 3px 1px #e4265f;
+}
+
 html {
   min-height: 100%;
   height: -webkit-max-content;
@@ -706,7 +797,7 @@ html {
 }
 
 body, .main-flex {
-  height: 100%;
+  height: 100vh;
 }
 
 @media (max-width: 47.8125em) {
@@ -727,22 +818,6 @@ body, .main-flex {
   }
 }
 
-@media (min-width: 47.875em) and (max-width: 74.9375em) {
-  body {
-    background-color: blue;
-  }
-}
-
-@media (min-width: 75em) {
-  body {
-    background-color: greenyellow;
-  }
-}
-
-.main-flex {
-  display: none;
-}
-
 .landing-page {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -759,6 +834,7 @@ body, .main-flex {
           flex-direction: column;
   background-color: #eccece;
   height: 100vh;
+  display: none;
 }
 
 .landing-page div {

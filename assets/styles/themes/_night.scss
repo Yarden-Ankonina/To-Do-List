@@ -1,3 +1,67 @@
 @mixin night{
-    
+    //common to all devices
+    .main-header{
+        background-color: $black1;
+        color: $white1;
+        .main-header-menu{
+            background-color: $red1d;
+            box-shadow: 0px 7px 12px -8px $black1;
+
+        }
+        .fa-suse{
+            color: $red4;
+        }
+    }
+    // .main-side{
+
+    // }
+    .main-content{
+        background-color: $red1;
+        .main-content-date{
+            color: $white2;
+            h3{
+            color: $white2;
+            }
+
+        }
+        .main-content-forms{
+        background-color: $red1;
+            .main-content-searchForm{
+                input{
+                    box-shadow: 0px 7px 10px -7px $black1;
+                }
+            }
+
+
+            .main-content-todoForm{
+                input{
+                    box-shadow: 0px 7px 10px -7px $black1;
+                }
+                button{
+                        background-color: $red3;
+                        box-shadow: 0px 7px 10px -7px $black1;
+
+                }
+            }   
+        }
+        .todo-list{
+            h2{
+                background-color: $black1;
+                color: $white1;
+                box-shadow: 0px 7px 10px -7px $red10;
+            }
+
+            li{
+                background-color: $white5r;
+                box-shadow: 0px 0px 3px 1px $red4;
+       
+
+            }
+
+        }
+
+    }
+    // footer{
+
+    // }
 }
