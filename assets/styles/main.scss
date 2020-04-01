@@ -45,8 +45,7 @@ body,.main-flex{
 //only mobile
 @media #{$break1}{
     .main-flex{
-        @include flexCenter(row);
-        height: 100%;
+        @include flexCenter(column);
     }
 }
 //only tablet

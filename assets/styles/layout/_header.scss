@@ -1,11 +1,13 @@
 //comon style
-header{
-    align-self: flex-start;
+
+
+.main-header{
     width: 100%;
     @include flexCenter(column);
-    background-color: $black400;
-    color: white;
-    position: fixed;
+    background-color: rgb(162, 218, 240);
+    position: sticky;
+    top: 0;
+    
 }
 
 //mobile and tablet
@@ -15,39 +17,51 @@ header{
 
 //only mobile
 @media #{$break1}{
-    header{
-        .main-header-toggle{
-            p{
-                display: none;
-            }
-            i{
-                display: none;
-                &:hover{
-                    cursor: pointer;
+    .main-header{
+        // .main-header-toggle{
+        //     p{
+        //         display: none;
+        //     }
+        //     i{
+        //         display: none;
+        //     }
+        // }
+        .main-header-mobile{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            font-size: 1.3em;
+            .main-header-mobile-container{
+                display: flex;
+                justify-content: space-between;
+                 padding: 0.5em;
+
+                h1{
+                    flex-grow: 1;
+                    text-align: center;
+                }
+            
+                .fa-bars{
+                    padding-right: 1.2em;
+                }
+                .fa-search{
+                    padding-right: 0.5em;
+                }
+                .fa-cog{
+                    padding-left: 0.5em;
+                    &:hover {
+                        cursor: pointer;
+                    }
                 }
             }
-        }
-        h1{
-            display: none;
-        }
-        .header-mobile{
-            width: 100%;
-            display: flex;
-           justify-content: space-between;
-            font-size: 1.3em;
-             padding: 0.7em;
-
-            .fa-bars{
-                align-self: flex-start;
-                flex-grow: 1;
-            }
-            .fa-search{
-                padding-right: 0.5em;
-            }
-            .fa-cog{
-                padding-left: 0.5em;
-                &:hover {
-                    cursor: pointer;
+            .main-header-menu{
+                background-color: rgb(182, 182, 182);
+                width: 100%;
+                padding: 0.2em 0.5em;
+                font-weight: normal;
+                font-size: 0.9em;
+                i{
+                    border: 3px solid pink;
                 }
             }
         }
@@ -57,6 +71,9 @@ header{
 
 //only tablet
 @media #{$break2}{
+    .main-header{
+        position: fixed;
+    }
     
 }
 
