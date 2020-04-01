@@ -500,6 +500,7 @@ body {
     padding: 0.2em 0.5em;
     font-weight: normal;
     font-size: 0.9em;
+    display: none;
   }
   .main-header .main-header-mobile .main-header-menu i {
     border: 3px solid pink;
