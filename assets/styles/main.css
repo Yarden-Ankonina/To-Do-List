@@ -701,7 +701,7 @@ input:focus {
   }
   .main-flex .todo-list li a {
     text-align: center;
-    width: 100%;
+    width: 60%;
     font-size: 1.1em;
     padding: 0 0.5em;
   }
@@ -836,18 +836,6 @@ body, .main-flex {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-  }
-}
-
-@media (min-width: 47.875em) and (max-width: 74.9375em) {
-  body {
-    background-color: blue;
-  }
-}
-
-@media (min-width: 75em) {
-  body {
-    background-color: greenyellow;
   }
 }
 

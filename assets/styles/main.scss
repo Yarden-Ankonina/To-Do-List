@@ -57,13 +57,11 @@ body,.main-flex{
 //only tablet
 @media #{$break2}{
     body{
-        background-color: blue;
     }
 }
 //only desktop
 @media #{$break3}{
     body{
-        background-color: greenyellow;
     }
 }
 
