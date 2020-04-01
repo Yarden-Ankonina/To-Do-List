@@ -664,7 +664,9 @@ body {
   }
   .main-flex .todo-list li {
     background-color: #f0f07e;
-    padding: 1em 0;
+    padding: 0.9em 0;
+    border-radius: 0.4em;
+    margin: 2em;
   }
 }
 
@@ -736,8 +738,7 @@ body {
 }
 
 .toggleOnNight .main-content .todo-list li {
-  background-color: rgba(209, 30, 75, 0.842);
-  border: 2px solid #67676e;
+  background-color: #ffdada;
 }
 
 .toggleOnNight .main-content .todo-list li:hover {
