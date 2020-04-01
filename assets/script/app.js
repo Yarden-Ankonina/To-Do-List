@@ -20,8 +20,8 @@ class UI {
 
     const li = document.createElement('li');
 
-    li.innerHTML = `<a href="#">${task.title}</a>
-    <i class="fas fa-trash-alt"></i>
+    li.innerHTML = `<i class="fas fa-trash-alt"></i>
+    <a href="#">${task.title}</a>
     <i class="far fa-edit"></i>`;
 
     li.firstElementChild.nextElementSibling.addEventListener('click', (event) => {

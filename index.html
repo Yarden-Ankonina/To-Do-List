@@ -8,7 +8,7 @@
     <script src="https://kit.fontawesome.com/a05612df27.js" crossorigin="anonymous"></script>
     <!-- <link rel="stylesheet" href="/assets/styles/debug.css"> -->
     <script src="/assets/script/style.js" defer></script>
-    <!-- <script src="/assets/script/newapp.js" defer></script> -->
+    <script src="/assets/script/app.js" defer></script>
     <title>TO-DO</title>
 </head>
 <body>
@@ -34,8 +34,10 @@
 
                <!-- hidden by defaul on mobile  -->
                 <div class="main-header-menu"> 
-                    <i class="fas fa-sort">sort</i>
-                    <a href="https://github.com/Yarden-Ankonina/To-Do-List" target="blank"><i class="fab fa-github"></i></a>
+                    <i id='a' class="fas fa-sort">Sort</i>
+                    <a href="https://github.com/Yarden-Ankonina/To-Do-List" target="blank">
+                    <i class="fab fa-github"></i>
+                    </a>
                     <i class="fas fa-star"></i>
                     <i class="fas fa-share"></i>
                     <i class="fas fa-cog"></i>
@@ -80,7 +82,20 @@
             <form class="main-content-todoForm" autocomplete="off">
                 <label for='title'>Title</label>
                 <input type="text" id="title-input" name="title" maxlength="12" placeholder="Insert title" required>
-                <button type="submit" id="submit-button">Submit</button>
+                <select id="priority-input">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                  </select>
+                  <label for="urgency">Urgency</label>
+                  <select id="urgency-input">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                  </select>
+                  <button type="submit" id="submit-button">Submit</button>
+                  <!-- <input type="submit" id="submit-button"> -->
+              </form>
             </form>
             <!-- AddTodo -->
 
@@ -105,7 +120,12 @@
 
      </main>
      <footer >
-        <h4>Made by Marcos <a href="https://github.com/marcosmol204" target="blank"><i class="fas fa-link"></i></a>and Yarden  <a href="https://github.com/Yarden-Ankonina" target="blank"><i class="fas fa-link"></i></a></h4>
+        <h4>Made by Marcos <a href="https://github.com/marcosmol204" target="blank">
+            <i class="fas fa-link"></i>
+        </a>and Yarden<a href="https://github.com/Yarden-Ankonina" target="blank">
+            <i class="fas fa-link"></i>
+        </a>
+        </h4>
      </footer>
     </section>
 </body>
