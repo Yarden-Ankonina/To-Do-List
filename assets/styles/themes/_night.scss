@@ -1,3 +1,57 @@
 @mixin night{
-    
+    //common to all devices
+    .main-header{
+        background-color: $black1;
+        color: $white1;
+        .main-header-menu{
+        background-color: $red1;
+        }
+        .fa-suse{
+            color: $red4;
+        }
+    }
+    // .main-side{
+
+    // }
+    .main-content{
+        background-color: $black2;
+        .main-content-date{
+            color: $white2;
+            h3{
+            color: $white2;
+            }
+
+        }
+        .main-content-forms{
+        background-color: $red1;
+            
+
+
+            .main-content-todoForm{
+                button{
+            background-color: $red3;
+
+                }
+            }   
+        }
+        .todo-list{
+            h2{
+        background-color: $black1;
+        color: $white1;
+            }
+
+            li{
+                &:hover{
+                    cursor: pointer;
+                }
+        background-color: $red3;
+        border: 2px solid $black3;
+            }
+
+        }
+
+    }
+    // footer{
+
+    // }
 }

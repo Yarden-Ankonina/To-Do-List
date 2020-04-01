@@ -4,9 +4,9 @@
 .main-header{
     width: 100%;
     @include flexCenter(column);
-    background-color: rgb(162, 218, 240);
     position: sticky;
     top: 0;
+
     
 }
 

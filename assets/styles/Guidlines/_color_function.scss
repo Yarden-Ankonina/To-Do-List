@@ -1,0 +1,62 @@
+
+$primary-color: #EE6352;
+$youtube: #D16E8D;
+$articles: #FFAC83;
+$community: #3F78C9;
+$courses: #49C4A3;
+$white: #FFF;
+$black: #444A51;
+
+$lighten: 5;
+$darken: 25;
+$darkest:40;
+
+
+$colors: (
+  primary: (
+    base: $primary-color,
+    light: lighten($primary-color, $lighten),
+    dark: darken($primary-color, $darken),
+  ),
+  yt: (
+    base: $youtube,
+    light: lighten($youtube, $lighten),
+    dark: darken($youtube, $darken),
+  ),
+  articles: (
+    base: $articles,
+    light: lighten($articles, $lighten),
+    dark: darken($articles, $darken),
+  ),
+  com: (
+    base: $community,
+    light: lighten($community, $lighten),
+    dark: darken($community, $darken),
+  ),
+  course: (
+    base: $courses,
+    light: lighten($courses, $lighten),
+    dark: darken($courses, $darken),
+  ),
+  neutral: ( 
+    base: #69777F,
+    light: #B2CAD8,
+    dark: $black,
+  ),
+);
+
+
+@function clr($base, $shade: base) {
+    $color: map-get(map-get($colors, $base), $shade);
+    @return $color;
+  }
+
+  @mixin fontColor($base,$shade){
+      color : clr($base,$shade);
+  }
+  
+  @mixin backColor($base,$shade){
+    background : clr($base,$shade);
+}
+
+  

@@ -449,7 +449,6 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-color: #a2daf0;
   position: -webkit-sticky;
   position: sticky;
   top: 0;
@@ -698,6 +697,53 @@ body {
   }
 }
 
+.toggleOnNight .main-header {
+  background-color: #1A1A1D;
+  color: #fff2f2;
+}
+
+.toggleOnNight .main-header .main-header-menu {
+  background-color: #6F2232;
+}
+
+.toggleOnNight .main-header .fa-suse {
+  color: #e4265f;
+}
+
+.toggleOnNight .main-content {
+  background-color: #4E4E50;
+}
+
+.toggleOnNight .main-content .main-content-date {
+  color: #f5e2e2;
+}
+
+.toggleOnNight .main-content .main-content-date h3 {
+  color: #f5e2e2;
+}
+
+.toggleOnNight .main-content .main-content-forms {
+  background-color: #6F2232;
+}
+
+.toggleOnNight .main-content .main-content-forms .main-content-todoForm button {
+  background-color: #C3073F;
+}
+
+.toggleOnNight .main-content .todo-list h2 {
+  background-color: #1A1A1D;
+  color: #fff2f2;
+}
+
+.toggleOnNight .main-content .todo-list li {
+  background-color: #C3073F;
+  border: 2px solid #67676e;
+}
+
+.toggleOnNight .main-content .todo-list li:hover {
+  cursor: pointer;
+}
+
 html {
   min-height: 100%;
   height: -webkit-max-content;
@@ -706,7 +752,7 @@ html {
 }
 
 body, .main-flex {
-  height: 100%;
+  height: 100vh;
 }
 
 @media (max-width: 47.8125em) {
@@ -739,10 +785,6 @@ body, .main-flex {
   }
 }
 
-.main-flex {
-  display: none;
-}
-
 .landing-page {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -759,6 +801,7 @@ body, .main-flex {
           flex-direction: column;
   background-color: #eccece;
   height: 100vh;
+  display: none;
 }
 
 .landing-page div {

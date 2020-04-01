@@ -1,62 +1,22 @@
-//colors -map
-//white
-$white : white;
-$white50 : rgb(243, 243, 243);
-$white100 : rgb(236, 236, 236);
-$white150 : rgb(219, 226, 225);
-$white200 : rgb(204, 202, 202);
-
-$whiteYellow50 : rgb(240, 239, 231);
-$whiteBlue100 : rgb(237, 245, 246);
-$whiteBlue200 : rgb(216, 237, 240);
-$whiteBlue800 : rgb(36, 120, 131);
-
-
+//colors
 
 //black
-$black : #000;
-$black50 : rgb(93, 93, 93);
-$black400 : rgb(41, 41, 41);
-$black800 : rgb(0, 0, 0);
+$black1 : #1A1A1D;
+$black2 :#4E4E50;
+$black3 :rgb(103, 103, 110);
 
 
-//blue
-$dayBackground : lightblue;
-$blue50 : rgb(222, 235, 255);
-$blue100 : rgb(199, 221, 255);
-$blue200 : rgb(167, 197, 241);
-$blue400 : rgb(61, 101, 161);
-$blue800 : rgb(15, 38, 73);
+//white
+$white1:rgb(255, 242, 242);
+$white2:rgb(245, 226, 226);
 
-$blueGreen50 : rgb(223, 244, 251);
-$blueGreen100 : rgb(205, 241, 253);
-$blueGreen200 : lightblue;
-$blueGreen400 : rgb(91, 159, 182);
 
+//red
+$red1 : #6F2232;
+$red2 : #950749;
+$red3: #C3073F;
+$red4: rgb(228, 38, 95);
+$red10: rgb(255, 79, 117);
 
 
 
-// day
-$whiteBackground :white;
-$dayBackground : lightblue;
-$dayDarkFont : rgb(27, 5, 66);
-
-
-// night
-$nightBlack :#000000;
-$nightBackground :  #282828;
-$night600 :  #757575;
-$night800 : #424242;
-
-//purple
-$darkPurple50 :rgb(224, 209, 241);
-
-$darkPurple100 :#D7B7FD;
-$darkPurple200 :#BB86FC;
-$darkPurple300 :#9E55FC;
-$darkPurple350 :rgb(138, 94, 197);
-$darkPurple400 :#4B00D1;
-$darkPurple800 :#270096;
-
-$darkGreen200 :#03DAC5;
-$darkGreen600 : #019592;
