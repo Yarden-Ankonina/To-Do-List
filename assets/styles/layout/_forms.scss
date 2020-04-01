@@ -13,7 +13,6 @@
      .main-content-searchForm{
          @include flexCenter(row);
          padding: 0.2em 0;
-         margin-bottom: 0.5em;
          background-color: white;
          input{
              text-align: center;
@@ -22,6 +21,9 @@
      .main-content-todoForm{
          @include flexCenter(column);
          color :white;
+         label{
+             padding: 0.2em;
+         }
          button{
              padding: 0.5em;
              margin:0.7em 0;

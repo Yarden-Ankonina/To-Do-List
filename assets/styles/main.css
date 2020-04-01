@@ -456,6 +456,12 @@ body {
 }
 
 @media (max-width: 47.8125em) {
+  .main-header .main-header-toggle p {
+    display: none;
+  }
+  .main-header .main-header-toggle i {
+    display: none;
+  }
   .main-header .main-header-mobile {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -548,7 +554,6 @@ footer {
         -ms-flex-direction: row;
             flex-direction: row;
     padding: 0.2em 0;
-    margin-bottom: 0.5em;
     background-color: white;
   }
   .main-content-forms .main-content-searchForm input {
@@ -569,6 +574,9 @@ footer {
         -ms-flex-direction: column;
             flex-direction: column;
     color: white;
+  }
+  .main-content-forms .main-content-todoForm label {
+    padding: 0.2em;
   }
   .main-content-forms .main-content-todoForm button {
     padding: 0.5em;
@@ -615,7 +623,7 @@ footer {
 }
 
 body {
-  background-color: black;
+  background-color: #333;
 }
 
 @media (max-width: 47.8125em) {

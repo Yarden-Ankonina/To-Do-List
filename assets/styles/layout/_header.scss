@@ -18,14 +18,14 @@
 //only mobile
 @media #{$break1}{
     .main-header{
-        // .main-header-toggle{
-        //     p{
-        //         display: none;
-        //     }
-        //     i{
-        //         display: none;
-        //     }
-        // }
+        .main-header-toggle{
+            p{
+                display: none;
+            }
+            i{
+                display: none;
+            }
+        }
         .main-header-mobile{
             display: flex;
             flex-direction: column;

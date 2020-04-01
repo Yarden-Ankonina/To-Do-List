@@ -22,6 +22,7 @@
 @import "./themes/night";
 
 //comon style
+//mixin implementation
 .toggleOnDay{
     @include day;
 }
@@ -29,6 +30,8 @@
 .toggleOnNight{
     @include night;
 }
+
+
 html{
     min-height: 100%;
     height: max-content;
