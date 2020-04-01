@@ -8,10 +8,9 @@
     <script src="https://kit.fontawesome.com/a05612df27.js" crossorigin="anonymous"></script>
     <!-- <link rel="stylesheet" href="/assets/styles/debug.css"> -->
     <script src="/assets/script/style.js" defer></script>
-    <script src="/assets/script/app.js" defer></script>
+    <!-- <script src="/assets/script/newapp.js" defer></script> -->
     <title>TO-DO</title>
 </head>
-
 <body>
     <section class="landing-page">
         <div>
@@ -23,99 +22,119 @@
 
         <!-- header -->
         <header class="main-header">
-
-            <div class="main-header-mobile">
-                <!--mobile-->
+         
+            <div class="main-header-mobile"><!--mobile-->
 
                 <div class="main-header-mobile-container">
                     <i class="fas fa-bars"></i>
-                    <h1><i class="fab fa-suse"></i>To-Do List</h1>
+                    <a href="./index.html"><h1><i class="fab fa-suse"></i></a>To-Do List</h1>
                     <i class="fas fa-search"></i>
-                    <i class="fas fa-plus"></i>
-
+                    <i class="fas fa-plus"></i> 
                 </div>
 
-                <!-- hidden by defaul on mobile  -->
-                <div class="main-header-menu">
-                    <i id='a' class="fas fa-sort"></i> <!-- by priority and -->
-                    <i id='b' class="fas fa-sort"></i>  <!-- by urgency-->
-                    <i id='c' class="fas fa-sort"></i> <!-- both -->
-
+               <!-- hidden by defaul on mobile  -->
+                <div class="main-header-menu"> 
+                    <i class="fas fa-sort">sort</i>
                     <a href="https://github.com/Yarden-Ankonina/To-Do-List" target="blank"><i class="fab fa-github"></i></a>
                     <i class="fas fa-star"></i>
                     <i class="fas fa-share"></i>
                     <i class="fas fa-cog"></i>
-
                 </div>
 
             </div>
-
-            <div class="main-header-toggle">
+               <div class="main-header-toggle">
                 <p>DAY</p>
                 <i class="fas fa-toggle-on"></i>
                 <p>NIGHT</p>
             </div>
         </header>
 
-        <!-- sidebar -->
+
+
+
+            <!-- sidebar -->
         <aside class="main-side">
             <h2>Menu</h2>
             <p>By Marcos and Yarden</p>
         </aside>
-        <!-- sidebar -->
+            <!-- sidebar -->
 
-        <main class="main-content">
 
-            <section class="main-content-date">
-                <h3>TODAY</h3>
-                <p> April 1 2020</p>
-                <i class="fas fa-calendar"></i>
-            </section>
+     <main class="main-content">
 
-            <section class="main-content-forms">
-                <!-- searchTodo -->
-                <form class="main-content-searchForm">
-                    <input type="search" id="search-input" placeholder="Search Todos">
-                </form>
-                <!-- searchTodo -->
+        <section class="main-content-date">
+            <h3>TODAY</h3> <p> April 1 2020</p>
+            <i class="fas fa-calendar"></i>
+        </section>
 
-                <!-- AddTodo -->
 
-                <form class="main-content-todoForm" autocomplete="off">
-                    <label for='title'>Title</label>
-                    <input type="text" id="title-input" name="title" maxlength="12" placeholder="Insert title" required>
-                    <label for="priority">Priority</label>
-                    <select id="priority-input">
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                    </select>
-                    <label for="urgency">Urgency</label>
-                    <select id="urgency-input">
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                    </select>
-                    <input type="submit" id="submit-button">
-                </form>
-                <!-- AddTodo -->
+        <section class="main-content-forms">
+            <!-- searchTodo -->
+            <form class="main-content-searchForm">
+                <input type="search" id="search-input" autocomplete="off" placeholder="Search Todos">
+            </form>
+            <!-- searchTodo -->
 
-            </section>
+            <!-- AddTodo -->
 
-            <!-- todoList -->
-            
+            <form class="main-content-todoForm" autocomplete="off">
+                <label for='title'>Title</label>
+                <input type="text" id="title-input" name="title" maxlength="12" placeholder="Insert title" required>
+                <button type="submit" id="submit-button">Submit</button>
+            </form>
+            <!-- AddTodo -->
+
+        </section>
+
+        <!-- todoList -->
             <ul class="todo-list">
                 <h2>My Todo's</h2>
-                <div>
-                </div>
-
+                    <li>
+                        <i class="fas fa-trash-alt"></i>
+                        <a href="#">Google</a>
+                        <i class="far fa-edit"></i>
+                    </li>
+                    <li>
+                        <i class="fas fa-trash-alt"></i>
+                        <a href="#">Google</a>
+                        <i class="far fa-edit"></i>
+                    </li>
+                    <li>
+                        <i class="fas fa-trash-alt"></i>
+                        <a href="#">Google</a>
+                        <i class="far fa-edit"></i>
+                    </li>
+                    <li>
+                        <i class="fas fa-trash-alt"></i>
+                        <a href="#">Google</a>
+                        <i class="far fa-edit"></i>
+                    </li>
+                    <li>
+                        <i class="fas fa-trash-alt"></i>
+                        <a href="#">Google</a>
+                        <i class="far fa-edit"></i>
+                    </li>
+                    <li>
+                        <i class="fas fa-trash-alt"></i>
+                        <a href="#">Google</a>
+                        <i class="far fa-edit"></i>
+                    </li>  <li>
+                        <i class="fas fa-trash-alt"></i>
+                        <a href="#">Google</a>
+                        <i class="far fa-edit"></i>
+                    </li>
+                    
+               
+                    
+                    
+               
             </ul>
-            <!-- todoList -->
+        <!-- todoList -->
 
-        </main>
-        <footer>
-            <h4>Made by Marcos <a href="https://github.com/marcosmol204" target="blank"><i class="fas fa-link"></i></a>and Yarden  <a href="https://github.com/Yarden-Ankonina" target="blank"><i class="fas fa-link"></i></a></h4>
-        </footer>
+     </main>
+     <footer >
+        <h4>Made by Marcos <a href="https://github.com/marcosmol204" target="blank"><i class="fas fa-link"></i></a>and Yarden  <a href="https://github.com/Yarden-Ankonina" target="blank"><i class="fas fa-link"></i></a></h4>
+     </footer>
     </section>
 </body>
 
