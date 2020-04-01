@@ -47,8 +47,6 @@ body,.main-flex{
 @media #{$break1}{
     .main-flex{
         @include flexCenter(column);
-        main{
-        }
     }
 }
 //only tablet
