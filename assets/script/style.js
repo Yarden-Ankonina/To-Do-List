@@ -37,7 +37,7 @@ if(toggle){
 BARS.addEventListener('click',function(){
    console.log(mainHeaderMenu);
    if(mainHeaderMenu.style.display === "none"){
-      mainHeaderMenu.style.display = "block";
+      mainHeaderMenu.style.display = "flex";
    }
    else{
       mainHeaderMenu.style.display = "none";
