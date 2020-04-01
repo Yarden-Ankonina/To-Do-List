@@ -482,6 +482,9 @@ body {
             flex-grow: 1;
     text-align: center;
   }
+  .main-header .main-header-mobile .main-header-mobile-container i:hover {
+    cursor: pointer;
+  }
   .main-header .main-header-mobile .main-header-mobile-container .fa-bars {
     padding-right: 1.2em;
   }
@@ -490,9 +493,6 @@ body {
   }
   .main-header .main-header-mobile .main-header-mobile-container .fa-cog {
     padding-left: 0.5em;
-  }
-  .main-header .main-header-mobile .main-header-mobile-container .fa-cog:hover {
-    cursor: pointer;
   }
   .main-header .main-header-mobile .main-header-menu {
     background-color: #b6b6b6;

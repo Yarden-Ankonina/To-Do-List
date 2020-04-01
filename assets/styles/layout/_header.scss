@@ -40,7 +40,11 @@
                     flex-grow: 1;
                     text-align: center;
                 }
-            
+                i{
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
                 .fa-bars{
                     padding-right: 1.2em;
                 }
@@ -49,9 +53,7 @@
                 }
                 .fa-cog{
                     padding-left: 0.5em;
-                    &:hover {
-                        cursor: pointer;
-                    }
+                    
                 }
             }
             .main-header-menu{
