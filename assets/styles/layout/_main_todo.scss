@@ -31,13 +31,18 @@
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
-                    font-weight: bold;
-                    padding: 0.9em 1.2em;
+                    flex-wrap: nowrap;
+                    padding: 0.3em 1.2em;
                     border-radius: 0.4em;
-                    margin: 2em;
+                    font-size: 0.9em;
+                    margin: 0.32em 2em;
+                    opacity: 0.8;
+                    transition-property: opacity,font-size;
+                    transition-duration: 0.6s;
                    
                     a{
                         text-align: center;
+                        flex-wrap: nowrap;
                         width: 60%;
                         font-size: 1.1em;
                         padding: 0 0.5em;
@@ -52,6 +57,8 @@
                         }
                     }
                     &:hover{
+                        opacity: 1;
+                        font-size: 0.95em;
                         i{
                             opacity: 1;
                         }

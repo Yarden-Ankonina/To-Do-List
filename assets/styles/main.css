@@ -675,13 +675,22 @@ input:focus {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    font-weight: bold;
-    padding: 0.9em 1.2em;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    padding: 0.3em 1.2em;
     border-radius: 0.4em;
-    margin: 2em;
+    font-size: 0.9em;
+    margin: 0.32em 2em;
+    opacity: 0.8;
+    -webkit-transition-property: opacity,font-size;
+    transition-property: opacity,font-size;
+    -webkit-transition-duration: 0.6s;
+            transition-duration: 0.6s;
   }
   .main-flex .todo-list li a {
     text-align: center;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
     width: 60%;
     font-size: 1.1em;
     padding: 0 0.5em;
@@ -696,6 +705,10 @@ input:focus {
   .main-flex .todo-list li i:hover {
     cursor: pointer;
     font-size: 1.05em;
+  }
+  .main-flex .todo-list li:hover {
+    opacity: 1;
+    font-size: 0.95em;
   }
   .main-flex .todo-list li:hover i {
     opacity: 1;
@@ -746,6 +759,49 @@ input:focus {
   color: #e4265f;
 }
 
+.toggleOnNight .main-header .fa-suse:hover {
+  -webkit-animation-name: chameleon;
+          animation-name: chameleon;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
+}
+
+@-webkit-keyframes chameleon {
+  0% {
+    color: #dd3f3f;
+  }
+  25% {
+    color: #ffbb00;
+  }
+  50% {
+    color: #4e75e2;
+  }
+  75% {
+    color: #3db43d;
+  }
+  100% {
+    color: white;
+  }
+}
+
+@keyframes chameleon {
+  0% {
+    color: #dd3f3f;
+  }
+  25% {
+    color: #ffbb00;
+  }
+  50% {
+    color: #4e75e2;
+  }
+  75% {
+    color: #3db43d;
+  }
+  100% {
+    color: white;
+  }
+}
+
 .toggleOnNight .main-content {
   background-color: #6F2232;
 }
@@ -786,9 +842,12 @@ input:focus {
 }
 
 .toggleOnNight .main-content .todo-list li {
-  background-color: #ffdada;
-  -webkit-box-shadow: 0px 0px 3px 1px #e4265f;
-          box-shadow: 0px 0px 3px 1px #e4265f;
+  background-color: #1A1A1D;
+  color: #f5e2e2;
+}
+
+.toggleOnNight .main-content .todo-list li .fa-trash-alt:hover {
+  color: #e4265f;
 }
 
 html {
