@@ -35,6 +35,9 @@ input{
          @include flexCenter(column);
          color :$white1;
          display: none;
+         .main-content-todoForm-selectors{
+            padding-top: 0.5em;;
+         }
          label{
              padding: 0.5em;
              font-size: 1.4em;

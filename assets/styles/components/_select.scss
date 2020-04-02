@@ -1,0 +1,19 @@
+select{
+    outline: none;
+    padding: 0.2em;
+    font-weight: bold;
+    border-radius: 0.4em;
+    opacity: 0.8;
+    &:hover{
+        font-size: 1.1em;
+    }
+    &:focus{    
+        font-weight: bold;
+        opacity: 1;
+
+    }
+    option{
+    outline: none;
+    font-weight: bold;
+    }
+}

@@ -512,6 +512,28 @@ body {
   }
 }
 
+select {
+  outline: none;
+  padding: 0.2em;
+  font-weight: bold;
+  border-radius: 0.4em;
+  opacity: 0.8;
+}
+
+select:hover {
+  font-size: 1.1em;
+}
+
+select:focus {
+  font-weight: bold;
+  opacity: 1;
+}
+
+select option {
+  outline: none;
+  font-weight: bold;
+}
+
 .main-header {
   width: 100%;
   display: -webkit-box;
@@ -691,6 +713,9 @@ input:focus {
     color: #fff2f2;
     display: none;
   }
+  .main-content-forms .main-content-todoForm .main-content-todoForm-selectors {
+    padding-top: 0.5em;
+  }
   .main-content-forms .main-content-todoForm label {
     padding: 0.5em;
     font-size: 1.4em;
@@ -862,6 +887,20 @@ input:focus {
 .toggleOnNight .main-content .main-content-forms .main-content-todoForm input {
   -webkit-box-shadow: 0px 7px 10px -7px #1A1A1D;
           box-shadow: 0px 7px 10px -7px #1A1A1D;
+}
+
+.toggleOnNight .main-content .main-content-forms .main-content-todoForm .main-content-todoForm-selectors label {
+  color: #f5e2e2;
+  font-size: 0.9em;
+}
+
+.toggleOnNight .main-content .main-content-forms .main-content-todoForm .main-content-todoForm-selectors select {
+  background-color: #1A1A1D;
+  color: #fff2f2;
+}
+
+.toggleOnNight .main-content .main-content-forms .main-content-todoForm .main-content-todoForm-selectors select option {
+  background-color: #4E4E50;
 }
 
 .toggleOnNight .main-content .main-content-forms .main-content-todoForm button {

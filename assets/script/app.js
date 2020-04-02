@@ -37,7 +37,7 @@ class UI {
     setTimeout(function(){
       Store.removeTask(title);
       element.remove();
-    },600);
+    },599);
   }
 
   // static showAlert(message, className) {
