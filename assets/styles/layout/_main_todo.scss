@@ -43,9 +43,10 @@
                     a{
                         text-align: center;
                         flex-wrap: nowrap;
-                        width: 60%;
+                        width: 80%;
                         font-size: 1.1em;
                         padding: 0 0.5em;
+                        overflow: hidden;
                     }
                     i{
                         opacity: 0;

@@ -1,0 +1,37 @@
+
+//all
+.main-flex{
+    .main-header{
+        .fa-bars{
+            transition-property: transform;
+            transition-duration: 2s;
+            &:hover{
+                transform: rotateZ(360deg);
+            }
+        }
+        .fa-suse{
+            &:hover{
+                animation-name: chameleon;
+                animation-duration: 3s;
+                animation-delay: 0.5s;
+                animation-iteration-count: infinite;
+               @keyframes chameleon{
+                10% { color:rgb(221, 63, 63);}
+                25% { color:rgb(255, 187, 0);}
+                50% { color:rgb(78, 117, 226);}
+                75% { color:rgb(61, 180, 61);}
+                100% { color:white;}
+               }
+            }
+         }
+    }
+
+    .main-content{
+        .todo-list{
+            li{
+                
+            }
+        }
+
+    }
+}

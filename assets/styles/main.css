@@ -434,6 +434,67 @@ body {
   color: #222;
 }
 
+.main-flex .main-header .fa-bars {
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  -webkit-transition-duration: 2s;
+          transition-duration: 2s;
+}
+
+.main-flex .main-header .fa-bars:hover {
+  -webkit-transform: rotateZ(360deg);
+          transform: rotateZ(360deg);
+}
+
+.main-flex .main-header .fa-suse:hover {
+  -webkit-animation-name: chameleon;
+          animation-name: chameleon;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes chameleon {
+  10% {
+    color: #dd3f3f;
+  }
+  25% {
+    color: #ffbb00;
+  }
+  50% {
+    color: #4e75e2;
+  }
+  75% {
+    color: #3db43d;
+  }
+  100% {
+    color: white;
+  }
+}
+
+@keyframes chameleon {
+  10% {
+    color: #dd3f3f;
+  }
+  25% {
+    color: #ffbb00;
+  }
+  50% {
+    color: #4e75e2;
+  }
+  75% {
+    color: #3db43d;
+  }
+  100% {
+    color: white;
+  }
+}
+
 .main-header {
   width: 100%;
   display: -webkit-box;
@@ -480,6 +541,48 @@ body {
         -ms-flex-pack: justify;
             justify-content: space-between;
     padding: 0.5em;
+  }
+  .main-header .main-header-mobile .main-header-mobile-container .fa-suse:hover {
+    -webkit-animation-name: chameleon;
+            animation-name: chameleon;
+    -webkit-animation-duration: 3s;
+            animation-duration: 3s;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+  }
+  @-webkit-keyframes chameleon {
+    0% {
+      color: #dd3f3f;
+    }
+    25% {
+      color: #ffbb00;
+    }
+    50% {
+      color: #4e75e2;
+    }
+    75% {
+      color: #3db43d;
+    }
+    100% {
+      color: white;
+    }
+  }
+  @keyframes chameleon {
+    0% {
+      color: #dd3f3f;
+    }
+    25% {
+      color: #ffbb00;
+    }
+    50% {
+      color: #4e75e2;
+    }
+    75% {
+      color: #3db43d;
+    }
+    100% {
+      color: white;
+    }
   }
   .main-header .main-header-mobile .main-header-mobile-container h1 {
     -webkit-box-flex: 1;
@@ -691,9 +794,10 @@ input:focus {
     text-align: center;
     -ms-flex-wrap: nowrap;
         flex-wrap: nowrap;
-    width: 60%;
+    width: 80%;
     font-size: 1.1em;
     padding: 0 0.5em;
+    overflow: hidden;
   }
   .main-flex .todo-list li i {
     opacity: 0;
@@ -764,24 +868,6 @@ input:focus {
           animation-name: chameleon;
   -webkit-animation-duration: 4s;
           animation-duration: 4s;
-}
-
-@-webkit-keyframes chameleon {
-  0% {
-    color: #dd3f3f;
-  }
-  25% {
-    color: #ffbb00;
-  }
-  50% {
-    color: #4e75e2;
-  }
-  75% {
-    color: #3db43d;
-  }
-  100% {
-    color: white;
-  }
 }
 
 @keyframes chameleon {
