@@ -18,6 +18,8 @@
     .main-content{
         background-color: $red1;
         .main-content-date{
+            background-color: lighten($red1,4);
+            z-index: 9999;
             color: $white2;
             h3{
             color: $white2;

@@ -868,6 +868,8 @@ input:focus {
 }
 
 .toggleOnNight .main-content .main-content-date {
+  background-color: #7f2739;
+  z-index: 9999;
   color: #f5e2e2;
 }
 
