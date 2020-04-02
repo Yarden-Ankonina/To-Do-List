@@ -6,12 +6,9 @@
     @include flexCenter(column);
     position: sticky;
     top: 0;
-
-    
 }
 //only mobile
 @media #{$break1}{
-
 }
 
 //mobile and tablet

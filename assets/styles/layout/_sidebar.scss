@@ -3,23 +3,21 @@
 
 //mobile and tablet
 @media #{$break1}, #{$break2}{
-    .main-flex{
-        aside{
-          display: none;
- 
-        }
-        
-    }
+  
 }
 
 //only mobile
 @media #{$break1}{
-   
+  .main-flex{
+    aside{
+      display: none;
+
+    }
+}
 }
 
 //only tablet
 @media #{$break2}{
-    
 }
 
 //only desktop

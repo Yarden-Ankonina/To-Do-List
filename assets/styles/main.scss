@@ -47,14 +47,14 @@ body,.main-flex{
 
 //mobile and tablet
 @media #{$break1}, #{$break2}{
-
+    .main-flex{
+        @include flexCenter(column);
+    }
 }
 
 //only mobile
 @media #{$break1}{
-    .main-flex{
-        @include flexCenter(column);
-    }
+    
 }
 //only tablet
 @media #{$break2}{

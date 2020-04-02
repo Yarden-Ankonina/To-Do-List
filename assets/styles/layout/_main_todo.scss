@@ -4,13 +4,13 @@
     height: 100%;
 
 }
-//mobile and tablet
-@media #{$break1}, #{$break2}{
+//only mobile
+@media #{$break1}{
 
 }
 
-//only mobile
-@media #{$break1}{
+//mobile and tablet
+@media #{$break1}, #{$break2}{
     .main-flex{
         .main-content{
             display: flex;
@@ -23,7 +23,6 @@
             text-align: center;
             display: inline-block;
                 h2{
-                    font-weight: bold;
                     font-size: 1.2em;
                     padding: 0.5em 0;
                 }
@@ -71,6 +70,15 @@
 
 //only tablet
 @media #{$break2}{
+    
+    .todo-list{
+        align-self: center;
+        width: 60%;
+        h2{
+            border-radius: 0.5em;
+            margin-top: 0.4em;
+        }
+    }
     
 }
 

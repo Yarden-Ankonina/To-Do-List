@@ -662,7 +662,7 @@ input:focus {
   font-weight: bold;
 }
 
-@media (max-width: 47.8125em) {
+@media (max-width: 47.8125em), (min-width: 47.875em) and (max-width: 74.9375em) {
   .main-content-forms {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -737,7 +737,13 @@ input:focus {
   }
 }
 
-@media (max-width: 47.8125em), (min-width: 47.875em) and (max-width: 74.9375em) {
+@media (min-width: 47.875em) and (max-width: 74.9375em) {
+  .main-content-todoForm {
+    border-bottom: 7px solid #67202e;
+  }
+}
+
+@media (max-width: 47.8125em) {
   .main-flex aside {
     display: none;
   }
@@ -747,7 +753,7 @@ input:focus {
   height: 100%;
 }
 
-@media (max-width: 47.8125em) {
+@media (max-width: 47.8125em), (min-width: 47.875em) and (max-width: 74.9375em) {
   .main-flex .main-content {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -765,7 +771,6 @@ input:focus {
     display: inline-block;
   }
   .main-flex .todo-list h2 {
-    font-weight: bold;
     font-size: 1.2em;
     padding: 0.5em 0;
   }
@@ -820,6 +825,19 @@ input:focus {
   }
 }
 
+@media (min-width: 47.875em) and (max-width: 74.9375em) {
+  .todo-list {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    width: 60%;
+  }
+  .todo-list h2 {
+    border-radius: 0.5em;
+    margin-top: 0.4em;
+  }
+}
+
 @media (max-width: 47.8125em), (min-width: 47.875em) and (max-width: 74.9375em) {
   .main-content-date {
     display: -webkit-box;
@@ -870,7 +888,6 @@ input:focus {
 
 .toggleOnNight .main-content .main-content-date {
   background-color: #7f2739;
-  z-index: 9999;
   color: #f5e2e2;
 }
 
@@ -890,13 +907,12 @@ input:focus {
 .toggleOnNight .main-content .main-content-forms .main-content-todoForm input {
   -webkit-box-shadow: 0px 7px 10px -7px #1A1A1D;
           box-shadow: 0px 7px 10px -7px #1A1A1D;
-  background-color: #1A1A1D;
-  opacity: 0.9;
+  opacity: 0.95;
 }
 
 .toggleOnNight .main-content .main-content-forms .main-content-todoForm input:focus {
   opacity: 1;
-  color: #f5e2e2;
+  color: #950749;
 }
 
 .toggleOnNight .main-content .main-content-forms .main-content-todoForm .main-content-todoForm-selectors label {
@@ -919,9 +935,14 @@ input:focus {
           box-shadow: 0px 7px 10px -7px #1A1A1D;
 }
 
+.toggleOnNight .main-content aside {
+  background-color: #341018;
+  color: #f5e2e2;
+}
+
 .toggleOnNight .main-content .todo-list h2 {
   background-color: #1A1A1D;
-  color: #fff2f2;
+  color: #f5e2e2;
   -webkit-box-shadow: 0px 7px 10px -7px #ff4f75;
           box-shadow: 0px 7px 10px -7px #ff4f75;
 }
@@ -946,7 +967,7 @@ body, .main-flex {
   height: 100vh;
 }
 
-@media (max-width: 47.8125em) {
+@media (max-width: 47.8125em), (min-width: 47.875em) and (max-width: 74.9375em) {
   .main-flex {
     display: -webkit-box;
     display: -ms-flexbox;

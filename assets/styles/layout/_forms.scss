@@ -8,12 +8,12 @@ input{
         font-weight: bold;
     }
 }
-//mobile and tablet
-@media #{$break1}, #{$break2}{
-
-}
 //only mobile
 @media #{$break1}{
+
+//mobile and tablet
+}
+@media #{$break1}, #{$break2}{
  .main-content-forms{
      display: flex;
      flex-direction: column;
@@ -62,7 +62,9 @@ input{
 
 //only tablet
 @media #{$break2}{
-    
+    .main-content-todoForm{
+        border-bottom: 7px solid darken($red1, 2);
+    }
 }
 
 //only desktop
