@@ -451,8 +451,8 @@ body {
 .main-flex .main-header .fa-suse:hover {
   -webkit-animation-name: chameleon;
           animation-name: chameleon;
-  -webkit-animation-duration: 3s;
-          animation-duration: 3s;
+  -webkit-animation-duration: 4s;
+          animation-duration: 4s;
   -webkit-animation-delay: 0.5s;
           animation-delay: 0.5s;
   -webkit-animation-iteration-count: infinite;
@@ -469,11 +469,14 @@ body {
   50% {
     color: #4e75e2;
   }
-  75% {
+  70% {
     color: #3db43d;
   }
-  100% {
+  85% {
     color: white;
+  }
+  100% {
+    color: #dd3f3f;
   }
 }
 
@@ -487,11 +490,35 @@ body {
   50% {
     color: #4e75e2;
   }
-  75% {
+  70% {
     color: #3db43d;
   }
-  100% {
+  85% {
     color: white;
+  }
+  100% {
+    color: #dd3f3f;
+  }
+}
+
+.deleted {
+  -webkit-animation: delete;
+          animation: delete;
+  -webkit-animation-duration: 0.6s;
+          animation-duration: 0.6s;
+}
+
+@-webkit-keyframes delete {
+  100% {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+  }
+}
+
+@keyframes delete {
+  100% {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
   }
 }
 
@@ -541,48 +568,6 @@ body {
         -ms-flex-pack: justify;
             justify-content: space-between;
     padding: 0.5em;
-  }
-  .main-header .main-header-mobile .main-header-mobile-container .fa-suse:hover {
-    -webkit-animation-name: chameleon;
-            animation-name: chameleon;
-    -webkit-animation-duration: 3s;
-            animation-duration: 3s;
-    -webkit-animation-iteration-count: infinite;
-            animation-iteration-count: infinite;
-  }
-  @-webkit-keyframes chameleon {
-    0% {
-      color: #dd3f3f;
-    }
-    25% {
-      color: #ffbb00;
-    }
-    50% {
-      color: #4e75e2;
-    }
-    75% {
-      color: #3db43d;
-    }
-    100% {
-      color: white;
-    }
-  }
-  @keyframes chameleon {
-    0% {
-      color: #dd3f3f;
-    }
-    25% {
-      color: #ffbb00;
-    }
-    50% {
-      color: #4e75e2;
-    }
-    75% {
-      color: #3db43d;
-    }
-    100% {
-      color: white;
-    }
   }
   .main-header .main-header-mobile .main-header-mobile-container h1 {
     -webkit-box-flex: 1;
@@ -861,31 +846,6 @@ input:focus {
 
 .toggleOnNight .main-header .fa-suse {
   color: #e4265f;
-}
-
-.toggleOnNight .main-header .fa-suse:hover {
-  -webkit-animation-name: chameleon;
-          animation-name: chameleon;
-  -webkit-animation-duration: 4s;
-          animation-duration: 4s;
-}
-
-@keyframes chameleon {
-  0% {
-    color: #dd3f3f;
-  }
-  25% {
-    color: #ffbb00;
-  }
-  50% {
-    color: #4e75e2;
-  }
-  75% {
-    color: #3db43d;
-  }
-  100% {
-    color: white;
-  }
 }
 
 .toggleOnNight .main-content {

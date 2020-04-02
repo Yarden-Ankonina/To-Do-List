@@ -10,19 +10,6 @@
         }
         .fa-suse{
             color: $red4;
-            &:hover{
-                animation-name: chameleon;
-                animation-duration: 4s;
-               @keyframes chameleon{
-                0% { color:rgb(221, 63, 63);}
-                25% { color:rgb(255, 187, 0);}
-                50% { color:rgb(78, 117, 226);}
-                75% { color:rgb(61, 180, 61);}
-                100% { color:white;}
-
-               }
-
-            }
         }
     }
     // .main-side{

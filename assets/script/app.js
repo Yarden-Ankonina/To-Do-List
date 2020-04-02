@@ -33,8 +33,11 @@ class UI {
   static removeTaskFromList(event) {
     const title = event.target.nextElementSibling.textContent;
     const element = event.target.parentNode;
-    Store.removeTask(title);
-    element.remove();
+    element.classList.add("deleted");
+    setTimeout(function(){
+      Store.removeTask(title);
+      element.remove();
+    },600);
   }
 
   // static showAlert(message, className) {
