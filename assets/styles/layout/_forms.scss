@@ -1,5 +1,6 @@
 //comon style
 input{
+    text-align: center;
     outline: none;
     &:focus{
         font-size: 1em;
@@ -11,7 +12,6 @@ input{
 @media #{$break1}, #{$break2}{
 
 }
-
 //only mobile
 @media #{$break1}{
  .main-content-forms{
@@ -21,11 +21,10 @@ input{
          @include flexCenter(row);
          display: none;
          width: 100%;
-
          input{
+             text-align: center;
              width: 100%;
              padding: 0.5em 2em;
-             text-align: center;
              &:focus{
                  font-size: 1.2em;
              }
