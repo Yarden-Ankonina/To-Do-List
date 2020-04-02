@@ -3,11 +3,9 @@
 .main-flex{
     .main-header{
         .fa-bars{
-            transition-property: transform;
-            transition-duration: 2s;
-            &:hover{
-                transform: rotateZ(360deg);
-            }
+          &:hover{
+              font-size: 1.1em;
+          }
         }
         .fa-suse{
             &:hover{

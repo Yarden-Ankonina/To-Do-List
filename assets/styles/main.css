@@ -434,18 +434,8 @@ body {
   color: #222;
 }
 
-.main-flex .main-header .fa-bars {
-  -webkit-transition-property: -webkit-transform;
-  transition-property: -webkit-transform;
-  transition-property: transform;
-  transition-property: transform, -webkit-transform;
-  -webkit-transition-duration: 2s;
-          transition-duration: 2s;
-}
-
 .main-flex .main-header .fa-bars:hover {
-  -webkit-transform: rotateZ(360deg);
-          transform: rotateZ(360deg);
+  font-size: 1.1em;
 }
 
 .main-flex .main-header .fa-suse:hover {
