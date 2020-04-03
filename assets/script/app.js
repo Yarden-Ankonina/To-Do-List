@@ -1,28 +1,28 @@
 class Task {
-  constructor(title, priority,urgency) {
-    this.title = title;
-    this.priority = priority;
-    this.urgency = urgency;
-    this.createdTime = Date.parse(new Date());
+  constructor(title, priority, urgency) {
+      this.title = title;
+      this.priority = priority;
+      this.urgency = urgency;
+      this.createdTime = Date.parse(new Date());
   }
 }
 
 class UI {
 
-  static displayTasks() {
-    const tasks = Store.getTasks();
-
-    tasks.forEach((task) => UI.addTaskToList(task));
+  static addTasksHandler() {
+      const tasks = Store.getTasksArray();
+      tasks.forEach((task) => UI.addTask(task));
   }
 
-  static addTaskToList(task) {
-    const list = document.querySelector('.todo-list'); 
+  static addTask(task) {
+      const list = document.querySelector('.todo-list');
 
-    const li = document.createElement('li');
+      const li = document.createElement('li');
+      li.classList.add(`priority${task.priority}`, `urgency${task.urgency}`)
 
-    li.innerHTML = `<i class="fas fa-trash-alt"></i>
-    <a href="#">${task.title}</a>
-    <i class="far fa-edit"></i>`;
+      li.innerHTML = `<i class="fas fa-trash-alt"></i>
+  <a href="#">${task.title}</a>
+  <i class="far fa-edit"></i>`;
 
     li.firstElementChild.addEventListener('click', (event) => { //change to specific trash class - yarden note
       UI.removeTaskFromList(event); })
@@ -45,93 +45,103 @@ class UI {
     },599);
   }
 
-  // static showAlert(message, className) {
-  //   // DISCUSSE LOGIC WITH YARDEN
-  //   // Vanish in 1.5 seconds
-  //   setTimeout(() => document.querySelector('.alert').remove(), 1500);
-  // }
+  static removeTask(event) {
+      const title = event.target.nextElementSibling.textContent;
+      const element = event.target.parentNode;
 
-  static clearFields() {
-    document.querySelector('#title-input').value = '';
-    document.querySelector('#priority-input').value = '1';
-    document.querySelector('#urgency-input').value = '1';
+      element.classList.add("deleted");
+      setTimeout(function() {
+          Store.removeTaskFromArray(title);
+          element.remove();
+      }, 599);
   }
 
-  static updateTask() {
-    const tasks = Store.getTasks();
-    tasks.sort(UI.compare);
-    console.log(tasks[0].priority)
-    console.log(tasks[1].priority)
-
-    Store.updateTasks(tasks);
-
-    const elements = Array.from(document.getElementsByClassName('todo-list')[0].children);
-    for ( let i= 1; i< elements.length; i++) {
-      elements[i].remove();
-    }
-    UI.displayTasks();
+  static clearInputs() {
+      document.querySelector('#title-input').value = '';
+      document.querySelector('#priority-input').value = '1';
+      document.querySelector('#urgency-input').value = '1';
   }
 
+  static sortHandler() {
+      const tasks = Store.getTasksArray();
 
-  static compare(a,b) {
-    if (a.priority === b.priority) {
-      return 0;
-    } else {
-    return a.priority > b.priority ? 1: -1;
+      tasks.sort(UI.compareByPriority);
+
+      Store.updateTasksArray(tasks);
+
+      const elements = Array.from(document.getElementsByClassName('todo-list')[0].children);
+
+      for (let i = 1; i < elements.length; i++) {
+          elements[i].remove();
+      }
+
+      UI.addTasksHandler();
   }
-}
+
+  static updateHandler(event) {
+      console.log(event);
+      // צריך לממש
+  }
+
+  static compareByPriority(a, b) {
+      if (a.priority === b.priority) {
+          return 0;
+      } else {
+          return a.priority > b.priority ? 1 : -1;
+      }
+  }
 }
 
 class Store {
-  static getTasks() {
-    let tasks;
-    if(localStorage.getItem('tasks') === null) {
-      tasks = [];
-    } else {
-      tasks = JSON.parse(localStorage.getItem('tasks'));
-    }
-    return tasks;
-  }
-
-  static addTask(task) {
-    const tasks = Store.getTasks();
-    tasks.push(task);
-    localStorage.setItem('tasks', JSON.stringify(tasks));
-  }
-
-  static removeTask(title) {
-    const tasks = Store.getTasks();
-
-    tasks.forEach((task, index) => {
-      if(task.title === title) {
-        tasks.splice(index, 1);
+  static getTasksArray() {
+      let tasks;
+      if (localStorage.getItem('tasks') === null) {
+          tasks = [];
+      } else {
+          tasks = JSON.parse(localStorage.getItem('tasks'));
       }
-    });
-
-    localStorage.setItem('tasks', JSON.stringify(tasks));
+      return tasks;
   }
 
-  static updateTasks(tasks){
-    localStorage.setItem('tasks', JSON.stringify(tasks));
+  static addTaskToArray(task) {
+      const tasks = Store.getTasksArray();
+      tasks.push(task);
+      localStorage.setItem('tasks', JSON.stringify(tasks));
+  }
+
+  static removeTaskFromArray(title) {
+      const tasks = Store.getTasksArray();
+
+      tasks.forEach((task, index) => {
+          if (task.title === title) {
+              tasks.splice(index, 1);
+          }
+      });
+
+      localStorage.setItem('tasks', JSON.stringify(tasks));
+  }
+
+  static updateTasksArray(tasks) {
+      localStorage.setItem('tasks', JSON.stringify(tasks));
   }
 }
 
 
-document.addEventListener('DOMContentLoaded', UI.displayTasks);
+document.addEventListener('DOMContentLoaded', UI.addTasksHandler);
 
-document.querySelector('.main-content-todoForm').addEventListener('submit', (e) => {
-  e.preventDefault();
+document.querySelector('.main-content-todoForm').addEventListener('submit', (event) => {
+  event.preventDefault();
 
   const title = document.querySelector('#title-input').value;
   const priority = document.querySelector('#priority-input').value;
   const urgency = document.querySelector('#urgency-input').value;
-    
-  const task = new Task(title,priority,urgency);
-  UI.addTaskToList(task);
-  Store.addTask(task);
-  UI.clearFields();
+
+  const task = new Task(title, priority, urgency);
+  UI.addTask(task);
+  Store.addTaskToArray(task);
+  UI.clearInputs();
 });
 
-document.querySelector('#a').addEventListener('click',()=>
-{
-  UI.updateTask();})
+document.querySelector('#a').addEventListener('click', () => {
+  UI.sortHandler();
+})
