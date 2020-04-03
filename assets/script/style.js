@@ -11,6 +11,7 @@ const SEARCH = document.querySelector(".fa-search");
 const ADD_TODO = document.querySelector(".fa-plus");
 const GITHUB_PROJECT = document.querySelector(".fa-github");
 const landingPageButton = document.querySelector(".landing-page-button");
+const EDIT = document.querySelectorAll(".fa-edit");
 
 //reset
 body.classList.add("toggleOnNight");
@@ -48,7 +49,7 @@ BARS.addEventListener('click',function(){
    }
 });
 
-
+//add a search bar
 SEARCH.addEventListener('click',function(){
    if(seachBar.style.display === "none"){
       seachBar.style.display = "flex";
@@ -57,6 +58,7 @@ SEARCH.addEventListener('click',function(){
       seachBar.style.display = "none";
 });
 
+//add a todoForm
 ADD_TODO.addEventListener('click',function(){
    if(mainContentTodoForm.style.display === "none"){
       mainContentTodoForm.style.display = "flex";
@@ -71,3 +73,14 @@ landingPageButton.addEventListener('click',function(){
       mainFlex.style.display = "flex";
    
 });
+
+
+//add edit popUp
+function addEditWindow(event){
+   console.log(event.toElement);
+   console.log(event.toElement.parentElement);
+   console.log(event.screenX);
+   console.log(event.screenY);
+   let pop = document.createElement('div');
+   pop.classList.add("edited");
+}

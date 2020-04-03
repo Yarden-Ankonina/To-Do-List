@@ -24,9 +24,14 @@ class UI {
     <a href="#">${task.title}</a>
     <i class="far fa-edit"></i>`;
 
-    li.firstElementChild.addEventListener('click', (event) => {
+    li.firstElementChild.addEventListener('click', (event) => { //change to specific trash class - yarden note
       UI.removeTaskFromList(event); })
     // edit feature must be added
+    //yarden
+      li.lastElementChild.addEventListener('click',(event)=>{
+        addEditWindow(event);
+      });
+    //yarden
     list.appendChild(li);
   }
   
