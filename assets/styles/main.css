@@ -561,7 +561,7 @@ select option {
   top: 0;
 }
 
-@media (max-width: 47.8125em), (min-width: 47.875em) and (max-width: 74.9375em) {
+@media (max-width: 47.8125em), (min-width: 47.875em) and (max-width: 74.9375em), (min-width: 75em) {
   .main-header .main-header-toggle p {
     display: none;
   }

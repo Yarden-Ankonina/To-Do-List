@@ -12,7 +12,7 @@
 }
 
 //mobile and tablet
-@media #{$break1}, #{$break2}{
+@media #{$break1}, #{$break2}, #{$break3}{
     .main-header{
         .main-header-toggle{
             p{
