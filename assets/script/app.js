@@ -22,7 +22,8 @@ class UI {
     const li = document.createElement("li");
     li.classList.add(`priority-${task.priority}`);
     li.id = `${task.createdTime}`;
-    li.innerHTML = `<i class="fas fa-trash-alt"></i>
+    li.innerHTML = `
+    <i class="fas fa-trash-alt"></i>
      <a href="#">${task.title}</a>
      <i class="far fa-edit"></i>`;
 
@@ -59,7 +60,7 @@ class UI {
 
     tasksArray.sort(UI.compareByPriority);
 
-    Store.updateTasksArray(tasks);
+    Store.updateTasksArray(tasksArray);
 
     const elements = Array.from(
       document.getElementsByClassName("todo-list")[0].children
@@ -162,3 +163,4 @@ document
 document.querySelector("#a").addEventListener("click", () => {
   UI.sortHandler();
 });
+
