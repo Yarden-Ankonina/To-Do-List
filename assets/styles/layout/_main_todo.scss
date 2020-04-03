@@ -21,7 +21,8 @@
         }
         .todo-list{
             text-align: center;
-            display: inline-block;
+            display: flex;
+            flex-direction: column;
                 h2{
                     font-size: 1.2em;
                     padding: 0.5em 0;
@@ -74,11 +75,12 @@
 @media #{$break2}, #{$break3}{
     
     .todo-list{
-        align-self: center;
-        width: 60%;
         h2{
-            border-radius: 0.5em;
             margin-top: 0.4em;
+        }
+        li{
+            width: 50%;
+           align-self: center;
         }
     }
     
@@ -92,5 +94,9 @@
 }
 //only desktop
 @media #{$break3}{
-    
+    .todo-list{
+       margin-top: 2em;
+       li{
+       }
+    }
 }

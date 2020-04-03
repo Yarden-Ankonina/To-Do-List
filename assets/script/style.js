@@ -68,11 +68,6 @@ ADD_TODO.addEventListener('click',function(){
 
 });
 
-landingPageButton.addEventListener('click',function(){
-      landingPage.style.display = "none";
-      mainFlex.style.display = "flex";
-   
-});
 
 
 //add edit popUp
@@ -89,3 +84,10 @@ function myFunction() {
    var popup = document.getElementById("myPopup");
    popup.classList.toggle("show");
  }
+
+
+ // landingPageButton.addEventListener('click',function(){
+//       landingPage.style.display = "none";
+//       mainFlex.style.display = "flex";
+   
+// });
