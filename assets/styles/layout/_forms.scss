@@ -61,7 +61,14 @@ input{
     }
 }
 
+// tablet and desktop
+@media #{$break2},#{$break3}{
+    .main-content-todoForm{
+        border-bottom: 7px solid darken($red1, 2);
+    }
+}
 //only tablet
+
 @media #{$break2}{
     .main-content-todoForm{
         border-bottom: 7px solid darken($red1, 2);

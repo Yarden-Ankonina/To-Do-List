@@ -75,8 +75,8 @@
     }
 }
 
-//only tablet
-@media #{$break2}{
+//tablet and desktop
+@media #{$break2},#{$break3}{
     .main-header{
         font-size: 1.1em;
         .main-header-mobile-container{
@@ -93,6 +93,10 @@
         }
         
     }
+    
+}
+//only tablet
+@media #{$break2}{
     
 }
 
