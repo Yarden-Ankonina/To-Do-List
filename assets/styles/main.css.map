@@ -20,6 +20,7 @@
         "layout/_main_todo.scss",
         "layout/_date.scss",
         "layout/_landingPage.scss",
+        "layout/_backdrop.scss",
         "themes/_day.scss",
         "themes/_night.scss"
     ],

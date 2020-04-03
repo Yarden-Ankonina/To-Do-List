@@ -1,147 +1,164 @@
 class Task {
   constructor(title, priority, urgency) {
-      this.title = title;
-      this.priority = priority;
-      this.urgency = urgency;
-      this.createdTime = Date.parse(new Date());
+    this.title = title;
+    this.priority = priority;
+    this.urgency = urgency;
+    this.createdTime = Date.parse(new Date());
   }
 }
 
 class UI {
-
   static addTasksHandler() {
-      const tasks = Store.getTasksArray();
-      tasks.forEach((task) => UI.addTask(task));
+    const tasksArray = Store.getTasksArray();
+    tasksArray.forEach(task => UI.addTask(task));
   }
 
   static addTask(task) {
-      const list = document.querySelector('.todo-list');
+    const ul = document.querySelector(".todo-list");
 
-      const li = document.createElement('li');
-      li.classList.add(`priority${task.priority}`, `urgency${task.urgency}`)
+    const li = document.createElement("li");
+    li.classList.add(`priority${task.priority}`, `urgency${task.urgency}`);
+    li.id = `${task.createdTime}`;
+    li.innerHTML = `<i class="fas fa-trash-alt"></i>
+     <a href="#">${task.title}</a>
+     <i class="far fa-edit"></i>`;
 
-      li.innerHTML = `<i class="fas fa-trash-alt"></i>
-  <a href="#">${task.title}</a>
-  <i class="far fa-edit"></i>`;
+    li.firstElementChild.addEventListener("click", event => {
+      event.preventDefault();
+      UI.removeTask(event);
+    });
+    li.lastElementChild.addEventListener("click", event => {
+      event.preventDefault();
+      UI.updateTaskHandler(event);
+    });
 
-    li.firstElementChild.addEventListener('click', (event) => { //change to specific trash class - yarden note
-      UI.removeTaskFromList(event); })
-    // edit feature must be added
-    //yarden
-      li.lastElementChild.addEventListener('click',(event)=>{
-        addEditWindow(event);
-      });
-    //yarden
-    list.appendChild(li);
-  }
-  
-  static removeTaskFromList(event) {
-    const title = event.target.nextElementSibling.textContent;
-    const element = event.target.parentNode;
-    element.classList.add("deleted");
-    setTimeout(function(){
-      Store.removeTask(title);
-      element.remove();
-    },599);
+    ul.appendChild(li);
   }
 
   static removeTask(event) {
-      const title = event.target.nextElementSibling.textContent;
-      const element = event.target.parentNode;
+    const title = event.target.nextElementSibling.textContent;
+    const element = event.target.parentNode;
 
-      element.classList.add("deleted");
-      setTimeout(function() {
-          Store.removeTaskFromArray(title);
-          element.remove();
-      }, 599);
+    element.classList.add("deleted");
+    setTimeout(function() {
+      Store.removeTaskFromArray(title);
+      element.remove();
+    }, 599);
   }
 
   static clearInputs() {
-      document.querySelector('#title-input').value = '';
-      document.querySelector('#priority-input').value = '1';
-      document.querySelector('#urgency-input').value = '1';
+    document.querySelector("#title-input").value = "";
+    document.querySelector("#priority-input").value = "1";
+    document.querySelector("#urgency-input").value = "1";
   }
 
   static sortHandler() {
-      const tasks = Store.getTasksArray();
+    const tasks = Store.getTasksArray();
 
-      tasks.sort(UI.compareByPriority);
+    tasks.sort(UI.compareByPriority);
 
-      Store.updateTasksArray(tasks);
+    Store.updateTasksArray(tasks);
 
-      const elements = Array.from(document.getElementsByClassName('todo-list')[0].children);
+    const elements = Array.from(
+      document.getElementsByClassName("todo-list")[0].children
+    );
 
-      for (let i = 1; i < elements.length; i++) {
-          elements[i].remove();
-      }
+    for (let i = 1; i < elements.length; i++) {
+      elements[i].remove();
+    }
 
-      UI.addTasksHandler();
+    UI.addTasksHandler();
+  }
+  static updateTaskHandler(event) {
+    const title = document.querySelector("#title-input").value;
+    const priority = document.querySelector("#priority-input").value;
+    const urgency = document.querySelector("#urgency-input").value;
+    UI.updateTask(event.target, title, priority, urgency);
+    Store.updateTask(event.target.innerHTML);
   }
 
-  static updateHandler(event) {
-      console.log(event);
-      // צריך לממש
+  static updateTask(element, title, priority, urgency,id) {
+    element.outerHTML = `<li class="priority${priority} urgency${urgency} id="${id}">
+    <i class="fas fa-trash-alt"></i>
+    <a href="#">${title}</a>
+    <i class="far fa-edit"></i>
+    </li>`;
   }
 
   static compareByPriority(a, b) {
-      if (a.priority === b.priority) {
-          return 0;
-      } else {
-          return a.priority > b.priority ? 1 : -1;
-      }
+    if (a.priority === b.priority) {
+      return 0;
+    } else {
+      return a.priority > b.priority ? 1 : -1;
+    }
   }
 }
 
 class Store {
   static getTasksArray() {
-      let tasks;
-      if (localStorage.getItem('tasks') === null) {
-          tasks = [];
-      } else {
-          tasks = JSON.parse(localStorage.getItem('tasks'));
-      }
-      return tasks;
+    let tasksArray;
+    if (localStorage.getItem("tasks") === null) {
+        tasksArray = [];
+    } else {
+        tasksArray = JSON.parse(localStorage.getItem("tasks"));
+    }
+    return tasksArray;
   }
 
   static addTaskToArray(task) {
-      const tasks = Store.getTasksArray();
-      tasks.push(task);
-      localStorage.setItem('tasks', JSON.stringify(tasks));
+    const tasksArray = Store.getTasksArray();
+    tasksArray.push(task);
+    localStorage.setItem("tasks", JSON.stringify(tasksArray));
   }
 
   static removeTaskFromArray(title) {
-      const tasks = Store.getTasksArray();
+    const tasksArray = Store.getTasksArray();
 
-      tasks.forEach((task, index) => {
-          if (task.title === title) {
-              tasks.splice(index, 1);
-          }
-      });
+    tasksArray.forEach((task, index) => {
+      if (task.title === title) {
+        tasksArray.splice(index, 1);
+      }
+    });
 
-      localStorage.setItem('tasks', JSON.stringify(tasks));
+    localStorage.setItem("tasks", JSON.stringify(tasksArray));
   }
 
-  static updateTasksArray(tasks) {
-      localStorage.setItem('tasks', JSON.stringify(tasks));
+  static updateTasksArray(tasksArray) {
+    localStorage.setItem("tasks", JSON.stringify(tasksArray));
+  }
+
+  static updateTask(id, title, priority, urgency) {
+    const tasksArray = Store.getTasksArray();
+
+    const index = tasksArray.findIndex(
+      task => task.createdTime === id
+    );
+
+    tasksArray[index].title = title;
+    tasksArray[index].priority = priority;
+    tasksArray[index].urgency = urgency;
+
+    Store.updateTasksArray(tasksArray)
   }
 }
 
+document.addEventListener("DOMContentLoaded", UI.addTasksHandler);
 
-document.addEventListener('DOMContentLoaded', UI.addTasksHandler);
+document
+  .querySelector(".main-content-todoForm")
+  .addEventListener("submit", event => {
+    event.preventDefault();
 
-document.querySelector('.main-content-todoForm').addEventListener('submit', (event) => {
-  event.preventDefault();
+    const title = document.querySelector("#title-input").value;
+    const priority = document.querySelector("#priority-input").value;
+    const urgency = document.querySelector("#urgency-input").value;
 
-  const title = document.querySelector('#title-input').value;
-  const priority = document.querySelector('#priority-input').value;
-  const urgency = document.querySelector('#urgency-input').value;
+    const task = new Task(title, priority, urgency);
+    UI.addTask(task);
+    Store.addTaskToArray(task);
+    UI.clearInputs();
+  });
 
-  const task = new Task(title, priority, urgency);
-  UI.addTask(task);
-  Store.addTaskToArray(task);
-  UI.clearInputs();
-});
-
-document.querySelector('#a').addEventListener('click', () => {
+document.querySelector("#a").addEventListener("click", () => {
   UI.sortHandler();
-})
+});
