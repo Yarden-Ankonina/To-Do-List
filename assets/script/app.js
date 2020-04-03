@@ -1,9 +1,12 @@
+/*
+CSS => design for priorities classes 1,2,3
+*/ 
+
 class Task {
-  constructor(title, priority, urgency) {
+  constructor(title, priority) {
     this.title = title;
     this.priority = priority;
-    this.urgency = urgency;
-    this.createdTime = Date.parse(new Date());
+    this.id = Date.parse(new Date());
   }
 }
 
@@ -17,7 +20,7 @@ class UI {
     const ul = document.querySelector(".todo-list");
 
     const li = document.createElement("li");
-    li.classList.add(`priority${task.priority}`, `urgency${task.urgency}`);
+    li.classList.add(`priority-${task.priority}`);
     li.id = `${task.createdTime}`;
     li.innerHTML = `<i class="fas fa-trash-alt"></i>
      <a href="#">${task.title}</a>
@@ -49,13 +52,12 @@ class UI {
   static clearInputs() {
     document.querySelector("#title-input").value = "";
     document.querySelector("#priority-input").value = "1";
-    document.querySelector("#urgency-input").value = "1";
   }
 
   static sortHandler() {
-    const tasks = Store.getTasksArray();
+    const tasksArray = Store.getTasksArray();
 
-    tasks.sort(UI.compareByPriority);
+    tasksArray.sort(UI.compareByPriority);
 
     Store.updateTasksArray(tasks);
 
@@ -72,7 +74,6 @@ class UI {
   static updateTaskHandler(event) {
     const title = document.querySelector("#title-input").value;
     const priority = document.querySelector("#priority-input").value;
-    const urgency = document.querySelector("#urgency-input").value;
     UI.updateTask(event.target, title, priority, urgency);
     Store.updateTask(event.target.innerHTML);
   }
@@ -151,9 +152,8 @@ document
 
     const title = document.querySelector("#title-input").value;
     const priority = document.querySelector("#priority-input").value;
-    const urgency = document.querySelector("#urgency-input").value;
 
-    const task = new Task(title, priority, urgency);
+    const task = new Task(title, priority);
     UI.addTask(task);
     Store.addTaskToArray(task);
     UI.clearInputs();
