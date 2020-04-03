@@ -534,6 +534,13 @@ select option {
   font-weight: bold;
 }
 
+.edited {
+  text-align: center;
+  background-color: white;
+  height: 100px;
+  width: 200px;
+}
+
 .main-header {
   width: 100%;
   display: -webkit-box;
