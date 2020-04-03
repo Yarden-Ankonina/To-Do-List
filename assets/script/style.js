@@ -84,3 +84,8 @@ function addEditWindow(event){
    let pop = document.createElement('div');
    pop.classList.add("edited");
 }
+
+function myFunction() {
+   var popup = document.getElementById("myPopup");
+   popup.classList.toggle("show");
+ }
