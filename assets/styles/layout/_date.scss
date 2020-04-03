@@ -7,7 +7,7 @@
 }
 //mobile and tablet
 
-@media #{$break1}, #{$break2}{
+@media #{$break1}, #{$break2}, #{$break3}{
     .main-content-date{
         display: flex;
         align-items: center;

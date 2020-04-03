@@ -9,8 +9,8 @@
 
 }
 
-//mobile and tablet
-@media #{$break1}, #{$break2}{
+//mobile and tablet and desktop
+@media #{$break1}, #{$break2}, #{$break3}{
     .main-flex{
         .main-content{
             display: flex;
@@ -68,8 +68,10 @@
     }
 }
 
-//only tablet
-@media #{$break2}{
+
+//only tablet and desktop
+
+@media #{$break2}, #{$break3}{
     
     .todo-list{
         align-self: center;
@@ -81,7 +83,13 @@
     }
     
 }
+//only tablet
 
+@media #{$break2}{
+    
+  
+    
+}
 //only desktop
 @media #{$break3}{
     

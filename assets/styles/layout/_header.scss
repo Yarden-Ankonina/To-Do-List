@@ -11,7 +11,7 @@
 @media #{$break1}{
 }
 
-//mobile and tablet
+//mobile and tablet and desktop
 @media #{$break1}, #{$break2}, #{$break3}{
     .main-header{
         .main-header-toggle{

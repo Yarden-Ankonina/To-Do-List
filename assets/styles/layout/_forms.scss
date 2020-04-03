@@ -11,9 +11,9 @@ input{
 //only mobile
 @media #{$break1}{
 
-//mobile and tablet
+//mobile and tablet and desktop
 }
-@media #{$break1}, #{$break2}{
+@media #{$break1}, #{$break2}, #{$break3}{
  .main-content-forms{
      display: flex;
      flex-direction: column;
@@ -43,6 +43,7 @@ input{
          }
          input{
              padding: 0.5em;
+             line-height: 2px;
              border-radius: 0.4em;
              
          }

@@ -730,7 +730,7 @@ input:focus {
   font-weight: bold;
 }
 
-@media (max-width: 47.8125em), (min-width: 47.875em) and (max-width: 74.9375em) {
+@media (max-width: 47.8125em), (min-width: 47.875em) and (max-width: 74.9375em), (min-width: 75em) {
   .main-content-forms {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -791,6 +791,7 @@ input:focus {
   }
   .main-content-forms .main-content-todoForm input {
     padding: 0.5em;
+    line-height: 2px;
     border-radius: 0.4em;
   }
   .main-content-forms .main-content-todoForm button {
@@ -821,7 +822,7 @@ input:focus {
   height: 100%;
 }
 
-@media (max-width: 47.8125em), (min-width: 47.875em) and (max-width: 74.9375em) {
+@media (max-width: 47.8125em), (min-width: 47.875em) and (max-width: 74.9375em), (min-width: 75em) {
   .main-flex .main-content {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -893,7 +894,7 @@ input:focus {
   }
 }
 
-@media (min-width: 47.875em) and (max-width: 74.9375em) {
+@media (min-width: 47.875em) and (max-width: 74.9375em), (min-width: 75em) {
   .todo-list {
     -ms-flex-item-align: center;
         -ms-grid-row-align: center;
@@ -906,7 +907,7 @@ input:focus {
   }
 }
 
-@media (max-width: 47.8125em), (min-width: 47.875em) and (max-width: 74.9375em) {
+@media (max-width: 47.8125em), (min-width: 47.875em) and (max-width: 74.9375em), (min-width: 75em) {
   .main-content-date {
     display: -webkit-box;
     display: -ms-flexbox;
