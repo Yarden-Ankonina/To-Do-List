@@ -12,14 +12,31 @@
   flex-direction: column;
   align-items: center;
   border-radius: 0.6em;
+  padding: 0.5em;
 
     h2{
-      font-size: 1.3em;
+      text-align: center;
+      background-color: $black2;
+      color: $white2;
+      padding: 0.5em 0;
+      margin-top: 0.2em;
+      width: 100%;
+      font-size: 1.4em;
+      font-weight: bold;
     }
   .exit-editForm{
     align-self: flex-end;
-    padding-right: 0.5em;
-    font-size: 1.3em;
+    background-color: $green4o;
+    margin: 0.2em 0;
+    width: 7%;
+    padding: 0;
+    padding-bottom: 0.2em;
+    margin-right: 0.5em;
+    font-size: 1.5em;
+    &:hover{
+      color: $white1;
+      background-color: $green3;
+    }
   }
   .edit-form{
     display: flex;
@@ -32,11 +49,15 @@
       text-align: center;
       line-height: 1.8em;
       font-size: 1.1em;
-      background-color: $green4;
+      background-color: $green4o;
       box-shadow: 0px 6px 6px -6px $black2;
       margin-bottom: 0.5em;
       &::placeholder{
         color: $white3;
+      }
+      &:focus{
+        background-color: $green3;
+        color: $white1;
       }
     }
     label{
@@ -54,13 +75,13 @@
     }
   }
   .edit-submit-update{
-    background-color: $green4;
-    margin-top: 1em;
-    color: $white1;
-    width: 30%;
-    align-self: center;
-    padding: 0.3em;
-    border-radius: 0.6em;
+    background-color: $green3;
+    width: 12%;
+    color: $black2;
+    &:hover{
+      color: $black1;
+      background-color: $green3;
+    }
   }
   }
 }
