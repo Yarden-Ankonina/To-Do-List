@@ -68,6 +68,13 @@
                 font-weight: normal;
                 font-size: 0.9em;
                 display: none;
+                i{
+                    &:hover{
+                        cursor: pointer;
+                    }    
+
+                }
+                    
                 
             }
         }

@@ -80,10 +80,6 @@ function addEditWindow(event){
    pop.classList.add("edited");
 }
 
-function myFunction() {
-   var popup = document.getElementById("myPopup");
-   popup.classList.toggle("show");
- }
 
 
  // landingPageButton.addEventListener('click',function(){
