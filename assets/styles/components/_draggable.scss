@@ -4,5 +4,7 @@
   }
 
   .draggable {
-    cursor: move;
+    &:hover{
+      cursor: grab;
+    }
   }
