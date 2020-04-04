@@ -78,13 +78,7 @@ ADD_TODO.addEventListener('click',function(){
 // });
 
 
-//add edit popUp
-function addEditWindow(event){
-   console.log(event.toElement);
-   console.log(event.toElement.parentElement);
-   console.log(event.screenX);
-   console.log(event.screenY);
-}
+
 
  function search() {
    let input, filter, ul, li, a, i, txtValue;
@@ -104,6 +98,16 @@ function addEditWindow(event){
  }
 
 
+ //add edit window popup
+function addEditWindow(event){
+   console.log(event.toElement);
+   console.log(event.toElement.parentElement);
+   console.log(event.screenX);
+   console.log(event.screenY);
+   
+}
+
+//exit edit window
  EDIT_EXIT.addEventListener('click', function(){
    editWindow.style.display = "none";
  });

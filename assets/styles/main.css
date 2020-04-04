@@ -539,12 +539,15 @@ select option {
   top: 30%;
   left: 35%;
   width: 30%;
-  height: 30%;
-  background-color: #fde7e7;
+  height: 40%;
+  background-color: #f5e2e2;
   z-index: 1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -552,14 +555,17 @@ select option {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 0.5em;
   border-radius: 0.6em;
+}
+
+.edit h2 {
+  font-size: 1.3em;
 }
 
 .edit .exit-editForm {
   -ms-flex-item-align: end;
       align-self: flex-end;
-  padding: 0.5em;
+  padding-right: 0.5em;
   font-size: 1.3em;
 }
 
@@ -571,13 +577,66 @@ select option {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  text-align: center;
   margin: 0.3em;
+  width: 100%;
 }
 
-.edit .edit-submit-update {
-  background-color: #6F2232;
+.edit .edit-form input {
+  text-align: center;
+  line-height: 1.8em;
+  font-size: 1.1em;
+  background-color: #167a2f;
+  -webkit-box-shadow: 0px 6px 6px -6px #4E4E50;
+          box-shadow: 0px 6px 6px -6px #4E4E50;
+  margin-bottom: 0.5em;
+}
+
+.edit .edit-form input::-webkit-input-placeholder {
+  color: #ebe1e1;
+}
+
+.edit .edit-form input:-ms-input-placeholder {
+  color: #ebe1e1;
+}
+
+.edit .edit-form input::-ms-input-placeholder {
+  color: #ebe1e1;
+}
+
+.edit .edit-form input::placeholder {
+  color: #ebe1e1;
+}
+
+.edit .edit-form label {
+  font-weight: bold;
+}
+
+.edit .edit-form select {
+  margin-top: 0.2em;
+  background-color: #1A1A1D;
+  color: #fff2f2;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  width: 10%;
+}
+
+.edit .edit-form select:focus {
+  background-color: #1A1A1D;
+  color: #f5e2e2;
+}
+
+.edit .edit-form .edit-submit-update {
+  background-color: #167a2f;
   margin-top: 1em;
-  color: white;
+  color: #fff2f2;
+  width: 30%;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  padding: 0.3em;
+  border-radius: 0.6em;
 }
 
 .blurBackground {

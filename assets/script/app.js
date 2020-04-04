@@ -41,6 +41,7 @@ static setDay() {
     });
     li.lastElementChild.addEventListener("click", event => {
       event.preventDefault();
+      addEditWindow(event);
       UI.updateTaskHandler(event);
     });
 
