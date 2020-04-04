@@ -9,7 +9,7 @@ draggables.forEach(draggable => {
 
   draggable.addEventListener('dragend', () => {
     draggable.classList.remove('dragging')
-    Store.swap()
+    Store.setCurrentTasks();
   })
 })
 
