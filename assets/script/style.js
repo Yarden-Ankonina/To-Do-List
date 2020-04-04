@@ -100,13 +100,19 @@ ADD_TODO.addEventListener('click',function(){
 
 
  //add edit window popup
-function addEditWindow(event){
+function addEditWindow(event){   
    let editButton = event.toElement;
    editButton.addEventListener('click', () =>{
    editWindow.style.visibility = "visible";
    mainFlex.classList.add("blurBackground");
-   });
    
+   const title= event.target.previousElementSibling.textContent
+   const priority = event.target.parentElement.classList.value.slice(-1);
+   const id = event.target.parentElement.id;
+   document.querySelector('#title-update').value = title;
+   document.querySelector('#priority-edit').value = priority;
+   document.querySelector(".edit-form").setAttribute('currentId',id)
+   });
 }
 
 EDIT_SAVE.addEventListener('click', function(){

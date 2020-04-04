@@ -34,20 +34,26 @@ static setDay() {
     <i class="fas fa-trash-alt"></i>
      <a href="#">${task.title}</a>
      <i class="far fa-edit"></i>`;
-     
-
+     li.addEventListener('dragstart', () => {
+      li.classList.add('dragging')
+    })
+    li.addEventListener('dragend', () => {
+      li.classList.remove('dragging')
+      Store.swap()})
+  
     li.firstElementChild.addEventListener("click", event => {
       event.preventDefault();
       UI.removeTask(event);
     });
+
     li.lastElementChild.addEventListener("click", event => {
       event.preventDefault();
-      addEditWindow(event);
-      // UI.updateTaskHandler(event); //to fix 
+      addEditWindow(event);     
     });
 
     ul.appendChild(li);
   }
+
 
   static removeTask(event) {
     const title = event.target.nextElementSibling.textContent;
@@ -182,3 +188,11 @@ document.querySelector("#a").addEventListener("click", () => {
 });
 
 
+  document.querySelector('.edit-form').addEventListener('submit',(event)=>
+  {
+  event.preventDefault();
+  const title= document.querySelector('#title-update').value;
+  const priority= document.querySelector('#priority-edit').value;
+
+  console.log(event.target.getAttribute('currentid'));
+  })
