@@ -39,10 +39,10 @@ static setDay() {
       event.preventDefault();
       UI.removeTask(event);
     });
-    li.lastElementChild.addEventListener("click", event => {
-      event.preventDefault();
-      UI.updateTaskHandler(event);
-    });
+    // li.lastElementChild.addEventListener("click", event => {
+    //   event.preventDefault();
+    //   UI.updateTaskHandler(event);
+    // });
 
     ul.appendChild(li);
   }
