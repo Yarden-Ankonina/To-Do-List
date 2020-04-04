@@ -5,6 +5,7 @@ let seachBar = document.querySelector(".main-content-searchForm");
 let mainContentTodoForm = document.querySelector(".main-content-todoForm");
 // let landingPage = document.querySelector(".landing-page");
 let mainFlex = document.querySelector(".main-flex");
+let editWindow =document.querySelector(".edit");
 
 const BARS = document.querySelector(".fa-bars");
 const SEARCH = document.querySelector(".fa-search");
@@ -12,6 +13,8 @@ const ADD_TODO = document.querySelector(".fa-plus");
 const GITHUB_PROJECT = document.querySelector(".fa-github");
 // const landingPageButton = document.querySelector(".landing-page-button");
 const EDIT = document.querySelectorAll(".fa-edit");
+const EDIT_EXIT = document.querySelector(".exit-editForm");
+
 
 //reset
 body.classList.add("toggleOnNight");
@@ -81,8 +84,6 @@ function addEditWindow(event){
    console.log(event.toElement.parentElement);
    console.log(event.screenX);
    console.log(event.screenY);
-   let pop = document.createElement('div');
-   pop.classList.add("edited");
 }
 
  function search() {
@@ -101,3 +102,8 @@ function addEditWindow(event){
      }
    }
  }
+
+
+ EDIT_EXIT.addEventListener('click', function(){
+   editWindow.style.display = "none";
+ });
