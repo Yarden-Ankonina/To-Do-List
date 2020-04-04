@@ -34,6 +34,7 @@ static setDay() {
     <i class="fas fa-trash-alt"></i>
      <a href="#">${task.title}</a>
      <i class="far fa-edit"></i>`;
+     
 
     li.firstElementChild.addEventListener("click", event => {
       event.preventDefault();
@@ -42,7 +43,7 @@ static setDay() {
     li.lastElementChild.addEventListener("click", event => {
       event.preventDefault();
       addEditWindow(event);
-      UI.updateTaskHandler(event);
+      // UI.updateTaskHandler(event); //to fix 
     });
 
     ul.appendChild(li);
@@ -79,15 +80,6 @@ static setDay() {
 
     UI.addTasksHandler();
   }
-//fixxxxxxxxxxxxxxxxxxxxxx
-  // static updateTaskHandler(event) {
-  //   const title = document.querySelector("#title-update").value;
-  //   const priority = document.querySelector("#priority-edit").value;
- 
-  //   UI.updateTask(element, title, priority,id);
-
-  //   Store.updateTask(id,title,priority);
-  // }
 
   static updateTask(element, title, priority,id) {
     element.outerHTML = `<li class="priority-${priority}id="${id}">

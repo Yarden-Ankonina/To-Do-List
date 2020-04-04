@@ -14,6 +14,7 @@ const GITHUB_PROJECT = document.querySelector(".fa-github");
 // const landingPageButton = document.querySelector(".landing-page-button");
 const EDIT = document.querySelectorAll(".fa-edit");
 const EDIT_EXIT = document.querySelector(".exit-editForm");
+const EDIT_SAVE = document.querySelector(".edit-submit-update");
 
 
 //reset
@@ -100,14 +101,21 @@ ADD_TODO.addEventListener('click',function(){
 
  //add edit window popup
 function addEditWindow(event){
-   console.log(event.toElement);
-   console.log(event.toElement.parentElement);
-   console.log(event.screenX);
-   console.log(event.screenY);
+   let editButton = event.toElement;
+   editButton.addEventListener('click', () =>{
+   editWindow.style.visibility = "visible";
+   mainFlex.classList.add("blurBackground");
+   });
    
 }
 
+EDIT_SAVE.addEventListener('click', function(){
+   editWindow.style.visibility = "hidden";
+   mainFlex.classList.remove("blurBackground");
+ });
+ 
 //exit edit window
  EDIT_EXIT.addEventListener('click', function(){
-   editWindow.style.display = "none";
+   editWindow.style.visibility = "hidden";
+   mainFlex.classList.remove("blurBackground");
  });

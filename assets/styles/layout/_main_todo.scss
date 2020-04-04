@@ -7,7 +7,12 @@
 }
 //only mobile
 @media #{$break1}{
-
+    .todo-list{
+        li{
+            align-self: center;
+            width: 80%;
+        }
+    }
 }
 
 //mobile and tablet and desktop
@@ -45,7 +50,6 @@
                     a{
                         text-align: center;
                         flex-wrap: nowrap;
-                        width: 80%;
                         font-size: 1.1em;
                         padding: 0 0.5em;
                         overflow: hidden;
@@ -81,7 +85,7 @@
             margin-top: 0.4em;
         }
         li{
-            width: 40%;
+            width: 50%;
            align-self: center;
         }
     }
@@ -90,8 +94,6 @@
 //only tablet
 
 @media #{$break2}{
-    
-  
     
 }
 //only desktop

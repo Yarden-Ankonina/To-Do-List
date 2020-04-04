@@ -535,6 +535,7 @@ select option {
 }
 
 .edit {
+  visibility: hidden;
   position: fixed;
   top: 30%;
   left: 35%;
@@ -882,6 +883,15 @@ input:focus {
   height: 100%;
 }
 
+@media (max-width: 47.8125em) {
+  .todo-list li {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    width: 80%;
+  }
+}
+
 @media (max-width: 47.8125em), (min-width: 47.875em) and (max-width: 74.9375em), (min-width: 75em) {
   .main-flex .main-content {
     display: -webkit-box;
@@ -935,7 +945,6 @@ input:focus {
     text-align: center;
     -ms-flex-wrap: nowrap;
         flex-wrap: nowrap;
-    width: 80%;
     font-size: 1.1em;
     padding: 0 0.5em;
     overflow: hidden;
@@ -965,7 +974,7 @@ input:focus {
     margin-top: 0.4em;
   }
   .todo-list li {
-    width: 40%;
+    width: 50%;
     -ms-flex-item-align: center;
         -ms-grid-row-align: center;
         align-self: center;
