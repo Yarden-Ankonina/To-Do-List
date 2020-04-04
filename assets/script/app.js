@@ -3,14 +3,19 @@ CSS => design for priorities classes 1,2,3
 */ 
 
 class Task {
-  constructor(title, priority) {
+  constructor(title, priority, id=Date.parse(new Date())) {
     this.title = title;
     this.priority = priority;
-    this.id = Date.parse(new Date());
+    this.id = id;
   }
 }
 
 class UI {
+static setDay() {
+    const element = document.querySelector('.date');
+    const today = new Date();
+    element.innerHTML= today.toDateString();
+}
   static addTasksHandler() {
     const tasksArray = Store.getTasksArray();
     tasksArray.forEach(task => UI.addTask(task));
@@ -20,8 +25,11 @@ class UI {
     const ul = document.querySelector(".todo-list");
 
     const li = document.createElement("li");
+    li.classList.add('draggable');
     li.classList.add(`priority-${task.priority}`);
-    li.id = `${task.createdTime}`;
+    li.setAttribute('draggable','true');
+
+    li.id = `${task.id}`;
     li.innerHTML = `
     <i class="fas fa-trash-alt"></i>
      <a href="#">${task.title}</a>
@@ -62,9 +70,7 @@ class UI {
 
     Store.updateTasksArray(tasksArray);
 
-    const elements = Array.from(
-      document.getElementsByClassName("todo-list")[0].children
-    );
+    const elements = Array.from(document.getElementsByClassName("todo-list")[0].children);
 
     for (let i = 1; i < elements.length; i++) {
       elements[i].remove();
@@ -72,15 +78,18 @@ class UI {
 
     UI.addTasksHandler();
   }
+
   static updateTaskHandler(event) {
-    const title = document.querySelector("#title-input").value;
-    const priority = document.querySelector("#priority-input").value;
-    UI.updateTask(event.target, title, priority, urgency);
-    Store.updateTask(event.target.innerHTML);
+    const title = document.querySelector("#update-title").value;
+    const priority = document.querySelector("#update-priority").value;
+ 
+    UI.updateTask(element, title, priority,id);
+
+    Store.updateTask(id,title,priority);
   }
 
-  static updateTask(element, title, priority, urgency,id) {
-    element.outerHTML = `<li class="priority${priority} urgency${urgency} id="${id}">
+  static updateTask(element, title, priority,id) {
+    element.outerHTML = `<li class="priority-${priority}id="${id}">
     <i class="fas fa-trash-alt"></i>
     <a href="#">${title}</a>
     <i class="far fa-edit"></i>
@@ -124,27 +133,42 @@ class Store {
 
     localStorage.setItem("tasks", JSON.stringify(tasksArray));
   }
+  static swap(){
+    const tasks= document.querySelectorAll('li');
+    
+    let newTaskArray = [];
+    
+    tasks.forEach(task,index => {
+      const title = tasks[index].querySelector('a').innerHTML;
+      const id = tasks[index].id;
+      const priority= tasks[index].classList.value.slice(-1);  
+      newTaskArray.push(new Task(title,priority,id))})
+
+    console.log(tasks);
+  }
 
   static updateTasksArray(tasksArray) {
     localStorage.setItem("tasks", JSON.stringify(tasksArray));
   }
 
-  static updateTask(id, title, priority, urgency) {
+  static updateTask(id, title, priority) {
     const tasksArray = Store.getTasksArray();
-
     const index = tasksArray.findIndex(
       task => task.createdTime === id
     );
-
     tasksArray[index].title = title;
     tasksArray[index].priority = priority;
-    tasksArray[index].urgency = urgency;
 
     Store.updateTasksArray(tasksArray)
   }
 }
 
-document.addEventListener("DOMContentLoaded", UI.addTasksHandler);
+document.addEventListener("DOMContentLoaded",()=>
+{   
+    UI.addTasksHandler();
+    UI.setDay();
+    draggableHandler();
+} );
 
 document
   .querySelector(".main-content-todoForm")
@@ -163,4 +187,5 @@ document
 document.querySelector("#a").addEventListener("click", () => {
   UI.sortHandler();
 });
+
 

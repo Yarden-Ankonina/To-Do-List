@@ -12,6 +12,8 @@
 @import "./components/animation";
 @import "./components/select";
 @import "./components/edit-event";
+@import "./components/draggable";
+
 
 //layout
 @import "./layout/header";
@@ -21,7 +23,7 @@
 @import "./layout/main_todo";
 @import "./layout/date";
 @import "./layout/landingPage";
-@import "./layout/backdrop";
+
 
 //themes
 @import "./themes/day";

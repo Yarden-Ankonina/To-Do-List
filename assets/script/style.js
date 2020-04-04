@@ -3,14 +3,14 @@ let body = document.querySelector("body");
 let mainHeaderMenu = document.querySelector(".main-header-menu");
 let seachBar = document.querySelector(".main-content-searchForm");
 let mainContentTodoForm = document.querySelector(".main-content-todoForm");
-let landingPage = document.querySelector(".landing-page");
+// let landingPage = document.querySelector(".landing-page");
 let mainFlex = document.querySelector(".main-flex");
 
 const BARS = document.querySelector(".fa-bars");
 const SEARCH = document.querySelector(".fa-search");
 const ADD_TODO = document.querySelector(".fa-plus");
 const GITHUB_PROJECT = document.querySelector(".fa-github");
-const landingPageButton = document.querySelector(".landing-page-button");
+// const landingPageButton = document.querySelector(".landing-page-button");
 const EDIT = document.querySelectorAll(".fa-edit");
 
 //reset
@@ -68,11 +68,11 @@ ADD_TODO.addEventListener('click',function(){
 
 });
 
-landingPageButton.addEventListener('click',function(){
-      landingPage.style.display = "none";
-      mainFlex.style.display = "flex";
+// landingPageButton.addEventListener('click',function(){
+//       landingPage.style.display = "none";
+//       mainFlex.style.display = "flex";
    
-});
+// });
 
 
 //add edit popUp
@@ -85,7 +85,19 @@ function addEditWindow(event){
    pop.classList.add("edited");
 }
 
-function myFunction() {
-   var popup = document.getElementById("myPopup");
-   popup.classList.toggle("show");
+ function search() {
+   let input, filter, ul, li, a, i, txtValue;
+   input = document.getElementById('search-input');
+   filter = input.value.toUpperCase();
+   ul = document.querySelector(".todo-list");
+   li = ul.getElementsByTagName('li');
+   for (i = 0; i < li.length; i++) {
+     a = li[i].getElementsByTagName("a")[0];
+     txtValue = a.textContent || a.innerText;
+     if (txtValue.toUpperCase().indexOf(filter) > -1) {
+       li[i].style.display = "";
+     } else {
+       li[i].style.display = "none";
+     }
+   }
  }

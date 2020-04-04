@@ -9,6 +9,8 @@
     <!-- <link rel="stylesheet" href="/assets/styles/debug.css"> -->
     <script src="/assets/script/style.js" defer></script>
     <script src="/assets/script/app.js" defer></script>
+    <script src="/assets/script/draganddrop.js" defer></script>
+
     <title>TO-DO</title>
 </head>
 
@@ -53,14 +55,15 @@
 
             <section class="main-content-date">
                 <h3>TODAY</h3>
-                <p> April 1 2020</p>
+                <p class="date"></p>
                 <i class="fas fa-calendar"></i>
             </section>
 
             <section class="main-content-forms">
                 <!-- searchTodo -->
                 <form class="main-content-searchForm">
-                    <input type="search" id="search-input" autocomplete="off" placeholder="Search Todos">
+                    <input type="search" id="search-input" autocomplete="off"
+                     placeholder="Search Todos" onkeyup="search()">
                 </form>
                 <!-- searchTodo -->
 

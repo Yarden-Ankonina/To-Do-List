@@ -602,6 +602,14 @@ select option {
   }
 }
 
+.draggable.dragging {
+  opacity: .5;
+}
+
+.draggable {
+  cursor: move;
+}
+
 .main-header {
   width: 100%;
   display: -webkit-box;
@@ -933,10 +941,6 @@ input:focus {
   .main-content-date i:hover {
     cursor: pointer;
   }
-}
-
-@media (max-width: 47.8125em) {
-  /* Popup container */
 }
 
 .toggleOnNight .main-header {

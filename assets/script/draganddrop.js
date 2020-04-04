@@ -1,3 +1,4 @@
+function draggableHandler() {
 const draggables = document.querySelectorAll('.draggable')
 const containers = document.querySelectorAll('ul')
 
@@ -8,6 +9,7 @@ draggables.forEach(draggable => {
 
   draggable.addEventListener('dragend', () => {
     draggable.classList.remove('dragging')
+    Store.swap()
   })
 })
 
@@ -18,12 +20,12 @@ containers.forEach(container => {
     const draggable = document.querySelector('.dragging')
     if (afterElement == null) {
       container.appendChild(draggable)
-      console.log(container)
     } else {
       container.insertBefore(draggable, afterElement)
     }
   })
 })
+}
 
 function getDragAfterElement(container, y) {
   const draggableElements = [...container.querySelectorAll('.draggable:not(.dragging)')]
