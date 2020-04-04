@@ -1,10 +1,8 @@
+//common all
 .edit{
   visibility: hidden;
   position: fixed;
-  top: 30%;
-  left: 35%;
-  width: 30%;
-  height: 40%;
+ 
   background-color: $white2;
   z-index: 1;
   display: flex;
@@ -28,7 +26,7 @@
     align-self: flex-end;
     background-color: $green4o;
     margin: 0.2em 0;
-    width: 7%;
+    width: 9%;
     padding: 0;
     padding-bottom: 0.2em;
     margin-right: 0.5em;
@@ -68,23 +66,80 @@
       background-color: $black1;
       color: $white1;
       align-self: center;
-      width: 10%;
+      width: 13%;
       &:focus{
         background-color: $black1;
         color: $white2;
+      }
     }
   }
   .edit-submit-update{
     background-color: $green3;
-    width: 12%;
+    width: 17%;
     color: $black2;
     &:hover{
       color: $black1;
       background-color: $green3;
     }
   }
+}
+
+
+//only mobile
+@media #{$break1}{
+  .edit{  
+    top:20%;
+    left:7.5%;
+    width: 85%;
+    height: 45%;
+  .exit-editForm{
+    font-size: 1.2em;
+    width: 9%;
+  }
+  .edit-form{
+    select{
+      width: 15%;
+    }
+    .edit-submit-update{
+      width: 40%;
+      }
+  }
+
   }
 }
+
+//mobile mid phase
+@media (min-width:500px)and (max-width:765px){
+  .edit{
+    left: 20%;
+    width: 60%;
+  }
+
+}
+
+
+//tablet only
+@media #{$break2}{
+  .edit{
+    top: 25%;
+    left: 20%;
+    width: 60%;
+    height: 50%;
+  }
+}
+
+//desktop only
+@media #{$break3}{
+  .edit{
+    top: 27.5%;
+    left: 35%;
+    width: 30%;
+    height: 45%;
+  }
+}
+
+
+
 
 .blurBackground{
   filter: grayscale(40%)blur(2px)brightness(0.8);
