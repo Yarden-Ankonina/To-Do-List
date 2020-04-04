@@ -84,8 +84,6 @@ function addEditWindow(event){
    console.log(event.toElement.parentElement);
    console.log(event.screenX);
    console.log(event.screenY);
-   let pop = document.createElement('div');
-   pop.classList.add("edited");
 }
 
  function search() {

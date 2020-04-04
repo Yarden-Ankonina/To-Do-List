@@ -78,15 +78,15 @@ static setDay() {
 
     UI.addTasksHandler();
   }
-
-  static updateTaskHandler(event) {
-    const title = document.querySelector("#update-title").value;
-    const priority = document.querySelector("#update-priority").value;
+//fixxxxxxxxxxxxxxxxxxxxxx
+  // static updateTaskHandler(event) {
+  //   const title = document.querySelector("#title-update").value;
+  //   const priority = document.querySelector("#priority-edit").value;
  
-    UI.updateTask(element, title, priority,id);
+  //   UI.updateTask(element, title, priority,id);
 
-    Store.updateTask(id,title,priority);
-  }
+  //   Store.updateTask(id,title,priority);
+  // }
 
   static updateTask(element, title, priority,id) {
     element.outerHTML = `<li class="priority-${priority}id="${id}">
