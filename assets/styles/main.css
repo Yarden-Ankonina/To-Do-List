@@ -534,74 +534,6 @@ select option {
   font-weight: bold;
 }
 
-.edited {
-  text-align: center;
-  background-color: white;
-  height: 100px;
-  width: 200px;
-}
-
-/* Popup container */
-.popup {
-  position: relative;
-  display: inline-block;
-  cursor: pointer;
-}
-
-/* The actual popup (appears on top) */
-.popup .popuptext {
-  visibility: hidden;
-  width: 160px;
-  background-color: #555;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 8px 0;
-  position: absolute;
-  z-index: 1;
-  bottom: 125%;
-  left: 50%;
-  margin-left: -80px;
-}
-
-/* Popup arrow */
-.popup .popuptext::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: #555 transparent transparent transparent;
-}
-
-/* Toggle this class when clicking on the popup container (hide and show the popup) */
-.popup .show {
-  visibility: visible;
-  -webkit-animation: fadeIn 1s;
-  animation: fadeIn 1s;
-}
-
-/* Add animation (fade in the popup) */
-@-webkit-keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
 .draggable.dragging {
   opacity: .5;
 }
@@ -695,9 +627,12 @@ select option {
     font-size: 0.9em;
     display: none;
   }
+  .main-header .main-header-mobile .main-header-menu i:hover {
+    cursor: pointer;
+  }
 }
 
-@media (min-width: 47.875em) and (max-width: 74.9375em) {
+@media (min-width: 47.875em) and (max-width: 74.9375em), (min-width: 75em) {
   .main-header {
     font-size: 1.1em;
   }
@@ -738,7 +673,7 @@ input:focus {
   font-weight: bold;
 }
 
-@media (max-width: 47.8125em), (min-width: 47.875em) and (max-width: 74.9375em) {
+@media (max-width: 47.8125em), (min-width: 47.875em) and (max-width: 74.9375em), (min-width: 75em) {
   .main-content-forms {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -799,6 +734,7 @@ input:focus {
   }
   .main-content-forms .main-content-todoForm input {
     padding: 0.5em;
+    line-height: 2px;
     border-radius: 0.4em;
   }
   .main-content-forms .main-content-todoForm button {
@@ -810,6 +746,12 @@ input:focus {
   }
   .main-content-forms .main-content-todoForm button:hover {
     font-size: 1.05em;
+  }
+}
+
+@media (min-width: 47.875em) and (max-width: 74.9375em), (min-width: 75em) {
+  .main-content-todoForm {
+    border-bottom: 7px solid #67202e;
   }
 }
 
@@ -829,7 +771,7 @@ input:focus {
   height: 100%;
 }
 
-@media (max-width: 47.8125em), (min-width: 47.875em) and (max-width: 74.9375em) {
+@media (max-width: 47.8125em), (min-width: 47.875em) and (max-width: 74.9375em), (min-width: 75em) {
   .main-flex .main-content {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -844,7 +786,13 @@ input:focus {
   }
   .main-flex .todo-list {
     text-align: center;
-    display: inline-block;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
   .main-flex .todo-list h2 {
     font-size: 1.2em;
@@ -901,20 +849,28 @@ input:focus {
   }
 }
 
-@media (min-width: 47.875em) and (max-width: 74.9375em) {
-  .todo-list {
+@media (min-width: 47.875em) and (max-width: 74.9375em), (min-width: 75em) {
+  .todo-list h2 {
+    margin-top: 0.4em;
+  }
+  .todo-list li {
+    width: 40%;
     -ms-flex-item-align: center;
         -ms-grid-row-align: center;
         align-self: center;
-    width: 60%;
-  }
-  .todo-list h2 {
-    border-radius: 0.5em;
-    margin-top: 0.4em;
   }
 }
 
-@media (max-width: 47.8125em), (min-width: 47.875em) and (max-width: 74.9375em) {
+@media (min-width: 75em) {
+  .todo-list {
+    margin-top: 2em;
+  }
+  .todo-list li {
+    width: 40%;
+  }
+}
+
+@media (max-width: 47.8125em), (min-width: 47.875em) and (max-width: 74.9375em), (min-width: 75em) {
   .main-content-date {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1104,5 +1060,43 @@ body, .main-flex {
   color: #7a2929;
   -webkit-box-shadow: 0px 2px 5px -2px black;
           box-shadow: 0px 2px 5px -2px black;
+}
+
+.todo-list li a {
+  line-height: 1.5;
+  margin-left: 1em;
+}
+
+.todo-list li .fa-edit::after {
+  font-size: 1.2em;
+  margin: 0.2em;
+  font-weight: bold;
+}
+
+.todo-list .priority-1 a:focus {
+  color: #e4265f;
+}
+
+.todo-list .priority-1 .fa-edit::after {
+  content: "  1";
+  color: #e4265f;
+}
+
+.todo-list .priority-2 a:focus {
+  color: #fbc64a;
+}
+
+.todo-list .priority-2 .fa-edit::after {
+  content: "  2";
+  color: #fbc64a;
+}
+
+.todo-list .priority-3 a:focus {
+  color: #33b373;
+}
+
+.todo-list .priority-3 .fa-edit::after {
+  content: "  3";
+  color: #33b373;
 }
 /*# sourceMappingURL=main.css.map */

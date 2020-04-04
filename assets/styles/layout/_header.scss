@@ -11,7 +11,7 @@
 @media #{$break1}{
 }
 
-//mobile and tablet
+//mobile and tablet and desktop
 @media #{$break1}, #{$break2}, #{$break3}{
     .main-header{
         .main-header-toggle{
@@ -68,6 +68,13 @@
                 font-weight: normal;
                 font-size: 0.9em;
                 display: none;
+                i{
+                    &:hover{
+                        cursor: pointer;
+                    }    
+
+                }
+                    
                 
             }
         }
@@ -75,8 +82,8 @@
     }
 }
 
-//only tablet
-@media #{$break2}{
+//tablet and desktop
+@media #{$break2},#{$break3}{
     .main-header{
         font-size: 1.1em;
         .main-header-mobile-container{
@@ -93,6 +100,10 @@
         }
         
     }
+    
+}
+//only tablet
+@media #{$break2}{
     
 }
 

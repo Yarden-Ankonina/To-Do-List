@@ -13,6 +13,7 @@
 @import "./components/select";
 @import "./components/edit-event";
 @import "./components/draggable";
+@import "./components/priority";
 
 
 //layout
@@ -23,6 +24,7 @@
 @import "./layout/main_todo";
 @import "./layout/date";
 @import "./layout/landingPage";
+
 
 
 //themes
@@ -71,3 +73,6 @@ body,.main-flex{
 
 //landing page
 @include landingPage();
+
+// li priority style
+@include priority;

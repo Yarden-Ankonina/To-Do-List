@@ -1,0 +1,66 @@
+//common style
+
+@mixin priority(){
+    .todo-list{
+        li{
+            a{
+                line-height: 1.5;
+                margin-left: 1em;
+            }
+            .fa-edit{
+                &::after{
+                    font-size: 1.2em;
+                    margin: 0.2em;
+                    font-weight: bold;
+                    
+                }
+            }
+        }
+        .priority-1{
+            a{
+              &:focus{
+                    color: $red4;
+              } 
+            }
+            .fa-edit{
+               
+                &::after{
+                    content: "  1";
+                    color: $red4;
+                }
+            }
+        }
+        .priority-2{
+            a{
+                &:focus{
+                    color: $yellow2;
+              }
+            }
+            .fa-edit{
+                
+                &::after{
+                    content: "  2";
+                    color: $yellow2;
+                }
+            }
+        }
+        .priority-3{
+            a{
+                &:focus{
+                    color: $green3;
+              }
+            }
+
+            .fa-edit{
+                &::after{
+                    content: "  3";
+                    color: $green3;
+                }
+            }
+        }
+        
+        
+    }
+    
+    
+}
