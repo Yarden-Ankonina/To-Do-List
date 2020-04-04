@@ -136,16 +136,16 @@ class Store {
   }
   static swap(){
     const tasks= document.querySelectorAll('li');
-    
+
     let newTaskArray = [];
     
-    tasks.forEach(task,index => {
-      const title = tasks[index].querySelector('a').innerHTML;
-      const id = tasks[index].id;
-      const priority= tasks[index].classList.value.slice(-1);  
+    tasks.forEach((task) => {
+      const title = task.querySelector('a').innerHTML;
+      const id = task.id;
+      const priority= task.classList.value.slice(-1);  
       newTaskArray.push(new Task(title,priority,id))})
 
-    console.log(tasks);
+      Store.updateTasksArray(newTaskArray);
   }
 
   static updateTasksArray(tasksArray) {
