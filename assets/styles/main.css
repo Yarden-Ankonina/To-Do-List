@@ -911,7 +911,7 @@ input:focus {
     margin-top: 0.4em;
   }
   .todo-list li {
-    width: 50%;
+    width: 40%;
     -ms-flex-item-align: center;
         -ms-grid-row-align: center;
         align-self: center;
@@ -922,6 +922,47 @@ input:focus {
   .todo-list {
     margin-top: 2em;
   }
+  .todo-list li {
+    width: 40%;
+  }
+}
+
+.todo-list li a {
+  line-height: 1.5;
+  margin-left: 1em;
+}
+
+.todo-list li .fa-edit::after {
+  font-size: 1.2em;
+  margin: 0.2em;
+  font-weight: bold;
+}
+
+.todo-list .priority-1 a:focus {
+  color: #e4265f;
+}
+
+.todo-list .priority-1 .fa-edit::after {
+  content: "  1";
+  color: #e4265f;
+}
+
+.todo-list .priority-2 a:focus {
+  color: #fbc64a;
+}
+
+.todo-list .priority-2 .fa-edit::after {
+  content: "  2";
+  color: #fbc64a;
+}
+
+.todo-list .priority-3 a:focus {
+  color: #33b373;
+}
+
+.todo-list .priority-3 .fa-edit::after {
+  content: "  3";
+  color: #33b373;
 }
 
 @media (max-width: 47.8125em), (min-width: 47.875em) and (max-width: 74.9375em), (min-width: 75em) {
@@ -1118,5 +1159,43 @@ body, .main-flex {
   color: #7a2929;
   -webkit-box-shadow: 0px 2px 5px -2px black;
           box-shadow: 0px 2px 5px -2px black;
+}
+
+.todo-list li a {
+  line-height: 1.5;
+  margin-left: 1em;
+}
+
+.todo-list li .fa-edit::after {
+  font-size: 1.2em;
+  margin: 0.2em;
+  font-weight: bold;
+}
+
+.todo-list .priority-1 a:focus {
+  color: #e4265f;
+}
+
+.todo-list .priority-1 .fa-edit::after {
+  content: "  1";
+  color: #e4265f;
+}
+
+.todo-list .priority-2 a:focus {
+  color: #fbc64a;
+}
+
+.todo-list .priority-2 .fa-edit::after {
+  content: "  2";
+  color: #fbc64a;
+}
+
+.todo-list .priority-3 a:focus {
+  color: #33b373;
+}
+
+.todo-list .priority-3 .fa-edit::after {
+  content: "  3";
+  color: #33b373;
 }
 /*# sourceMappingURL=main.css.map */
