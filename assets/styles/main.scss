@@ -15,6 +15,7 @@
 @import "./components/draggable";
 @import "./components/priority";
 @import "./components/deleteAlert";
+@import "./components/input";
 
 
 //layout
@@ -72,8 +73,6 @@ body,.main-flex{
     
 }
 
+@include priority();
 //landing page
 @include landingPage();
-
-// li priority style
-@include priority;

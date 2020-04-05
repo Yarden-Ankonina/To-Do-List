@@ -1,5 +1,22 @@
 //comon style
-
+.main-content-date{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1em;
+    h3{
+        font-size: 1.4em;
+        font-weight: bold;
+        flex-grow: 2;
+        color: #333;
+    }
+    p{
+        padding-right: 0.5em;
+    }
+    i:hover{
+        cursor: pointer;
+    }
+}
 //only mobile
 
 @media #{$break1}{
@@ -7,26 +24,7 @@
 }
 //mobile and tablet
 
-@media #{$break1}, #{$break2}, #{$break3}{
-    .main-content-date{
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 1em;
-        h3{
-            font-size: 1.4em;
-            font-weight: bold;
-            flex-grow: 2;
-            color: #333;
-        }
-        p{
-            padding-right: 0.5em;
-        }
-        i:hover{
-            cursor: pointer;
-        }
-    }
-}
+ 
 //only tablet
 @media #{$break2}{
    

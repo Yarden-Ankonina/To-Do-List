@@ -1,64 +1,53 @@
 //comon style
-input{
-    text-align: center;
-    outline: none;
-    &:focus{
-        font-size: 1em;
-        color: $black2;
-        font-weight: bold;
+.main-content-forms{
+    display: flex;
+    flex-direction: column;
+    .main-content-searchForm{
+        @include flexCenter(row);
+        display: none;
+        width: 100%;
+        input{
+            text-align: center;
+            width: 100%;
+            padding: 0.5em 2em;
+            &:focus{
+                font-size: 1.2em;
+            }
+        }
     }
-}
+    .main-content-todoForm{
+        @include flexCenter(column);
+        color :$white1;
+        display: none;
+        .main-content-todoForm-selectors{
+           padding-top: 0.5em;;
+        }
+        label{
+            padding: 0.5em;
+            font-size: 1.4em;
+        }
+        input{
+            padding: 0.5em;
+            line-height: 2px;
+            border-radius: 0.4em;
+            
+        }
+        button{
+            padding: 0.8em;
+            margin:0.7em 0;
+            border-radius: 0.5em;
+            outline: none;
+            font-weight: bold;
+            &:hover{
+                font-size: 1.05em;
+                }
+            }
+       }
+   }
 //only mobile
 @media #{$break1}{
 
 //mobile and tablet and desktop
-}
-@media #{$break1}, #{$break2}, #{$break3}{
- .main-content-forms{
-     display: flex;
-     flex-direction: column;
-     .main-content-searchForm{
-         @include flexCenter(row);
-         display: none;
-         width: 100%;
-         input{
-             text-align: center;
-             width: 100%;
-             padding: 0.5em 2em;
-             &:focus{
-                 font-size: 1.2em;
-             }
-         }
-     }
-     .main-content-todoForm{
-         @include flexCenter(column);
-         color :$white1;
-         display: none;
-         .main-content-todoForm-selectors{
-            padding-top: 0.5em;;
-         }
-         label{
-             padding: 0.5em;
-             font-size: 1.4em;
-         }
-         input{
-             padding: 0.5em;
-             line-height: 2px;
-             border-radius: 0.4em;
-             
-         }
-         button{
-             padding: 0.8em;
-             margin:0.7em 0;
-             border-radius: 0.5em;
-             outline: none;
-             font-weight: bold;
-             &:hover{
-                 font-size: 1.05em;
-                 }
-             }
-        }
-    }
 }
 
 // tablet and desktop
