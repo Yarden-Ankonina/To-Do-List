@@ -180,6 +180,3 @@ document.querySelector('.deleteAlert-yes').addEventListener('click',function(eve
 //    mainFlex.classList.remove("backgroundOpacity");
 
 // });
-
-  
-   
