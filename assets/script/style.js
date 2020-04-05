@@ -127,19 +127,42 @@ EDIT_SAVE.addEventListener('click', function(){
  });
 
 
+// function addDeleteWindow(event){
+//    event.target.addEventListener('click', function(){
+//       document.querySelector('.deleteAlert').style.visibility="visible";
+//       document.querySelector('.deleteAlert-yes').addEventListener('click',function(){
+//          document.querySelector('.deleteAlert').style.visibility="hidden";
+//          return true;
+//       });
+//       document.querySelector('.deleteAlert-no').addEventListener('click',function(){
+//          document.querySelector('.deleteAlert').style.visibility="hidden";
+//          return false;
+
+//       });
+//    });
+
+// }
+
+
+
 function addDeleteWindow(event){
-   event.target.addEventListener('click', function(){
-      document.querySelector('.deleteAlert').style.visibility="visible";
-      document.querySelector('.deleteAlert-yes').addEventListener('click',function(){
-         document.querySelector('.deleteAlert').style.visibility="hidden";
-         return true;
+      event.target.addEventListener('click', function(){
+         document.querySelector('.deleteAlert').style.visibility="visible";
+         const id = event.target.parentElement.id;
+         document.querySelector(".deleteAlert").setAttribute('currentId',id)
       });
-      document.querySelector('.deleteAlert-no').addEventListener('click',function(){
-         document.querySelector('.deleteAlert').style.visibility="hidden";
-         return false;
-
-      });
-   });
-
-
 }
+
+document.querySelector('.deleteAlert-yes').addEventListener('click',function(){
+   document.querySelector('.deleteAlert').style.visibility="hidden";
+
+   // UI.removeTask()
+});
+document.querySelector('.deleteAlert-no').addEventListener('click',function(){
+   document.querySelector('.deleteAlert').style.visibility="hidden";
+});
+
+  
+  
+   
+
