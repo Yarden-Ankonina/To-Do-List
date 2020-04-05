@@ -125,3 +125,21 @@ EDIT_SAVE.addEventListener('click', function(){
    editWindow.style.visibility = "hidden";
    mainFlex.classList.remove("blurBackground");
  });
+
+
+function addDeleteWindow(event){
+   event.target.addEventListener('click', function(){
+      document.querySelector('.deleteAlert').style.visibility="visible";
+      document.querySelector('.deleteAlert-yes').addEventListener('click',function(){
+         document.querySelector('.deleteAlert').style.visibility="hidden";
+         return true;
+      });
+      document.querySelector('.deleteAlert-no').addEventListener('click',function(){
+         document.querySelector('.deleteAlert').style.visibility="hidden";
+         return false;
+
+      });
+   });
+
+
+}

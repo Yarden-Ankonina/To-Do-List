@@ -43,7 +43,11 @@ static setDay() {
   
     li.firstElementChild.addEventListener("click", event => {
       event.preventDefault();
-      UI.removeTask(event);
+      let removeFlag = addDeleteWindow(event);
+      console.log(removeFlag);
+      if(removeFlag){
+        UI.removeTask(event);
+      }
     });
 
     li.lastElementChild.addEventListener("click", event => {

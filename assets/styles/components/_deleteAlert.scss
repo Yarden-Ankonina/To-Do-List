@@ -1,0 +1,37 @@
+.deleteAlert{
+    position: fixed;
+    background-color: $black1;
+    top: 25%;
+    left: 25%;
+    width: 50%;
+    height: 50%;
+    z-index: 1;
+    border-radius: 20em;
+    color: $white1;
+    font-size: 1.2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0px 8px 7px -6px $black1;
+    color: $white3;
+    visibility: hidden;
+    .deleteAlert-answers{
+        font-size: 1.2em;
+        color: $red4;
+        button{
+            margin-left: 1em;
+            margin-right: 1em;
+            padding-left: 1em;
+            padding-right: 1em;
+
+        &:hover{
+            color: $red10;
+        }
+        }
+    }
+}
+
+.backgroundOpacity{
+    filter: opacity(0.4)grayscale(100%);
+}
