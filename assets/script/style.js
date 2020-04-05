@@ -1,4 +1,3 @@
-let toggle = document.querySelector("fa-toggle-on");
 let body = document.querySelector("body");
 let mainHeaderMenu = document.querySelector(".main-header-menu");
 let seachBar = document.querySelector(".main-content-searchForm");
@@ -8,7 +7,6 @@ let mainFlex = document.querySelector(".main-flex");
 let editWindow =document.querySelector(".edit");
 let addTodoBanner = document.querySelector(".addTodoAdd")
 
-const BARS = document.querySelector(".fa-bars");
 const SEARCH = document.querySelector(".fa-search");
 const ADD_TODO = document.querySelector(".fa-plus");
 const GITHUB_PROJECT = document.querySelector(".fa-github");
@@ -18,39 +16,17 @@ const EDIT_EXIT = document.querySelector(".exit-editForm");
 const EDIT_SAVE = document.querySelector(".edit-submit-update");
 
 
-//reset
+//default current theme
 body.classList.add("toggleOnNight");
 
-if(toggle){
-   toggle.addEventListener('click',function(){
-      if(toggle.classList[1] === "fa-toggle-on"){
-         toggle.classList.remove("fa-toggle-on");
-         toggle.classList.add("fa-toggle-off");
-         body.classList.remove("toggleOnNight");
-         body.classList.add("toggleOnDay");
-     
-         
-      }
-      else{
-         toggle.classList.remove("fa-toggle-off");
-         toggle.classList.add("fa-toggle-on");
-         body.classList.remove("toggleOnDay");
-         body.classList.add("toggleOnNight");
-     
-      }
-     });
-}
-
-
-
-BARS.addEventListener('click',function(){
+//bar menu
+document.querySelector(".fa-bars").addEventListener('click',function(){
    console.log(mainHeaderMenu);
    if(mainHeaderMenu.style.display === "none"){
       mainHeaderMenu.style.display = "flex";
    }
    else{
       mainHeaderMenu.style.display = "none";
-
    }
 });
 
@@ -72,12 +48,6 @@ ADD_TODO.addEventListener('click',function(){
       mainContentTodoForm.style.display = "none";
 
 });
-
-// landingPageButton.addEventListener('click',function(){
-//       landingPage.style.display = "none";
-//       mainFlex.style.display = "flex";
-   
-// });
 
 
 
@@ -116,6 +86,7 @@ function addEditWindow(event){
    });
 }
 
+//exit save button 
 EDIT_SAVE.addEventListener('click', function(){
    editWindow.style.visibility = "hidden";
    mainFlex.classList.remove("blurBackground");
@@ -126,6 +97,8 @@ EDIT_SAVE.addEventListener('click', function(){
    editWindow.style.visibility = "hidden";
    mainFlex.classList.remove("blurBackground");
  });
+ 
+ //addTodo confirm
 
  if(localStorage.tasks === "[]"){
    addTodoBanner.style.display="block";
@@ -133,7 +106,6 @@ EDIT_SAVE.addEventListener('click', function(){
  else{
    addTodoBanner.style.display="none";
  }
- //addTodoAdd
  addTodoBanner.addEventListener('click',function(){
    addTodoBanner.style.display="none";
    mainContentTodoForm.style.display = "flex";
@@ -141,14 +113,6 @@ EDIT_SAVE.addEventListener('click', function(){
 
 function addDeleteWindow(event){
    return confirm("ARE YOU SURE YOU WANT TO DELETE THIS TODO?");
-      // event.target.addEventListener('click', function(){
-      //    document.querySelector('.deleteAlert').style.visibility="visible";
-      //    mainFlex.classList.add("backgroundOpacity");
-
-      //    const id = event.target.parentElement.id;
-      //    document.querySelector(".deleteAlert").setAttribute('currentId',id)
-      //    //remove todo
-      // });
 }
 
 document.querySelector('.deleteAlert-yes').addEventListener('click',function(event){
@@ -158,28 +122,10 @@ document.querySelector('.deleteAlert-yes').addEventListener('click',function(eve
    mainFlex.classList.remove("backgroundOpacity");
 })
 
-// customConfirm ( 'a', function(confirmed,element){
-//    if(confirmed){
-
-//    }
-// });
-
-// customConfirm ( 'button', function(confirmed,element){
-
-// });
-
-// document.querySelector('.deleteAlert-yes').addEventListener('click',function(){
-//    document.querySelector('.deleteAlert').style.visibility="hidden";
-//    mainFlex.classList.remove("backgroundOpacity");
-
-
-//    // UI.removeTask()
-// });
-// document.querySelector('.deleteAlert-no').addEventListener('click',function(){
-//    document.querySelector('.deleteAlert').style.visibility="hidden";
-//    mainFlex.classList.remove("backgroundOpacity");
-
-// });
-
-  
    
+// landingPageButton.addEventListener('click',function(){
+//       landingPage.style.display = "none";
+//       mainFlex.style.display = "flex";
+   
+// });
+
