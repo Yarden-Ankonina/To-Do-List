@@ -156,6 +156,8 @@ document.querySelector('.deleteAlert-yes').addEventListener('click',function(eve
    UI.removeTask(event);
    document.querySelector('.deleteAlert').style.visibility="hidden";
    mainFlex.classList.remove("backgroundOpacity");
+})
+
 // customConfirm ( 'a', function(confirmed,element){
 //    if(confirmed){
 
@@ -180,6 +182,4 @@ document.querySelector('.deleteAlert-yes').addEventListener('click',function(eve
 // });
 
   
-  
    
-
