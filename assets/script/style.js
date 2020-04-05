@@ -129,14 +129,15 @@ EDIT_SAVE.addEventListener('click', function(){
 
 
 function addDeleteWindow(event){
-      event.target.addEventListener('click', function(){
-         document.querySelector('.deleteAlert').style.visibility="visible";
-         mainFlex.classList.add("backgroundOpacity");
+   return confirm("ARE YOU SURE YOU WANT TO DELETE THIS TODO?");
+      // event.target.addEventListener('click', function(){
+      //    document.querySelector('.deleteAlert').style.visibility="visible";
+      //    mainFlex.classList.add("backgroundOpacity");
 
-         const id = event.target.parentElement.id;
-         document.querySelector(".deleteAlert").setAttribute('currentId',id)
-         //remove todo
-      });
+      //    const id = event.target.parentElement.id;
+      //    document.querySelector(".deleteAlert").setAttribute('currentId',id)
+      //    //remove todo
+      // });
 }
 
 document.querySelector('.deleteAlert-yes').addEventListener('click',function(event){
@@ -144,15 +145,28 @@ document.querySelector('.deleteAlert-yes').addEventListener('click',function(eve
    UI.removeTask(event);
    document.querySelector('.deleteAlert').style.visibility="hidden";
    mainFlex.classList.remove("backgroundOpacity");
+// customConfirm ( 'a', function(confirmed,element){
+//    if(confirmed){
+
+//    }
+// });
+
+// customConfirm ( 'button', function(confirmed,element){
+
+// });
+
+// document.querySelector('.deleteAlert-yes').addEventListener('click',function(){
+//    document.querySelector('.deleteAlert').style.visibility="hidden";
+//    mainFlex.classList.remove("backgroundOpacity");
 
 
-   // UI.removeTask()
-});
-document.querySelector('.deleteAlert-no').addEventListener('click',function(){
-   document.querySelector('.deleteAlert').style.visibility="hidden";
-   mainFlex.classList.remove("backgroundOpacity");
+//    // UI.removeTask()
+// });
+// document.querySelector('.deleteAlert-no').addEventListener('click',function(){
+//    document.querySelector('.deleteAlert').style.visibility="hidden";
+//    mainFlex.classList.remove("backgroundOpacity");
 
-});
+// });
 
   
   
