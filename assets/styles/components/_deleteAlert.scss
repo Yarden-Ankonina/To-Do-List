@@ -1,0 +1,60 @@
+.deleteAlert{
+    position: fixed;
+    background-color: $black1;
+    top: 30%;
+    left: 30%;
+    width: 40%;
+    height: 40%;
+    z-index: 1;
+    border-radius: 20em;
+    color: $white1;
+    font-size: 1.1em;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0px 8px 7px -6px $black1;
+    color: $white3;
+    visibility: hidden;
+    .deleteAlert-answers{
+        font-size: 1.2em;
+        color: $red4;
+        button{
+            margin-left: 1em;
+            margin-right: 1em;
+            padding-left: 1em;
+            padding-right: 1em;
+
+        &:hover{
+            color: $red10;
+        }
+        }
+    }
+}
+
+@media #{$break2}{
+    .deleteAlert{
+        top: 25%;
+        left: 25%;
+        width: 50%;
+        height: 50%;
+        padding: 2em;
+
+    }
+}
+
+@media #{$break1}{
+    .deleteAlert{
+        top: 25%;
+        left: 5%;
+        width: 90%;
+        height: 50%;
+        font-size: 1em;
+        padding: 2em;
+    }
+}
+
+.backgroundOpacity{
+    filter: opacity(0.4)grayscale(100%);
+}
