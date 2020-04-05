@@ -127,23 +127,6 @@ EDIT_SAVE.addEventListener('click', function(){
  });
 
 
-// function addDeleteWindow(event){
-//    event.target.addEventListener('click', function(){
-//       document.querySelector('.deleteAlert').style.visibility="visible";
-//       document.querySelector('.deleteAlert-yes').addEventListener('click',function(){
-//          document.querySelector('.deleteAlert').style.visibility="hidden";
-//          return true;
-//       });
-//       document.querySelector('.deleteAlert-no').addEventListener('click',function(){
-//          document.querySelector('.deleteAlert').style.visibility="hidden";
-//          return false;
-
-//       });
-//    });
-
-// }
-
-
 
 function addDeleteWindow(event){
       event.target.addEventListener('click', function(){
@@ -152,6 +135,7 @@ function addDeleteWindow(event){
 
          const id = event.target.parentElement.id;
          document.querySelector(".deleteAlert").setAttribute('currentId',id)
+         //remove todo
       });
 }
 
