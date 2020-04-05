@@ -148,6 +148,8 @@ EDIT_SAVE.addEventListener('click', function(){
 function addDeleteWindow(event){
       event.target.addEventListener('click', function(){
          document.querySelector('.deleteAlert').style.visibility="visible";
+         mainFlex.classList.add("backgroundOpacity");
+
          const id = event.target.parentElement.id;
          document.querySelector(".deleteAlert").setAttribute('currentId',id)
       });
@@ -155,11 +157,15 @@ function addDeleteWindow(event){
 
 document.querySelector('.deleteAlert-yes').addEventListener('click',function(){
    document.querySelector('.deleteAlert').style.visibility="hidden";
+   mainFlex.classList.remove("backgroundOpacity");
+
 
    // UI.removeTask()
 });
 document.querySelector('.deleteAlert-no').addEventListener('click',function(){
    document.querySelector('.deleteAlert').style.visibility="hidden";
+   mainFlex.classList.remove("backgroundOpacity");
+
 });
 
   
