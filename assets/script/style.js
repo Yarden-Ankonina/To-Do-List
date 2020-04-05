@@ -6,6 +6,7 @@ let mainContentTodoForm = document.querySelector(".main-content-todoForm");
 // let landingPage = document.querySelector(".landing-page");
 let mainFlex = document.querySelector(".main-flex");
 let editWindow =document.querySelector(".edit");
+let addTodoBanner = document.querySelector(".addTodoAdd")
 
 const BARS = document.querySelector(".fa-bars");
 const SEARCH = document.querySelector(".fa-search");
@@ -126,7 +127,17 @@ EDIT_SAVE.addEventListener('click', function(){
    mainFlex.classList.remove("blurBackground");
  });
 
-
+ if(localStorage.tasks === "[]"){
+   addTodoBanner.style.display="block";
+ }
+ else{
+   addTodoBanner.style.display="none";
+ }
+ //addTodoAdd
+ addTodoBanner.addEventListener('click',function(){
+   addTodoBanner.style.display="none";
+   mainContentTodoForm.style.display = "flex";
+});
 
 function addDeleteWindow(event){
    return confirm("ARE YOU SURE YOU WANT TO DELETE THIS TODO?");

@@ -33,6 +33,24 @@
                     font-size: 1.2em;
                     padding: 0.5em 0;
                 }
+                .addTodoAdd{
+                    margin: 1em 0;
+                    font-size: 1.3em;
+                    color: rgb(189, 189, 189);
+                    box-shadow: 0px 7px 8px -7px $black1;
+                    padding: 1em 0;
+                    font-weight: bold;
+                    &:hover{
+                        font-size: 1.32em;
+                        background-color: rgba(90, 4, 4, 0.123);
+                        color: $white1;
+                        cursor: pointer;
+                    }
+                    i{
+                        color: $yellow2;
+                       
+                    }
+                }
                 li{
                     display: flex;
                     justify-content: space-between;
