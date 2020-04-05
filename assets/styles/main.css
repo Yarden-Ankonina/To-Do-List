@@ -789,8 +789,8 @@ select option {
 @media (max-width: 47.8125em) {
   .deleteAlert {
     top: 25%;
-    left: 5%;
-    width: 90%;
+    left: 7.5%;
+    width: 85%;
     height: 50%;
     font-size: 1em;
     padding: 2em;
