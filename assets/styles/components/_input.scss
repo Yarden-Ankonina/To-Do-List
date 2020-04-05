@@ -1,0 +1,10 @@
+//common style
+input{
+    text-align: center;
+    outline: none;
+    &:focus{
+        font-size: 1em;
+        color: $black2;
+        font-weight: bold;
+    }
+}
