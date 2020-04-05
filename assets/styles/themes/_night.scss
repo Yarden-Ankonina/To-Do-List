@@ -6,6 +6,13 @@
         .main-header-menu{
             background-color: $red1d;
             box-shadow: 0px 7px 12px -8px $black1;
+            i{
+                color: $white2;
+                &:hover{
+                    color: $white1;
+                    font-size: 0.85em;
+                }
+            }
 
         }
         .fa-suse{
