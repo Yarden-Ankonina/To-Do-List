@@ -1070,6 +1070,24 @@ input:focus {
     font-size: 1.2em;
     padding: 0.5em 0;
   }
+  .main-flex .todo-list .addTodoAdd {
+    margin: 0.5em 0;
+    font-size: 1.3em;
+    color: #bdbdbd;
+    -webkit-box-shadow: 0px 7px 8px -7px #1A1A1D;
+            box-shadow: 0px 7px 8px -7px #1A1A1D;
+    padding: 1em 0;
+    font-weight: bold;
+  }
+  .main-flex .todo-list .addTodoAdd:hover {
+    font-size: 1.32em;
+    background-color: rgba(90, 4, 4, 0.123);
+    color: #fff2f2;
+    cursor: pointer;
+  }
+  .main-flex .todo-list .addTodoAdd i {
+    color: #fbc64a;
+  }
   .main-flex .todo-list li {
     display: -webkit-box;
     display: -ms-flexbox;
