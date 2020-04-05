@@ -139,7 +139,9 @@ function addDeleteWindow(event){
       });
 }
 
-document.querySelector('.deleteAlert-yes').addEventListener('click',function(){
+document.querySelector('.deleteAlert-yes').addEventListener('click',function(event){
+   event.preventDefault()
+   UI.removeTask(event);
    document.querySelector('.deleteAlert').style.visibility="hidden";
    mainFlex.classList.remove("backgroundOpacity");
 
