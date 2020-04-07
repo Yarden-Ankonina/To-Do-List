@@ -1,5 +1,5 @@
 const ADD_FORM_BUTTON = document.querySelector(".fa-plus");
-const MAIN_HEADER_MENU = document.querySelector(".main-header-menu");
+const MAIN_HEADER_MENU = document.querySelector(".main-header-navbar-menu");
 const SEARCH_BAR = document.querySelector(".main-content-forms-searchForm");
 const ADD_FORM = document.querySelector(".main-content-forms-todoForm");
 const MAIN_FLEX = document.querySelector(".main-flex");

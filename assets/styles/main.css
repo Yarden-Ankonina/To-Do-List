@@ -436,15 +436,11 @@ body {
 }
 
 button {
-  margin-top: 1em;
   font-weight: bold;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
-  padding: 0.3em;
   border-radius: 0.6em;
-  -webkit-box-shadow: 0px 8px 7px -7px #4E4E50;
-          box-shadow: 0px 8px 7px -7px #4E4E50;
   outline: none;
 }
 
@@ -730,7 +726,6 @@ input:focus {
 }
 
 .main-header {
-  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -746,6 +741,7 @@ input:focus {
           flex-direction: column;
   position: -webkit-sticky;
   position: sticky;
+  width: 100%;
   top: 0;
   background-color: #1A1A1D;
   color: #fff2f2;
@@ -763,79 +759,105 @@ input:focus {
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 100%;
-  font-size: 1.3em;
 }
 
-.main-header-navbar-logo-title {
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
-  text-align: center;
+.main-header-navbar-logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.main-header-navbar-logo-title .header-icon {
+.main-header-navbar-logo .fa-suse {
+  color: #e4265f;
   padding-right: 0.5em;
-  font-size: 1.3em;
-}
-
-.main-header-navbar .header-icon {
-  padding: 0.5em;
 }
 
 .main-header-navbar .header-icon:hover {
   cursor: pointer;
 }
 
-.main-header .main-header-navbar-menu {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+.main-header-navbar-menu {
   -ms-flex-pack: distribute;
       justify-content: space-around;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: #b6b6b6;
   width: 100%;
-  padding: 0.2em 0.5em;
   font-weight: normal;
-  font-size: 0.9em;
-  display: none;
   background-color: #4e131f;
   -webkit-box-shadow: 0px 7px 12px -8px #1A1A1D;
           box-shadow: 0px 7px 12px -8px #1A1A1D;
 }
 
-.main-header .main-header-navbar-menu i {
+.main-header-navbar-menu .navbar-menu-icon {
   color: #f5e2e2;
+  padding: 0.5em;
 }
 
-.main-header .main-header-navbar-menu i:hover {
+.main-header-navbar-menu .navbar-menu-icon:hover {
   cursor: pointer;
   color: #fff2f2;
-  font-size: 0.85em;
 }
 
-.main-header .main-header-navbar-menu .fa-sort {
-  font-size: 0.8em;
+@media (max-width: 47.8125em), (min-width: 47.875em) and (max-width: 74.9375em) {
+  .main-header-navbar {
+    font-size: 1.1em;
+    padding: 0.5em 0;
+  }
+  .main-header-navbar-logo {
+    font-size: 1.3em;
+  }
+  .main-header-navbar-logo .main-header-navbar-title {
+    font-size: 1.2em;
+  }
+  .main-header-navbar .main-header-navbar-right-icons {
+    padding: 0.9em;
+  }
+  .main-header-navbar .main-header-navbar-right-icons .fa-search {
+    padding-right: 0.3em;
+  }
+  .main-header-navbar .fa-bars {
+    padding: 1em;
+    font-size: 1.2em;
+  }
+  .main-header-navbar-menu {
+    display: none;
+    padding: 0.3em 0.2em;
+  }
 }
 
-.main-header .main-header-navbar-menu .fa-suse {
-  color: #e4265f;
-}
-
-@media (min-width: 47.875em) and (max-width: 74.9375em), (min-width: 75em) {
-  .main-header {
+@media (min-width: 75em) {
+  .main-header-navbar {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    padding: 0.5em 0;
+  }
+  .main-header-navbar .fa-bars {
+    display: none;
+  }
+  .main-header-navbar-logo {
+    width: 52%;
+    font-size: 2em;
+  }
+  .main-header-navbar-logo .main-header-navbar-title {
     font-size: 1.1em;
   }
-  .main-header .main-header-mobile-container {
-    margin: 0.5em;
+  .main-header-navbar .main-header-navbar-right-icons {
+    padding: 0.8em;
+    font-size: 1.1em;
   }
-  .main-header .main-header-mobile-container .fa-search {
-    font-size: 0.9em;
+  .main-header-navbar .main-header-navbar-right-icons .fa-search {
+    padding-right: 0.3em;
   }
-  .main-header .main-header-menu i {
-    padding: 0.5em;
+  .main-header-navbar-menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 0.3em 0.2em;
   }
 }
 
