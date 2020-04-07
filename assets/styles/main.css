@@ -382,13 +382,20 @@ select {
   border: none;
 }
 
-ul, ol, dd {
+ul,
+ol,
+dd {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 0;
   font-size: inherit;
   font-weight: inherit;
@@ -410,8 +417,8 @@ fieldset {
 
 /*remove autocomplete color*/
 /*remove spinner  buttons to number inputs*/
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
@@ -718,15 +725,6 @@ select option {
 .blurBackground {
   -webkit-filter: grayscale(40%) blur(2px) brightness(0.8);
           filter: grayscale(40%) blur(2px) brightness(0.8);
-}
-
-.draggable:hover {
-  cursor: -webkit-grab;
-  cursor: grab;
-}
-
-.draggable .dragging {
-  opacity: 0.5;
 }
 
 input {
@@ -1175,7 +1173,7 @@ input:focus {
   color: #e4265f;
 }
 
-footer {
+.main-footer {
   position: fixed;
   bottom: 0;
   background-color: white;
@@ -1184,10 +1182,6 @@ footer {
   font-size: 0.9em;
   padding: 0.2em;
   margin-top: 1em;
-}
-
-footer a {
-  padding: 0.2em 0.3em;
 }
 
 html {
