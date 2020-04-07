@@ -1,13 +1,9 @@
-/*
-CSS => design for priorities classes 1,2,3
-*/
-
 const ADD_FORM_BUTTON = document.querySelector(".fa-plus");
-let MAIN_HEADER_MENU = document.querySelector(".main-header-menu");
-let SEARCH_BAR = document.querySelector(".main-content-forms-searchForm");
-let ADD_FORM = document.querySelector(".main-content-forms-todoForm");
-let MAIN_FLEX = document.querySelector(".main-flex");
-let EDIT_POPUP = document.querySelector(".edit");
+const MAIN_HEADER_MENU = document.querySelector(".main-header-menu");
+const SEARCH_BAR = document.querySelector(".main-content-forms-searchForm");
+const ADD_FORM = document.querySelector(".main-content-forms-todoForm");
+const MAIN_FLEX = document.querySelector(".main-flex");
+const EDIT_POPUP = document.querySelector(".edit-popup");
 
 class Task {
   constructor(title, priority, id = Date.parse(new Date())) {
@@ -33,17 +29,6 @@ class UI {
     placeHolder.innerHTML = today.toDateString();
   }
   static addTask(taskObj) {
-    /*
-<div class="main-content-todolist">
-<h2 class="main-content-todolist-title">My Todo's</h2>
-<ul class="main-content-todolist-list">
-<li class="main-content-todolist-list-item draggable priority-1" draggable="true" id="1586098611000">
- <i class="fas fa-trash-alt todo-icon" aria-hidden="true"></i>
-<span class="main-content-todolist-list-item-title>Title</span>
- <i class="far fa-edit todo-icon" aria-hidden="true"></i></li>
-</ul>
-</div>
-*/
     const ul = document.querySelector(".main-content-todolist-list");
 
     const li = document.createElement("li");
@@ -68,7 +53,7 @@ class UI {
 
     li.firstElementChild.addEventListener("click", (event) => {
       event.preventDefault();
-      if (addDeleteWindow()) {
+      if (confirm('Do you want to delete') == true) {
         UI.removeTask(event);
       }
     });
@@ -86,7 +71,7 @@ class UI {
     const element = event.target.parentNode;
 
     element.classList.add("deleted");
-    setTimeout(function () {
+    setTimeout(() => {
       Store.removeTaskFromArray(title);
       element.remove();
     }, 599);
@@ -98,12 +83,9 @@ class UI {
   }
 
   static removeAllTasks() {
-    const elements = [
-      ...document.getElementsByClassName("todo-list")[0].children,
+    const tasksArray = [...document.getElementsByClassName("main-content-todolist-list")[0].children,
     ];
-    for (let i = 1; i < elements.length; i++) {
-      elements[i].remove();
-    }
+    tasksArray.forEach(task => task.remove());
   }
 
   static updateTask(id, newTitle, newPriority) {
@@ -153,7 +135,7 @@ class Store {
     let newTaskArray = [];
 
     tasks.forEach((task) => {
-      const title = task.querySelector("a").innerHTML;
+      const title = task.querySelector("span").innerHTML;
       const id = task.id;
       const priority = task.classList.value.slice(-1);
       newTaskArray.push({ title: title, priority: priority, id: id });
@@ -220,12 +202,6 @@ function searchHandler() {
   }
 }
 
-function emptyStoreHandler() {
-  document.querySelector(".addTodoAdd").addEventListener("click", function () {
-    document.querySelector(".addTodoAdd").style.display = "none";
-    ADD_FORM.style.display = "flex";
-  });
-}
 
 document.addEventListener("DOMContentLoaded", () => {
   addTasksHandler();
@@ -240,12 +216,12 @@ document
     createTaskHandler(event);
   });
 
-document.querySelector("#sort-button").addEventListener("click", (event) => {
+document.querySelector("#navbar-sort-button").addEventListener("click", (event) => {
   event.preventDefault();
   sortTasksHandler();
 });
 
-document.querySelector(".edit-form").addEventListener("submit", (event) => {
+document.querySelector(".edit-popup-form").addEventListener("submit", (event) => {
   event.preventDefault();
   editTaskHandler();
 });
@@ -259,7 +235,7 @@ document
   });
 
 //exit edit window
-document.querySelector(".exit-editForm").addEventListener("click", function () {
+document.querySelector("#popup-exit").addEventListener("click", function () {
   EDIT_POPUP.style.visibility = "hidden";
   MAIN_FLEX.classList.remove("blurBackground");
 });
@@ -286,10 +262,6 @@ ADD_FORM_BUTTON.addEventListener("click", function () {
   } else ADD_FORM.style.display = "none";
 });
 
-function addDeleteWindow() {
-  return confirm("ARE YOU SURE YOU WANT TO DELETE THIS TODO?");
-}
-
 function addEditPopUp() {
   EDIT_POPUP.style.visibility = "visible";
   MAIN_FLEX.classList.add("blurBackground");
@@ -297,7 +269,7 @@ function addEditPopUp() {
   const title = event.target.previousElementSibling.textContent;
   const priority = event.target.parentElement.classList.value.slice(-1);
   const id = event.target.parentElement.id;
-  document.querySelector("#title-update").value = title;
-  document.querySelector("#priority-edit").value = priority;
-  document.querySelector(".edit-form").setAttribute("currentId", id);
+  document.querySelector("#popup-title-input").value = title;
+  document.querySelector("#popup-priority-select").value = priority;
+  document.querySelector(".edit-popup-form").setAttribute("currentId", id);
 }
