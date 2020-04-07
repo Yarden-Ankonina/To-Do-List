@@ -7,138 +7,133 @@
     <link rel="stylesheet" href="/assets/styles/main.css">
     <script src="https://kit.fontawesome.com/a05612df27.js" crossorigin="anonymous"></script>
     <!-- <link rel="stylesheet" href="/assets/styles/debug.css"> -->
-    <script src="/assets/script/style.js" defer></script>
-    <script src="/assets/script/app.js" defer></script>
-    <script src="/assets/script/draganddrop.js" defer></script>
-
+    <div data-js>
+        <script src="/assets/script/app.js" defer></script>
+        <script src="/assets/script/draganddrop.js" defer></script>
+    </div>
     <title>TO-DO</title>
 </head>
 
 <body>
-    <div class="deleteAlert">
-        <p>ARE YOU SURE WANT TO DELETE THIS TODO ?</p>
-        <div class="deleteAlert-answers">
-            <button class="deleteAlert-yes">Yes</button>
-            <button class="deleteAlert-no">No</button>
-        </div>
-        
-    </div>
-
-    <div class="edit" >
-        <button class="exit-editForm">&times</button>
-        <h2>Edit</h2>
-        <form class="edit-form" autocomplete="off">
-            <label for='title'>Rename Title</label>
-            <input type="text" id="title-update" name="title" maxlength="20"
-             placeholder="Insert News title" required>
-            <label for="priority-edit">Change Priority</label>
-                <select id="priority-edit">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-              </select>
-            <button class="edit-submit-update" type="submit" >SAVE</button>
+    <section class="edit-popup">
+        <button id="popup-exit">&times</button>
+        <h2 class="edit-popup-title">Edit</h2>
+        <form class="edit-popup-form" autocomplete="off">
+            <label for='popup-title-input'>Rename Title</label>
+            <input type="text" id="popup-title-input" name="title" maxlength="20" placeholder="Insert News title"
+                required>
+            <label for="popup-priority-select">Change Priority</label>
+            <select id="popup-priority-select">
+                <option class="popup-priority-select-option" value="1">1</option>
+                <option class="popup-priority-select-option" value="2">2</option>
+                <option class="popup-priority-select-option" value="3">3</option>
+            </select>
+            <button class="edit-submit-update" type="submit">SAVE</button>
         </form>
-    </div>
+    </section>
 
-    </div>                
     <section class="main-flex">
-
-        <!-- header -->
         <header class="main-header">
-
-            <div class="main-header-mobile">
-                <!--mobile-->
-
-                <div class="main-header-mobile-container">
-                    <i class="fas fa-bars"></i>
-                    <a href="./index.html">
-                        <h1><i class="fab fa-suse"></i>
-                    </a>To-Do List</h1>
-                    <i class="fas fa-search"></i>
-                    <i class="fas fa-plus"></i>
-                </div>
-
-                <!-- hidden by defaul on mobile  -->
-                <div class="main-header-menu">
-                    <i id='sort-button' class="fas fa-sort">    Sort by priority</i>
-                    <a href="https://github.com/Yarden-Ankonina/To-Do-List" target="blank">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-share"></i>
-                    <i class="fas fa-cog"></i>
-                </div>
-
+            <div class="main-header-navbar">
+                <i class="fas fa-bars header-icon"></i>
+                <a class="main-header-navbar-logo" href="./index.html">
+                    <i class="fab fa-suse"></i>
+                    <h1 class="main-header-navbar-title">To-Do List</h1>
+                </a>
+                <i class="fas fa-search header-icon"></i>
+                <i class="fas fa-plus header-icon"></i>
             </div>
-            <div class="main-header-toggle">
-                <p>DAY</p>
-                <i class="fas fa-toggle-on"></i>
-                <p>NIGHT</p>
+
+            <div class="main-header-navbar-menu">
+                <button id='navbar-sort-button'>
+                    <i class="fas fa-sort">
+                        Sort by priority
+                    </i>
+                </button>
+                <a href="https://github.com/Yarden-Ankonina/To-Do-List" target="blank">
+                    <i class="fab fa-github"></i>
+                </a>
+                <i class="fas fa-star"></i> <!-- favorites -->
+                <i class="fas fa-share"></i> <!-- export -->
+                <i class="fas fa-cog"></i> <!-- settings -->
             </div>
         </header>
 
         <main class="main-content">
 
             <section class="main-content-date">
-                <h3>TODAY</h3>
-                <p class="date"></p>
+                <h3 class="main-content-date-title">TODAY</h3>
+                <p class="main-content-date-placeHolder"></p>
                 <i class="fas fa-calendar"></i>
             </section>
 
             <section class="main-content-forms">
-                <!-- searchTodo -->
-                <form class="main-content-searchForm">
-                    <input type="search" id="search-input" autocomplete="off"
-                     placeholder="Search Todos" onkeyup="search()">
+                <form class="main-content-forms-searchForm">
+                    <input type="search" id="search-input" autocomplete="off" placeholder="Search Todos"
+                        onkeyup="searchHandler()">
                 </form>
-                <!-- searchTodo -->
 
-                <!-- AddTodo -->
-
-                <form class="main-content-todoForm" autocomplete="off">
-                    <label for='title'>Title</label>
-                    <input type="text" id="title-input" name="title" maxlength="20" placeholder="Insert title" required>
-                    <div class="main-content-todoForm-selectors">
-                        <label for="priority-input">Priority</label>
-                        <select id="priority-input">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
+                <form class="main-content-forms-todoForm" autocomplete="off">
+                    <label class="main-content-forms-todoForm-titleLabel" for='todoForm-title-input'>Title</label>
+                    <input type="text" id="todoForm-title-input" name="title" maxlength="20" placeholder="Insert title"
+                        required>
+                    <div class="main-content-forms-todoForm-selector">
+                        <label for="todoForm-priority-select">Priority</label>
+                        <select id="todoForm-priority-select">
+                            <option class="main-content-forms-todoForm-selector-option" value="1">1</option>
+                            <option class="main-content-forms-todoForm-selector-option" value="2">2</option>
+                            <option class="main-content-forms-todoForm-selector-option" value="3">3</option>
                         </select>
                     </div>
-
-                    <button type="submit" id="submit-button">Submit</button>
-                    <!-- <input type="submit" id="submit-button"> -->
+                    <button type="submit" id="todoForm-submit-button">Submit</button>
                 </form>
-
-                <!-- AddTodo -->
 
             </section>
 
-            
-            <!-- todoList -->
-            <ul class="todo-list">
-                <h2>My Todo's</h2>
-                <a href="#title-input" class="addTodoAdd"><i class="fas fa-plus"></i> Add todo</a>
-            </ul>
-            <!-- todoList -->
+
+            <div class="main-content-todolist">
+                <h2 class="main-content-todolist-title">My Todo's</h2>
+                <ul class="main-content-todolist-list">
+                </ul>
+            </div>
 
         </main>
 
-
-
-        <footer>
-            <h4>Made by Marcos Molina<a href="https://github.com/marcosmol204" target="blank"><i class="fab fa-github"></i></a>and Yarden Ankonina<a href="https://github.com/Yarden-Ankonina"
-                    target="blank"><i class="fab fa-github"></i></a></h4>
+        <footer class="main-footer">
+            <div class="main-footer-text">
+                Made by Marcos Molina
+                <span class="main-footer-text-info">
+                    <a href="https://github.com/marcosmol204" target="blank"></a>
+                    <i class="fab fa-github"></i>
+                </span>
+                Yarden Ankonina
+                <span class="main-footer-text-info">
+                    <a href="https://github.com/Yarden-Ankonina" target="blank"></a>
+                    <i class="fab fa-github"></i>
+                </span>
+            </div>
         </footer>
     </section>
 </body>
 
 </html>
+
 <!-- <section class="landing-page">
         <div>
             <h1>Welcome to our todo list app</h1>
             <button class="landing-page-button">press here to start</button>
         </div>
+    </section> -->
+<!-- <div class="deleteAlert">
+        <p>ARE YOU SURE WANT TO DELETE THIS TODO ?</p>
+        <div class="deleteAlert-answers">
+            <button class="deleteAlert-yes">Yes</button>
+            <button class="deleteAlert-no">No</button>
+        </div>
+
+    </div> -->
+<!-- <section>
+
+        <a href="#title-input" class="addTodoAdd"><i class="fas fa-plus"></i> Add todo</a>
+
     </section> -->

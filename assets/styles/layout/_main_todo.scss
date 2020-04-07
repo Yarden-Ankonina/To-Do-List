@@ -1,124 +1,94 @@
-
-//comon style
-
-.todo-list{
+.main-content-todolist {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-align: center;
+  &-title {
+    font-size: 1.2em;
+    padding: 0.5em 0;
+  }
+  &-list {
     height: 100%;
-
-}
-.main-flex{
-    .main-content{
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        height: 100%;
-        overflow: auto;
-    }
-    .todo-list{
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-            h2{
-                font-size: 1.2em;
-                padding: 0.5em 0;
-            }
-            .addTodoAdd{
-                margin: 1em 0;
-                font-size: 1.3em;
-                color: rgb(189, 189, 189);
-                box-shadow: 0px 7px 8px -7px $black1;
-                padding: 1em 0;
-                font-weight: bold;
-                &:hover{
-                    font-size: 1.32em;
-                    background-color: rgba(90, 4, 4, 0.123);
-                    color: $white1;
-                    cursor: pointer;
-                }
-                i{
-                    color: $yellow2;
-                   
-                }
-            }
-            li{
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                flex-wrap: nowrap;
-                padding: 0.3em 1.2em;
-                border-radius: 0.4em;
-                font-size: 0.9em;
-                margin: 0.32em 2em;
-                opacity: 0.8;
-                transition-property: opacity,font-size;
-                transition-duration: 0.6s;
-                
-               
-                a{
-                    text-align: center;
-                    flex-wrap: nowrap;
-                    font-size: 1.1em;
-                    padding: 0 0.5em;
-                    overflow: hidden;
-                }
-                i{
-                    opacity: 0;
-                    transition-property: opacity;
-                    transition-duration: 0.6s;
-                    &:hover{
-                        cursor: pointer;
-                        font-size: 1.05em;
-                    }
-                }
-                &:hover{
-                    opacity: 1;
-                    font-size: 0.95em;
-                    i{
-                        opacity: 1;
-                    }
-                }
-            }
-    }
-}
-//only mobile
-@media #{$break1}{
-    .todo-list{
-        li{
-            align-self: center;
-            width: 80%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    &-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: nowrap;
+      padding: 0.3em 1.2em;
+      border-radius: 0.4em;
+      font-size: 0.9em;
+      margin: 0.32em 2em;
+      opacity: 0.8;
+      transition-property: opacity, font-size;
+      transition-duration: 0.6s;
+      &:hover {
+        opacity: 1;
+        font-size: 0.95em;
+        todo-icon {
+          opacity: 1;
         }
+      }
+      .draggable {
+        &:hover {
+          cursor: grab;
+        }
+        .dragging {
+          opacity: 0.5;
+        }
+      }
+      &-title {
+        text-align: center;
+        flex-wrap: nowrap;
+        font-size: 1.1em;
+        padding: 0 0.5em;
+        overflow: hidden;
+      }
+      todo-icon {
+        opacity: 0;
+        transition-property: opacity;
+        transition-duration: 0.6s;
+        &:hover {
+          cursor: pointer;
+          font-size: 1.05em;
+        }
+      }
     }
+  }
 }
 
-
+@media #{$break1} {
+  .main-content-todolist-list-item {
+    align-self: center;
+    width: 80%;
+  }
+}
 
 //only tablet and desktop
 
-@media #{$break2}, #{$break3}{
-    
-    .todo-list{
-        h2{
-            margin-top: 0.4em;
-        }
-        li{
-            width: 50%;
-           align-self: center;
-        }
+@media #{$break2}, #{$break3} {
+  .main-content-todolist {
+    &-title {
+      margin-top: 0.4em;
     }
-    
+    &-list-item {
+      width: 50%;
+      align-self: center;
+    }
+  }
 }
 //only tablet
 
-@media #{$break2}{
-    
+@media #{$break2} {
 }
 //only desktop
-@media #{$break3}{
-    .todo-list{
-       margin-top: 2em;
-         li{
-            width: 40%;
-        }
+@media #{$break3} {
+  .main-content-todolist {
+    margin-top: 2em;
+    &-list-item {
+      width: 40%;
     }
-   
+  }
 }
-

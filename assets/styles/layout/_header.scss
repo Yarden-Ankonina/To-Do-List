@@ -1,113 +1,110 @@
 //comon style
 
-
-.main-header{
-    width: 100%;
-    @include flexCenter(column);
-    position: sticky;
-    top: 0;
+.main-header {
+  width: 100%;
+  @include flexCenter(column);
+  position: sticky;
+  top: 0;
+  background-color: $black1;
+  color: $white1;
 }
-.main-header{
-    .main-header-toggle{
-        p{
-            display: none;
-        }
-        i{
-            display: none;
-        }
+.main-header {
+  .main-header-toggle {
+    p {
+      display: none;
     }
-    .main-header-mobile{
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        font-size: 1.3em;
-        .main-header-mobile-container{
-            display: flex;
-            justify-content: space-between;
-             padding: 0.5em;
-           
-
-            h1{
-                flex-grow: 1;
-                text-align: center;
-                i{
-                    padding-right: 0.5em;
-                    font-size: 1.3em;
-                }
-            }
-            i{
-                &:hover {
-                    cursor: pointer;
-                }
-            }
-            .fa-bars{
-               
-                padding-right: 1.2em;
-            }
-            .fa-search{
-                padding-right: 0.5em;
-            }
-            .fa-cog{
-                padding-left: 0.5em;
-                
-            }
-        }
-        .main-header-menu{
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            background-color: rgb(182, 182, 182);
-            width: 100%;
-            padding: 0.2em 0.5em;
-            font-weight: normal;
-            font-size: 0.9em;
-            display: none;
-            i{
-                &:hover{
-                    cursor: pointer;
-                }    
-
-            }
-            .fa-sort{
-                font-size: 0.8em;
-            }
-                
-            
-        }
+    i {
+      display: none;
     }
-  
+  }
+  .main-header-mobile {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    font-size: 1.3em;
+    .main-header-mobile-container {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.5em;
+
+      h1 {
+        flex-grow: 1;
+        text-align: center;
+        i {
+          padding-right: 0.5em;
+          font-size: 1.3em;
+        }
+      }
+      i {
+        &:hover {
+          cursor: pointer;
+        }
+      }
+      .fa-bars {
+        padding-right: 1.2em;
+      }
+      .fa-search {
+        padding-right: 0.5em;
+      }
+      .fa-cog {
+        padding-left: 0.5em;
+      }
+    }
+    .main-header-menu {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      background-color: rgb(182, 182, 182);
+      width: 100%;
+      padding: 0.2em 0.5em;
+      font-weight: normal;
+      font-size: 0.9em;
+      display: none;
+      background-color: $red1d;
+      box-shadow: 0px 7px 12px -8px $black1;
+      i {
+        color: $white2;
+
+        &:hover {
+          cursor: pointer;
+          color: $white1;
+          font-size: 0.85em;
+        }
+      }
+      .fa-sort {
+        font-size: 0.8em;
+      }
+      .fa-suse {
+        color: $red4;
+      }
+    }
+  }
 }
 //only mobile
-@media #{$break1}{
+@media #{$break1} {
 }
-
 
 //tablet and desktop
-@media #{$break2},#{$break3}{
-    .main-header{
-        font-size: 1.1em;
-        .main-header-mobile-container{
-           margin: 0.5em;
-            .fa-search{
-                font-size: 0.9em;
-            }
-           
-        }
-        .main-header-menu{
-            i{
-                padding: 0.5em;
-            }
-        }
-        
+@media #{$break2},#{$break3} {
+  .main-header {
+    font-size: 1.1em;
+    .main-header-mobile-container {
+      margin: 0.5em;
+      .fa-search {
+        font-size: 0.9em;
+      }
     }
-    
+    .main-header-menu {
+      i {
+        padding: 0.5em;
+      }
+    }
+  }
 }
 //only tablet
-@media #{$break2}{
-    
+@media #{$break2} {
 }
 
 //only desktop
-@media #{$break3}{
-    
+@media #{$break3} {
 }

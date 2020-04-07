@@ -1,103 +1,76 @@
-@mixin night{
-    //common to all devices
-    .main-header{
+@mixin night {
+  //common to all devices
+  // .main-side{
+
+  // }
+  .main-content {
+    background-color: $red1;
+    .main-content-date {
+      background-color: lighten($red1, 4);
+      color: $white2;
+      h3 {
+        color: $white2;
+      }
+    }
+    .main-content-forms {
+      background-color: $red1;
+      .main-content-searchForm {
+        input {
+          box-shadow: 0px 7px 10px -7px $black1;
+        }
+      }
+      .main-content-todoForm {
+        input {
+          box-shadow: 0px 7px 10px -7px $black1;
+          opacity: 0.95;
+          &:focus {
+            opacity: 1;
+            color: $red2;
+          }
+        }
+        .main-content-todoForm-selectors {
+          label {
+            color: $white2;
+            font-size: 0.9em;
+          }
+          select {
+            background-color: $black1;
+            color: $white1;
+            option {
+              background-color: $black2;
+            }
+          }
+        }
+
+        button {
+          background-color: $red3;
+          box-shadow: 0px 7px 10px -7px $black1;
+        }
+      }
+    }
+    aside {
+      background-color: darken($red1, 15);
+      color: $white2;
+    }
+    .todo-list {
+      h2 {
         background-color: $black1;
-        color: $white1;
-        .main-header-menu{
-            background-color: $red1d;
-            box-shadow: 0px 7px 12px -8px $black1;
-            i{
-                color: $white2;
-                &:hover{
-                    color: $white1;
-                    font-size: 0.85em;
-                }
-            }
+        color: $white2;
+        box-shadow: 0px 7px 10px -7px $red10;
+      }
 
+      li {
+        // background-color: $white5r;
+        // box-shadow: 0px 0px 3px 1px $red4;
+        background-color: $black1;
+        color: $white2;
+        .fa-trash-alt:hover {
+          color: $red4;
         }
-        .fa-suse{
-            color: $red4;
-        }
+      }
     }
-    // .main-side{
+  }
+  // footer{
 
-    // }
-    .main-content{
-        background-color: $red1;
-        .main-content-date{
-            background-color: lighten($red1,4);
-            color: $white2;
-            h3{
-            color: $white2;
-            }
-
-        }
-        .main-content-forms{
-        background-color: $red1;
-            .main-content-searchForm{
-                input{
-                    box-shadow: 0px 7px 10px -7px $black1;
-                   
-                }
-            }
-            .main-content-todoForm{
-               
-                input{
-                    box-shadow: 0px 7px 10px -7px $black1;
-                    opacity: 0.95;
-                    &:focus{
-                        opacity: 1;
-                        color: $red2;
-                    }
-                }
-                .main-content-todoForm-selectors{
-                    label{
-                        color: $white2;
-                        font-size: 0.9em;
-                    }
-                    select{
-                        background-color: $black1;
-                        color: $white1;
-                        option{
-                            background-color: $black2;
-                        }
-                    }
-                }
-                
-                button{
-                        background-color: $red3;
-                        box-shadow: 0px 7px 10px -7px $black1;
-
-                }
-            }   
-        }
-        aside{
-            background-color: darken($red1,15);
-            color: $white2;
-        }
-        .todo-list{
-            h2{
-                background-color: $black1;
-                color: $white2;
-                box-shadow: 0px 7px 10px -7px $red10;
-            }
-
-            li{
-                // background-color: $white5r;
-                // box-shadow: 0px 0px 3px 1px $red4;
-                background-color: $black1;
-                color: $white2;
-                .fa-trash-alt:hover{
-                    color: $red4;
-                }                    
-       
-
-            }
-
-        }
-
-    }
-    // footer{
-
-    // }
+  // }
 }

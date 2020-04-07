@@ -14,64 +14,46 @@
 @import "./components/edit-event";
 @import "./components/draggable";
 @import "./components/priority";
-@import "./components/deleteAlert";
-@import "./components/input";
 
+@import "./components/input";
 
 //layout
 @import "./layout/header";
+@import "./layout/main-content";
 @import "./layout/footer";
-@import "./layout/forms";
-@import "./layout/sidebar";
-@import "./layout/main_todo";
-@import "./layout/date";
-@import "./layout/landingPage";
-
-
-
-//themes
-@import "./themes/night";
 
 //comon style
 //mixin implementation
-.toggleOnDay{
-    @include day;
+
+html {
+  min-height: 100%;
+  height: max-content;
 }
 
-.toggleOnNight{
-    @include night;
+body,
+.main-flex {
+  height: 100vh;
 }
-
-html{
-    min-height: 100%;
-    height: max-content;
-}
-
-body,.main-flex{
-    height: 100vh;
-}
-
 
 //mobile and tablet
-@media #{$break1}, #{$break2}{
-    .main-flex{
-        @include flexCenter(column);
-    }
+@media #{$break1}, #{$break2} {
+  .main-flex {
+    @include flexCenter(column);
+  }
 }
 
 //only mobile
-@media #{$break1}{
-    
+@media #{$break1} {
 }
 //only tablet
-@media #{$break2}{
-   
+@media #{$break2} {
 }
 //only desktop
-@media #{$break3}{
-    
+@media #{$break3} {
 }
 
 @include priority();
 //landing page
-@include landingPage();
+
+// @import "./components/deleteAlert";
+// @import "./layout/landingPage";

@@ -1,35 +1,33 @@
 //comon style
-.main-content-date{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1em;
-    h3{
-        font-size: 1.4em;
-        font-weight: bold;
-        flex-grow: 2;
-        color: #333;
-    }
-    p{
-        padding-right: 0.5em;
-    }
-    i:hover{
-        cursor: pointer;
-    }
+.main-content-date {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: lighten($red1, 4);
+  color: $white2;
+  padding: 1em;
+  &-title {
+    font-size: 1.4em;
+    font-weight: bold;
+    flex-grow: 2;
+    color: $white2;
+  }
+  &-placeHolder {
+    padding-right: 0.5em;
+  }
+  .fa-calendar:hover {
+    cursor: pointer;
+  }
 }
 //only mobile
 
-@media #{$break1}{
-
+@media #{$break1} {
 }
 //mobile and tablet
 
- 
 //only tablet
-@media #{$break2}{
-   
+@media #{$break2} {
 }
 //only desktop
-@media #{$break3}{
-  
+@media #{$break3} {
 }
