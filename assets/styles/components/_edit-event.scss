@@ -1,5 +1,5 @@
 //common all
-.edit{
+.edit-popup{
   visibility: hidden;
   position: fixed;
  
@@ -12,7 +12,7 @@
   border-radius: 0.6em;
   padding: 0.5em;
 
-    h2{
+    &-title{
       text-align: center;
       background-color: $black2;
       color: $white2;
@@ -22,7 +22,7 @@
       font-size: 1.4em;
       font-weight: bold;
     }
-  .exit-editForm{
+  .popup-exit{
     align-self: flex-end;
     background-color: $green4o;
     margin: 0.2em 0;
@@ -36,14 +36,14 @@
       background-color: $green3;
     }
   }
-  .edit-form{
+  &-form{
     display: flex;
     flex-direction: column;
     text-align: center;
     margin: 0.3em;
     width: 100%;
    
-    input{
+    #popup-title-input{
       text-align: center;
       line-height: 1.8em;
       font-size: 1.1em;
@@ -58,13 +58,11 @@
         color: $white1;
       }
     }
-    label{
-      font-weight: bold;
-    }
-    select{
+    #popup-priority-select{
       margin-top: 0.2em;
       background-color: $black1;
       color: $white1;
+      font-weight: bold;
       align-self: center;
       width: 13%;
       &:focus{
@@ -110,7 +108,7 @@
 
 //mobile mid phase
 @media (min-width:500px)and (max-width:765px){
-  .edit{
+  .edit-popup{
     left: 20%;
     width: 60%;
   }
@@ -120,7 +118,7 @@
 
 //tablet only
 @media #{$break2}{
-  .edit{
+  .edit-popup{
     top: 25%;
     left: 20%;
     width: 60%;
@@ -130,7 +128,7 @@
 
 //desktop only
 @media #{$break3}{
-  .edit{
+  .edit-popup{
     top: 27.5%;
     left: 35%;
     width: 30%;

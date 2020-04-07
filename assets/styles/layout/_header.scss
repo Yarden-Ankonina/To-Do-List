@@ -1,5 +1,6 @@
 //comon style
 
+
 .main-header {
   width: 100%;
   @include flexCenter(column);
@@ -7,50 +8,33 @@
   top: 0;
   background-color: $black1;
   color: $white1;
-}
-.main-header {
-  .main-header-toggle {
-    p {
-      display: none;
-    }
-    i {
-      display: none;
-    }
-  }
-  .main-header-mobile {
+    &-navbar{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
     width: 100%;
     font-size: 1.3em;
-    .main-header-mobile-container {
-      display: flex;
-      justify-content: space-between;
-      padding: 0.5em;
-
-      h1 {
-        flex-grow: 1;
-        text-align: center;
-        i {
-          padding-right: 0.5em;
-          font-size: 1.3em;
+      &-logo{
+        &-title {
+          flex-grow: 1;
+          text-align: center;
+          .header-icon {
+            padding-right: 0.5em;
+            font-size: 1.3em;
+          }
         }
       }
-      i {
+     
+      .header-icon{
+        padding: 0.5em;
         &:hover {
           cursor: pointer;
         }
       }
-      .fa-bars {
-        padding-right: 1.2em;
-      }
-      .fa-search {
-        padding-right: 0.5em;
-      }
-      .fa-cog {
-        padding-left: 0.5em;
-      }
+      
+     
     }
-    .main-header-menu {
+    .main-header-navbar-menu {
       display: flex;
       justify-content: space-around;
       align-items: center;
@@ -79,7 +63,7 @@
       }
     }
   }
-}
+
 //only mobile
 @media #{$break1} {
 }
