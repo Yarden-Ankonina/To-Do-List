@@ -6,11 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/assets/styles/main.css">
     <script src="https://kit.fontawesome.com/a05612df27.js" crossorigin="anonymous"></script>
-    <!-- <link rel="stylesheet" href="/assets/styles/debug.css"> -->
-    <div data-js>
-        <script src="/assets/script/app.js" defer></script>
-        <script src="/assets/script/draganddrop.js" defer></script>
-    </div>
+    <script type="module" src="/assets/script/main.js" defer></script>
     <title>TO-DO</title>
 </head>
 
@@ -42,8 +38,8 @@
                 </a>
                 <span class="main-header-navbar-right-icons">
                     <i class="fas fa-search header-icon"></i>
-                    <i class="fas fa-plus header-icon"></i> 
-                </span> 
+                    <i class="fas fa-plus header-icon"></i>
+                </span>
             </div>
 
             <div class="main-header-navbar-menu">
@@ -71,8 +67,7 @@
 
             <section class="main-content-forms">
                 <form class="main-content-forms-searchForm">
-                    <input type="search" id="search-input" autocomplete="off" placeholder="Search Todos"
-                        onkeyup="searchHandler()">
+                    <input type="search" id="search-input" autocomplete="off" placeholder="Search Todos">
                 </form>
 
                 <form class="main-content-forms-todoForm" autocomplete="off">
