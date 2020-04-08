@@ -1,6 +1,7 @@
 export default 'todolist';
 export { addTasksHandler };
 export { editTaskHandler };
+
 import Store from './store.js';
 import UI from './ui.js';
 
@@ -54,3 +55,4 @@ function addTasksHandler() {
     const tasksArray = Store.getTasksArray();
     tasksArray.forEach((task) => UI.addTask(task));
 }
+

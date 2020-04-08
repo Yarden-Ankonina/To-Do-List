@@ -1,7 +1,9 @@
 export default 'navbar';
+
 import Task from './task.js'
 import UI from './ui.js'
 import Store from './store.js'
+
 import { addTasksHandler } from './todolist.js';
 
 const ADD_FORM_BUTTON = document.querySelector(".fa-plus");
@@ -43,7 +45,8 @@ document.querySelector(".fa-search").addEventListener("click", function () {
     } else SEARCH_BAR.style.display = "none";
 });
 
-ADD_FORM_BUTTON.addEventListener("click", function () {
+ADD_FORM_BUTTON.addEventListener("click", function (event) {
+    event.preventDefault();
     if (ADD_FORM.style.display === "none") {
         ADD_FORM.style.display = "flex";
     } else ADD_FORM.style.display = "none";
