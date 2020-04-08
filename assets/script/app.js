@@ -3,7 +3,10 @@ const MAIN_HEADER_MENU = document.querySelector(".main-header-navbar-menu");
 const SEARCH_BAR = document.querySelector(".main-content-forms-searchForm");
 const ADD_FORM = document.querySelector(".main-content-forms-todoForm");
 const MAIN_FLEX = document.querySelector(".main-flex");
+
 const EDIT_POPUP = document.querySelector(".edit-popup");
+const CLOSE_POPUP = document.querySelector("#popup-exit");
+const SUBMIT_POPUP = document.querySelector(".edit-submit-update") /* SHOULD BE ID*/
 
 class Task {
   constructor(title, priority, id = Date.parse(new Date())) {
@@ -59,8 +62,7 @@ class UI {
     });
 
     li.lastElementChild.addEventListener("click", (event) => {
-      event.preventDefault();
-      addEditPopUp();
+      editTaskHandler(event);
     });
 
     ul.appendChild(li);
@@ -178,12 +180,6 @@ function createTaskHandler() {
   UI.clearInputs();
 }
 
-function editTaskHandler() {
-  const newTitle = document.querySelector("#title-update").value;
-  const newPriority = document.querySelector("#priority-edit").value;
-  const id = event.target.getAttribute("currentid");
-  UI.updateTask(id, newTitle, newPriority);
-}
 
 function searchHandler() {
   let input, filter, ul, li, a, i, txtValue;
@@ -221,24 +217,6 @@ document.querySelector("#navbar-sort-button").addEventListener("click", (event) 
   sortTasksHandler();
 });
 
-document.querySelector(".edit-popup-form").addEventListener("submit", (event) => {
-  event.preventDefault();
-  editTaskHandler();
-});
-
-//exit save button
-document
-  .querySelector(".edit-submit-update")
-  .addEventListener("click", function () {
-    EDIT_POPUP.style.visibility = "hidden";
-    MAIN_FLEX.classList.remove("blurBackground");
-  });
-
-//exit edit window
-document.querySelector("#popup-exit").addEventListener("click", function () {
-  EDIT_POPUP.style.visibility = "hidden";
-  MAIN_FLEX.classList.remove("blurBackground");
-});
 
 //bar menu
 document.querySelector(".fa-bars").addEventListener("click", function () {
@@ -262,14 +240,44 @@ ADD_FORM_BUTTON.addEventListener("click", function () {
   } else ADD_FORM.style.display = "none";
 });
 
-function addEditPopUp() {
+function editTaskHandler(event) {
+  let id = event.target.parentElement.id
   EDIT_POPUP.style.visibility = "visible";
   MAIN_FLEX.classList.add("blurBackground");
 
-  const title = event.target.previousElementSibling.textContent;
-  const priority = event.target.parentElement.classList.value.slice(-1);
-  const id = event.target.parentElement.id;
-  document.querySelector("#popup-title-input").value = title;
-  document.querySelector("#popup-priority-select").value = priority;
-  document.querySelector(".edit-popup-form").setAttribute("currentId", id);
+  document.querySelector('#popup-title-input').value =
+    event.target.previousElementSibling.textContent;
+  document.querySelector('#popup-priority-select').value =
+    event.target.parentElement.classList.value.slice(-1);
+
+  const promise = new Promise((resolve) => {
+    SUBMIT_POPUP.addEventListener('click', (event) => {
+      event.preventDefault();
+      const newTitle = document.querySelector('#popup-title-input').value;
+      const newPriority = document.querySelector('#popup-priority-select').value;
+      resolve([newTitle, newPriority, id]);
+    });
+    CLOSE_POPUP.addEventListener('click', (event) => {
+      console.log(event)
+      resolve("");
+    });
+  });
+
+  promise.then(response => {
+    if (!response) {
+      EDIT_POPUP.style.visibility = "hidden";
+      MAIN_FLEX.classList.remove("blurBackground");
+    }
+    else {
+      console.log(response)
+      const newTitle = response[0];
+      const newPriority = response[1];
+      const id = response[2];
+      UI.updateTask(id, newTitle, newPriority);
+      EDIT_POPUP.style.visibility = "hidden";
+      MAIN_FLEX.classList.remove("blurBackground");
+    }
+  });
+  //
 }
+
