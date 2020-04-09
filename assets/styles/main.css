@@ -444,11 +444,7 @@ button {
   outline: none;
 }
 
-.main-flex .main-header .fa-bars:hover {
-  font-size: 1.1em;
-}
-
-.main-flex .main-header .fa-suse:hover {
+.main-flex .fa-suse:hover {
   -webkit-animation-name: chameleon;
           animation-name: chameleon;
   -webkit-animation-duration: 4s;
@@ -571,13 +567,13 @@ select option {
   background-color: #4E4E50;
   color: #f5e2e2;
   padding: 0.5em 0;
-  margin-top: 0.2em;
+  margin-top: 2em;
   width: 100%;
   font-size: 1.4em;
   font-weight: bold;
 }
 
-.edit-popup .popup-exit {
+.edit-popup #popup-exit {
   -ms-flex-item-align: end;
       align-self: flex-end;
   background-color: rgba(22, 122, 47, 0.596);
@@ -589,7 +585,7 @@ select option {
   font-size: 1.5em;
 }
 
-.edit-popup .popup-exit:hover {
+.edit-popup #popup-exit:hover {
   color: #fff2f2;
   background-color: #33b373;
 }
@@ -655,6 +651,8 @@ select option {
 }
 
 .edit-popup .edit-submit-update {
+  margin-top: 0.6em;
+  padding: 0.4em;
   background-color: #33b373;
   width: 17%;
   color: #4E4E50;
@@ -775,8 +773,15 @@ input:focus {
   padding-right: 0.5em;
 }
 
+.main-header-navbar .header-icon {
+  opacity: 0.9;
+}
+
 .main-header-navbar .header-icon:hover {
+  opacity: 1;
   cursor: pointer;
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
 }
 
 .main-header-navbar-menu {
@@ -799,6 +804,8 @@ input:focus {
 
 .main-header-navbar-menu .navbar-menu-icon:hover {
   cursor: pointer;
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
   color: #fff2f2;
 }
 
@@ -808,10 +815,10 @@ input:focus {
     padding: 0.5em 0;
   }
   .main-header-navbar-logo {
-    font-size: 1.3em;
+    font-size: 1.9em;
   }
   .main-header-navbar-logo .main-header-navbar-title {
-    font-size: 1.2em;
+    font-size: 1em;
   }
   .main-header-navbar .main-header-navbar-right-icons {
     padding: 0.9em;
@@ -841,14 +848,14 @@ input:focus {
   }
   .main-header-navbar-logo {
     width: 52%;
-    font-size: 2em;
+    font-size: 2.2em;
   }
   .main-header-navbar-logo .main-header-navbar-title {
     font-size: 1.1em;
   }
   .main-header-navbar .main-header-navbar-right-icons {
     padding: 0.8em;
-    font-size: 1.1em;
+    font-size: 1.3em;
   }
   .main-header-navbar .main-header-navbar-right-icons .fa-search {
     padding-right: 0.3em;
@@ -921,12 +928,19 @@ input:focus {
   color: #fff2f2;
   display: none;
   align-items: center;
+  margin: 1em;
+}
+
+.main-content-forms-todoForm-titleLabel {
+  padding: 0.5em;
+  font-size: 1.2em;
 }
 
 .main-content-forms-todoForm #todoForm-title-input {
   -webkit-box-shadow: 0px 7px 10px -7px #1A1A1D;
           box-shadow: 0px 7px 10px -7px #1A1A1D;
   opacity: 0.95;
+  margin: 0.8em;
 }
 
 .main-content-forms-todoForm #todoForm-title-input:focus {
@@ -962,15 +976,11 @@ input:focus {
 }
 
 .main-content-forms #todoForm-submit-button {
+  padding: 0.5em;
+  margin: 0.5em;
   background-color: #C3073F;
   -webkit-box-shadow: 0px 7px 10px -7px #1A1A1D;
           box-shadow: 0px 7px 10px -7px #1A1A1D;
-}
-
-@media (min-width: 47.875em) and (max-width: 74.9375em), (min-width: 75em) {
-  .main-content-forms-todoForm {
-    border-bottom: 7px solid #67202e;
-  }
 }
 
 @media (min-width: 47.875em) and (max-width: 74.9375em) {
@@ -987,21 +997,29 @@ input:focus {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  height: 100%;
-  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .main-content-todolist-title {
-  font-size: 1.2em;
-  padding: 0.5em 0;
+  width: 100%;
+  text-align: center;
+  background-color: var(--bg--todo-list-title);
+  color: var(--bg-clr--todo-list-title);
+  padding: 0.6em 0;
+  font-size: 1.1em;
+  font-weight: bold;
 }
 
 .main-content-todolist-list {
-  height: 100%;
-  text-align: center;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -1009,6 +1027,7 @@ input:focus {
 }
 
 .main-content-todolist-list-item {
+  border-radius: 0.6em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1018,87 +1037,31 @@ input:focus {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  padding: 0.3em 1.2em;
-  border-radius: 0.4em;
-  font-size: 0.9em;
-  margin: 0.32em 2em;
-  opacity: 0.8;
-  -webkit-transition-property: opacity, font-size;
-  transition-property: opacity, font-size;
-  -webkit-transition-duration: 0.6s;
-          transition-duration: 0.6s;
+  width: 50%;
+  padding: 0.4em 0.7em;
+  margin: 0.5em;
+  background-color: var(--bg--todo-list-item);
+  color: var(--bg-clr--todo-list-item);
+  opacity: 0.85;
+  -webkit-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 1s;
+          transition-duration: 1s;
 }
 
 .main-content-todolist-list-item:hover {
-  opacity: 1;
-  font-size: 0.95em;
-}
-
-.main-content-todolist-list-item:hover todo-icon {
-  opacity: 1;
-}
-
-.main-content-todolist-list-item .draggable:hover {
-  cursor: -webkit-grab;
-  cursor: grab;
-}
-
-.main-content-todolist-list-item .draggable .dragging {
-  opacity: 0.5;
-}
-
-.main-content-todolist-list-item-title {
-  text-align: center;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  font-size: 1.1em;
-  padding: 0 0.5em;
-  overflow: hidden;
-}
-
-.main-content-todolist-list-item todo-icon {
-  opacity: 0;
-  -webkit-transition-property: opacity;
-  transition-property: opacity;
-  -webkit-transition-duration: 0.6s;
-          transition-duration: 0.6s;
-}
-
-.main-content-todolist-list-item todo-icon:hover {
   cursor: pointer;
-  font-size: 1.05em;
+  opacity: 1;
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
 }
 
-@media (max-width: 47.8125em) {
-  .main-content-todolist-list-item {
-    -ms-flex-item-align: center;
-        -ms-grid-row-align: center;
-        align-self: center;
-    width: 80%;
-  }
+.main-content-todolist-list-item .fa-trash-alt:hover {
+  color: var(--todo-list-item-trash);
 }
 
-@media (min-width: 47.875em) and (max-width: 74.9375em), (min-width: 75em) {
-  .main-content-todolist-title {
-    margin-top: 0.4em;
-  }
-  .main-content-todolist-list-item {
-    width: 50%;
-    -ms-flex-item-align: center;
-        -ms-grid-row-align: center;
-        align-self: center;
-  }
-}
-
-@media (min-width: 75em) {
-  .main-content-todolist {
-    margin-top: 2em;
-  }
-  .main-content-todolist-list-item {
-    width: 40%;
-  }
+.main-content-todolist-list-item .fa-edit:hover {
+  color: var(--todo-list-item-edit);
 }
 
 .main-content-date {
@@ -1172,6 +1135,15 @@ input:focus {
   font-size: 0.9em;
   padding: 0.2em;
   margin-top: 1em;
+}
+
+html[data-theme="redMode"] {
+  --bg--todo-list-title: hsl(0,0%,0%);
+  --bg-clr--todo-list-title: hsl(0,20%, 80%);
+  --bg--todo-list-item: hsl(0,50%,10%);
+  --bg-clr--todo-list-item: hsl(0,20%,95%);
+  --todo-list-item-trash: hsl(0,90%,60%);
+  --todo-list-item-edit: hsl(30,95%,60%);
 }
 
 html {

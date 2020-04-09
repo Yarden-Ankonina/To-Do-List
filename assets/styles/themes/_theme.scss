@@ -1,0 +1,17 @@
+html[data-theme="redMode"]{
+    //header
+    //date
+    //main-content
+    //main todo
+
+    --bg--todo-list-title : hsl(0,0%,0%);
+    --bg-clr--todo-list-title : hsl(0,20%, 80%);
+
+
+    --bg--todo-list-item : hsl(0,50%,10%);
+    --bg-clr--todo-list-item : hsl(0,20%,95%);
+    --todo-list-item-trash : hsl(0,90%,60%);
+    --todo-list-item-edit : hsl(30,95%,60%);
+
+
+}

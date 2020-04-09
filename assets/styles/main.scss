@@ -13,7 +13,6 @@
 @import "./components/select";
 @import "./components/edit-event";
 @import "./components/priority";
-
 @import "./components/input";
 
 //layout
@@ -21,6 +20,8 @@
 @import "./layout/main-content";
 @import "./layout/footer";
 
+//themes
+@import "./themes/theme";
 //comon style
 //mixin implementation
 
