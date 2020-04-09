@@ -11,7 +11,7 @@ const MAIN_HEADER_MENU = document.querySelector(".main-header-navbar-menu");
 const SEARCH_BAR = document.querySelector(".main-content-forms-searchForm");
 const ADD_FORM = document.querySelector(".main-content-forms-todoForm");
 
-document.querySelector('#search-input').addEventListener('keyup',
+document.querySelector('#search-input').addEventListener('click',
     () => {
         searchHandler();
     }
@@ -29,8 +29,6 @@ document.querySelector("#navbar-sort-button").addEventListener("click", (event) 
     sortTasksHandler();
 });
 
-
-//bar menu
 document.querySelector(".fa-bars").addEventListener("click", function () {
     if (MAIN_HEADER_MENU.style.display === "none") {
         MAIN_HEADER_MENU.style.display = "flex";

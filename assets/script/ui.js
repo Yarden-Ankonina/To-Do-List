@@ -9,9 +9,7 @@ export default class UI {
         const today = new Date();
         placeHolder.innerHTML = today.toDateString();
     }
-    static addTask(taskObj) {
-        const ul = document.querySelector(".main-content-todolist-list");
-
+    static createTask(taskObj) {
         const li = document.createElement("li");
         li.classList.add("main-content-todolist-list-item");
         li.classList.add("draggable");
@@ -42,8 +40,12 @@ export default class UI {
         li.lastElementChild.addEventListener("click", (event) => {
             editTaskHandler(event);
         });
+        return li;
+    }
 
-        ul.appendChild(li);
+    static addTask(taskObj) {
+        const ul = document.querySelector(".main-content-todolist-list");
+        ul.appendChild(this.createTask(taskObj));
     }
 
     static removeTask(event) {

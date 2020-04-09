@@ -24,6 +24,7 @@ function editPromise(event) {
         });
     });
 }
+
 function showEditPopup() {
     EDIT_POPUP.style.visibility = "visible";
     MAIN_FLEX.classList.add("blurBackground");
@@ -41,7 +42,6 @@ function fillEditPopupInputs() {
 function editTaskHandler(event) {
     showEditPopup();
     fillEditPopupInputs(event);
-
 
     editPromise(event).then(response => {
         if (!response) {
