@@ -14,10 +14,14 @@
         }
       }
       .header-icon{
+        opacity: 0.9;
         &:hover {
+          opacity: 1;
           cursor: pointer;
+          transform: scale(1.05);
         }
       }
+      
     }
     &-navbar-menu {
       justify-content: space-around; align-items: center;
@@ -29,6 +33,7 @@
         padding: 0.5em;
         &:hover {
           cursor: pointer;
+          transform: scale(1.05);
           color: $white1;
         }
       }
@@ -49,9 +54,9 @@
       padding: 0.5em 0;
 
       &-logo{
-        font-size: 1.3em;
+        font-size: 1.9em;
         .main-header-navbar-title {
-          font-size: 1.2em;
+          font-size: 1em;
         }
       }
       .main-header-navbar-right-icons{
@@ -64,6 +69,7 @@
         padding: 1em;
         font-size: 1.2em;
       }
+     
     }
     &-navbar-menu{
       display: none;
@@ -85,14 +91,14 @@
       }
       &-logo{
         width: 52%;
-        font-size: 2em;
+        font-size: 2.2em;
         .main-header-navbar-title {
           font-size: 1.1em;
         }
       }
       .main-header-navbar-right-icons{
         padding: 0.8em;
-        font-size: 1.1em;
+        font-size: 1.3em;
         .fa-search{
           padding-right: 0.3em;
         }
