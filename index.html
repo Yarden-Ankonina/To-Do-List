@@ -6,16 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/assets/styles/main.css">
     <script src="https://kit.fontawesome.com/a05612df27.js" crossorigin="anonymous"></script>
-    <!-- <link rel="stylesheet" href="/assets/styles/debug.css"> -->
-    <div data-js>
-        <script src="/assets/script/app.js" defer></script>
-        <script src="/assets/script/draganddrop.js" defer></script>
-    </div>
+    <script type="module" src="/assets/script/main.js" defer></script>
     <title>TO-DO</title>
 </head>
 
 <body>
-    <section class="edit-popup">
+    <section class="edit-popup" style="display: none">
         <button id="popup-exit">&times</button>
         <h2 class="edit-popup-title">Edit</h2>
         <form class="edit-popup-form" autocomplete="off">
@@ -42,11 +38,11 @@
                 </a>
                 <span class="main-header-navbar-right-icons">
                     <i class="fas fa-search header-icon"></i>
-                    <i class="fas fa-plus header-icon"></i> 
-                </span> 
+                    <i class="fas fa-plus header-icon"></i>
+                </span>
             </div>
 
-            <div class="main-header-navbar-menu">
+            <div class="main-header-navbar-menu" style="display: none">
                 <button id='navbar-sort-button'>
                     <i class="fas fa-sort navbar-menu-icon">
                         Sort by priority
@@ -70,12 +66,11 @@
             </section>
 
             <section class="main-content-forms">
-                <form class="main-content-forms-searchForm">
-                    <input type="search" id="search-input" autocomplete="off" placeholder="Search Todos"
-                        onkeyup="searchHandler()">
+                <form class="main-content-forms-searchForm" style="display: none">
+                    <input type="search" id="search-input" autocomplete="off" placeholder="Search Todos">
                 </form>
 
-                <form class="main-content-forms-todoForm" autocomplete="off">
+                <form class="main-content-forms-todoForm" autocomplete="off" style="display: none">
                     <label class="main-content-forms-todoForm-titleLabel" for='todoForm-title-input'>Title</label>
                     <input type="text" id="todoForm-title-input" name="title" maxlength="20" placeholder="Insert title" required>
                     <div class="main-content-forms-todoForm-selector">
