@@ -1,4 +1,5 @@
 export default 'todolist';
+
 export { addTasksHandler };
 export { editTaskHandler };
 
@@ -17,7 +18,7 @@ function editPromise(event) {
             event.preventDefault();
             const newTitle = document.querySelector('#popup-title-input').value;
             const newPriority = document.querySelector('#popup-priority-select').value;
-            resolve([newTitle, newPriority, id]);
+            resolve({ newTitle, newPriority, id });
         });
         CLOSE_POPUP.addEventListener('click', () => {
             resolve("");
@@ -48,10 +49,7 @@ function editTaskHandler(event) {
             hideEditPopup();
         }
         else {
-            const newTitle = response[0];
-            const newPriority = response[1];
-            const id = response[2];
-            UI.updateTask(id, newTitle, newPriority);
+            UI.updateTask(response.id, response.newTitle, newPriority);
             hideEditPopup();
         }
     });

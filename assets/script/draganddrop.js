@@ -1,5 +1,5 @@
 export { draggableHandler };
-
+import Store from './store.js'
 function draggableHandler() {
   const draggables = document.querySelectorAll('.draggable')
   const containers = document.querySelectorAll('ul')
@@ -18,7 +18,7 @@ function draggableHandler() {
   containers.forEach(container => {
     container.addEventListener('dragover', event => {
       event.preventDefault()
-      const afterElement = getDragAfterElement(container, e.clientY)
+      const afterElement = getDragAfterElement(container, event.clientY)
       const draggable = document.querySelector('.dragging')
       if (afterElement == null) {
         container.appendChild(draggable)
