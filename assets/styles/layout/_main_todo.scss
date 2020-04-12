@@ -5,8 +5,8 @@
    align-items: center;
   &-title{
     width: 100%;text-align: center;
-    background-color:var(--bg--todo-list-title);
-    color : var(--bg-clr--todo-list-title);
+    background-color:$black1;
+    color : $white2;
     padding: 0.6em 0;
     font-size: 1.1em;
     font-weight: bold;
