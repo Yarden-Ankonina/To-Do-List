@@ -11,6 +11,9 @@ const CLOSE_POPUP = document.querySelector("#popup-exit");
 const SUBMIT_POPUP = document.querySelector(".edit-submit-update")
 const MAIN_FLEX = document.querySelector(".main-flex");
 
+const DELETE_POPUP = document.querySelector(".delete-popup");
+
+
 function editPromise(event) {
     const id = event.target.parentElement.id;
     return new Promise((resolve) => {
@@ -61,3 +64,20 @@ function addTasksHandler() {
     tasksArray.forEach((task) => UI.addTask(task));
 }
 
+//to arrange---yarden 12.4.2020
+function showDeletePopup() {
+    DELETE_POPUP.style.visibility = "visible";
+    MAIN_FLEX.classList.add("blurBackground");
+}
+
+function hideDeletePopup() {
+    DELETE_POPUP.style.visibility = "hidden";
+    MAIN_FLEX.classList.remove("blurBackground");
+}
+document.querySelector(".yes").addEventListener('click',e=>{
+    hideDeletePopup();
+});
+document.querySelector(".no").addEventListener('click',(e)=>{
+    hideDeletePopup()
+});
+showDeletePopup();

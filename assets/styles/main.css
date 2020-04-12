@@ -734,6 +734,69 @@ input:focus {
   font-weight: bold;
 }
 
+.delete-popup {
+  z-index: 1;
+  position: absolute;
+  height: 30%;
+  width: 50%;
+  top: 35%;
+  left: 25%;
+  background-color: #daf1e6;
+  color: #1c1717;
+  border-radius: 0.7em;
+  -webkit-box-shadow: inset 0px 0px 0px 8px #80b399;
+          box-shadow: inset 0px 0px 0px 8px #80b399;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 1em;
+  text-align: center;
+}
+
+.delete-popup-question {
+  font-size: 1.3em;
+  font-weight: bold;
+  margin: 0.5em;
+}
+
+.delete-popup-answer-button {
+  padding: 0.4em;
+  margin: 0.3em;
+}
+
+.delete-popup-answer-button:hover {
+  cursor: pointer;
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+  -webkit-filter: brightness(1.5);
+          filter: brightness(1.5);
+}
+
+.no {
+  background-color: #a32929;
+  color: #0f0a0a;
+}
+
+.yes {
+  background-color: #7aa329;
+  color: #0e0f0a;
+}
+
+.blurBackground {
+  -webkit-filter: grayscale(40%) blur(2px) brightness(0.8);
+          filter: grayscale(40%) blur(2px) brightness(0.8);
+}
+
 .main-header {
   display: -webkit-box;
   display: -ms-flexbox;

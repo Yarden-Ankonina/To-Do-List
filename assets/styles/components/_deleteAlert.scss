@@ -1,60 +1,47 @@
-.deleteAlert{
-    position: fixed;
-    background-color: $black1;
-    top: 30%;
-    left: 30%;
-    width: 40%;
-    height: 40%;
+.delete-popup{
     z-index: 1;
-    border-radius: 20em;
-    color: $white1;
-    font-size: 1.1em;
-    text-align: center;
+    position: absolute;
+    height: 30%;
+    width: 50%;
+    top: 35%;
+    left: 25%;
+    background-color: hsl(150, 45%, 90%);
+    color: hsl(0, 10%, 10%);
+    border-radius: 0.7em;
+    box-shadow: inset 0px 0px 0px 8px hsl(150, 25%, 60%);
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    box-shadow: 0px 8px 7px -6px $black1;
-    color: $white3;
-    visibility: hidden;
-    .deleteAlert-answers{
-        font-size: 1.2em;
-        color: $red4;
-        button{
-            margin-left: 1em;
-            margin-right: 1em;
-            padding-left: 1em;
-            padding-right: 1em;
-
-        &:hover{
-            color: $red10;
+    padding: 1em;
+    text-align: center;
+    &-question{
+        font-size: 1.3em;
+        font-weight: bold;
+        margin: 0.5em;
+    }
+    &-answer{
+        &-button{
+            padding: 0.4em;
+            margin: 0.3em;
+            &:hover{
+                cursor: pointer;
+                transform: scale(1.02);
+                filter: brightness(1.5);
+            }
         }
-        }
     }
 }
-
-@media #{$break2}{
-    .deleteAlert{
-        top: 25%;
-        left: 25%;
-        width: 50%;
-        height: 50%;
-        padding: 2em;
-
-    }
+.no{
+    background-color: hsl(0, 60%, 40%);
+    color: hsl(0, 20%, 5%);
 }
 
-@media #{$break1}{
-    .deleteAlert{
-        top: 25%;
-        left: 7.5%;
-        width: 85%;
-        height: 50%;
-        font-size: 1em;
-        padding: 2em;
-    }
+.yes{
+    background-color: hsl(80, 60%, 40%);
+    color: hsl(80, 20%, 5%);
 }
 
-.backgroundOpacity{
-    filter: opacity(0.4)grayscale(100%);
-}
+.blurBackground{
+    filter: grayscale(40%)blur(2px)brightness(0.8);
+  }
