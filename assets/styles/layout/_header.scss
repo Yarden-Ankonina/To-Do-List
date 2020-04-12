@@ -26,8 +26,11 @@
     &-navbar-menu {
       justify-content: space-around; align-items: center;
       width: 100%;
-      font-weight: normal;
       background-color: $red1d;box-shadow: 0px 7px 12px -8px $black1;
+      #navbar-sort-button{
+        font-weight: normal;
+        font-size: 0.9em;
+      }
       .navbar-menu-icon {
         color: $white2;
         padding: 0.5em;

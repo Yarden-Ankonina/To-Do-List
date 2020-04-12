@@ -48,10 +48,11 @@
     }
       &-selector {
         background-color: hsl(350,50%,25%);
+        width: 10%;
         opacity: 0.8;
-        width: 100%;
         margin: 0.2em 0;
-        padding: 0.2em 0;
+        padding: 0.4em 0;
+        border-radius: 0.4em;
         text-align: center;
         &-label{
           padding-right: 0.3em;
