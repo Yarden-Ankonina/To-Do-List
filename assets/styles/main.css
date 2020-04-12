@@ -724,8 +724,8 @@ select option {
 }
 
 .priority-1 {
-  -webkit-box-shadow: inset 0px 0px 5px 2px #d92626;
-          box-shadow: inset 0px 0px 5px 2px #d92626;
+  -webkit-box-shadow: inset 0px 0px 5px 2px #e61a1a;
+          box-shadow: inset 0px 0px 5px 2px #e61a1a;
 }
 
 .priority-2 {
