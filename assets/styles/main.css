@@ -879,6 +879,16 @@ input:focus {
   }
 }
 
+.hide {
+  display: none;
+}
+
+.show {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 /* imports */
 .main-content-forms {
   display: -webkit-box;

@@ -1,6 +1,5 @@
 import Store from './store.js'
 import { editTaskHandler } from './todolist.js';
-import {init} from "./init.js";
 
 export default class UI {
     static setDay() {
