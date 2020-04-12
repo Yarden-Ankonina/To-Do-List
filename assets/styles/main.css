@@ -821,6 +821,21 @@ input:focus {
   cursor: move;
 }
 
+.draggable:active .priority-1:hover {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.draggable:active .priority-2:hover {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.draggable:active .priority-3:hover {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
 .dragging {
   -webkit-box-shadow: 0px 0px 5px 2px white;
           box-shadow: 0px 0px 5px 2px white;
@@ -1242,6 +1257,10 @@ input:focus {
   font-size: 0.9em;
   padding: 0.2em;
   margin-top: 1em;
+}
+
+.main-footer-text-info {
+  padding: 0 0.2em;
 }
 
 html[data-theme="redMode"] {
