@@ -2,8 +2,8 @@
 .edit-popup{
   visibility: hidden;
   position: fixed;
- 
-  background-color: $white2;
+  background-color: hsl(180, 65%, 90%);
+  box-shadow: inset 0px 0px 0px 8px hsl(180, 45%, 60%);
   z-index: 1;
   display: flex;
   justify-content: flex-start;
@@ -14,8 +14,9 @@
 
     &-title{
       text-align: center;
-      background-color: $black2;
-      color: $white2;
+      background-color: hsl(180, 35%, 50%);
+      opacity: 0.5;
+      color: $black1;
       padding: 0.5em 0;
       margin-top: 2em;
       width: 100%;
@@ -24,7 +25,7 @@
     }
     #popup-exit{
     align-self: flex-end;
-    background-color: $green4o;
+    background-color: hsl(180, 25%, 70%);
     margin: 0.2em 0;
     width: 9%;
     padding: 0;
@@ -32,8 +33,7 @@
     margin-right: 0.5em;
     font-size: 1.5em;
     &:hover{
-      color: $white1;
-      background-color: $green3;
+      background-color: hsl(180, 55%, 70%);
     }
   }
   &-form{
@@ -42,25 +42,24 @@
     text-align: center;
     margin: 0.3em;
     width: 100%;
+    font-size: 1.1em;
+    padding: 0.3em 1em;
    
     #popup-title-input{
       text-align: center;
       line-height: 1.8em;
       font-size: 1.1em;
-      background-color: $green4o;
+      background-color: hsl(180, 25%, 70%);
       box-shadow: 0px 6px 6px -6px $black2;
-      margin-bottom: 0.5em;
-      &::placeholder{
-        color: $white3;
-      }
+      margin: 0.5em 0;
       &:focus{
-        background-color: $green3;
-        color: $white1;
+        background-color: hsl(180, 65%, 60%);
+        color: $black2;
       }
     }
     #popup-priority-select{
       margin-top: 0.2em;
-      background-color: $black1;
+      background-color: $black2;
       color: $white1;
       font-weight: bold;
       align-self: center;
@@ -74,12 +73,12 @@
   .edit-submit-update{
     margin-top: 0.6em;
     padding: 0.4em;
-    background-color: $green3;
+    background-color: hsl(180, 55%, 70%);
     width: 17%;
     color: $black2;
     &:hover{
       color: $black1;
-      background-color: $green3;
+      background-color: hsl(180, 65%, 60%);
     }
   }
 }

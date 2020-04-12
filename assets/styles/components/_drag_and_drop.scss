@@ -1,24 +1,6 @@
 .draggable{
     cursor: move;
-    &:active{
-        .priority{
-            &-1{
-                &:hover{
-                    box-shadow: none
-                }
-            };
-            &-2{
-                &:hover{
-                    box-shadow: none
-                }
-            }
-            &-3{
-                &:hover{
-                    box-shadow: none
-                }
-            }
-        }
-    }
+    
     
 }
 .dragging{
