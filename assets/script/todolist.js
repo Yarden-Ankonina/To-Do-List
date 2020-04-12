@@ -68,11 +68,14 @@ function addTasksHandler() {
 function showDeletePopup() {
     DELETE_POPUP.style.visibility = "visible";
     MAIN_FLEX.classList.add("blurBackground");
+    MAIN_FLEX.classList.add("cant-touch");
 }
 
 function hideDeletePopup() {
     DELETE_POPUP.style.visibility = "hidden";
     MAIN_FLEX.classList.remove("blurBackground");
+    MAIN_FLEX.classList.remove("cant-touch");
+
 }
 document.querySelector(".yes").addEventListener('click',e=>{
     hideDeletePopup();

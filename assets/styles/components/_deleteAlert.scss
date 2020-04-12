@@ -45,3 +45,6 @@
 .blurBackground{
     filter: grayscale(40%)blur(2px)brightness(0.8);
   }
+.cant-touch{
+  cursor: not-allowed;
+}
