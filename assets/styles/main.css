@@ -797,6 +797,15 @@ input:focus {
           filter: grayscale(40%) blur(2px) brightness(0.8);
 }
 
+.draggable {
+  cursor: move;
+}
+
+.dragging {
+  -webkit-box-shadow: 0px 0px 5px 2px yellow;
+          box-shadow: 0px 0px 5px 2px yellow;
+}
+
 .main-header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1141,17 +1150,18 @@ input:focus {
 }
 
 .main-content-todolist-list-item:hover {
-  cursor: pointer;
   opacity: 1;
   -webkit-transform: scale(1.02);
           transform: scale(1.02);
 }
 
 .main-content-todolist-list-item .fa-trash-alt:hover {
+  cursor: pointer;
   color: var(--todo-list-item-trash);
 }
 
 .main-content-todolist-list-item .fa-edit:hover {
+  cursor: pointer;
   color: var(--todo-list-item-edit);
 }
 

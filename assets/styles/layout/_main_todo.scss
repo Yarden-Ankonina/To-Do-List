@@ -24,17 +24,18 @@
       transition-property: all;
       transition-duration: 1s;
       &:hover{
-        cursor: pointer;
         opacity: 1;
         transform: scale(1.02);
       }
       .fa-trash-alt{
         &:hover{
+          cursor: pointer;
           color : var(--todo-list-item-trash);
         }
       }
       .fa-edit{
         &:hover{
+          cursor: pointer;
           color : var(--todo-list-item-edit);
         }
       }
