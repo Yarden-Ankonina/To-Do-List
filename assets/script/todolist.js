@@ -51,10 +51,12 @@ function showEditPopup() {
 function hideEditPopup() {
     EDIT_POPUP.style.visibility = "hidden";
     MAIN_FLEX.classList.remove("blurBackground");
+
 }
 function showDeletePopup() {
     DELETE_POPUP.style.visibility = "visible";
     MAIN_FLEX.classList.add("blurBackground");
+
 }
 
 function hideDeletePopup() {

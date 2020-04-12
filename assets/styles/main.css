@@ -1016,12 +1016,14 @@ input:focus {
   color: #fff2f2;
   display: none;
   align-items: center;
-  margin: 1em;
 }
 
 .main-content-forms-todoForm-titleLabel {
+  background-color: #4d1a22;
+  text-align: center;
+  width: 100%;
   padding: 0.3em;
-  color: #f6eeee;
+  color: #e8c9c9;
   font-weight: bold;
   font-size: 1.2em;
 }
