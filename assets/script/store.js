@@ -27,19 +27,20 @@ export default class Store {
         this.removeSpecificTask(title, tasksArray);
         localStorage.setItem("tasks", JSON.stringify(tasksArray));
     }
-    static fillCurrentTasksArray(tasks) {
+    static createTaskArrayFromList(tasks) {
+        const taskArray = [];
         tasks.forEach((task) => {
             const title = task.querySelector("span").innerHTML;
             const id = task.id;
             const priority = task.classList.value.slice(-1);
-            newTaskArray.push({ title: title, priority: priority, id: id });
+            taskArray.push({ title: title, priority: priority, id: id });
         })
-
+        return taskArray;
     }
 
     static setCurrentTasks() {
         const tasks = document.querySelectorAll("li");
-        let newTaskArray = this.fillCurrentTasksArray(tasks);
+        const newTaskArray = this.createTaskArrayFromList(tasks);
         Store.setTasksArray(newTaskArray);
     }
 
