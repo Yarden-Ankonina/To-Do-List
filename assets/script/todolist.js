@@ -76,7 +76,7 @@ function editTaskHandler(event) {
             hideEditPopup();
         }
         else {
-            UI.updateTask(response.id, response.newTitle, newPriority);
+            UI.updateTask(response.id, response.newTitle, response.newPriority);
             hideEditPopup();
         }
     });
