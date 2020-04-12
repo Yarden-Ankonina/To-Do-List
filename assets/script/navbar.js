@@ -32,7 +32,7 @@ document.querySelector("#navbar-sort-button").addEventListener("click", (event) 
 });
 
 document.querySelector(".fa-bars").addEventListener("click", function () {
-    if (MAIN_HEADER_MENU.style.display!="flex") {
+    if (MAIN_HEADER_MENU.style.display != "flex") {
         MAIN_HEADER_MENU.style.display = "flex";
     } else {
         MAIN_HEADER_MENU.style.display = "none";
@@ -60,6 +60,7 @@ function sortTasksHandler() {
     Store.setTasksArray(tasksArray);
 
     UI.removeAllTasks();
+
     addTasksHandler();
 
     Store.setCurrentTasks();

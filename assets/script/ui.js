@@ -1,5 +1,5 @@
 import Store from './store.js'
-import { editTaskHandler } from './todolist.js';
+import { editTaskHandler, deleteTaskHandler } from './todolist.js';
 
 export default class UI {
     static setDay() {
@@ -32,9 +32,7 @@ export default class UI {
 
         li.firstElementChild.addEventListener("click", (event) => {
             event.preventDefault();
-            if (confirm('Do you want to delete') == true) {
-                UI.removeTask(event);
-            }
+            deleteTaskHandler(event);
         });
 
         li.lastElementChild.addEventListener("click", (event) => {
@@ -54,7 +52,7 @@ export default class UI {
 
         element.classList.add("deleted");
         setTimeout(() => {
-            Store.removeTaskFromArray(title);
+            Store.deleteTaskHandler(title);
             element.remove();
         }, 599);
     }

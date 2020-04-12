@@ -1,7 +1,11 @@
 export default 'todolist';
 
-export { addTasksHandler };
-export { editTaskHandler };
+export {
+    addTasksHandler,
+    deleteTaskHandler,
+    editTaskHandler
+};
+
 
 import Store from './store.js';
 import UI from './ui.js';
@@ -10,9 +14,10 @@ const EDIT_POPUP = document.querySelector(".edit-popup");
 const CLOSE_POPUP = document.querySelector("#popup-exit");
 const SUBMIT_POPUP = document.querySelector(".edit-submit-update")
 const MAIN_FLEX = document.querySelector(".main-flex");
+const YES_DELETE_POPUP = document.querySelector(".yes");
+const NO_DELETE_POPUP = document.querySelector(".no");
 
 const DELETE_POPUP = document.querySelector(".delete-popup");
-
 
 function editPromise(event) {
     const id = event.target.parentElement.id;
@@ -24,7 +29,18 @@ function editPromise(event) {
             resolve({ newTitle, newPriority, id });
         });
         CLOSE_POPUP.addEventListener('click', () => {
-            resolve("");
+            resolve(false);
+        });
+    });
+}
+
+function deletePopUpPromise(event) {
+    return new Promise((resolve) => {
+        YES_DELETE_POPUP.addEventListener('click', () => {
+            resolve(true);
+        });
+        NO_DELETE_POPUP.addEventListener('click', () => {
+            resolve(false);
         });
     });
 }
@@ -35,6 +51,15 @@ function showEditPopup() {
 }
 function hideEditPopup() {
     EDIT_POPUP.style.visibility = "hidden";
+    MAIN_FLEX.classList.remove("blurBackground");
+}
+function showDeletePopup() {
+    DELETE_POPUP.style.visibility = "visible";
+    MAIN_FLEX.classList.add("blurBackground");
+}
+
+function hideDeletePopup() {
+    DELETE_POPUP.style.visibility = "hidden";
     MAIN_FLEX.classList.remove("blurBackground");
 }
 function fillEditPopupInputs() {
@@ -58,26 +83,22 @@ function editTaskHandler(event) {
     });
     //
 }
+function deleteTaskHandler(event) {
+    showDeletePopup();
+    deletePopUpPromise(event).then(response => {
+        if (!response) {
+            hideEditPopup();
+        }
+        else {
+            UI.removeTask(event);
+            hideEditPopup();
+        }
+    });
+}
 
 function addTasksHandler() {
     const tasksArray = Store.getTasksArray();
     tasksArray.forEach((task) => UI.addTask(task));
 }
 
-//to arrange---yarden 12.4.2020
-function showDeletePopup() {
-    DELETE_POPUP.style.visibility = "visible";
-    MAIN_FLEX.classList.add("blurBackground");
-}
 
-function hideDeletePopup() {
-    DELETE_POPUP.style.visibility = "hidden";
-    MAIN_FLEX.classList.remove("blurBackground");
-}
-document.querySelector(".yes").addEventListener('click',e=>{
-    hideDeletePopup();
-});
-document.querySelector(".no").addEventListener('click',(e)=>{
-    hideDeletePopup()
-});
-showDeletePopup();
