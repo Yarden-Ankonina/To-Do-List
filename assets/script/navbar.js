@@ -3,6 +3,8 @@ export default 'navbar';
 import Task from './task.js'
 import UI from './ui.js'
 import Store from './store.js'
+import {initNav} from "./init_nav.js";
+
 
 import { addTasksHandler } from './todolist.js';
 
@@ -11,6 +13,7 @@ const MAIN_HEADER_MENU = document.querySelector(".main-header-navbar-menu");
 const SEARCH_BAR = document.querySelector(".main-content-forms-searchForm");
 const ADD_FORM = document.querySelector(".main-content-forms-todoForm");
 
+initNav();
 document.querySelector('#search-input').addEventListener('click',
     () => {
         searchHandler();
