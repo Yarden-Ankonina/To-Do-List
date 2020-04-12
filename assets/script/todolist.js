@@ -16,7 +16,6 @@ const SUBMIT_POPUP = document.querySelector(".edit-submit-update")
 const MAIN_FLEX = document.querySelector(".main-flex");
 const YES_DELETE_POPUP = document.querySelector(".yes");
 const NO_DELETE_POPUP = document.querySelector(".no");
-
 const DELETE_POPUP = document.querySelector(".delete-popup");
 
 function editPromise(event) {
@@ -87,11 +86,11 @@ function deleteTaskHandler(event) {
     showDeletePopup();
     deletePopUpPromise(event).then(response => {
         if (!response) {
-            hideEditPopup();
+            hideDeletePopup();
         }
         else {
             UI.removeTask(event);
-            hideEditPopup();
+            hideDeletePopup();
         }
     });
 }

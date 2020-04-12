@@ -761,6 +761,7 @@ input:focus {
           flex-direction: column;
   padding: 1em;
   text-align: center;
+  visibility: hidden;
 }
 
 .delete-popup-question {
@@ -953,16 +954,6 @@ input:focus {
     display: flex;
     padding: 0.3em 0.2em;
   }
-}
-
-.hide {
-  display: none;
-}
-
-.show {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
 }
 
 /* imports */
