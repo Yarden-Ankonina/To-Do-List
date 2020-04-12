@@ -1,12 +1,19 @@
 export default class Store {
-    static getTasksArray() {
-        let tasksArray = Store.isEmpty()
+    static allocNewList(listName) {
+        this.setTasksArray([], listName);
+    }
+    static getTasksArray(currentList) {
+        let tasksArray = Store.isListEmpty(currentList)
             ? []
-            : JSON.parse(localStorage.getItem("tasks"));
+            : JSON.parse(localStorage.getItem(currentList));
         return tasksArray;
     }
-    static isEmpty() {
-        return localStorage.getItem("tasks") === "[]";
+    static isStoreEmpty() {
+        return window.localStorage.length == 0;
+        ;
+    }
+    static isListEmpty(currentList) {
+        return JSON.parse(localStorage.getItem(currentList) == []);
     }
 
     static addTaskToArray(task) {
@@ -44,7 +51,7 @@ export default class Store {
         Store.setTasksArray(newTaskArray);
     }
 
-    static setTasksArray(tasksArray) {
-        localStorage.setItem("tasks", JSON.stringify(tasksArray));
+    static setTasksArray(tasksArray, listName) {
+        localStorage.setItem(listName, JSON.stringify(tasksArray));
     }
 }

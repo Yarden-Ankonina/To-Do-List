@@ -47,19 +47,25 @@ function deletePopUpPromise(event) {
 function showEditPopup() {
     EDIT_POPUP.style.visibility = "visible";
     MAIN_FLEX.classList.add("blurBackground");
+    MAIN_FLEX.style.pointerEvents = "none";
 }
 function hideEditPopup() {
     EDIT_POPUP.style.visibility = "hidden";
     MAIN_FLEX.classList.remove("blurBackground");
+    MAIN_FLEX.style.pointerEvents = "auto";
+
 }
 function showDeletePopup() {
     DELETE_POPUP.style.visibility = "visible";
     MAIN_FLEX.classList.add("blurBackground");
+    MAIN_FLEX.style.pointerEvents = "none";
+
 }
 
 function hideDeletePopup() {
     DELETE_POPUP.style.visibility = "hidden";
     MAIN_FLEX.classList.remove("blurBackground");
+    MAIN_FLEX.style.pointerEvents = "auto";
 }
 function fillEditPopupInputs() {
     document.querySelector('#popup-title-input').value =
@@ -95,8 +101,8 @@ function deleteTaskHandler(event) {
     });
 }
 
-function addTasksHandler() {
-    const tasksArray = Store.getTasksArray();
+function addTasksHandler(currentList) {
+    const tasksArray = Store.getTasksArray(currentList);
     tasksArray.forEach((task) => UI.addTask(task));
 }
 

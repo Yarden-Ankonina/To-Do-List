@@ -1,7 +1,20 @@
 import Store from './store.js'
 import { editTaskHandler, deleteTaskHandler } from './todolist.js';
+import { addOptiontoSelect } from './ladingpage.js';
 
 export default class UI {
+    static addOptions() {
+        for (let i = 0; i < localStorage.length; i++) {
+            addOptiontoSelect(localStorage.key(i));
+        }
+    }
+    static renderStore() {
+        this.addOptions();
+        const array = Store.getTasksArray(localStorage.key(0));
+        array.forEach(element => {
+            this.addTask(element)
+        })
+    }
     static setDay() {
         const placeHolder = document.querySelector(
             ".main-content-date-placeHolder"

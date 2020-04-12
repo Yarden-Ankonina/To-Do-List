@@ -31,8 +31,18 @@
     <section class="delete-popup">
         <p class="delete-popup-question">Are You Sure You Want To Delete This Todo?</p>
         <div class="delete-popup-answer">
-        <button class="delete-popup-answer-button yes">Yes</button>
-        <button class="delete-popup-answer-button no">No</button>
+            <button class="delete-popup-answer-button yes">Yes</button>
+            <button class="delete-popup-answer-button no">No</button>
+        </div>
+    </section>
+
+    <section class="landing-page" style="display:none">
+        <div>
+            <h1>Welcome to our todo list app</h1>
+            <form class="landing-page-form">
+                <input id="landing-text-input" type="text"></input>
+                <input id="landing-submit-input" type="submit"></input>
+            </form>
         </div>
     </section>
 
@@ -50,7 +60,7 @@
                 </span>
             </div>
 
-            <div class="main-header-navbar-menu" >
+            <div class="main-header-navbar-menu">
                 <button id='navbar-sort-button'>
                     <i class="fas fa-sort navbar-menu-icon">
                         Sort by priority
@@ -83,7 +93,8 @@
                     <input type="text" id="todoForm-title-input" name="title" maxlength="20" placeholder="Insert title"
                         required>
                     <div class="main-content-forms-todoForm-selector">
-                        <label for="todoForm-priority-select" class="main-content-forms-todoForm-selector-label">Priority</label>
+                        <label for="todoForm-priority-select"
+                            class="main-content-forms-todoForm-selector-label">Priority</label>
                         <select id="todoForm-priority-select">
                             <option class="main-content-forms-todoForm-selector-option" value="1">1</option>
                             <option class="main-content-forms-todoForm-selector-option" value="2">2</option>
@@ -97,7 +108,8 @@
 
 
             <div class="main-content-todolist">
-                <h2 class="main-content-todolist-title">My Todo's</h2>
+                <select class="main-content-todolist-select"></select>
+                <!-- <option class="popup-priority-select-option" value="1">1</option> -->
                 <ul class="main-content-todolist-list">
                 </ul>
             </div>
@@ -123,12 +135,7 @@
 
 </html>
 
-<!-- <section class="landing-page">
-        <div>
-            <h1>Welcome to our todo list app</h1>
-            <button class="landing-page-button">press here to start</button>
-        </div>
-    </section> -->
+
 <!-- <div class="deleteAlert">
         <p>ARE YOU SURE WANT TO DELETE THIS TODO ?</p>
         <div class="deleteAlert-answers">
