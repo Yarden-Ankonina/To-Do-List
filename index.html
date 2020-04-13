@@ -36,6 +36,16 @@
         </div>
     </section>
 
+    <section class="landing-page" style="display:none">
+        <div>
+            <h1>Welcome to our todo list app</h1>
+            <form class="landing-page-form">
+                <input id="landing-text-input" type="text"></input>
+                <input id="landing-submit-input" type="submit"></input>
+            </form>
+        </div>
+    </section>
+
     <section class="main-flex">
         <header class="main-header">
             <div class="main-header-navbar">
@@ -96,7 +106,10 @@
 
 
             <div class="main-content-todolist">
-                <h2 class="main-content-todolist-title">My Todo's</h2>
+                <select class="main-content-todolist-select "> 
+                    <option class="popup-priority-select-option" value="dummy">My Todo's</option>
+                    <option class="popup-priority-select-option" value="dummy">dummy</option>
+                </select>
                 <ul class="main-content-todolist-list">
                 </ul>
             </div>

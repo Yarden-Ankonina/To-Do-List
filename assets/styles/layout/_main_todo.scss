@@ -1,15 +1,27 @@
 //common style
 .main-content-todolist {
-  display: flex;
-  flex-direction: column;
+   display: flex;
+   flex-direction: column;
    align-items: center;
-  &-title{
-    width: 100%;text-align: center;
-    background-color:$black1;
-    color : $white2;
-    padding: 0.6em 0;
+   padding-bottom: 3em;
+   box-shadow:inset 0px 0px 40px 5px hsl(0, 50%, 20%);
+
+  &-select{
+    background-color: hsl(0, 0%, 15%);
     font-size: 1.1em;
-    font-weight: bold;
+    box-shadow: 0px 8px 8px -9px hsl(0, 20%, 10%);
+    color : $white2;
+    padding: 0.5em 2em;
+    margin: 1.5em 0;
+    outline: none;
+    transition-property: background-color;
+    transition-duration: 0.8s;
+    text-align-last: center;
+    &:hover{
+      cursor: pointer;
+      transform: scale(1.02);
+      filter: brightness(1.1);
+    }
   }
   &-list{
     width: 100%;

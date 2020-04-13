@@ -5,6 +5,7 @@
   @include flexCenter(column);
   position: sticky; width: 100%; top: 0;
   background-color: $black1; color: $white1;
+  z-index: 1;
     &-navbar{
     display: flex; flex-direction: row; justify-content: space-between; width: 100%;
       &-logo{

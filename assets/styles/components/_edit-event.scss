@@ -63,7 +63,8 @@
       color: $white1;
       font-weight: bold;
       align-self: center;
-      width: 13%;
+      border-radius: 0.4em;
+      padding-left: 0.6em;
       &:focus{
         background-color: $black1;
         color: $white2;
@@ -86,7 +87,7 @@
 
 //only mobile
 @media #{$break1}{
-  .edit{  
+  .edit-popup{  
     top:20%;
     left:7.5%;
     width: 85%;
@@ -95,10 +96,7 @@
     font-size: 1.2em;
     width: 9%;
   }
-  .edit-form{
-    select{
-      width: 15%;
-    }
+  .edit-popup-form{
     .edit-submit-update{
       width: 40%;
       }

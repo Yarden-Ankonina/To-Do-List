@@ -2,14 +2,23 @@
 
 .priority{
     &-1{
-            box-shadow: inset 0px 0px 1px 1px hsl(0, 80%, 50%); 
+            box-shadow: inset 0px 0px 1px 1px hsl(0, 100%, 50%); 
+            &:hover{
+                    filter: saturate(2);
+            }
     }
     &-2{
-            box-shadow: inset 0px 0px 1px 1px hsl(40, 80%, 50%);
+            box-shadow: inset 0px 0px 1px 1px hsl(50, 100%, 50%);
+            &:hover{
+                filter: saturate(2);
+            }
     }
     &-3{
-            box-shadow: inset 0px 0px 1px 1px hsl(150, 60%, 50%);
+            box-shadow: inset 0px 0px 1px 1px hsl(120, 80%, 50%);
+            &:hover{
+                filter: saturate(2);
+            }
     }
-  
 }
+  
 
