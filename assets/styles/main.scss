@@ -21,6 +21,7 @@
 @import "./layout/header";
 @import "./layout/main-content";
 @import "./layout/footer";
+@import "./layout/landingPage";
 
 //themes
 @import "./themes/theme";
@@ -54,7 +55,4 @@ body,
 @media #{$break3} {
 }
 
-//landing page
 
-// @import "./components/deleteAlert";
-// @import "./layout/landingPage";

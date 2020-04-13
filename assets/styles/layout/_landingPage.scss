@@ -1,40 +1,57 @@
-@mixin landingPage(){
-
-//comon style
-.main-flex{
-    // display: none;
-}
-
 .landing-page{
-    @include flexCenter(column);
-    background-color: rgb(236, 206, 206);
-    height: 100vh;
-    display: none;
-    div{
-        text-align: center;
-        padding: 15em 2em;
-        background-color: rgba(145, 64, 64, 0.459);
-        border: 5px solid rgba(102, 41, 41, 0.445);
+  background: black;
+  position: fixed;
+  background-position-x: center;
+  background-position-y: center;
+  background-image: url("/assets/styles/LandingPage/Welcome.jpg");
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;
+  display: none;
+  &:hover{
+    cursor: pointer;
+  }
+  &-form{
+    visibility: hidden;
+    position: relative;
+    top: 45%;
+    left: 42%;
+    &-title{
+      position: relative;
+      left: -1%;
+     margin-bottom: 2em;
+     font-size: 1.2em;
     }
-    
-    h1{
-        font-size: 1.3em;
-        font-weight: bold;
-        padding: 1em;
-        text-transform: uppercase;
-        color: rgb(99, 17, 17);
+    #landing-text-input{
+      line-height: 1.5em;
+      padding: 0.4em;
+      background-color: hsl(180,30%,20%);
+      border-radius: 0.2em;
+      &::placeholder{
+        color: hsl(0,50%,90%);
+      }
+      &:focus{
+        font-weight: normal;
+        color: hsl(0,20%,100%);
+        filter: brightness(1.4);
+      }
+    }
+    #landing-submit-input{
+      margin: 0.3em;
+      padding: 0.4em;
+      border-radius: 0.5em;
+      background-color: hsl(180,30%,80%);
+      &:hover{
+        cursor: pointer;
+         background-color: hsl(180,50%,80%);
 
+      }
     }
-    button{
-        padding: 1em;
-        background-color: salmon;
-        border-radius: 1.5em;
-        font-size: 1.2em;
-        font-weight: bold;
-        color: rgb(122, 41, 41);
-        box-shadow: 0px 2px 5px -2px black;
-    }
+  }
+
 }
+
 
 //mobile and tablet
 @media #{$break1}, #{$break2}{
@@ -52,5 +69,4 @@
 //only desktop
 @media #{$break3}{
   
-}
 }

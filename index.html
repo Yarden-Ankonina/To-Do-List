@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="/assets/styles/main.css">
     <script src="https://kit.fontawesome.com/a05612df27.js" crossorigin="anonymous"></script>
     <script type="module" src="/assets/script/main.js" defer></script>
+    <script src="/assets/script/landingPage.js" defer></script>
+
     <title>TO-DO</title>
 </head>
 
@@ -36,14 +38,12 @@
         </div>
     </section>
 
-    <section class="landing-page" style="display:none">
-        <div>
-            <h1>Welcome to our todo list app</h1>
+    <section class="landing-page"  >
             <form class="landing-page-form">
-                <input id="landing-text-input" type="text"></input>
+                <h2 class="landing-page-form-title">Please Enter Your First Todo-List</h2>
+                <input id="landing-text-input" type="text" placeholder="My First Todo-List"></input>
                 <input id="landing-submit-input" type="submit"></input>
-            </form>
-        </div>
+            </form> 
     </section>
 
     <section class="main-flex">
@@ -113,6 +113,7 @@
                 <ul class="main-content-todolist-list">
                 </ul>
             </div>
+
 
         </main>
 
