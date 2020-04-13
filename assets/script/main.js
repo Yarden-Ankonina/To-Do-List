@@ -1,17 +1,16 @@
-import UI from './ui.js';
-import { createDraggableZone } from './draganddrop.js';
-import navbar from './navbar.js'
-import { addTasksHandler } from './todolist.js';
-import Store from './store.js';
-import { showLandingPage } from './ladingpage.js';
+import { isStoreEmpty, } from './store.js';
+import { firstTimeHandler, notFirstTimeHandler } from './handlers.js';
+import { displayLandingPage } from './DOM.js'
+function onLoad() {
+  if (isStoreEmpty()) {
+    displayLandingPage();
+  }
+  else {
+    notFirstTimeHandler();
+  }
+}
+onLoad();
 
 
-if (Store.isStoreEmpty()) {
-  showLandingPage();
-}
-else {
-  UI.renderStore();
-  UI.setDay();
-  createDraggableZone();
-}
+
 
