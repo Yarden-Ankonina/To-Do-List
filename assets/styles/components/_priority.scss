@@ -20,27 +20,45 @@
 //             }
 //     }
 // }
-  
+
 .priority{
-    &-1{
-            box-shadow: inset 0px 0px 1px 1px hsl(0, 100%, 50%); 
-            &:hover{
+        &-1{
+                box-shadow: inset 0px 0px 1px 1px hsl(0, 100%, 50%); 
+                &:hover{
+                        filter: saturate(2);
+                }
+        }
+        &-2{
+                box-shadow: inset 0px 0px 1px 1px hsl(50, 100%, 50%);
+                &:hover{
                     filter: saturate(2);
-            }
+                }
+        }
+        &-3{
+                box-shadow: inset 0px 0px 1px 1px hsl(120, 80%, 50%);
+                &:hover{
+                    filter: saturate(2);
+                }
+        }
     }
-    &-2{
-            box-shadow: inset 0px 0px 1px 1px hsl(50, 100%, 50%);
-            &:hover{
-                filter: saturate(2);
-            }
-    }
-    &-3{
-            box-shadow: inset 0px 0px 1px 1px hsl(120, 80%, 50%);
-            &:hover{
-                filter: saturate(2);
-            }
-    }
-}
+  
+// .priority{
+//     &-1{
+//             &:hover{
+//                     color: hsl(0, 80%, 50%);
+//             }
+//     }
+//     &-2{
+//             &:hover{
+//                 color: hsl(50, 100%, 50%);
+//             }
+//     }
+//     &-3{
+//             &:hover{
+//                 color:hsl(120, 30%, 50%);
+//             }
+//     }
+// }
   
 
 
