@@ -1,50 +1,52 @@
-export default class Store {
-    static getTasksArray() {
-        let tasksArray = Store.isEmpty()
-            ? []
-            : JSON.parse(localStorage.getItem("tasks"));
-        return tasksArray;
-    }
-    static isEmpty() {
-        return localStorage.getItem("tasks") === "[]";
-    }
-
-    static addTaskToArray(task) {
-        const tasksArray = Store.getTasksArray();
-        tasksArray.push(task);
-        localStorage.setItem("tasks", JSON.stringify(tasksArray));
-    }
-
-    static removeSpecificTask(title, tasksArray) {
-        tasksArray.forEach((task, index) => {
-            if (task.title === title) {
-                tasksArray.splice(index, 1);
-            }
-        });
-    }
-    static deleteTaskHandler(title) {
-        const tasksArray = Store.getTasksArray();
-        this.removeSpecificTask(title, tasksArray);
-        localStorage.setItem("tasks", JSON.stringify(tasksArray));
-    }
-    static createTaskArrayFromList(tasks) {
-        const taskArray = [];
-        tasks.forEach((task) => {
-            const title = task.querySelector("span").innerHTML;
-            const id = task.id;
-            const priority = task.classList.value.slice(-1);
-            taskArray.push({ title: title, priority: priority, id: id });
-        })
-        return taskArray;
-    }
-
-    static setCurrentTasks() {
-        const tasks = document.querySelectorAll("li");
-        const newTaskArray = this.createTaskArrayFromList(tasks);
-        Store.setTasksArray(newTaskArray);
-    }
-
-    static setTasksArray(tasksArray) {
-        localStorage.setItem("tasks", JSON.stringify(tasksArray));
-    }
+import Task from './task.js'
+export {
+    isStoreEmpty, getTasksArray, setTasksArray,
+    snapshotHandler, addTaskToTasksArray, removeSpecificTask,
 }
+function getTasksArray(key) {
+    const tasksArray = doesTasksArrayExist(key) ? [] : JSON.parse(localStorage.getItem(key));
+    return tasksArray;
+}
+function isStoreEmpty() {
+    return window.localStorage.length === 0;
+}
+function doesTasksArrayExist(key) {
+    return JSON.parse(localStorage.getItem(key) === []);
+}
+function addTaskToTasksArray(task, key) {
+    const tasksArray = getTasksArray(key);
+    tasksArray.push(task);
+    localStorage.setItem(key, JSON.stringify(tasksArray));
+}
+
+function removeSpecificTask(id, key) {
+    const tasksArray = getTasksArray(key);
+    tasksArray.forEach((task, index) => {
+        if (task.id == id) {
+            tasksArray.splice(index, 1);
+        }
+    });
+    setTasksArray(tasksArray, key);
+}
+
+function createTasksArrayFromList(tasksNodeList) {
+    const taskArray = [];
+    tasksNodeList.forEach((task) => {
+        const title = task.querySelector("span").innerHTML;
+        const id = task.id;
+        const priority = task.classList.value.slice(-1);
+        taskArray.push(new Task(title, priority, id));
+    })
+    return taskArray;
+}
+
+function snapshotHandler(key) {
+    const tasksNodeList = document.querySelectorAll("li");
+    const taskArray = createTasksArrayFromList(tasksNodeList);
+    setTasksArray(taskArray, key);
+}
+
+function setTasksArray(tasksArray = [], key) {
+    localStorage.setItem(key, JSON.stringify(tasksArray));
+}
+
