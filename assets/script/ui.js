@@ -20,7 +20,7 @@ export default class UI {
         li.innerHTML = `
         <i class="fas fa-trash-alt todo-icon" aria-hidden="true"></i>
         <span class="main-content-todolist-list-item-title">${taskObj.title}</span>
-        <i class="far fa-edit todo-icon" aria-hidden="true"></i>`;
+        <span><i class="far fa-star star-item todo-icon" aria-hidden="true"></i><i class="far fa-edit todo-icon" aria-hidden="true"></i></span>`;
 
         li.addEventListener("dragstart", () => {
             li.classList.add("dragging");
@@ -35,9 +35,14 @@ export default class UI {
             deleteTaskHandler(event);
         });
 
-        li.lastElementChild.addEventListener("click", (event) => {
+        li.lastElementChild.lastElementChild.addEventListener("click", (event) => {
             editTaskHandler(event);
         });
+
+        li.lastElementChild.firstElementChild.addEventListener("click", (event) => {
+            // to add promise function document.querySelector(".star-item").classList.add("fas");
+        });
+
         return li;
     }
 

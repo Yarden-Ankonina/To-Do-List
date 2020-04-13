@@ -1,5 +1,26 @@
 //common style
 
+// .priority{
+//     &-1{
+//             &:hover{
+//                     background-color: hsl(0, 100%, 35%);
+
+//             }
+//     }
+//     &-2{
+//             &:hover{
+//                 background-color: hsl(50, 100%, 35%);
+
+//             }
+//     }
+//     &-3{
+//             &:hover{
+//                 background-color: hsl(120, 30%, 30%);
+
+//             }
+//     }
+// }
+  
 .priority{
     &-1{
             box-shadow: inset 0px 0px 1px 1px hsl(0, 100%, 50%); 
@@ -21,4 +42,5 @@
     }
 }
   
+
 

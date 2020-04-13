@@ -1209,6 +1209,15 @@ input:focus {
   color: var(--todo-list-item-edit);
 }
 
+.main-content-todolist-list-item .fa-star {
+  padding-right: 0.5em;
+}
+
+.main-content-todolist-list-item .fa-star:hover {
+  cursor: pointer;
+  color: #ffea80;
+}
+
 .main-content-date {
   display: -webkit-box;
   display: -ms-flexbox;

@@ -17,6 +17,7 @@ const MAIN_FLEX = document.querySelector(".main-flex");
 const YES_DELETE_POPUP = document.querySelector(".yes");
 const NO_DELETE_POPUP = document.querySelector(".no");
 const DELETE_POPUP = document.querySelector(".delete-popup");
+// const FAVOR = document.querySelector(".star-item"); //to add promise function .classlist.add("fas")/remove("far")
 
 function editPromise(event) {
     const id = event.target.parentElement.id;
@@ -96,6 +97,7 @@ function deleteTaskHandler(event) {
         }
     });
 }
+
 
 function addTasksHandler() {
     const tasksArray = Store.getTasksArray();
