@@ -54,7 +54,6 @@ export function addEventsListenerHandler() {
     })
 
     LANDING_FORM.addEventListener('submit', (event) => {
-        console.log(event);
         event.preventDefault();
         const newListName = LANDING_TEXT_INPUT.value;
         firstTimeHandler(newListName)

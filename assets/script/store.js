@@ -4,9 +4,7 @@ export {
     snapshotHandler, addTaskToTasksArray, removeSpecificTask,
 }
 function getTasksArray(key) {
-    const tasksArray = doesTasksArrayExist(key)
-        ? []
-        : JSON.parse(localStorage.getItem(key));
+    const tasksArray = doesTasksArrayExist(key) ? [] : JSON.parse(localStorage.getItem(key));
     return tasksArray;
 }
 function isStoreEmpty() {
