@@ -1,16 +1,16 @@
-import { isStoreEmpty, } from './store.js';
+import { isStorageEmpty, } from './storage.js';
 import { firstTimeHandler, notFirstTimeHandler } from './handlers.js';
-import { displayLandingPage } from './DOM.js';
 
 
 function onLoad() {
-  if (isStoreEmpty()) {
-    displayLandingPage();
+  if (isStorageEmpty()) {
+    firstTimeHandler();
   }
   else {
     notFirstTimeHandler();
   }
 }
+
 onLoad();
 
 

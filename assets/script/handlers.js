@@ -1,60 +1,55 @@
 import Task from './task.js';
+
 import {
+    addTaskToTasksArray,
+    getTasksArray,
+    removeSpecificTask,
     setTasksArray,
     snapshotHandler,
-    addTaskToTasksArray,
-    removeSpecificTask,
-    getTasksArray
-} from './store.js';
+} from './storage.js';
+
 import {
-    removeAllTasks,
-    addTask,
-    clearInputs,
-    showDeletePopup,
-    removeTaskNode,
-    showEditPopup,
-    fillEditPopupInputs,
-    hideEditPopup,
-    updateTask,
-    addListsOfTasks, setDay,
-    displayLandingPage,
+    displayLandingPage, hideDeletePopup, showDeletePopup,
+    removeTaskNode, showEditPopup, fillEditPopupInputs,
+    hideEditPopup, updateTask, addListsOfTasks, setDay,
+    removeAllTasks, addTask, clearInputs,
 } from './DOM.js'
+
 import { addEventsListenerHandler } from './events.js';
 
 
-const TODO_TITLE_INPUT = document.querySelector("#todoForm-title-input");
-const TODO_PRIORITY_SELECT = document.querySelector("#todoForm-priority-select");
-const SEARCH_INPUT = document.querySelector("#search-input");
-const SELECT = document.querySelector('.main-content-todolist-select');
-const CLOSE_POPUP = document.querySelector("#popup-exit");
-const SUBMIT_POPUP = document.querySelector(".edit-submit-update");
-const YES_DELETE_POPUP = document.querySelector(".yes");
-const NO_DELETE_POPUP = document.querySelector(".no");
+const INPUT_ADD_TEXT = document.querySelector("#todoForm-title-input");
+const SELECT_ADD_PRIORITY = document.querySelector("#todoForm-priority-select");
+const INPUT_SEARCH_TEXT = document.querySelector("#search-input");
+const SELECT_TODOLIST = document.querySelector('.main-content-todolist-select');
+const BUTTON_POPUP_CLOSE = document.querySelector("#popup-exit");
+const BUTTON_POPUP_SUBMIT = document.querySelector(".edit-submit-update");
+const BUTTON_DELETE_YES = document.querySelector(".yes");
+const BUTTON_DELETE_NO = document.querySelector(".no");
 
 
-function firstTimeHandler(newListName) {
-    setTasksArray(newListName);
-    addOptiontoSelect(newListName);
+function firstTimeHandler() {
     setDay();
     addEventsListenerHandler();
+    displayLandingPage();
 }
 
 function notFirstTimeHandler() {
-    addListsOfTasks();
-    addTasksHandler(getTasksArray(localStorage.key(0)));
     setDay();
     addEventsListenerHandler();
+    addListsOfTasks();
+    addTasksHandler(getTasksArray(localStorage.key(0)));
 }
 
 
 function editPromise(event) {
     return new Promise((resolve) => {
-        SUBMIT_POPUP.addEventListener('click', (e) => {
+        BUTTON_POPUP_SUBMIT.addEventListener('click', (e) => {
             e.preventDefault();
             resolve(new Task(getEditTitle(), getEditPriority()
                 , getIdbyEvent(event)));
         });
-        CLOSE_POPUP.addEventListener('click', () => {
+        BUTTON_POPUP_CLOSE.addEventListener('click', () => {
             resolve(false);
         });
     });
@@ -62,10 +57,10 @@ function editPromise(event) {
 
 function deletePopUpPromise() {
     return new Promise((resolve) => {
-        YES_DELETE_POPUP.addEventListener('click', () => {
+        BUTTON_DELETE_YES.addEventListener('click', () => {
             resolve(true);
         });
-        NO_DELETE_POPUP.addEventListener('click', () => {
+        BUTTON_DELETE_NO.addEventListener('click', () => {
             resolve(false);
         });
     });
@@ -77,16 +72,16 @@ function addTasksHandler(tasksArray) {
     })
 }
 
-function sortTasksHandler() {
-    const tasksArray = getTasksArray();
+function sortTasksHandler(key) {
+    const tasksArray = getTasksArray(key);
 
     tasksArray.sort(Task.compare);
 
-    setTasksArray(tasksArray, getCurrentKey());
+    setTasksArray(key, tasksArray);
 
     removeAllTasks();
 
-    addTasksHandler();
+    addTasksHandler(tasksArray);
 
     snapshotHandler(getCurrentKey());
 }
@@ -172,40 +167,43 @@ function getDragAfterElement(container, y) {
 }
 
 function getEditTitle() {
-    return document.querySelector('#popup-title-input').value;
+    const VALUE_TEXT_EDIT = document.querySelector('#popup-title-input').value;
+    return VALUE_TEXT_EDIT;
 }
 function getEditPriority() {
-    return document.querySelector('#popup-priority-select').value;
+    const VALUE_EDIT_PRIORITY = document.querySelector('#popup-priority-select').value;
+    return VALUE_EDIT_PRIORITY;
 }
 function getIdbyEvent(event) {
     return event.target.parentNode.id;
 }
 
 function getUlElement() {
-    return document.querySelector(".main-content-todolist-list");
+    const UL_TODOLIST = document.querySelector(".main-content-todolist-list");
+    return UL_TODOLIST;
 }
 function getLiNodeList(ul) {
     return ul.querySelectorAll("li");
 }
 function getFilter() {
-    return SEARCH_INPUT.value.toUpperCase();
+    return INPUT_SEARCH_TEXT.value.toUpperCase();
 }
 function getSpanFromli(li) {
     return li.getElementsByTagName("span")[0];
 }
 function getTitleFromForm() {
-    return TODO_TITLE_INPUT.value;
+    return INPUT_ADD_TEXT.value;
 }
 
 function getPriorityFromForm() {
-    return TODO_PRIORITY_SELECT.value;
+    return SELECT_ADD_PRIORITY.value;
 }
 function getCurrentKey() {
-    return SELECT.value;
+    return SELECT_TODOLIST.value;
 }
 
 export {
-    sortTasksHandler, searchHandler, createTaskHandler,
     deleteTaskHandler, editTaskHandler, firstTimeHandler,
-    notFirstTimeHandler
+    notFirstTimeHandler, swapHandler,
+    sortTasksHandler, searchHandler, createTaskHandler,
 }

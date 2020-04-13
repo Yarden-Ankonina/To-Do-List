@@ -1,6 +1,6 @@
 
 import { deleteTaskHandler, editTaskHandler } from './handlers.js'
-import { snapshotHandler } from './store.js'
+import { snapshotHandler } from './storage.js'
 
 const DATE_PLACEHOLDER = document.querySelector(".main-content-date-placeHolder");
 const CURRENT_TODOLIST = document.querySelector(".main-content-todolist-list");
@@ -15,7 +15,7 @@ const MAIN_HEADER_MENU = document.querySelector(".main-header-navbar-menu");
 const SEARCH_BAR = document.querySelector(".main-content-forms-searchForm");
 const SELECT_TITLE = document.querySelector(".main-content-todolist-select");
 const SELECT = document.querySelector('.main-content-todolist-select');
-
+const LANDING_FORM = document.querySelector('.landing-page-form');
 
 function addOptiontoSelect(name) {
     const option = createOption(name);
@@ -104,14 +104,16 @@ function updateTask(taskObj) {
             task.classList.add("draggable", `priority-${taskObj.priority}`);
         }
     });
-    snapshotHandler();
 }
 
 function displayLandingPage() {
-    LANDING_PAGE.style.display = 'flex';
+    LANDING_PAGE.style.display = 'block';
 }
 function hideLandingPage() {
     LANDING_PAGE.style.display = 'hiden';
+}
+function displayLandingPageForm() {
+    LANDING_FORM.style.visibility = 'visible';
 }
 
 function showEditPopup() {
@@ -172,5 +174,6 @@ export {
     addListsOfTasks, setDay, addTask, toogleMainHeaderDisplay,
     clearInputs, removeAllTasks, toogleSearchBarDisplay, toogleAddForm,
     showDeletePopup, hideDeletePopup, removeTaskNode, showEditPopup,
-    fillEditPopupInputs, hideEditPopup, updateTask, displayLandingPage, addOptiontoSelect
+    fillEditPopupInputs, hideEditPopup, updateTask, displayLandingPage, addOptiontoSelect,
+    displayLandingPageForm
 }

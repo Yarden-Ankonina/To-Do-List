@@ -1,13 +1,10 @@
 import Task from './task.js'
-export {
-    isStoreEmpty, getTasksArray, setTasksArray,
-    snapshotHandler, addTaskToTasksArray, removeSpecificTask,
-}
+
 function getTasksArray(key) {
     const tasksArray = doesTasksArrayExist(key) ? [] : JSON.parse(localStorage.getItem(key));
     return tasksArray;
 }
-function isStoreEmpty() {
+function isStorageEmpty() {
     return window.localStorage.length === 0;
 }
 function doesTasksArrayExist(key) {
@@ -26,7 +23,7 @@ function removeSpecificTask(id, key) {
             tasksArray.splice(index, 1);
         }
     });
-    setTasksArray(tasksArray, key);
+    setTasksArray(key, tasksArray);
 }
 
 function createTasksArrayFromList(tasksNodeList) {
@@ -43,10 +40,15 @@ function createTasksArrayFromList(tasksNodeList) {
 function snapshotHandler(key) {
     const tasksNodeList = document.querySelectorAll("li");
     const taskArray = createTasksArrayFromList(tasksNodeList);
-    setTasksArray(taskArray, key);
+    setTasksArray(key, taskArray);
 }
 
-function setTasksArray(tasksArray = [], key) {
-    localStorage.setItem(key, JSON.stringify(tasksArray));
+function setTasksArray(key, taskArray = []) {
+    localStorage.setItem(key, JSON.stringify(taskArray));
 }
 
+
+export {
+    isStorageEmpty, getTasksArray, setTasksArray,
+    snapshotHandler, addTaskToTasksArray, removeSpecificTask,
+}

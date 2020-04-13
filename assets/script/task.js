@@ -11,7 +11,5 @@ export default class Task {
             return a.priority > b.priority ? 1 : -1;
         }
     }
-    static isEqual(otherTask) {
-        return this.id === otherTask.id;
-    }
+
 }

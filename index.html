@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="/assets/styles/main.css">
     <script src="https://kit.fontawesome.com/a05612df27.js" crossorigin="anonymous"></script>
     <script type="module" src="/assets/script/app.js" defer></script>
-    <script src="/assets/script/landingPage.js" defer></script>
 
     <title>TO-DO</title>
 </head>
@@ -33,17 +32,17 @@
     <section class="delete-popup">
         <p class="delete-popup-question">Are You Sure You Want To Delete This Todo?</p>
         <div class="delete-popup-answer">
-        <button class="delete-popup-answer-button yes">Yes</button>
-        <button class="delete-popup-answer-button no">No</button>
+            <button class="delete-popup-answer-button yes">Yes</button>
+            <button class="delete-popup-answer-button no">No</button>
         </div>
     </section>
 
-    <section class="landing-page"  >
-            <form class="landing-page-form">
-                <h2 class="landing-page-form-title">Please Enter Your First Todo-List</h2>
-                <input id="landing-text-input" type="text" placeholder="My First Todo-List"></input>
-                <input id="landing-submit-input" type="submit"></input>
-            </form> 
+    <section class="landing-page">
+        <form class="landing-page-form">
+            <h2 class="landing-page-form-title">Please Enter Your First Todo-List</h2>
+            <input id="landing-text-input" type="text" placeholder="My First Todo-List"></input>
+            <input id="landing-submit-input" type="submit"></input>
+        </form>
     </section>
 
     <section class="main-flex">
@@ -60,7 +59,7 @@
                 </span>
             </div>
 
-            <div class="main-header-navbar-menu" >
+            <div class="main-header-navbar-menu">
                 <button id='navbar-sort-button'>
                     <i class="fas fa-sort navbar-menu-icon"></i>
                     Sort by priority
@@ -92,7 +91,8 @@
                     <input type="text" id="todoForm-title-input" name="title" maxlength="20" placeholder="Insert title"
                         required>
                     <div class="main-content-forms-todoForm-selector">
-                        <label for="todoForm-priority-select" class="main-content-forms-todoForm-selector-label">Priority</label>
+                        <label for="todoForm-priority-select"
+                            class="main-content-forms-todoForm-selector-label">Priority</label>
                         <select id="todoForm-priority-select">
                             <option class="main-content-forms-todoForm-selector-option" value="1">1</option>
                             <option class="main-content-forms-todoForm-selector-option" value="2">2</option>
@@ -106,9 +106,7 @@
 
 
             <div class="main-content-todolist">
-                <select class="main-content-todolist-select "> 
-                    <option class="popup-priority-select-option" value="dummy">My Todo's</option>
-                    <option class="popup-priority-select-option" value="dummy">dummy</option>
+                <select class="main-content-todolist-select">
                 </select>
                 <ul class="main-content-todolist-list">
                 </ul>
@@ -124,7 +122,7 @@
                     <a class="footer-icon" href="https://github.com/marcosmol204" target="blank"></a>
                     <i class="fab fa-github"></i>
                 </span>
-                    Yarden Ankonina
+                Yarden Ankonina
                 <span class="main-footer-text-info">
                     <a class="footer-icon" href="https://github.com/Yarden-Ankonina" target="blank"></a>
                     <i class="fab fa-github"></i>
