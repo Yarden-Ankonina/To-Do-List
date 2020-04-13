@@ -5,12 +5,14 @@ const landingPageForm = document.querySelector(".landing-page-form");
 const landingSubmit = document.getElementById("landing-submit-input");
 let firstTime = true;
 
+window.addEventListener('load', (event) => {
+    if(firstTime){
+        landingPage.style.display = "block";
+    }else{
+        landingPage.style.display = "none";
+    }
+  });
 
-if(firstTime){
-    landingPage.style.display = "block";
-}else{
-    landingPage.style.display = "block";
-}
 
 landingPage.addEventListener('click',function(){
     if(click === 0){
