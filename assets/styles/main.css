@@ -1280,6 +1280,79 @@ input:focus {
   padding: 0 0.2em;
 }
 
+.landing-page {
+  background: black;
+  position: fixed;
+  background-position-x: center;
+  background-position-y: center;
+  background-image: url("/assets/styles/LandingPage/Welcome.jpg");
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;
+  display: none;
+}
+
+.landing-page:hover {
+  cursor: pointer;
+}
+
+.landing-page-form {
+  visibility: hidden;
+  position: relative;
+  top: 45%;
+  left: 42%;
+}
+
+.landing-page-form-title {
+  position: relative;
+  left: -1%;
+  margin-bottom: 2em;
+  font-size: 1.2em;
+}
+
+.landing-page-form #landing-text-input {
+  line-height: 1.5em;
+  padding: 0.4em;
+  background-color: #244242;
+  border-radius: 0.2em;
+}
+
+.landing-page-form #landing-text-input::-webkit-input-placeholder {
+  color: #f2d9d9;
+}
+
+.landing-page-form #landing-text-input:-ms-input-placeholder {
+  color: #f2d9d9;
+}
+
+.landing-page-form #landing-text-input::-ms-input-placeholder {
+  color: #f2d9d9;
+}
+
+.landing-page-form #landing-text-input::placeholder {
+  color: #f2d9d9;
+}
+
+.landing-page-form #landing-text-input:focus {
+  font-weight: normal;
+  color: white;
+  -webkit-filter: brightness(1.4);
+          filter: brightness(1.4);
+}
+
+.landing-page-form #landing-submit-input {
+  margin: 0.3em;
+  padding: 0.4em;
+  border-radius: 0.5em;
+  background-color: #bddbdb;
+}
+
+.landing-page-form #landing-submit-input:hover {
+  cursor: pointer;
+  background-color: #b3e6e6;
+}
+
 html[data-theme="redMode"] {
   --bg--todo-list-title: hsl(0,0%,0%);
   --bg-clr--todo-list-title: hsl(0,20%, 80%);
