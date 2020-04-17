@@ -809,6 +809,8 @@ html[data-theme="redMode"] {
   --theme: 0;
   --theme-10: 350;
   --theme-20: 340;
+  --land-pg-bg-clr: hsl(185,40%,50%);
+  --land-pg-title-bg-clr: hsl(185,50%,40%);
   --header-bg-clr: hsl(var(--theme-10),20%,10%);
   --header-logo-clr: hsl(var(--theme-10),90%,60%);
   --header-text-clr: hsl(var(--theme-10),20%,90%);
@@ -1341,32 +1343,45 @@ html[data-theme="redMode"] {
 .landing-page {
   background: black;
   position: fixed;
-  background-position-x: center;
-  background-position-y: center;
-  background-image: url("/assets/styles/resources/LandingPage/Welcome.jpg");
-  background-repeat: no-repeat;
-  width: 100vw;
-  height: 100vh;
+  background-color: var(--land-pg-bg-clr);
+  width: 100%;
+  height: 100%;
   z-index: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 1em;
   display: none;
 }
 
-.landing-page:hover {
-  cursor: pointer;
+.landing-page-title {
+  font-size: 2em;
+  padding: 0.5em 2em;
+  margin: 0.5em;
+  background-color: var(--land-pg-title-bg-clr);
+  color: #c6e9ec;
+  -webkit-box-shadow: 0px 8px 7px -8px #122121;
+          box-shadow: 0px 8px 7px -8px #122121;
 }
 
 .landing-page-form {
-  visibility: hidden;
-  position: relative;
-  top: 45%;
-  left: 42%;
-}
-
-.landing-page-form-title {
-  position: relative;
-  left: -1%;
-  margin-bottom: 2em;
-  font-size: 1.2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 10em;
+  padding: 2em;
+  background-color: #94ccd1;
 }
 
 .landing-page-form #landing-text-input {
