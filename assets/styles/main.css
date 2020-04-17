@@ -435,15 +435,6 @@ body {
   color: #222;
 }
 
-button {
-  font-weight: bold;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-  border-radius: 0.6em;
-  outline: none;
-}
-
 .main-flex .fa-suse:hover {
   -webkit-animation-name: chameleon;
           animation-name: chameleon;
@@ -516,6 +507,92 @@ button {
     -webkit-transform: scaleX(0);
             transform: scaleX(0);
   }
+}
+
+button {
+  font-weight: bold;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  border-radius: 0.6em;
+  outline: none;
+}
+
+.delete-popup {
+  z-index: 1;
+  position: absolute;
+  height: 30%;
+  width: 50%;
+  top: 35%;
+  left: 25%;
+  background-color: #daf1e6;
+  color: #1c1717;
+  border-radius: 0.7em;
+  -webkit-box-shadow: inset 0px 0px 0px 8px #80b399;
+          box-shadow: inset 0px 0px 0px 8px #80b399;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 1em;
+  text-align: center;
+  visibility: hidden;
+}
+
+.delete-popup-question {
+  font-size: 1.3em;
+  font-weight: bold;
+  margin: 0.5em;
+}
+
+.delete-popup-answer-button {
+  padding: 0.4em;
+  margin: 0.3em;
+}
+
+.delete-popup-answer-button:hover {
+  cursor: pointer;
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+  -webkit-filter: brightness(1.5);
+          filter: brightness(1.5);
+}
+
+.no {
+  background-color: #a32929;
+  color: #0f0a0a;
+}
+
+.yes {
+  background-color: #7aa329;
+  color: #0e0f0a;
+}
+
+.blurBackground {
+  -webkit-filter: grayscale(40%) blur(2px) brightness(0.8);
+          filter: grayscale(40%) blur(2px) brightness(0.8);
+}
+
+.cant-touch {
+  cursor: not-allowed;
+}
+
+.draggable {
+  cursor: move;
+}
+
+.dragging {
+  -webkit-box-shadow: 0px 0px 5px 2px white;
+          box-shadow: 0px 0px 5px 2px white;
 }
 
 .edit-popup {
@@ -687,6 +764,17 @@ button {
           filter: grayscale(40%) blur(2px) brightness(0.8);
 }
 
+input {
+  text-align: center;
+  outline: none;
+}
+
+input:focus {
+  font-size: 1em;
+  color: #4E4E50;
+  font-weight: bold;
+}
+
 .priority-1 {
   -webkit-box-shadow: inset 0px 0px 1px 1px red;
           box-shadow: inset 0px 0px 1px 1px red;
@@ -715,94 +803,6 @@ button {
 .priority-3:hover {
   -webkit-filter: saturate(2);
           filter: saturate(2);
-}
-
-input {
-  text-align: center;
-  outline: none;
-}
-
-input:focus {
-  font-size: 1em;
-  color: #4E4E50;
-  font-weight: bold;
-}
-
-.delete-popup {
-  z-index: 1;
-  position: absolute;
-  height: 30%;
-  width: 50%;
-  top: 35%;
-  left: 25%;
-  background-color: #daf1e6;
-  color: #1c1717;
-  border-radius: 0.7em;
-  -webkit-box-shadow: inset 0px 0px 0px 8px #80b399;
-          box-shadow: inset 0px 0px 0px 8px #80b399;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  padding: 1em;
-  text-align: center;
-  visibility: hidden;
-}
-
-.delete-popup-question {
-  font-size: 1.3em;
-  font-weight: bold;
-  margin: 0.5em;
-}
-
-.delete-popup-answer-button {
-  padding: 0.4em;
-  margin: 0.3em;
-}
-
-.delete-popup-answer-button:hover {
-  cursor: pointer;
-  -webkit-transform: scale(1.02);
-          transform: scale(1.02);
-  -webkit-filter: brightness(1.5);
-          filter: brightness(1.5);
-}
-
-.no {
-  background-color: #a32929;
-  color: #0f0a0a;
-}
-
-.yes {
-  background-color: #7aa329;
-  color: #0e0f0a;
-}
-
-.blurBackground {
-  -webkit-filter: grayscale(40%) blur(2px) brightness(0.8);
-          filter: grayscale(40%) blur(2px) brightness(0.8);
-}
-
-.cant-touch {
-  cursor: not-allowed;
-}
-
-.draggable {
-  cursor: move;
-}
-
-.dragging {
-  -webkit-box-shadow: 0px 0px 5px 2px white;
-          box-shadow: 0px 0px 5px 2px white;
 }
 
 .main-header {
@@ -1278,79 +1278,6 @@ input:focus {
 
 .main-footer-text-info {
   padding: 0 0.2em;
-}
-
-.landing-page {
-  background: black;
-  position: fixed;
-  background-position-x: center;
-  background-position-y: center;
-  background-image: url("/assets/styles/LandingPage/Welcome.jpg");
-  background-repeat: no-repeat;
-  width: 100vw;
-  height: 100vh;
-  z-index: 2;
-  display: none;
-}
-
-.landing-page:hover {
-  cursor: pointer;
-}
-
-.landing-page-form {
-  visibility: hidden;
-  position: relative;
-  top: 45%;
-  left: 42%;
-}
-
-.landing-page-form-title {
-  position: relative;
-  left: -1%;
-  margin-bottom: 2em;
-  font-size: 1.2em;
-}
-
-.landing-page-form #landing-text-input {
-  line-height: 1.5em;
-  padding: 0.4em;
-  background-color: #244242;
-  border-radius: 0.2em;
-}
-
-.landing-page-form #landing-text-input::-webkit-input-placeholder {
-  color: #f2d9d9;
-}
-
-.landing-page-form #landing-text-input:-ms-input-placeholder {
-  color: #f2d9d9;
-}
-
-.landing-page-form #landing-text-input::-ms-input-placeholder {
-  color: #f2d9d9;
-}
-
-.landing-page-form #landing-text-input::placeholder {
-  color: #f2d9d9;
-}
-
-.landing-page-form #landing-text-input:focus {
-  font-weight: normal;
-  color: white;
-  -webkit-filter: brightness(1.4);
-          filter: brightness(1.4);
-}
-
-.landing-page-form #landing-submit-input {
-  margin: 0.3em;
-  padding: 0.4em;
-  border-radius: 0.5em;
-  background-color: #bddbdb;
-}
-
-.landing-page-form #landing-submit-input:hover {
-  cursor: pointer;
-  background-color: #b3e6e6;
 }
 
 html[data-theme="redMode"] {

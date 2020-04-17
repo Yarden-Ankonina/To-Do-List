@@ -1,32 +1,10 @@
-// abstracts
-@import "./abstracts/mixin";
-@import "./abstracts/variables";
-@import "./abstracts/colors";
-// base
-@import "./base/normalize";
-@import "./base/reset.local";
-@import "./base/typography";
+//configurating all variables
+@import "./config/config";
 
-// components
-@import "./components/buttons";
-@import "./components/animation";
-@import "./components/select";
-@import "./components/edit-event";
-@import "./components/priority";
-@import "./components/input";
-@import "./components/deleteAlert";
-@import "./components/drag_and_drop";
+//local styling
+@import "./local/local";
 
-//layout
-@import "./layout/header";
-@import "./layout/main-content";
-@import "./layout/footer";
-@import "./layout/landingPage";
 
-//themes
-@import "./themes/theme";
-//comon style
-//mixin implementation
 
 html {
   min-height: 100%;
