@@ -805,6 +805,30 @@ input:focus {
           filter: saturate(2);
 }
 
+html[data-theme="redMode"] {
+  --theme: 0;
+  --theme-10: 350;
+  --theme-20: 340;
+  --header-bg-clr: hsl(var(--theme-10),20%,10%);
+  --header-logo-clr: hsl(var(--theme-10),90%,60%);
+  --header-text-clr: hsl(var(--theme-10),20%,90%);
+  --header-menu-bg-clr: hsl(var(--theme-10),60%,20%);
+  --date-bg-clr: hsl(var(--theme-10),45%,40%);
+  --form--bg-clr: hsl(var(--theme-10),50%,30%);
+  --todoform-title-bg-clr: hsl(var(--theme-10),65%,20%);
+  --todoform-selcet-bg-clr: hsl(var(--theme-10),20%,10%);
+  --todoform-input-bg-clr: hsl(var(--theme-10),20%,13%);
+  --todoform-submit-btn-bg-clr: hsl(var(--theme-10),70%,45%);
+  --list-selcet-bg-clr: hsl(var(--theme-10),20%,10%);
+  --footer-bg-clr: hsl(var(--theme-10),20%,10%);
+  --bg--todo-list-title: hsl(0,0%,0%);
+  --bg-clr--todo-list-title: hsl(0,20%, 80%);
+  --bg--todo-list-item: hsl(0,50%,10%);
+  --bg-clr--todo-list-item: hsl(0,20%,95%);
+  --todo-list-item-trash: hsl(0,90%,60%);
+  --todo-list-item-edit: hsl(30,95%,60%);
+}
+
 .main-header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -823,8 +847,8 @@ input:focus {
   position: sticky;
   width: 100%;
   top: 0;
-  background-color: #1A1A1D;
-  color: #fff2f2;
+  background-color: var(--header-bg-clr);
+  color: var(--header-text-clr);
   z-index: 1;
 }
 
@@ -852,7 +876,7 @@ input:focus {
 }
 
 .main-header-navbar-logo .fa-suse {
-  color: #e4265f;
+  color: var(--header-logo-clr);
   padding-right: 0.5em;
 }
 
@@ -874,7 +898,7 @@ input:focus {
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
-  background-color: #4e131f;
+  background-color: var(--header-menu-bg-clr);
   -webkit-box-shadow: 0px 7px 12px -8px #1A1A1D;
           box-shadow: 0px 7px 12px -8px #1A1A1D;
 }
@@ -964,7 +988,7 @@ input:focus {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-color: #6F2232;
+  background-color: var(--form--bg-clr);
   padding-bottom: 1em;
 }
 
@@ -1020,7 +1044,7 @@ input:focus {
 }
 
 .main-content-forms-todoForm-titleLabel {
-  background-color: #4d1a22;
+  background-color: var(--todoform-title-bg-clr);
   text-align: center;
   width: 100%;
   padding: 0.3em;
@@ -1030,7 +1054,7 @@ input:focus {
 }
 
 .main-content-forms-todoForm #todoForm-title-input {
-  background-color: #350d0d;
+  background-color: var(--todoform-input-bg-clr);
   -webkit-box-shadow: 0px 7px 10px -7px #1A1A1D;
           box-shadow: 0px 7px 10px -7px #1A1A1D;
   line-height: 1.5em;
@@ -1063,7 +1087,6 @@ input:focus {
 }
 
 .main-content-forms-todoForm-selector {
-  background-color: #60202b;
   width: 10%;
   opacity: 0.8;
   margin: 0.2em 0;
@@ -1079,7 +1102,7 @@ input:focus {
 }
 
 .main-content-forms-todoForm-selector #todoForm-priority-select {
-  background-color: #1A1A1D;
+  background-color: var(--todoform-selcet-bg-clr);
   opacity: 1;
   color: #fff2f2;
   padding: 0.2em;
@@ -1098,7 +1121,7 @@ input:focus {
 .main-content-forms #todoForm-submit-button {
   padding: 0.5em;
   margin: 0.5em;
-  background-color: #C3073F;
+  background-color: var(--todoform-submit-btn-bg-clr);
   opacity: 0.6;
   -webkit-box-shadow: 0px 7px 10px -7px #1A1A1D;
           box-shadow: 0px 7px 10px -7px #1A1A1D;
@@ -1132,8 +1155,37 @@ input:focus {
           box-shadow: inset 0px 0px 40px 5px #4d1a1a;
 }
 
+.main-content-todolist-select-container .todo-select-icon {
+  padding: 0.5em 1em;
+  font-size: 1.1em;
+  opacity: 0;
+  color: #f7d4da;
+  -webkit-transition-property: opacity;
+  transition-property: opacity;
+  -webkit-transition-duration: 0.6s;
+          transition-duration: 0.6s;
+}
+
+.main-content-todolist-select-container .todo-select-icon:hover {
+  cursor: pointer;
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+.main-content-todolist-select-container:hover .todo-select-icon {
+  opacity: 1;
+}
+
+.main-content-todolist-select-container .fa-plus:hover {
+  color: #00b3b3;
+}
+
+.main-content-todolist-select-container .fa-trash:hover {
+  color: red;
+}
+
 .main-content-todolist-select {
-  background-color: #262626;
+  background-color: var(--list-selcet-bg-clr);
   font-size: 1.1em;
   -webkit-box-shadow: 0px 8px 8px -9px #1f1414;
           box-shadow: 0px 8px 8px -9px #1f1414;
@@ -1228,7 +1280,7 @@ input:focus {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  background-color: #7f2739;
+  background-color: var(--date-bg-clr);
   color: #f5e2e2;
   padding: 1em;
 }
@@ -1267,7 +1319,7 @@ input:focus {
 .main-footer {
   position: fixed;
   bottom: 0;
-  background-color: #1A1A1D;
+  background-color: var(--footer-bg-clr);
   color: #f5e2e2;
   width: 100%;
   text-align: center;
@@ -1351,15 +1403,6 @@ input:focus {
 .landing-page-form #landing-submit-input:hover {
   cursor: pointer;
   background-color: #b3e6e6;
-}
-
-html[data-theme="redMode"] {
-  --bg--todo-list-title: hsl(0,0%,0%);
-  --bg-clr--todo-list-title: hsl(0,20%, 80%);
-  --bg--todo-list-item: hsl(0,50%,10%);
-  --bg-clr--todo-list-item: hsl(0,20%,95%);
-  --todo-list-item-trash: hsl(0,90%,60%);
-  --todo-list-item-edit: hsl(30,95%,60%);
 }
 
 html {

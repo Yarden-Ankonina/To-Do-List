@@ -3,7 +3,7 @@
 .main-footer{
     position: fixed;
     bottom: 0;
-    background-color: $black1;
+    background-color: var(--footer-bg-clr);
     color: $white2;
     width: 100%;
     text-align: center;

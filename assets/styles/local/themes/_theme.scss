@@ -4,14 +4,64 @@ html[data-theme="redMode"]{
     //main-content
     //main todo
 
+    //saturation
+
+
+
+    // //theme red  - hsl value
+    --theme : 0;
+    --theme-10 : 350;
+    --theme-20 : 340;
+
+    //theme blue 
+    // --theme : 185;
+    // --theme-10 : 175;
+    // --theme-20 : 165;
+
+    //theme yellow 
+    // --theme : 45;
+    // --theme-10 : 35;
+    // --theme-20 : 25;
+
+    //layout
+    //header
+    --header-bg-clr : hsl(var(--theme-10),20%,10%);
+    --header-logo-clr : hsl(var(--theme-10),90%,60%);
+    --header-text-clr : hsl(var(--theme-10),20%,90%);
+    --header-menu-bg-clr : hsl(var(--theme-10),60%,20%);
+
+    //date
+    --date-bg-clr : hsl(var(--theme-10),45%,40%);
+
+    //forms
+    --form--bg-clr : hsl(var(--theme-10),50%,30%);
+    
+    //search-form
+
+    //todo-form
+    --todoform-title-bg-clr : hsl(var(--theme-10),65%,20%);
+    --todoform-selcet-bg-clr : hsl(var(--theme-10),20%,10%);
+    --todoform-input-bg-clr : hsl(var(--theme-10),20%,13%);
+    --todoform-submit-btn-bg-clr : hsl(var(--theme-10),70%,45%);
+
+
+
+    //main todo
+    --list-selcet-bg-clr : hsl(var(--theme-10),20%,10%);
+
+    //footer
+    --footer-bg-clr : hsl(var(--theme-10),20%,10%);
+
+
     --bg--todo-list-title : hsl(0,0%,0%);
     --bg-clr--todo-list-title : hsl(0,20%, 80%);
-
-
     --bg--todo-list-item : hsl(0,50%,10%);
     --bg-clr--todo-list-item : hsl(0,20%,95%);
     --todo-list-item-trash : hsl(0,90%,60%);
     --todo-list-item-edit : hsl(30,95%,60%);
 
+
+    
+    
 
 }
