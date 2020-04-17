@@ -15,22 +15,3 @@ body,
 .main-flex {
   height: 100vh;
 }
-
-//mobile and tablet
-@media #{$break1}, #{$break2} {
-  .main-flex {
-    @include flexCenter(column);
-  }
-}
-
-//only mobile
-@media #{$break1} {
-}
-//only tablet
-@media #{$break2} {
-}
-//only desktop
-@media #{$break3} {
-}
-
-

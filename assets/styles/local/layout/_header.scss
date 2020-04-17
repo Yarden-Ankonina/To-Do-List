@@ -1,7 +1,7 @@
 //comon style
 
 .main-header {
-  @include flexCenter(column);
+  @include perfectCenteringFlex(column);
   position: sticky; width: 100%; top: 0;
   background-color: var(--header-bg-clr);
   color: var(--header-text-clr);
@@ -10,7 +10,7 @@
     display: flex; flex-direction: row; justify-content: space-between; width: 100%;
       &-logo{
         display: flex; align-items: center;
-        .fa-suse {
+        .fa-check-square {
           // color: $red4; 
           color: var(--header-logo-clr); 
           padding-right: 0.5em;

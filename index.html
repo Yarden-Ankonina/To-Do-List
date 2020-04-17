@@ -6,70 +6,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/assets/styles/main.css">
     <script src="https://kit.fontawesome.com/a05612df27.js" crossorigin="anonymous"></script>
-    <script type="module" src="assets/script/app.js" defer></script>
-    <script src="assets/script/download.js" defer></script>
+    <!-- <script type="module" src="assets/script/app.js" defer></script> -->
+    <!-- <script src="assets/script/download.js" defer></script> -->
 
 
     <title>TO-DO</title>
 </head>
 
 <body>
-    <section class="edit-popup">
-        <button id="popup-exit">&times</button>
-        <h2 class="edit-popup-title">Edit</h2>
-        <form class="edit-popup-form" autocomplete="off">
-            <label for='popup-title-input'>Rename Title</label>
-            <input type="text" id="popup-title-input" name="title" maxlength="20" placeholder="Insert News title"
-                required>
-            <label for="popup-priority-select">Change Priority</label>
-            <select id="popup-priority-select">
-                <option class="popup-priority-select-option" value="1">1</option>
-                <option class="popup-priority-select-option" value="2">2</option>
-                <option class="popup-priority-select-option" value="3">3</option>
-            </select>
-            <button class="edit-submit-update" type="submit">SAVE</button>
-        </form>
-    </section>
-
-    <section class="delete-popup">
-        <p class="delete-popup-question">Are You Sure You Want To Delete This Todo?</p>
-        <div class="delete-popup-answer">
-            <button class="delete-popup-answer-button yes">Yes</button>
-            <button class="delete-popup-answer-button no">No</button>
-        </div>
-    </section>
-
-    <!-- <section class="landing-page">
-        <form class="landing-page-form">
-            <h2 class="landing-page-form-title">Please Enter Your First Todo-List</h2>
-            <input id="landing-text-input" type="text" placeholder="My First Todo-List"></input>
-            <input id="landing-submit-input" type="submit"></input>
-        </form>
-    </section> -->
-    <section class="landing-page">
-        <p class="landing-page-title">Welcome To Todo List</p>
-        <div class="landing-page-firstTime">
-            <form class="landing-page-form">
-                <h2 class="landing-page-form-title">Please Enter Your First Todo-List</h2>
-                <input id="landing-text-input" type="text" placeholder="My First Todo-List"></input>
-                <input id="landing-submit-input" type="submit"></input>
+    <div class="popup-collection">
+        <section class="popup edit-popup" style="display: flex;">
+            <button class="popup-exit">&times</button>
+            <p class="popup-title">Edit</p>
+            <form class="popup-form" autocomplete="off">
+                <label for='edit-text-input'>Rename Title</label>
+                <input type="text" id='edit-text-input' class="popup-form-input" name="title" maxlength="20"
+                    placeholder="Insert News title" required>
+                <label for="edit-select-input">Change Priority</label>
+                <select id="edit-select-input" class="popup-form-select">
+                    <option class="popup-form-select-option" value="1">1</option>
+                    <option class="popup-form-select-option" value="2">2</option>
+                    <option class="popup-form-select-option" value="3">3</option>
+                </select>
+                <button class="popup-form-submit" type="submit">SAVE</button>
             </form>
-        </div>
-        <div class="landing-page-skip">
-            <form class="landing-page-form">
-                <button class="landing-page-form-title">Skip</button>
+        </section>
+
+        <section class="popup delete-popup">
+            <p class=" popup-question">Are You Sure You Want To Delete?</p>
+            <div class="popup-answer">
+                <button class="popup-answer-btn yes">Yes</button>
+                <button class="popup-answer-btn no">No</button>
+            </div>
+        </section>
+
+        <section class="popup first-popup">
+            <p class="popup-title">Welcome to.......</p>
+            <form class="popup-form" autocomplete="off">
+                <label for='first-text-input'>First list name</label>
+                <input id="first-text-input" type="text" class="popup-form-input" name="title" maxlength="20"
+                    placeholder="Insert News title" required>
+                <button class="popup-form-submit" type="submit">SAVE</button>
             </form>
-        </div>
-        
-    </section>
-    
+        </section>
+
+        <section class="popup add-popup">
+            <button class=" popup-exit">&times</button>
+            <p class="popup-title">Add A New List</p>
+            <form class="popup-form" autocomplete="off">
+                <label for='add-text-input'>Rename Title</label>
+                <input if="add-text-input" type="text" class="popup-form-input" name="title" maxlength="20"
+                    placeholder="Insert News title" required>
+                <button class="popup-form-submit" type="submit">SAVE</button>
+            </form>
+        </section>
+    </div>
 
     <section class="main-flex">
         <header class="main-header">
             <div class="main-header-navbar">
                 <i class="fas fa-bars header-icon"></i>
                 <a class="main-header-navbar-logo" href="./index.html">
-                    <i class="fab fa-suse header-icon"></i>
+                    <i class="fas fa-check-square header-icon"></i>
                     <h1 class="main-header-navbar-title">To-Do List</h1>
                 </a>
                 <span class="main-header-navbar-right-icons">
@@ -78,15 +76,13 @@
                 </span>
             </div>
 
-            <div class="main-header-navbar-menu">
+            <div class="main-header-navbar-menu" style="display: flex;">
                 <button id='navbar-sort-button'>
                     <i class="fas fa-sort navbar-menu-icon"></i>
                     Sort by priority
                 </button>
-                <!-- <a href="https://github.com/Yarden-Ankonina/To-Do-List" target="blank"> <i class="fab fa-github navbar-menu-icon"></i></a> -->
-                <!-- <i class="fas fa-star navbar-menu-icon"></i> -->
-                <a id="downloadElement" class="navbar-menu-icon"><i class="fas fa-share"></i></a> <!--export-->
-                <!-- <i class="fas fa-cog navbar-menu-icon"></i>     -->
+                <a id="downloadElement" class="navbar-menu-icon">
+                    <i class="fas fa-share"></i> Export</a>
             </div>
         </header>
 
@@ -153,23 +149,3 @@
 </body>
 
 </html>
-
-<!-- <section class="landing-page">
-        <div>
-            <h1>Welcome to our todo list app</h1>
-            <button class="landing-page-button">press here to start</button>
-        </div>
-    </section> -->
-<!-- <div class="deleteAlert">
-        <p>ARE YOU SURE WANT TO DELETE THIS TODO ?</p>
-        <div class="deleteAlert-answers">
-            <button class="deleteAlert-yes">Yes</button>
-            <button class="deleteAlert-no">No</button>
-        </div>
-
-    </div> -->
-<!-- <section>
-
-        <a href="#title-input" class="addTodoAdd"><i class="fas fa-plus"></i> Add todo</a>
-
-    </section> -->

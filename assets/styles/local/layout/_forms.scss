@@ -8,7 +8,7 @@
   padding-bottom: 1em;
 
   &-searchForm {
-    @include flexCenter(row);
+    @include perfectCenteringFlex(row);
     display: none;
     width: 100%;
     align-items: center;
@@ -24,7 +24,7 @@
     }
   }
   &-todoForm {
-    @include flexCenter(column);
+    @include perfectCenteringFlex(column);
     color: $white1;
     display: none;
     align-items: center;
@@ -118,3 +118,14 @@
 //only desktop
 @media #{$break3} {
 }
+
+
+// input{
+//     text-align: center;
+//     outline: none;
+//     &:focus{
+//         font-size: 1em;
+//         color: $black2;
+//         font-weight: bold;
+//     }
+// }

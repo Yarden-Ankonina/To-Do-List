@@ -78,12 +78,12 @@
       
       }
       .fa-edit{
-       
+      
         &:hover{
           cursor: pointer;
           color : var(--todo-list-item-edit);
         }
-       
+      
       }
       .fa-star{
         padding-right: 0.5em;

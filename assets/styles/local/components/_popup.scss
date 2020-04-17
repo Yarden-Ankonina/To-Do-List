@@ -1,0 +1,185 @@
+.popup {
+    @include perfectCenteringFlex(column);
+    display: none;
+    text-align: center;
+    z-index: 1;
+    position: fixed;
+    background-color: hsl(150, 45%, 90%);
+    color: hsl(0, 10%, 10%);
+    border-radius: 0.7em;
+    box-shadow: inset 0px 0px 0px 8px hsl(150, 25%, 60%);
+    padding: 1em;
+    &-exit{
+            align-self: flex-end;
+            background-color: hsl(180, 25%, 70%);
+            margin: 0.2em 0;
+            width: 9%;
+            padding: 0;
+            padding-bottom: 0.2em;
+            margin-right: 0.5em;
+            font-size: 1.5em;
+            &:hover{
+            background-color: hsl(180, 55%, 70%);
+            }
+    }
+    
+    &-title{
+        text-align: center;
+        background-color: hsl(150, 25%, 60%);
+        opacity: 0.5;
+        color: $black1;
+        padding: 0.5em 0;
+        margin-top: 2em;
+        width: 100%;
+        font-size: 1.4em;
+        font-weight: bold;
+}
+&-form{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 0.3em;
+    width: 100%;
+    font-size: 1.1em;
+    padding: 0.3em 1em;
+    &-input{
+    text-align: center;
+    line-height: 1.8em;
+    background-color: hsl(180, 25%, 70%);
+    box-shadow: 0px 6px 6px -6px $black2;
+    margin: 0.5em 0;
+    &:focus{
+        font-size: 1.1em;
+        background-color: hsl(180, 65%, 60%);
+        color: $black2;
+    }
+}
+    &-select{
+        background-color: $black2;
+        color: $white1;
+        font-weight: bold;
+        align-self: center;
+        border-radius: 0.4em;
+        padding-left: 0.6em;
+        margin-top: 0.2em;
+        &:focus{
+        background-color: $black1;
+        color: $white2;
+    }
+    }
+    &-submit{
+        margin-top: 0.6em;
+        padding: 0.4em;
+        background-color: hsl(180, 55%, 70%);
+        width: 17%;
+        color: $black2;
+        &:hover{
+        color: $black1;
+        background-color: hsl(180, 65%, 60%);
+        }
+    }
+}
+    &-question {
+        font-size: 1.3em;
+        font-weight: bold;
+        margin: 0.5em;
+    }
+    &-answer{
+                &-btn{
+                    padding: 0.4em;
+                    margin: 0.3em;
+                    &:hover{
+                        cursor: pointer;
+                        transform: scale(1.02);
+                        filter: brightness(1.5);
+                    }
+                }
+                .no{
+                        background-color: hsl(0, 60%, 40%);
+                        color: hsl(0, 20%, 5%);
+                    }
+                    .yes{
+    background-color: hsl(80, 60%, 40%);
+    color: hsl(80, 20%, 5%);
+}
+}
+
+}
+
+@media #{$break1}{
+    .popup{  
+    top:20%;
+    left:7.5%;
+    width: 85%;
+    height: 45%;
+    &-exit{
+    font-size: 1.2em;
+    width: 9%;
+    }
+    .popup-form-submit{
+        width: 30%;
+        }
+    }
+}
+@media (max-width:500px){
+    .edit-popup,.add-popup {
+    top: 20%;
+    left: 5%;
+    height: 60%;
+    width: 90%;
+    }
+}
+
+@media (min-width:500px) and (max-width:765px){
+    .edit-popup,.add-popup{
+    top: 20%;
+    left: 20%;
+    height: 60%;
+    width: 60%;
+    }
+}
+
+@media #{$break2}{
+    .edit-popup,.add-popup{
+    top: 20%;
+    left: 20%;
+    width: 60%;
+    height: 60%;
+    }
+}
+
+@media #{$break3}{
+    .edit-popup,.add-popup{
+    top: 20%;
+    left: 35%;
+    width: 30%;
+    height: 60%;
+    }
+}
+
+.blurBackground{
+    filter: grayscale(40%)blur(2px)brightness(0.8);
+}
+
+.edit-popup{
+    justify-content: flex-start;  
+}
+
+.delete-popup{
+    height: 30%;
+    width: 50%;
+    top: 35%;
+    left: 25%;
+}
+
+.first-popup{
+    width: 100vw ;
+    height: 100vh;
+    top: 0;
+    left:0;
+    z-index: 2;
+    }
+
+.add-popup{
+    justify-content: flex-start;  
+}

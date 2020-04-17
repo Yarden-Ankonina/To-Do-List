@@ -31,17 +31,17 @@
         &-2{
                 box-shadow: inset 0px 0px 1px 1px hsl(50, 100%, 50%);
                 &:hover{
-                    filter: saturate(2);
+                filter: saturate(2);
                 }
         }
         &-3{
                 box-shadow: inset 0px 0px 1px 1px hsl(120, 80%, 50%);
                 &:hover{
-                    filter: saturate(2);
+                filter: saturate(2);
                 }
         }
-    }
-  
+}
+
 // .priority{
 //     &-1{
 //             &:hover{

@@ -1,31 +1,22 @@
-
 //all
 .main-flex{
-   
-        .fa-suse{
+        .fa-check-square {
             &:hover{
-                animation-name: chameleon;
+                animation-name: todo;
                 animation-duration:4s;
                 animation-delay: 0.5s;
                 animation-iteration-count: infinite;
-               @keyframes chameleon{
+                @keyframes todo{
                 10% { color:rgb(221, 63, 63);}
                 25% { color:rgb(255, 187, 0);}
                 50% { color:rgb(78, 117, 226);}
                 70% { color:rgb(61, 180, 61);}
                 85% { color:white;}
                 100% { color:rgb(221, 63, 63);}
-
-               }
+                }
             }
-         }
+                }
     }
-
-    
-        
-
-
-
 
 .deleted{
     animation: delete;

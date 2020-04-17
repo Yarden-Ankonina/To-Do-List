@@ -1,75 +1,101 @@
-/****** Elad Shechter's RESET *******/
-/*** box sizing border-box for all elements ***/
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+* {
+	box-sizing: border-box;
+	&::before {
+		box-sizing: border-box;
+	}
+	&::after {
+		box-sizing: border-box;
+	}
 }
 a {
-  text-decoration: none;
-  color: inherit;
-  cursor: pointer;
+	text-decoration: none;
+	color: inherit;
+	cursor: pointer;
 }
 button {
-  background-color: transparent;
-  color: inherit;
-  border-width: 0;
-  padding: 0;
-  cursor: pointer;
+	background-color: transparent;
+	color: inherit;
+	border-width: 0;
+	padding: 0;
+	cursor: pointer;
 }
 figure {
-  margin: 0;
-}
-input::-moz-focus-inner {
-  border: 0;
-  padding: 0;
-  margin: 0;
+	margin: 0;
 }
 input {
-  border: none;
+	&::-moz-focus-inner {
+		border: 0;
+		padding: 0;
+		margin: 0;
+	}
+	border: none;
 }
 select {
-  border: none;
+	border: none;
 }
-ul,
-ol,
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+ol {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
 dd {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+	margin: 0;
+	padding: 0;
+	list-style: none;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
+h1 {
+	margin: 0;
+	font-size: inherit;
+	font-weight: inherit;
+}
+h2 {
+	margin: 0;
+	font-size: inherit;
+	font-weight: inherit;
+}
+h3 {
+	margin: 0;
+	font-size: inherit;
+	font-weight: inherit;
+}
+h4 {
+	margin: 0;
+	font-size: inherit;
+	font-weight: inherit;
+}
+h5 {
+	margin: 0;
+	font-size: inherit;
+	font-weight: inherit;
+}
 h6 {
-  margin: 0;
-  font-size: inherit;
-  font-weight: inherit;
+	margin: 0;
+	font-size: inherit;
+	font-weight: inherit;
 }
 p {
-  margin: 0;
+	margin: 0;
 }
 cite {
-  font-style: normal;
+	font-style: normal;
 }
 fieldset {
-  border-width: 0;
-  padding: 0;
-  margin: 0;
+	border-width: 0;
+	padding: 0;
+	margin: 0;
 }
-/*remove autocomplete color*/
-
-/*remove spinner  buttons to number inputs*/
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+input[type="number"] {
+	&::-webkit-inner-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}
+	&::-webkit-outer-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}
 }
-
-/* MARCOS/YARDEN 
-input {border:none;} 3/28/2020
-select {border:none;} 3/28/2020
-
-*/
