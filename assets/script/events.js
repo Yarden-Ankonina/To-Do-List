@@ -19,11 +19,11 @@ export function addEventsListenerHandler() {
     const SECTION_LANDING_PAGE = document.querySelector('.landing-page');
     const DRAGGABLE_ZONE = document.querySelector('ul');
     const LANDING_TEXT_INPUT = document.querySelector('#landing-text-input');
-    const picsArray = ["'/assets/styles/LandingPage/Tips.jpg'",
-        "'/assets/styles/LandingPage/addTodo.jpg'",
-        "'/assets/styles/LandingPage/search.jpg'",
-        "'/assets/styles/LandingPage/openMenu.jpg'",
-        "'/assets/styles/LandingPage/createList.jpg'"
+    const picsArray = ["'/assets/styles/resources/LandingPage/Tips.jpg'",
+        "'/assets/styles/resources/LandingPage/addTodo.jpg'",
+        "'/assets/styles/resources/LandingPage/search.jpg'",
+        "'/assets/styles/resources/LandingPage/openMenu.jpg'",
+        "'/assets/styles/resources/LandingPage/createList.jpg'"
     ]
     let indexPicsArray = 0;
 
