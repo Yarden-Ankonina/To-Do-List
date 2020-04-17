@@ -13,4 +13,11 @@
     &-text-info{
         padding:0 0.2em;
     }
+    .footer-icon{
+        &:hover{
+            transform: scale(1.05);
+            cursor: pointer;
+        }
+    }
 }
+

@@ -1332,6 +1332,12 @@ html[data-theme="redMode"] {
   padding: 0 0.2em;
 }
 
+.main-footer .footer-icon:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  cursor: pointer;
+}
+
 .landing-page {
   background: black;
   position: fixed;

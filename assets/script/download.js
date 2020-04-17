@@ -28,11 +28,6 @@ SHARE.addEventListener('click',function(){
 
 
 
-
-
-
-
-
 function getTasksArray2(key) {
     const tasksArray = doesTasksArrayExist(key) ? [] : JSON.parse(localStorage.getItem(key));
     return tasksArray;
