@@ -1158,9 +1158,11 @@ html[data-theme="redMode"] {
 }
 
 .main-content-todolist-select-container .todo-select-icon {
-  padding: 0.5em 1em;
+  padding: 0.7em 0.8em;
+  margin: 0.2em;
   font-size: 1.1em;
   opacity: 0;
+  background-color: #1f1414;
   color: #f7d4da;
   -webkit-transition-property: opacity;
   transition-property: opacity;

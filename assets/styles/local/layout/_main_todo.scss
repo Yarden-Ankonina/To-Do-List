@@ -7,9 +7,11 @@
    box-shadow:inset 0px 0px 40px 5px hsl(0, 50%, 20%);
   &-select-container{
       .todo-select-icon{
-      padding: 0.5em 1em;
+      padding: 0.7em 0.8em;
+      margin: 0.2em;
       font-size: 1.1em;
       opacity: 0;
+      background-color: hsl(0, 20%, 10%);
       color: hsl(350, 70%,90%);
       transition-property: opacity;
       transition-duration: 0.6s;
