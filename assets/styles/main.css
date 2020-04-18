@@ -25,8 +25,8 @@ html {
 }
 
 html[data-theme='light'] {
-  -webkit-filter: invert(2) contrast(0.9) hue-rotate(55deg) saturate(0.7) !important;
-          filter: invert(2) contrast(0.9) hue-rotate(55deg) saturate(0.7) !important;
+  -webkit-filter: invert(1) contrast(0.9) hue-rotate(55deg) saturate(1.3) !important;
+          filter: invert(1) contrast(0.9) hue-rotate(55deg) saturate(1.3) !important;
 }
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */

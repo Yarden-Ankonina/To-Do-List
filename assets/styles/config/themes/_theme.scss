@@ -48,9 +48,9 @@ html{
 }
 
 html[data-theme='light']{
-    filter: invert(2)
+    filter: invert(1)
     contrast(0.9)
     hue-rotate(55deg)
-    saturate(0.7) !important; 
+    saturate(1.3) !important; 
 }
 
