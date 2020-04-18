@@ -1,57 +1,61 @@
 .popup {
-    @include perfectCenteringFlex(column);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     display: none;
     text-align: center;
-    z-index: 1;
+    z-index: 2;
     position: fixed;
     background-color: hsl(150, 45%, 90%);
     color: hsl(0, 10%, 10%);
     border-radius: 0.7em;
     box-shadow: inset 0px 0px 0px 8px hsl(150, 25%, 60%);
-    padding: 1em;
     &-exit{
             align-self: flex-end;
-            background-color: hsl(180, 25%, 70%);
-            margin: 0.2em 0;
             width: 9%;
-            padding: 0;
+            padding: 0.2em;
             padding-bottom: 0.2em;
-            margin-right: 0.5em;
-            font-size: 1.5em;
+            font-size: 1.6em;
             &:hover{
-            background-color: hsl(180, 55%, 70%);
+                transform: scale(1.1);
             }
     }
     
     &-title{
         text-align: center;
-        background-color: hsl(150, 25%, 60%);
-        opacity: 0.5;
+        background-color: hsl(140, 25%, 60%);
+        opacity: 0.8;
         color: $black1;
         padding: 0.5em 0;
-        margin-top: 2em;
+        margin-top: 1em;
         width: 100%;
         font-size: 1.4em;
         font-weight: bold;
 }
 &-form{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
+    @include perfectCenteringFlex(column);
     margin: 0.3em;
     width: 100%;
     font-size: 1.1em;
     padding: 0.3em 1em;
     &-input{
+    outline: none;
     text-align: center;
     line-height: 1.8em;
-    background-color: hsl(180, 25%, 70%);
+    background-color: hsl(150, 15%, 50%);
     box-shadow: 0px 6px 6px -6px $black2;
     margin: 0.5em 0;
+    &::placeholder{
+        color: hsl(150, 45%, 90%);
+    }
     &:focus{
-        font-size: 1.1em;
-        background-color: hsl(180, 65%, 60%);
-        color: $black2;
+       color: hsl(150,15%, 100%);
+       font-size: 1.1em;
+       filter: saturate(1.5);
+       &::placeholder{
+        color: hsl(150,15%, 100%);
+    }
+
     }
 }
     &-select{
@@ -66,23 +70,23 @@
         background-color: $black1;
         color: $white2;
     }
-    }
+}
+    
     &-submit{
         margin-top: 0.6em;
         padding: 0.4em;
-        background-color: hsl(180, 55%, 70%);
+        background-color: hsl(150,35%, 60%);
         width: 17%;
         color: $black2;
         &:hover{
-        color: $black1;
-        background-color: hsl(180, 65%, 60%);
+        background-color: hsl(150,40%, 60%);
         }
     }
 }
     &-question {
         font-size: 1.3em;
         font-weight: bold;
-        margin: 0.5em;
+        margin: 0.7em;
     }
     &-answer{
                 &-btn{
@@ -173,11 +177,12 @@
 }
 
 .first-popup{
-    width: 100vw ;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
+    left: 0;
     top: 0;
-    left:0;
     z-index: 2;
+    border-radius: 0;
     }
 
 .add-popup{

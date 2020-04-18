@@ -15,7 +15,8 @@
 
 <body>
     <div class="popup-collection">
-        <section class="popup edit-popup" style="display: flex;">
+
+        <section class="popup edit-popup" style="display: none;">
             <button class="popup-exit">&times</button>
             <p class="popup-title">Edit</p>
             <form class="popup-form" autocomplete="off">
@@ -32,7 +33,8 @@
             </form>
         </section>
 
-        <section class="popup delete-popup">
+        <section class="popup delete-popup" style="display: none;">
+            <button class="popup-exit">&times</button>
             <p class=" popup-question">Are You Sure You Want To Delete?</p>
             <div class="popup-answer">
                 <button class="popup-answer-btn yes">Yes</button>
@@ -40,17 +42,19 @@
             </div>
         </section>
 
-        <section class="popup first-popup">
-            <p class="popup-title">Welcome to.......</p>
+        <section class="popup first-popup" style="display: none;">
+            <button class="popup-exit">&times</button>
+            <p class="popup-title"> <i class="fas fa-check-square header-icon"></i>Welcome To Todo-List</p>
+            <p>You can create with our app multiple todo lists.<br/> You can add/delete your todo's.<br/>You can search, sort, and download your list's.<br/><strong>Enjoy!!!</strong>  <br/></p>
             <form class="popup-form" autocomplete="off">
-                <label for='first-text-input'>First list name</label>
+                <label for='first-text-input'>Now Let's Create Your First List</br>Please enter your first list name : </label>
                 <input id="first-text-input" type="text" class="popup-form-input" name="title" maxlength="20"
                     placeholder="Insert News title" required>
                 <button class="popup-form-submit" type="submit">SAVE</button>
             </form>
         </section>
 
-        <section class="popup add-popup">
+        <section class="popup add-popup" style="display: none;">
             <button class=" popup-exit">&times</button>
             <p class="popup-title">Add A New List</p>
             <form class="popup-form" autocomplete="off">
