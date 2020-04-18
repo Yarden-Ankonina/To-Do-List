@@ -1,4 +1,4 @@
-html[data-theme="redMode"] {
+html {
   --theme: 0;
   --theme-10: 350;
   --theme-20: 340;
@@ -22,6 +22,11 @@ html[data-theme="redMode"] {
   --bg-clr--todo-list-item: hsl(0,20%,95%);
   --todo-list-item-trash: hsl(0,90%,60%);
   --todo-list-item-edit: hsl(30,95%,60%);
+}
+
+html[data-theme='light'] {
+  -webkit-filter: invert(2) contrast(0.9) hue-rotate(55deg) saturate(0.7) !important;
+          filter: invert(2) contrast(0.9) hue-rotate(55deg) saturate(0.7) !important;
 }
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
@@ -632,10 +637,8 @@ button {
 .popup-exit {
   -ms-flex-item-align: end;
       align-self: flex-end;
-  width: 9%;
-  padding: 0.2em;
-  padding-bottom: 0.2em;
-  font-size: 1.6em;
+  padding: 0.3em 0.5em;
+  font-size: 1.54em;
 }
 
 .popup-exit:hover {
@@ -653,6 +656,12 @@ button {
   width: 100%;
   font-size: 1.4em;
   font-weight: bold;
+}
+
+.popup-text {
+  font-size: 1.1em;
+  padding: 0.5em;
+  line-height: 2em;
 }
 
 .popup-form {
@@ -679,49 +688,33 @@ button {
   outline: none;
   text-align: center;
   line-height: 1.8em;
-  background-color: #6c9380;
+  background-color: #b5e3cc;
   -webkit-box-shadow: 0px 6px 6px -6px #4E4E50;
           box-shadow: 0px 6px 6px -6px #4E4E50;
   margin: 0.5em 0;
 }
 
-.popup-form-input::-webkit-input-placeholder {
-  color: #daf1e6;
-}
-
-.popup-form-input:-ms-input-placeholder {
-  color: #daf1e6;
-}
-
-.popup-form-input::-ms-input-placeholder {
-  color: #daf1e6;
-}
-
-.popup-form-input::placeholder {
-  color: #daf1e6;
-}
-
 .popup-form-input:focus {
-  color: white;
+  color: #161d1a;
   font-size: 1.1em;
-  -webkit-filter: saturate(1.5);
-          filter: saturate(1.5);
+  -webkit-filter: contrast(2);
+          filter: contrast(2);
 }
 
 .popup-form-input:focus::-webkit-input-placeholder {
-  color: white;
+  color: #161d1a;
 }
 
 .popup-form-input:focus:-ms-input-placeholder {
-  color: white;
+  color: #161d1a;
 }
 
 .popup-form-input:focus::-ms-input-placeholder {
-  color: white;
+  color: #161d1a;
 }
 
 .popup-form-input:focus::placeholder {
-  color: white;
+  color: #161d1a;
 }
 
 .popup-form-select {
@@ -788,10 +781,6 @@ button {
     left: 7.5%;
     width: 85%;
     height: 45%;
-  }
-  .popup-exit {
-    font-size: 1.2em;
-    width: 9%;
   }
   .popup .popup-form-submit {
     width: 30%;
@@ -1256,11 +1245,11 @@ button {
 }
 
 .main-content-todolist-select-container .fa-plus:hover {
-  color: #00b3b3;
+  color: #248f59;
 }
 
 .main-content-todolist-select-container .fa-trash:hover {
-  color: red;
+  color: #dd3c3c;
 }
 
 .main-content-todolist-select {
@@ -1402,7 +1391,7 @@ button {
   width: 100%;
   text-align: center;
   font-size: 0.9em;
-  padding: 0.2em;
+  padding: 0.3em;
   margin-top: 1em;
 }
 
