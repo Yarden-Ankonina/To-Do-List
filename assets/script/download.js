@@ -1,21 +1,21 @@
 const SHARE = document.querySelector('.fa-share');
 let list = document.querySelectorAll('.main-content-todolist-select option');
 let aDownload = document.getElementById("downloadElement");
-let downloadArray =[];
+let downloadArray = [];
 let output;
 
-SHARE.addEventListener('click',function(){
-    downloadArray =[];//reset
+SHARE.addEventListener('click', function () {
+    downloadArray = [];
     let tempArr = [];
-    list.forEach(function(e){
-        getTasksArray2(e.value).forEach(function(el){
+    list.forEach(function (e) {
+        getTasksArray2(e.value).forEach(function (el) {
             tempArr.push(el.title);
         });
-        downloadArray.push("List Name: " + e.value );
+        downloadArray.push("List Name: " + e.value);
         downloadArray.push(tempArr);
         tempArr = [];
     });
-     output = JSON.stringify(downloadArray);
+    output = JSON.stringify(downloadArray);
     console.log(output);
     let data = "text/json;charset=utf-8," + encodeURIComponent(output);
     console.log(data);

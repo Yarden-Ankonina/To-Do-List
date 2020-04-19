@@ -1,25 +1,34 @@
-
 import { deleteTaskHandler, editTaskHandler } from './handlers.js'
 import { snapshotHandler } from './storage.js'
 
+const POPUP_EDIT = document.querySelector(".edit-popup");
+const POPUP_LANDING = document.querySelector('.first-popup');
+const POPUP_EDIT_TEXT_INPUT = document.querySelector('#edit-text-input');
+const POPUP_EDIT_PRIORITY_SELECT = document.querySelector('#edit-select-input');
+const POPUP_DELETE = document.querySelector(".delete-popup");
 const DATE_PLACEHOLDER = document.querySelector(".main-content-date-placeHolder");
 const CURRENT_TODOLIST = document.querySelector(".main-content-todolist-list");
-const TITLE_INPUT = document.querySelector("#todoForm-title-input");
-const PRIORITY_SELECT = document.querySelector("#todoForm-priority-select");
-const LANDING_PAGE = document.querySelector('.landing-page');
-const EDIT_POPUP = document.querySelector(".edit-popup");
-const MAIN_FLEX = document.querySelector(".main-flex");
+const FORM_NEW_TITLE_INPUT = document.querySelector("#todoForm-title-input");
+const FORM_NEW_PRIORITY_SELECT = document.querySelector("#todoForm-priority-select");
 const ADD_FORM = document.querySelector(".main-content-forms-todoForm");
-const DELETE_POPUP = document.querySelector(".delete-popup");
+const MAIN_FLEX = document.querySelector(".main-flex");
 const MAIN_HEADER_MENU = document.querySelector(".main-header-navbar-menu");
-const SEARCH_BAR = document.querySelector(".main-content-forms-searchForm");
-const SELECT_TITLE = document.querySelector(".main-content-todolist-select");
+const INPUT_SEARCH = document.querySelector(".main-content-forms-searchForm");
+const SELECT_CURRENT_LIST = document.querySelector(".main-content-todolist-select");
 const SELECT = document.querySelector('.main-content-todolist-select');
 const LANDING_FORM = document.querySelector('.landing-page-form');
+const INPUT_ADD_TEXT = document.querySelector("#todoForm-title-input");
+const SELECT_ADD_PRIORITY = document.querySelector("#todoForm-priority-select");
+const INPUT_SEARCH_TEXT = document.querySelector("#search-input");
+const SELECT_TODOLIST = document.querySelector('.main-content-todolist-select');
+const POPUP_EDIT_CLOSE = document.querySelector(".popup-exit");
+const POPUP_SUBMIT_BUTTON = document.querySelector(".popup-form-submit");
+const BUTTON_DELETE_YES = document.querySelector(".yes");
+const BUTTON_DELETE_NO = document.querySelector(".no");
 
 function addOptiontoSelect(name) {
     const option = createOption(name);
-    SELECT_TITLE.appendChild(option);
+    SELECT_CURRENT_LIST.appendChild(option);
 }
 function createOption(name) {
     const option = document.createElement('option');
@@ -86,8 +95,8 @@ function removeTaskNode(event) {
 }
 
 function clearInputs() {
-    TITLE_INPUT.value = "";
-    PRIORITY_SELECT.value = "1";
+    FORM_NEW_TITLE_INPUT.value = "";
+    FORM_NEW_PRIORITY_SELECT.value = "1";
 }
 
 function removeAllTasks() {
@@ -106,43 +115,53 @@ function updateTask(taskObj) {
     });
 }
 
-function displayLandingPage() {
-    LANDING_PAGE.style.display = 'block';
+function displayLandingPopUP() {
+    POPUP_LANDING.style.display = 'flex';
 }
-function hideLandingPage() {
-    LANDING_PAGE.style.display = 'hiden';
+function hideLandingPopUp() {
+    POPUP_LANDING.style.display = 'none';
 }
-function displayLandingPageForm() {
+function displayLandingPopUPForm() {
     LANDING_FORM.style.visibility = 'visible';
 }
 
-function showEditPopup() {
-    EDIT_POPUP.style.visibility = "visible";
-    MAIN_FLEX.classList.add("blurBackground");
-    MAIN_FLEX.style.pointerEvents = "none";
+function displayEditPopup() {
+    POPUP_EDIT.style.display = "flex";
+
 }
 function hideEditPopup() {
-    EDIT_POPUP.style.visibility = "hidden";
-    MAIN_FLEX.classList.remove("blurBackground");
-    MAIN_FLEX.style.pointerEvents = "auto";
-
+    POPUP_EDIT.style.display = "none";
 }
-function showDeletePopup() {
-    DELETE_POPUP.style.visibility = "visible";
+function blurMain() {
     MAIN_FLEX.classList.add("blurBackground");
+}
+function deblurMain() {
+    MAIN_FLEX.classList.remove("blurBackground");
+}
+function disableClickInMain() {
     MAIN_FLEX.style.pointerEvents = "none";
+}
+function enableClickInMain() {
+    MAIN_FLEX.style.pointerEvents = "auto";
+}
 
+function showDeletePopup() {
+    POPUP_DELETE.style.display = "flex";
 }
 function hideDeletePopup() {
-    DELETE_POPUP.style.visibility = "hidden";
-    MAIN_FLEX.classList.remove("blurBackground");
-    MAIN_FLEX.style.pointerEvents = "auto";
+    POPUP_DELETE.style.display = "none";
 }
+
 function fillEditPopupInputs(event) {
-    document.querySelector('#popup-title-input').value =
-        event.target.previousElementSibling.textContent;
-    document.querySelector('#popup-priority-select').value =
-        event.target.parentElement.className.slice(-1);
+    POPUP_EDIT_TEXT_INPUT.value = getTitleFromEvent(event);
+    POPUP_EDIT_PRIORITY_SELECT.value = getPriorityFromEvent(event);
+    event.target.parentElement.className.slice(-1);
+}
+function getTitleFromEvent(event) {
+    return event.target.previousElementSibling.textContent;
+}
+function getPriorityFromEvent(event) {
+    return event.target.parentElement.className.slice(-1);
 }
 
 function toogleMainHeaderDisplay() {
@@ -152,10 +171,11 @@ function toogleMainHeaderDisplay() {
         MAIN_HEADER_MENU.style.display = "none";
     }
 }
+
 function toogleSearchBarDisplay() {
-    if (SEARCH_BAR.style.display === "none") {
-        SEARCH_BAR.style.display = "flex";
-    } else SEARCH_BAR.style.display = "none";
+    if (INPUT_SEARCH.style.display === "none") {
+        INPUT_SEARCH.style.display = "flex";
+    } else INPUT_SEARCH.style.display = "none";
 }
 
 function toogleAddForm() {
@@ -169,11 +189,74 @@ function addListsOfTasks() {
         addOptiontoSelect(localStorage.key(i));
     }
 }
+function getEditTitle() {
+    const POPUP_EDIT_INPUT_VALUE = document.querySelector('#edit-text-input').value;
+    return POPUP_EDIT_INPUT_VALUE;
+}
+function getEditPriority() {
+    const POPUP_EDIT_PRIORITY = document.querySelector('#edit-select-input').value;
+    return POPUP_EDIT_PRIORITY;
+}
+function showPopUphandler() {
+    blurMain();
+    disableClickInMain();
+}
+function hidePopUphandler() {
+    deblurMain();
+    enableClickInMain();
+}
+
+function displayNode(node) {
+    node.style.display = "";
+}
+function hideNode(node) {
+    node.style.display = "none";
+}
+function getAllNotDragging(list) {
+    return [...list.querySelectorAll('.draggable:not(.dragging)')];
+}
+function getIdbyEvent(event) {
+    return event.target.parentNode.id;
+}
+
+function getUlElement() {
+    const UL_TODOLIST = document.querySelector(".main-content-todolist-list");
+    return UL_TODOLIST;
+}
+
+function getLiNodeList(ul) {
+    return ul.querySelectorAll("li");
+}
+function getFilter() {
+    return INPUT_SEARCH_TEXT.value.toUpperCase();
+}
+function getSpanFromli(li) {
+    return li.getElementsByTagName("span")[0];
+}
+function getTitleFromForm() {
+    return INPUT_ADD_TEXT.value;
+}
+
+function getPriorityFromForm() {
+    return SELECT_ADD_PRIORITY.value;
+}
+function getCurrentKey() {
+    return SELECT_TODOLIST.value;
+}
 
 export {
-    addListsOfTasks, setDay, addTask, toogleMainHeaderDisplay,
+    addListsOfTasks, setDay, addTask, toogleMainHeaderDisplay, getIdbyEvent, getUlElement, getLiNodeList, getFilter, getSpanFromli, getTitleFromForm,
+    getPriorityFromForm, getCurrentKey,
     clearInputs, removeAllTasks, toogleSearchBarDisplay, toogleAddForm,
-    showDeletePopup, hideDeletePopup, removeTaskNode, showEditPopup,
-    fillEditPopupInputs, hideEditPopup, updateTask, displayLandingPage, addOptiontoSelect,
-    displayLandingPageForm
+    showDeletePopup, hideDeletePopup, removeTaskNode, displayEditPopup,
+    fillEditPopupInputs, hideEditPopup, updateTask, displayLandingPopUP, addOptiontoSelect,
+    displayLandingPopUPForm, hideLandingPopUp, blurMain, deblurMain, enableClickInMain, disableClickInMain
+    , getEditTitle, getEditPriority, showPopUphandler, hidePopUphandler, displayNode, hideNode, getAllNotDragging
+}
+
+
+
+export {
+    INPUT_ADD_TEXT, SELECT_ADD_PRIORITY, INPUT_SEARCH_TEXT, SELECT_TODOLIST, POPUP_EDIT_CLOSE,
+    POPUP_SUBMIT_BUTTON, BUTTON_DELETE_YES, BUTTON_DELETE_NO
 }
