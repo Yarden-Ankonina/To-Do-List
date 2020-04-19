@@ -1,9 +1,8 @@
 html {
-  --theme: 0;
-  --theme-10: 350;
-  --theme-20: 340;
-  --land-pg-bg-clr: hsl(185,40%,50%);
-  --land-pg-title-bg-clr: hsl(185,50%,40%);
+  --popup-bg-clr: hsl(150, 45%, 90%);
+  --popup-clr: hsl(0, 10%, 10%);
+  --popup--title-bg-clr: hsl(185,50%,40%);
+  --popup-pg-title-bg-clr: hsl(185,50%,40%);
   --header-bg-clr: hsl(var(--theme-10),20%,10%);
   --header-logo-clr: hsl(var(--theme-10),90%,60%);
   --header-text-clr: hsl(var(--theme-10),20%,90%);
@@ -14,14 +13,14 @@ html {
   --todoform-selcet-bg-clr: hsl(var(--theme-10),20%,10%);
   --todoform-input-bg-clr: hsl(var(--theme-10),20%,13%);
   --todoform-submit-btn-bg-clr: hsl(var(--theme-10),70%,45%);
-  --list-selcet-bg-clr: hsl(var(--theme-10),20%,10%);
+  --list-selcet-bg-clr: hsl(var(--theme-10),20%,15%);
   --footer-bg-clr: hsl(var(--theme-10),20%,10%);
-  --bg--todo-list-title: hsl(0,0%,0%);
-  --bg-clr--todo-list-title: hsl(0,20%, 80%);
-  --bg--todo-list-item: hsl(0,50%,10%);
-  --bg-clr--todo-list-item: hsl(0,20%,95%);
-  --todo-list-item-trash: hsl(0,90%,60%);
-  --todo-list-item-edit: hsl(30,95%,60%);
+}
+
+html {
+  --theme: 0;
+  --theme-10: 350;
+  --theme-20: 340;
 }
 
 html[data-theme='light'] {
@@ -659,6 +658,7 @@ button {
 }
 
 .popup-text {
+  margin: 1em;
   font-size: 1.1em;
   padding: 0.5em;
   line-height: 2em;
@@ -678,7 +678,7 @@ button {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 0.3em;
+  margin: 1em;
   width: 100%;
   font-size: 1.1em;
   padding: 0.3em 1em;
@@ -1226,7 +1226,7 @@ button {
   margin: 0.2em;
   font-size: 1.1em;
   opacity: 0;
-  background-color: #1f1414;
+  background-color: #2e1f1f;
   color: #f7d4da;
   -webkit-transition-property: opacity;
   transition-property: opacity;
@@ -1364,10 +1364,6 @@ button {
 
 .main-content-date-placeHolder {
   padding-right: 0.5em;
-}
-
-.main-content-date .fa-calendar:hover {
-  cursor: pointer;
 }
 
 .main-content {

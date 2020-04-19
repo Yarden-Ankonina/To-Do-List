@@ -31,13 +31,14 @@
         font-weight: bold;
 }
 &-text{
+    margin: 1em;
     font-size: 1.1em;
     padding: 0.5em;
     line-height: 2em;
 }
 &-form{
     @include perfectCenteringFlex(column);
-    margin: 0.3em;
+    margin: 1em;
     width: 100%;
     font-size: 1.1em;
     padding: 0.3em 1em;
