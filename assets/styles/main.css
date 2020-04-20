@@ -1570,8 +1570,7 @@ html {
   height: max-content;
 }
 
-body,
-.main-flex {
-  height: 100vh;
+body, .main-flex {
+  height: 100%;
 }
 /*# sourceMappingURL=main.css.map */
