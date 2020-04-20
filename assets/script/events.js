@@ -1,13 +1,13 @@
 import {
     displayToogle, addOptiontoSelect,
-    removeAllTasks, addTask
+    removeAllTasks, addTask, getPopUpLandingInput
 } from './DOM.js'
 
 import {
     FORM_NEW_TODO, INPUT_SEARCH_TEXT, SORT_BUTTON,
     MENU_BUTTON, MAIN_HEADER_MENU, SEARCH_BUTTON,
     FORM_SEARCH, ADD_FORM_BUTTON, SELECT_CURRENT_LIST,
-    LANDING_FORM, POPUP_LANDING_TEXT_INPUT, DRAGGABLE_ZONE
+    LANDING_FORM, POPUP_LANDING, DRAGGABLE_ZONE
 
 } from './DOM.js'
 
@@ -63,10 +63,6 @@ export function addEventsListenerHandler() {
         setTasksArray(key);
         addOptiontoSelect(key);
     })
-
-    function getPopUpLandingInput() {
-        return POPUP_LANDING_TEXT_INPUT.value;
-    }
 
     DRAGGABLE_ZONE.addEventListener('dragover', (event) => {
         swapHandler(DRAGGABLE_ZONE, event);

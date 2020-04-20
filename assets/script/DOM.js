@@ -1,5 +1,4 @@
-import { deleteTaskHandler, editTaskHandler } from './handlers.js'
-import { snapshotHandler } from './storage.js'
+import Task from './task.js';
 
 const POPUP_EDIT = document.querySelector(".edit-popup");
 const POPUP_EDIT_TEXT_INPUT = document.querySelector('#edit-text-input');
@@ -32,11 +31,19 @@ const SEARCH_BUTTON = document.querySelector(".fa-search");
 const ADD_FORM_BUTTON = document.querySelector(".fa-plus");
 const DRAGGABLE_ZONE = document.querySelector('ul');
 
+function setDay() {
+    const today = new Date();
+    DATE_PLACEHOLDER.innerText = today.toDateString();
+}
+function addListsOfTasks() {
+    for (let i = 0; i < localStorage.length; i++) {
+        addOptiontoSelect(localStorage.key(i));
+    }
+}
 function addOptiontoSelect(name) {
     const option = createOption(name);
     SELECT_CURRENT_LIST.appendChild(option);
 }
-
 function createOption(name) {
     const option = document.createElement('option');
     option.classList.add('popup-priority-select-option');
@@ -45,63 +52,8 @@ function createOption(name) {
     return option;
 }
 
-function setDay() {
-    const today = new Date();
-    DATE_PLACEHOLDER.innerText = today.toDateString();
-}
-
-function createTask(taskObj) {
-    const li = document.createElement("li");
-    li.classList.add("main-content-todolist-list-item");
-    li.classList.add("draggable");
-    li.classList.add(`priority-${taskObj.priority}`);
-    li.setAttribute("draggable", "true");
-
-    li.id = `${taskObj.id}`;
-    li.innerHTML = `
-        <i class="fas fa-trash-alt todo-icon" aria-hidden="true"></i>
-        <span class="main-content-todolist-list-item-title">${taskObj.title}</span>
-        <i class="far fa-edit todo-icon" aria-hidden="true"></i>`;
-
-    liEventsHandler(li);
-
-    return li;
-}
-
-function liEventsHandler(li) {
-    li.addEventListener("dragstart", () => {
-        li.classList.add("dragging");
-    });
-    li.addEventListener("dragend", () => {
-        li.classList.remove("dragging");
-        snapshotHandler(SELECT.value);
-    });
-
-    li.firstElementChild.addEventListener("click", (event) => {
-        event.preventDefault();
-        deleteTaskHandler(event);
-    });
-
-    li.lastElementChild.addEventListener("click", (event) => {
-        editTaskHandler(event);
-    });
-}
-
 function addTask(taskObj) {
-    CURRENT_TODOLIST.appendChild(createTask(taskObj));
-}
-
-function removeTaskNode(event) {
-    const element = event.target.parentNode;
-    element.classList.add("deleted");
-    setTimeout(() => {
-        element.remove();
-    }, 599);
-}
-
-function clearInputs() {
-    FORM_NEW_TITLE_INPUT.value = "";
-    FORM_NEW_PRIORITY_SELECT.value = "1";
+    CURRENT_TODOLIST.appendChild(Task.createHTMLelement(taskObj));
 }
 
 function removeAllTasks() {
@@ -109,7 +61,13 @@ function removeAllTasks() {
     ];
     tasksArray.forEach(task => task.remove());
 }
-
+function removeTaskNode(event) {
+    const element = event.target.parentNode;
+    element.classList.add("deleted");
+    setTimeout(() => {
+        element.remove();
+    }, 599);
+}
 function updateTask(taskObj) {
     const tasksNodeList = document.querySelectorAll("li");
     tasksNodeList.forEach(task => {
@@ -120,6 +78,16 @@ function updateTask(taskObj) {
     });
 }
 
+function fillEditPopupInputs(event) {
+    POPUP_EDIT_TEXT_INPUT.value = getTitleFromEvent(event);
+    POPUP_EDIT_PRIORITY_SELECT.value = getPriorityFromEvent(event);
+    event.target.parentElement.className.slice(-1);
+}
+function clearInputs() {
+    FORM_NEW_TITLE_INPUT.value = "";
+    FORM_NEW_PRIORITY_SELECT.value = "1";
+}
+
 function displayToogle(domElement) {
     if (domElement.style.display != "flex") {
         domElement.style.display = "flex";
@@ -127,7 +95,6 @@ function displayToogle(domElement) {
         domElement.style.display = "none";
     }
 }
-
 function blurToggle() {
     if (!MAIN_FLEX.classList.contains('blurBackground')) {
         MAIN_FLEX.classList.add("blurBackground");
@@ -153,34 +120,6 @@ function hideDeletePopupHandler() {
     blurToggle();
     clickInMainToggle();
 }
-
-
-function fillEditPopupInputs(event) {
-    POPUP_EDIT_TEXT_INPUT.value = getTitleFromEvent(event);
-    POPUP_EDIT_PRIORITY_SELECT.value = getPriorityFromEvent(event);
-    event.target.parentElement.className.slice(-1);
-}
-function getTitleFromEvent(event) {
-    return event.target.previousElementSibling.textContent;
-}
-function getPriorityFromEvent(event) {
-    return event.target.parentElement.className.slice(-1);
-}
-
-
-function addListsOfTasks() {
-    for (let i = 0; i < localStorage.length; i++) {
-        addOptiontoSelect(localStorage.key(i));
-    }
-}
-function getEditTitle() {
-    const POPUP_EDIT_INPUT_VALUE = document.querySelector('#edit-text-input').value;
-    return POPUP_EDIT_INPUT_VALUE;
-}
-function getEditPriority() {
-    const POPUP_EDIT_PRIORITY = document.querySelector('#edit-select-input').value;
-    return POPUP_EDIT_PRIORITY;
-}
 function showEditPopUphandler() {
     displayToogle(POPUP_EDIT);
     fillEditPopupInputs(event);
@@ -192,12 +131,26 @@ function hideEditPopUphandler() {
     blurToggle();
     clickInMainToggle();
 }
-
 function displayNode(node) {
     node.style.display = "";
 }
 function hideNode(node) {
     node.style.display = "none";
+}
+
+function getTitleFromEvent(event) {
+    return event.target.previousElementSibling.textContent;
+}
+function getPriorityFromEvent(event) {
+    return event.target.parentElement.className.slice(-1);
+}
+function getEditTitle() {
+    const POPUP_EDIT_INPUT_VALUE = document.querySelector('#edit-text-input').value;
+    return POPUP_EDIT_INPUT_VALUE;
+}
+function getEditPriority() {
+    const POPUP_EDIT_PRIORITY = document.querySelector('#edit-select-input').value;
+    return POPUP_EDIT_PRIORITY;
 }
 function getAllNotDragging(list) {
     return [...list.querySelectorAll('.draggable:not(.dragging)')];
@@ -205,12 +158,10 @@ function getAllNotDragging(list) {
 function getIdbyEvent(event) {
     return event.target.parentNode.id;
 }
-
 function getUlElement() {
     const UL_TODOLIST = document.querySelector(".main-content-todolist-list");
     return UL_TODOLIST;
 }
-
 function getLiNodeList(ul) {
     return ul.querySelectorAll("li");
 }
@@ -230,7 +181,9 @@ function getPriorityFromForm() {
 function getCurrentKey() {
     return SELECT_TODOLIST.value;
 }
-
+function getPopUpLandingInput() {
+    return POPUP_LANDING_TEXT_INPUT.value;
+}
 export {
     getEditTitle, getEditPriority,
     addListsOfTasks, setDay, addTask,
@@ -242,7 +195,7 @@ export {
     removeTaskNode,
     fillEditPopupInputs, updateTask, addOptiontoSelect,
     displayNode, hideNode, getAllNotDragging, showDeletePopupHandler,
-    hideDeletePopupHandler
+    hideDeletePopupHandler, getPopUpLandingInput
 }
 
 
