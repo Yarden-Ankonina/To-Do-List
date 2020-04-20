@@ -14,6 +14,8 @@ html {
   --todoform-input-bg-clr: hsl(var(--theme-10),20%,13%);
   --todoform-submit-btn-bg-clr: hsl(var(--theme-10),70%,45%);
   --list-selcet-bg-clr: hsl(var(--theme-10),20%,15%);
+  --list-item-bg-clr: hsl(var(--theme-10),20%,15%);
+  --list-item-clr: hsl(var(--theme-10),20%,85%);
   --footer-bg-clr: hsl(var(--theme-10),20%,10%);
 }
 
@@ -754,24 +756,24 @@ button {
 
 .popup-answer-btn {
   padding: 0.4em;
-  margin: 0.3em;
+  margin: 0.6em;
 }
 
 .popup-answer-btn:hover {
   cursor: pointer;
   -webkit-transform: scale(1.02);
           transform: scale(1.02);
-  -webkit-filter: brightness(1.5);
-          filter: brightness(1.5);
+  -webkit-filter: saturate(1.1);
+          filter: saturate(1.1);
 }
 
 .popup-answer .no {
-  background-color: #a32929;
+  background-color: #eb4747;
   color: #0f0a0a;
 }
 
 .popup-answer .yes {
-  background-color: #7aa329;
+  background-color: #99cc33;
   color: #0e0f0a;
 }
 
@@ -850,6 +852,10 @@ button {
   border-radius: 0;
 }
 
+.first-popup .popup-form-submit {
+  margin-top: 2em;
+}
+
 .add-popup {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
@@ -861,38 +867,105 @@ button {
 }
 
 .dragging {
-  -webkit-box-shadow: 0px 0px 5px 2px white;
-          box-shadow: 0px 0px 5px 2px white;
-}
-
-.priority-1 {
-  -webkit-box-shadow: inset 0px 0px 1px 1px red;
-          box-shadow: inset 0px 0px 1px 1px red;
+  -webkit-box-shadow: 0px 0px 5px 2px white !important;
+          box-shadow: 0px 0px 5px 2px white !important;
 }
 
 .priority-1:hover {
-  -webkit-filter: saturate(2);
-          filter: saturate(2);
+  -webkit-animation-name: priority1;
+          animation-name: priority1;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
 }
 
-.priority-2 {
-  -webkit-box-shadow: inset 0px 0px 1px 1px #ffd500;
-          box-shadow: inset 0px 0px 1px 1px #ffd500;
+@-webkit-keyframes priority1 {
+  0% {
+    background-color: #5c0a0a;
+  }
+  50% {
+    background-color: #e61a1a;
+  }
+  100% {
+    background-color: #5c0a0a;
+  }
+}
+
+@keyframes priority1 {
+  0% {
+    background-color: #5c0a0a;
+  }
+  50% {
+    background-color: #e61a1a;
+  }
+  100% {
+    background-color: #5c0a0a;
+  }
 }
 
 .priority-2:hover {
-  -webkit-filter: saturate(2);
-          filter: saturate(2);
+  -webkit-animation-name: priority2;
+          animation-name: priority2;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
 }
 
-.priority-3 {
-  -webkit-box-shadow: inset 0px 0px 1px 1px #1ae61a;
-          box-shadow: inset 0px 0px 1px 1px #1ae61a;
+@-webkit-keyframes priority2 {
+  0% {
+    background-color: #38362e;
+  }
+  50% {
+    background-color: #998000;
+    -webkit-filter: saturate(3);
+            filter: saturate(3);
+  }
+  100% {
+    background-color: #38362e;
+  }
+}
+
+@keyframes priority2 {
+  0% {
+    background-color: #38362e;
+  }
+  50% {
+    background-color: #998000;
+    -webkit-filter: saturate(3);
+            filter: saturate(3);
+  }
+  100% {
+    background-color: #38362e;
+  }
 }
 
 .priority-3:hover {
-  -webkit-filter: saturate(2);
-          filter: saturate(2);
+  -webkit-animation-name: priority3;
+          animation-name: priority3;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+}
+
+@-webkit-keyframes priority3 {
+  0% {
+    background-color: #30382e;
+  }
+  50% {
+    background-color: #2e7a1f;
+  }
+  0% {
+    background-color: #30382e;
+  }
+}
+
+@keyframes priority3 {
+  0% {
+    background-color: #30382e;
+  }
+  50% {
+    background-color: #2e7a1f;
+  }
+  0% {
+    background-color: #30382e;
+  }
 }
 
 .main-header {
@@ -1120,13 +1193,14 @@ button {
 }
 
 .main-content-forms-todoForm #todoForm-title-input {
+  text-align: center;
+  outline: none;
   background-color: var(--todoform-input-bg-clr);
   -webkit-box-shadow: 0px 7px 10px -7px #1A1A1D;
           box-shadow: 0px 7px 10px -7px #1A1A1D;
   line-height: 1.5em;
   border-radius: 0.4em;
   padding: 0.3em;
-  opacity: 0.95;
   margin: 0.8em;
 }
 
@@ -1147,8 +1221,10 @@ button {
 }
 
 .main-content-forms-todoForm #todoForm-title-input:focus {
-  opacity: 1;
-  background-color: #321b1b;
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  -webkit-filter: saturate(1.5);
+          filter: saturate(1.5);
   color: #f28c8c;
 }
 
@@ -1304,9 +1380,9 @@ button {
   width: 50%;
   padding: 0.4em 0.7em;
   margin: 0.5em;
-  background-color: var(--bg--todo-list-item);
-  color: var(--bg-clr--todo-list-item);
-  opacity: 0.8;
+  background-color: var(--list-item-bg-clr);
+  color: var(--list-item-clr);
+  opacity: 0.75;
   -webkit-transition-property: all;
   transition-property: all;
   -webkit-transition-duration: 1s;
@@ -1321,12 +1397,12 @@ button {
 
 .main-content-todolist-list-item .fa-trash-alt:hover {
   cursor: pointer;
-  color: var(--todo-list-item-trash);
+  color: #dd3c3c;
 }
 
 .main-content-todolist-list-item .fa-edit:hover {
   cursor: pointer;
-  color: var(--todo-list-item-edit);
+  color: #f2bf8c;
 }
 
 .main-content-todolist-list-item .fa-star {
@@ -1376,6 +1452,7 @@ button {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 100%;
+  min-height: 100vh;
   height: 100%;
 }
 
@@ -1494,8 +1571,8 @@ html {
   height: max-content;
 }
 
-body,
-.main-flex {
-  height: 100vh;
+body, .main-flex {
+  min-height: 100vh;
+  height: 100%;
 }
 /*# sourceMappingURL=main.css.map */

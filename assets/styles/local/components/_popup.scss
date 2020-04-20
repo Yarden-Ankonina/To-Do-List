@@ -92,21 +92,21 @@
     &-answer{
                 &-btn{
                     padding: 0.4em;
-                    margin: 0.3em;
+                    margin: 0.6em;
                     &:hover{
                         cursor: pointer;
                         transform: scale(1.02);
-                        filter: brightness(1.5);
+                        filter: saturate(1.1);
                     }
                 }
                 .no{
-                        background-color: hsl(0, 60%, 40%);
+                        background-color: hsl(0, 80%, 60%);
                         color: hsl(0, 20%, 5%);
                     }
-                    .yes{
-    background-color: hsl(80, 60%, 40%);
-    color: hsl(80, 20%, 5%);
-}
+                .yes{
+                    background-color: hsl(80, 60%, 50%);
+                    color: hsl(80, 20%, 5%);
+                }
 }
 
 }
@@ -181,6 +181,9 @@
     top: 0;
     z-index: 2;
     border-radius: 0;
+    .popup-form-submit{
+        margin-top: 2em;
+    }
     }
 
 .add-popup{

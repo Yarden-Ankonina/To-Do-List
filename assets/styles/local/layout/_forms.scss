@@ -38,19 +38,20 @@
       font-size: 1.2em;
     }
     #todoForm-title-input {
+      text-align: center;
+      outline: none;
       background-color: var(--todoform-input-bg-clr);
       box-shadow: 0px 7px 10px -7px $black1;
       line-height: 1.5em;
       border-radius: 0.4em;
       padding: 0.3em;
-      opacity: 0.95;
       margin: 0.8em;
       &::placeholder{
         color: $white2;
       }
       &:focus {
-        opacity: 1;
-        background-color: hsl(0,30%,15%);
+        transform: scale(1.05);
+        filter: saturate(1.5);
         color: hsl(0,80%,75%);
       }
     }
