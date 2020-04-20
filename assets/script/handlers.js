@@ -9,28 +9,26 @@ import {
 } from './storage.js';
 
 import {
-    displayLandingPopUP, hideDeletePopup, showDeletePopup,
-    removeTaskNode, displayEditPopup, fillEditPopupInputs,
-    updateTask, addListsOfTasks,
+    removeTaskNode, showDeletePopupHandler, hideDeletePopupHandler,
+    updateTask, addListsOfTasks, hideEditPopUphandler, showEditPopUphandler,
     removeAllTasks, clearInputs,
     getEditTitle, getEditPriority,
-    showPopUphandler, hidePopUphandler, getAllNotDragging,
-    displayNode, hideNode, hideEditPopup, setDay,
+    getAllNotDragging, displayNode, hideNode, setDay,
     addTask, getIdbyEvent, getUlElement, getLiNodeList, getFilter,
     getSpanFromli, getTitleFromForm,
-    getPriorityFromForm, getCurrentKey,
+    getPriorityFromForm, getCurrentKey, displayToogle
 } from './DOM.js'
 
 import {
     POPUP_EDIT_CLOSE,
-    POPUP_SUBMIT_BUTTON, BUTTON_DELETE_YES, BUTTON_DELETE_NO
+    POPUP_SUBMIT_BUTTON, BUTTON_DELETE_YES, BUTTON_DELETE_NO, POPUP_LANDING
 } from './DOM.js'
 import { addEventsListenerHandler } from './events.js';
 
 function firstTimeHandler() {
     setDay();
     addEventsListenerHandler();
-    displayLandingPopUP();
+    displayToogle(POPUP_LANDING);
 }
 
 function notFirstTimeHandler() {
@@ -53,19 +51,14 @@ function editPromise(event) {
     });
 }
 function editTaskHandler(event) {
-    displayEditPopup();
-    showPopUphandler();
-    fillEditPopupInputs(event);
-
+    showEditPopUphandler();
     editPromise(event).then(response => {
         if (!response) {
-            hideEditPopup();
-            hidePopUphandler();
+            hideEditPopUphandler();
         }
         else {
             updateTask(response);
-            hideEditPopup();
-            hidePopUphandler();
+            hideEditPopUphandler();
             snapshotHandler(getCurrentKey());
         }
     });
@@ -83,17 +76,14 @@ function deletePopUpPromise() {
 }
 
 function deleteTaskHandler(event) {
-    showDeletePopup();
-    showPopUphandler();
+    showDeletePopupHandler();
     deletePopUpPromise().then(response => {
         if (!response) {
-            hideDeletePopup();
-        }
-        else {
+            hideDeletePopupHandler();
+        } else {
             removeTaskNode(event);
             removeSpecificTask(getIdbyEvent(event), getCurrentKey());
-            hidePopUphandler();
-            hideDeletePopup();
+            hideDeletePopupHandler();
         }
     });
 }
