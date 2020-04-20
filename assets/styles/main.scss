@@ -11,6 +11,7 @@ html {
   height: max-content;
 }
 
-body, .main-flex {
+body,.main-flex {
+  min-height: 100vh;
   height: 100%;
 }
