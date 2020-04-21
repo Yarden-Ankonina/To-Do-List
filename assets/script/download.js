@@ -1,38 +1,23 @@
-const SHARE = document.querySelector('.fa-share');
+const SHARE = document.querySelector('#downloadElement');
 let list = document.querySelectorAll('.main-content-todolist-select option');
 let aDownload = document.getElementById("downloadElement");
-let downloadArray = [];
-let output;
+let string = '';
 
-SHARE.addEventListener('click', function () {
-    downloadArray = [];
-    let tempArr = [];
-    list.forEach(function (e) {
-        getTasksArray2(e.value).forEach(function (el) {
-            tempArr.push(el.title);
-        });
-        downloadArray.push("List Name: " + e.value);
-        downloadArray.push(tempArr);
-        tempArr = [];
-    });
-    output = JSON.stringify(downloadArray);
-    console.log(output);
-    let data = "text/json;charset=utf-8," + encodeURIComponent(output);
-    console.log(data);
+function addText(e) {
+    let arr = getTasksArray2(e.value);
+    string += `title:${e.value}\n`;
+    arr.forEach((a, index) => string += `${+index + 1}:${a.title}\n`);
+}
+
+function downloadHandler() {
+    let listArray = [...document.querySelectorAll('.main-content-todolist-select option')];
+    listArray.forEach(e => { addText(e) }
+    )
+}
+
+SHARE.addEventListener('click', function (e) {
+    downloadHandler();
+    let data = "text;charset=utf-8," + encodeURIComponent(string);
     aDownload.href = 'data:' + data;
     aDownload.download = 'data.txt';
-    aDownload.innerHTML = '<i class="fas fa-share"></i>'
-
 });
-
-
-
-
-function getTasksArray2(key) {
-    const tasksArray = doesTasksArrayExist(key) ? [] : JSON.parse(localStorage.getItem(key));
-    return tasksArray;
-}
-
-function doesTasksArrayExist(key) {
-    return JSON.parse(localStorage.getItem(key) === []);
-}
