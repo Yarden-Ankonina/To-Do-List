@@ -1320,12 +1320,31 @@ button {
   opacity: 1;
 }
 
+.main-content-todolist-select-container .fa-edit {
+  margin-left: 0;
+}
+
+.main-content-todolist-select-container .fa-edit:hover {
+  color: #eda65e;
+}
+
 .main-content-todolist-select-container .fa-plus:hover {
   color: #248f59;
 }
 
 .main-content-todolist-select-container .fa-trash:hover {
   color: #dd3c3c;
+}
+
+.main-content-todolist-select-container .placefiller {
+  color: transparent;
+  background-color: transparent;
+}
+
+.main-content-todolist-select-container .placefiller:hover {
+  cursor: default;
+  color: transparent;
+  background-color: transparent;
 }
 
 .main-content-todolist-select {

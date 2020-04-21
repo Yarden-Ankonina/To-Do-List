@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/assets/styles/main.css">
     <script src="https://kit.fontawesome.com/a05612df27.js" crossorigin="anonymous"></script>
     <script type="module" src="assets/script/app.js" defer></script>
-    <script src="assets/script/download.js" defer></script>
+    <!-- <script src="assets/script/download.js" defer></script> -->
     <script src="assets/script/theme.js" defer></script>
 
 
@@ -57,7 +57,7 @@
         </section>
 
         <section class="popup delete-popup" style="display: none;">
-            <button class="popup-exit">&times</button>
+            <button class="popup-exit" style="visibility: hidden;">&times</button>
             <p class=" popup-question">Are You Sure You Want To Delete?</p>
             <div class="popup-answer">
                 <button class="popup-answer-btn yes">Yes</button>
@@ -151,9 +151,11 @@
 
             <div class="main-content-todolist">
                 <div class="main-content-todolist-select-container">
-                    <i class="fas fa-trash todo-select-icon"></i>
+                    <i class="fas fa-edit todo-select-icon placefiller"></i>
+                   <i class="fas fa-trash todo-select-icon"></i>
                     <select class="main-content-todolist-select"></select>
-                    <span class="add/edit"><i class="fas fa-plus todo-select-icon"></i><i class="fas fa-edit todo-select-icon"></i></span>
+                    <i class="fas fa-plus todo-select-icon"></i>
+                    <i class="fas fa-edit todo-select-icon"></i>
                 </div>
                 <ul class="main-content-todolist-list">
                 </ul>

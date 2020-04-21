@@ -25,6 +25,12 @@
       opacity: 1;
     }
     }
+    .fa-edit{
+      margin-left: 0;
+      &:hover{
+        color: hsl(30, 80%, 65%);
+      }
+    }
     .fa-plus{
       &:hover{
         color: hsl(150, 60%, 35%);
@@ -34,6 +40,16 @@
       &:hover{
         color: hsl(0, 70%, 55%);
       }
+    }
+    .placefiller{
+     color: transparent; 
+     background-color: transparent; 
+     &:hover{
+      cursor: default;
+      color: transparent; 
+      background-color: transparent; 
+     }
+
     }
   }
   &-select{
