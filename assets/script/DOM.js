@@ -1,9 +1,15 @@
 import Task from './task.js';
 
+
+
 const POPUP_EDIT = document.querySelector(".edit-popup");
 const POPUP_EDIT_TEXT_INPUT = document.querySelector('#edit-text-input');
 const POPUP_EDIT_PRIORITY_SELECT = document.querySelector('#edit-select-input');
-const POPUP_EDIT_CLOSE = document.querySelector(".popup-exit");
+
+const POPUP_EDIT_CLOSE = document.getElementsByClassName("popup-exit")[2];
+const POPUP_EDITLIST_CLOSE = document.getElementsByClassName("popup-exit")[0];
+
+
 const POPUP_SUBMIT_BUTTON = document.querySelector(".popup-form-submit");
 const POPUP_LANDING = document.querySelector('.first-popup');
 const POPUP_DELETE = document.querySelector(".delete-popup");
@@ -30,6 +36,8 @@ const MENU_BUTTON = document.querySelector(".fa-bars");
 const SEARCH_BUTTON = document.querySelector(".fa-search");
 const ADD_FORM_BUTTON = document.querySelector(".fa-plus");
 const DRAGGABLE_ZONE = document.querySelector('ul');
+
+const SELECT_TITLE = document.querySelector('.main-content-todolist-select');
 
 function setDay() {
     const today = new Date();
@@ -127,6 +135,7 @@ function showEditPopUphandler() {
     clickInMainToggle();
 }
 function hideEditPopUphandler() {
+    console.log('here');
     displayToogle(POPUP_EDIT);
     blurToggle();
     clickInMainToggle();
@@ -199,7 +208,6 @@ export {
 }
 
 
-
 export {
     INPUT_ADD_TEXT, SELECT_ADD_PRIORITY,
     SELECT_TODOLIST, SELECT_CURRENT_LIST,
@@ -207,5 +215,5 @@ export {
     BUTTON_DELETE_NO, POPUP_LANDING, POPUP_EDIT,
     FORM_NEW_TODO, INPUT_SEARCH_TEXT, SORT_BUTTON, MENU_BUTTON,
     MAIN_HEADER_MENU, SEARCH_BUTTON, FORM_SEARCH, ADD_FORM_BUTTON,
-    LANDING_FORM, POPUP_LANDING_TEXT_INPUT, DRAGGABLE_ZONE
+    LANDING_FORM, POPUP_LANDING_TEXT_INPUT, DRAGGABLE_ZONE, SELECT_TITLE
 }
