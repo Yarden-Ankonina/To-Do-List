@@ -4,19 +4,18 @@ let htmlTheme = document.querySelector("html");
 let hueCounter = 0;
 
 
-THEME.addEventListener('click',function(){
+THEME.addEventListener('click', function () {
     hueCounter += 30;
-    htmlTheme.style.filter = "hue-rotate(" + hueCounter +"deg)";
+    htmlTheme.style.filter = "hue-rotate(" + hueCounter + "deg)";
 });
 
-LIGHT.addEventListener('click',function(){
-
-    if(htmlTheme.hasAttribute('data-theme')){
+LIGHT.addEventListener('click', function () {
+    if (htmlTheme.hasAttribute('data-theme')) {
         htmlTheme.removeAttribute('data-theme', 'light');
     }
-    else{
+    else {
         htmlTheme.setAttribute('data-theme', 'light');
     }
     hueCounter = 0;
-    htmlTheme.style.filter = "hue-rotate(" + hueCounter +"deg)";
+    htmlTheme.style.filter = "hue-rotate(" + hueCounter + "deg)";
 });

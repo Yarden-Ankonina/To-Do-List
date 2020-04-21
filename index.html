@@ -18,6 +18,26 @@
 
 <body>
     <div class="popup-collection">
+        <section class="popup editlist-popup" style="display: none;">
+            <button class="popup-exit">&times</button>
+            <p class="popup-title">Edit</p>
+            <form class="popup-form" autocomplete="off">
+                <label for='editlist-text-input'>Rename List</label>
+                <input type="text" id='editlist-text-input' class="popup-form-input" name="title" maxlength="20"
+                    placeholder="Insert News title" required>
+                <button class="popup-form-submit" type="submit">SAVE</button>
+            </form>
+        </section>
+        <section class="popup addlist-popup" style="display: none;">
+            <button class="popup-exit">&times</button>
+            <p class="popup-title">Edit</p>
+            <form class="popup-form" autocomplete="off">
+                <label for='addlist-text-input'>Rename List</label>
+                <input type="text" id='addlist-text-input' class="popup-form-input" name="title" maxlength="20"
+                    placeholder="Insert News title" required>
+                <button class="popup-form-submit" type="submit">SAVE</button>
+            </form>
+        </section>
 
         <section class="popup edit-popup" style="display: none;">
             <button class="popup-exit">&times</button>
@@ -146,12 +166,14 @@
             <div class="main-footer-text">
                 Made by Marcos Molina
                 <span class="main-footer-text-info">
-                    <a href="https://github.com/marcosmol204/To-Do-List-1" target="blank"> <i class="fab fa-github footer-icon"></i></a>
+                    <a href="https://github.com/marcosmol204/To-Do-List-1" target="blank"> <i
+                            class="fab fa-github footer-icon"></i></a>
                 </span>
                 Yarden Ankonina
                 <span class="main-footer-text-info">
-                    <a href="https://github.com/Yarden-Ankonina/To-Do-List" target="blank"> <i class="fab fa-github footer-icon"></i></a>
-                   
+                    <a href="https://github.com/Yarden-Ankonina/To-Do-List" target="blank"> <i
+                            class="fab fa-github footer-icon"></i></a>
+
                 </span>
             </div>
         </footer>
