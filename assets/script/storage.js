@@ -1,4 +1,5 @@
 import Task from './task.js'
+import { getCurrentKey } from './DOM.js';
 
 function getTasksArray(key) {
     const tasksArray = doesTasksArrayExist(key) ? [] : JSON.parse(localStorage.getItem(key));
@@ -44,11 +45,18 @@ function snapshotHandler(key) {
 }
 
 function setTasksArray(key, taskArray = []) {
+    console.log(taskArray);
     localStorage.setItem(key, JSON.stringify(taskArray));
 }
+function editKey(name) {
+    const currentArray = getTasksArray(localStorage.key(0));
+    localStorage.removeItem(getCurrentKey());
 
+    setTasksArray(name, currentArray);
+}
 
 export {
     isStorageEmpty, getTasksArray, setTasksArray,
     snapshotHandler, addTaskToTasksArray, removeSpecificTask,
+    editKey
 }

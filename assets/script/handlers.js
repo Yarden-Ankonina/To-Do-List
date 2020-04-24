@@ -1,129 +1,74 @@
 import Task from './task.js';
 
 import {
-    addTaskToTasksArray,
-    getTasksArray,
-    removeSpecificTask,
-    setTasksArray,
-    snapshotHandler,
+    getTasksArray, setTasksArray, snapshotHandler,
+    removeSpecificTask, addTaskToTasksArray, editKey
 } from './storage.js';
 
 import {
-    removeTaskNode, showDeletePopupHandler, hideDeletePopupHandler,
-    updateTask, addListsOfTasks, hideEditPopUphandler, showEditPopUphandler,
-    removeAllTasks, clearInputs,
-    getEditTitle, getEditPriority,
-    getAllNotDragging, displayNode, hideNode, setDay,
-    addTask, getIdbyEvent, getUlElement, getLiNodeList, getFilter,
-    getSpanFromli, getTitleFromForm,
-    getPriorityFromForm, getCurrentKey, displayToogle
+    renderListsOfKeys, removeTasksNodeList, getAllNotDragging,
+    displayNode, hideNode, setDay,
+    renderTask, getUlElement, getLiNodeList, getFilter, getSpanFromLi,
+    getCurrentKey, removeTaskNode,
+    renderPopup, removePopup, updateTaskNode, fillEditPopupInputs,
+    getEditTitle, getEditPriority, getIdByEvent,
+    getTitleFromForm, getPriorityFromForm, clearInputs,
+    blurToggle, clickInMainToggle, fillEditListInput, getPopUpTextInput,
 } from './DOM.js'
 
 import {
-    POPUP_EDIT_CLOSE,
-    POPUP_SUBMIT_BUTTON, BUTTON_DELETE_YES, BUTTON_DELETE_NO, POPUP_LANDING
-} from './DOM.js'
-import { addEventsListenerHandler } from './events.js';
+    deletePopupEventsHandler, firstTimePopupEventsHandler,
+    addEventsListenerHandler
+} from './events.js'
 
 function firstTimeHandler() {
     setDay();
+    renderPopup('firstTime');
+    blurToggle();
+    clickInMainToggle();
+    firstTimePopupEventsHandler();
     addEventsListenerHandler();
-    displayToogle(POPUP_LANDING);
 }
-
 function notFirstTimeHandler() {
     setDay();
+    renderListsOfKeys();
+    renderTasksArrayHandler(getTasksArray(localStorage.key(0)));
     addEventsListenerHandler();
-    addListsOfTasks();
-    addTasksHandler(getTasksArray(localStorage.key(0)));
 }
 
-function editPromise(event) {
-    return new Promise((resolve) => {
-        POPUP_SUBMIT_BUTTON.addEventListener('click', (e) => {
-            e.preventDefault();
-            resolve(new Task(getEditTitle(), getEditPriority()
-                , getIdbyEvent(event)));
-        });
-        POPUP_EDIT_CLOSE.addEventListener('click', () => {
-            resolve(false);
-        });
-    });
-}
-function editTaskHandler(event) {
-    showEditPopUphandler();
-    editPromise(event).then(response => {
-        if (!response) {
-            hideEditPopUphandler();
-        }
-        else {
-            updateTask(response);
-            hideEditPopUphandler();
-            snapshotHandler(getCurrentKey());
-        }
-    });
-}
-
-function deletePopUpPromise() {
-    return new Promise((resolve) => {
-        BUTTON_DELETE_YES.addEventListener('click', () => {
-            resolve(true);
-        });
-        BUTTON_DELETE_NO.addEventListener('click', () => {
-            resolve(false);
-        });
-    });
-}
-
-function deleteTaskHandler(event) {
-    showDeletePopupHandler();
-    deletePopUpPromise().then(response => {
-        if (!response) {
-            hideDeletePopupHandler();
-        } else {
-            removeTaskNode(event);
-            removeSpecificTask(getIdbyEvent(event), getCurrentKey());
-            hideDeletePopupHandler();
-        }
-    });
-}
-
-
-function addTasksHandler(tasksArray) {
+function renderTasksArrayHandler(tasksArray) {
     tasksArray.forEach(task => {
-        addTask(task);
+        renderTask(task);
     })
+}
+
+function createTaskHandler() {
+    const newTask = (new Task(getTitleFromForm(), getPriorityFromForm()));
+    renderTask(newTask);
+    addTaskToTasksArray(newTask, getCurrentKey());
+    clearInputs();
 }
 
 function sortTasksHandler(key) {
     const tasksArray = getTasksArray(key);
     tasksArray.sort(Task.compare);
     setTasksArray(key, tasksArray);
-    removeAllTasks();
-    addTasksHandler(tasksArray);
+    removeTasksNodeList();
+    renderTasksArrayHandler(tasksArray);
     snapshotHandler(getCurrentKey());
 }
-
-function createTaskHandler() {
-    const newTask = (new Task(getTitleFromForm(), getPriorityFromForm()));
-    addTask(newTask);
-    addTaskToTasksArray(newTask, getCurrentKey());
-    clearInputs();
-}
-
 
 function searchHandler() {
     const filter = getFilter();
     const ul = getUlElement();
     const liNodeList = getLiNodeList(ul)
-    search(liNodeList, filter);
-
+    searchByFilter(liNodeList, filter);
 }
 
-function search(nodeList, filter) {
+function searchByFilter(nodeList, filter) {
     let span, i, txtValue;
     for (i = 0; i < nodeList.length; i++) {
-        span = getSpanFromli(nodeList[i]);
+        span = getSpanFromLi(nodeList[i]);
         txtValue = span.textContent || span.innerText;
         if (txtValue.toUpperCase().indexOf(filter) > -1) {
             displayNode(nodeList[i]);
@@ -132,7 +77,6 @@ function search(nodeList, filter) {
         }
     }
 }
-
 
 function swapHandler(draggableZone, event) {
     const afterElement = getDragAfterElement(draggableZone, event.clientY);
@@ -146,7 +90,6 @@ function swapHandler(draggableZone, event) {
 
 function getDragAfterElement(list, y) {
     const draggableElements = getAllNotDragging(list);
-
     return draggableElements.reduce((closest, child) => {
         const box = child.getBoundingClientRect();
         const offset = y - box.top - box.height / 2;
@@ -158,11 +101,120 @@ function getDragAfterElement(list, y) {
     }, { offset: Number.NEGATIVE_INFINITY }).element
 }
 
+function editTaskHandler(event) {
+    renderPopup('editTask');
+    blurToggle();
+    clickInMainToggle();
+    fillEditPopupInputs(event);
+    editPopupHandler(event);
+}
+function editPromise(event) {
+    const POPUP_SUBMIT_BUTTON = document.querySelector('.popup-form-submit');
+    const POPUP_EDIT_CLOSE = document.querySelector('.popup-exit');
 
+    return new Promise((resolve) => {
+        POPUP_SUBMIT_BUTTON.addEventListener('click', (e) => {
+            e.preventDefault();
+            resolve(new Task(getEditTitle(), getEditPriority()
+                , getIdByEvent(event)));
+        });
+        POPUP_EDIT_CLOSE.addEventListener('click', () => {
+            resolve(false);
+        });
+    });
+}
+function editPopupHandler(event) {
+    editPromise(event).then(response => {
+        if (!response) {
+            blurToggle();
+            clickInMainToggle();
+            removePopup();
+        }
+        else {
+            updateTaskNode(response);
+            blurToggle();
+            clickInMainToggle();
+            removePopup();
+            snapshotHandler(getCurrentKey());
+        }
+    });
+}
 
+function deletePopUpPromise() {
+    const BUTTON_DELETE_YES = document.querySelector('.yes');
+    const BUTTON_DELETE_NO = document.querySelector('.no');
+
+    return new Promise((resolve) => {
+        BUTTON_DELETE_YES.addEventListener('click', () => {
+            resolve(true);
+        });
+        BUTTON_DELETE_NO.addEventListener('click', () => {
+            resolve(false);
+        });
+    });
+}
+function deleteTaskHandler(event) {
+    blurToggle();
+    clickInMainToggle();
+    renderPopup('yesNo');
+    deletePopupHandler(event);
+}
+function deletePopupHandler(event) {
+    deletePopupEventsHandler();
+    deletePopUpPromise().then(response => {
+        if (!response) {
+            blurToggle();
+            clickInMainToggle();
+            removePopup();
+        } else {
+            removeTaskNode(event);
+            removeSpecificTask(getIdByEvent(event), getCurrentKey());
+            blurToggle();
+            clickInMainToggle();
+            removePopup();
+        }
+    });
+
+}
+function editListHandler() {
+    blurToggle();
+    clickInMainToggle();
+    renderPopup('editList');
+    fillEditListInput();
+    editListPromise().then(response => {
+        if (!response) {
+            blurToggle();
+            clickInMainToggle();
+            removePopup();
+        }
+        else {
+            editKey(response);
+            blurToggle();
+            clickInMainToggle();
+            removePopup();
+
+        }
+    });
+}
+
+function editListPromise() {
+    const POPUP_SUBMIT_BUTTON = document.querySelector('.popup-form-submit');
+    const POPUP_EDIT_CLOSE = document.querySelector('.popup-exit');
+    return new Promise((resolve) => {
+        POPUP_SUBMIT_BUTTON.addEventListener('click', (e) => {
+            e.preventDefault();
+            resolve(getPopUpTextInput());
+        });
+        POPUP_EDIT_CLOSE.addEventListener('click', () => {
+            resolve(false);
+        });
+    });
+}
 
 export {
-    deleteTaskHandler, editTaskHandler, firstTimeHandler,
+    firstTimeHandler, createTaskHandler,
     notFirstTimeHandler, swapHandler,
-    sortTasksHandler, searchHandler, createTaskHandler
+    sortTasksHandler, searchHandler,
+    deleteTaskHandler, editTaskHandler,
+    renderTasksArrayHandler, editListHandler
 }
