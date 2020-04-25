@@ -1,5 +1,6 @@
 import Task from './task.js';
 import { PopupFactory } from './factory.js'
+import { isStorageEmpty } from './storage.js'
 
 const MAIN_FORM = document.querySelector(".main-content-forms-todoForm");
 const FORM_SEARCH = document.querySelector(".main-content-forms-searchForm");
@@ -11,8 +12,13 @@ const MENU_BUTTON = document.querySelector(".fa-bars");
 const SEARCH_BUTTON = document.querySelector(".fa-search");
 const ADD_FORM_BUTTON = document.querySelector(".fa-plus");
 const DRAGGABLE_ZONE = document.querySelector('ul');
+const MAIN_TODOLIST = document.querySelector(".main-content-todolist-list");
 
-const EDIT_LIST_BUTTON = document.querySelector('.editList');
+const DELETE_LIST_BUTTON = document.querySelector('.fas.fa-trash.todo-select-icon');
+const ADD_LIST_BUTTON = document.querySelector('.fas.fa-plus.todo-select-icon');
+const THEME = document.querySelector(".fa-tint");
+const LIGHT = document.querySelector(".fa-lightbulb");
+const HTML = document.querySelector("html");
 
 function setDay() {
     const DATE_PLACEHOLDER = document.querySelector(".main-content-date-placeHolder");
@@ -20,17 +26,23 @@ function setDay() {
     DATE_PLACEHOLDER.innerText = today.toDateString();
 }
 function renderListsOfKeys() {
+    if (isStorageEmpty()) {
+        removeAllSelects();
+    }
     for (let i = 0; i < localStorage.length; i++) {
         renderOptionToSelect(localStorage.key(i));
     }
 }
+function removeAllSelects() {
+    document.querySelector('.main-content-todolist-select').innerHTML = '';
+}
+
 function renderOptionToSelect(name) {
     const option = createOption(name);
     SELECT_CURRENT_LIST.appendChild(option);
 }
 function renderTask(taskObj) {
-    const CURRENT_TODOLIST = document.querySelector(".main-content-todolist-list");
-    CURRENT_TODOLIST.appendChild(Task.createHTMLelement(taskObj));
+    MAIN_TODOLIST.appendChild(Task.createHTMLelement(taskObj));
 }
 function renderPopup(type) {
     const placeHolder = document.querySelector('.popup-placeholder');
@@ -67,6 +79,10 @@ function updateTaskNode(taskObj) {
 function updateListName(name) {
     const nameList = document.querySelector('.popup-priority-select-option');
     nameList.innerText = name;
+}
+function updateMain() {
+    MAIN_TODOLIST.innerHTML = '';
+    SELECT_CURRENT_LIST.innerHTML = '';
 }
 function clearInputs() {
     const MAIN_FORM_NEW_TITLE_INPUT = document.querySelector("#todoForm-title-input");
@@ -129,8 +145,7 @@ function getIdByEvent(event) {
     return event.target.parentNode.id;
 }
 function getUlElement() {
-    const UL_TODOLIST = document.querySelector(".main-content-todolist-list");
-    return UL_TODOLIST;
+    return MAIN_TODOLIST;
 }
 function getLiNodeList(ul) {
     return ul.querySelectorAll("li");
@@ -170,6 +185,11 @@ function fillEditListInput() {
     input.value = getCurrentKey();
 }
 
+function popupToogle() {
+    blurToggle();
+    clickInMainToggle();
+}
+
 export {
     renderListsOfKeys, setDay, renderTask,
     getUlElement, getLiNodeList, getFilter,
@@ -180,13 +200,16 @@ export {
     getAllNotDragging, getIdByEvent, renderPopup,
     removePopup, fillEditPopupInputs, getEditTitle,
     getEditPriority, getPopUpTextInput, blurToggle,
-    clickInMainToggle, fillEditListInput, updateListName
+    clickInMainToggle, fillEditListInput, updateListName,
+    updateMain, popupToogle
 }
 
 export {
     SELECT_CURRENT_LIST, MAIN_FORM,
     INPUT_SEARCH_TEXT, SORT_BUTTON, MENU_BUTTON,
     MAIN_HEADER_NAVBAR, SEARCH_BUTTON, FORM_SEARCH,
-    ADD_FORM_BUTTON, DRAGGABLE_ZONE, EDIT_LIST_BUTTON
+    ADD_FORM_BUTTON, DRAGGABLE_ZONE, DELETE_LIST_BUTTON,
+    ADD_LIST_BUTTON, THEME, LIGHT, HTML,
+
 }
 

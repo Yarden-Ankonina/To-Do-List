@@ -1,25 +1,29 @@
 import {
     displayToogle, removeTasksNodeList,
     getCurrentKey, getPopUpTextInput, removePopup,
-    blurToggle, clickInMainToggle
+    blurToggle, clickInMainToggle, renderOptionToSelect
 } from './DOM.js'
 
 import {
     MAIN_FORM, INPUT_SEARCH_TEXT, SORT_BUTTON,
     MENU_BUTTON, MAIN_HEADER_NAVBAR, ADD_FORM_BUTTON,
     SELECT_CURRENT_LIST, DRAGGABLE_ZONE, SEARCH_BUTTON,
-    FORM_SEARCH, EDIT_LIST_BUTTON,
-    renderOptionToSelect
+    FORM_SEARCH, DELETE_LIST_BUTTON, ADD_LIST_BUTTON,
+    THEME, LIGHT, HTML,
+
 } from './DOM.js'
 
 import {
     sortTasksHandler, searchHandler,
-    createTaskHandler, swapHandler,
-    renderTasksArrayHandler, editListHandler
+    newTaskHandler, swapHandler,
+    renderTasksArrayHandler, deleteListHandler,
+    addListHandler
 } from './handlers.js'
 
 
 import { setTasksArray, getTasksArray } from './storage.js'
+
+let hueCounter = 0;
 
 export function addEventsListenerHandler() {
     INPUT_SEARCH_TEXT.addEventListener('input', () => {
@@ -28,7 +32,7 @@ export function addEventsListenerHandler() {
 
     MAIN_FORM.addEventListener("submit", (event) => {
         event.preventDefault();
-        createTaskHandler(event);
+        newTaskHandler();
     });
 
     SORT_BUTTON.addEventListener("click", (event) => {
@@ -59,21 +63,32 @@ export function addEventsListenerHandler() {
         swapHandler(DRAGGABLE_ZONE, event);
     })
 
-    EDIT_LIST_BUTTON.addEventListener('click', () => {
-        editListHandler();
+    DELETE_LIST_BUTTON.addEventListener('click', (e) => {
+        deleteListHandler();
+
     })
+    ADD_LIST_BUTTON.addEventListener('click', (e) => {
+        addListHandler();
+    })
+    THEME.addEventListener('click', function () {
+        hueCounter += 30;
+        HTML.style.filter = "hue-rotate(" + hueCounter + "deg)";
+    });
+
+    LIGHT.addEventListener('click', function () {
+        if (HTML.hasAttribute('data-theme')) {
+            HTML.removeAttribute('data-theme', 'light');
+        }
+        else {
+            HTML.setAttribute('data-theme', 'light');
+        }
+        hueCounter = 0;
+        HTML.style.filter = "hue-rotate(" + hueCounter + "deg)";
+    });
 
 }
 
 
-function deletePopupEventsHandler() {
-    const exit = document.querySelector('.popup-exit');
-    exit.addEventListener('click', () => {
-        blurToggle();
-        clickInMainToggle();
-        removePopup();
-    })
-}
 function firstTimePopupEventsHandler() {
     const POPUP_FORM = document.querySelector('.popup-form');
     POPUP_FORM.addEventListener('submit', (event) => {
@@ -87,4 +102,4 @@ function firstTimePopupEventsHandler() {
     })
 }
 
-export { deletePopupEventsHandler, firstTimePopupEventsHandler }
+export { firstTimePopupEventsHandler }

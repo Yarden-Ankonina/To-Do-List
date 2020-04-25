@@ -127,12 +127,6 @@ function YesNoPopup(object) {
 function PopupFactory() {
     this.create = (type) => {
         switch (type) {
-            case 'textInput':
-                return new TextInputPopup(title, label, placeholder).HTML;
-                break;
-            case 'textInputSelect':
-                return new SelectTextInputPopup(title, label, placeholder).HTML;
-                break;
             case 'yesNo':
                 return new YesNoPopup(DELETE_TASK).HTML;
                 break;
@@ -144,6 +138,9 @@ function PopupFactory() {
                 break;
             case 'editList':
                 return new TextInputPopup(EDIT_LIST).HTML;
+                break;
+            case 'addList':
+                return new TextInputPopup(DUMMY).HTML;
                 break;
         }
     }

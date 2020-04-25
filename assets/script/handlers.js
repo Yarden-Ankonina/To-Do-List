@@ -2,47 +2,32 @@ import Task from './task.js';
 
 import {
     getTasksArray, setTasksArray, snapshotHandler,
-    removeSpecificTask, addTaskToTasksArray, editKey
+    removeSpecificTask, addTaskToTasksArray,
 } from './storage.js';
 
 import {
     renderListsOfKeys, removeTasksNodeList, getAllNotDragging,
-    displayNode, hideNode, setDay,
+    displayNode, hideNode,
     renderTask, getUlElement, getLiNodeList, getFilter, getSpanFromLi,
     getCurrentKey, removeTaskNode,
     renderPopup, removePopup, updateTaskNode, fillEditPopupInputs,
     getEditTitle, getEditPriority, getIdByEvent,
     getTitleFromForm, getPriorityFromForm, clearInputs,
-    blurToggle, clickInMainToggle, fillEditListInput, getPopUpTextInput,
+    blurToggle, clickInMainToggle, updateMain,
+    renderOptionToSelect, popupToogle
+
 } from './DOM.js'
 
-import {
-    deletePopupEventsHandler, firstTimePopupEventsHandler,
-    addEventsListenerHandler
-} from './events.js'
-
-function firstTimeHandler() {
-    setDay();
-    renderPopup('firstTime');
-    blurToggle();
-    clickInMainToggle();
-    firstTimePopupEventsHandler();
-    addEventsListenerHandler();
-}
-function notFirstTimeHandler() {
-    setDay();
-    renderListsOfKeys();
-    renderTasksArrayHandler(getTasksArray(localStorage.key(0)));
-    addEventsListenerHandler();
-}
 
 function renderTasksArrayHandler(tasksArray) {
-    tasksArray.forEach(task => {
-        renderTask(task);
-    })
+    if (tasksArray) {
+        tasksArray.forEach(task => {
+            renderTask(task);
+        })
+    }
 }
 
-function createTaskHandler() {
+function newTaskHandler() {
     const newTask = (new Task(getTitleFromForm(), getPriorityFromForm()));
     renderTask(newTask);
     addTaskToTasksArray(newTask, getCurrentKey());
@@ -103,12 +88,12 @@ function getDragAfterElement(list, y) {
 
 function editTaskHandler(event) {
     renderPopup('editTask');
-    blurToggle();
-    clickInMainToggle();
+    popupToogle();
     fillEditPopupInputs(event);
     editPopupHandler(event);
 }
-function editPromise(event) {
+
+function editTaskPromise(event) {
     const POPUP_SUBMIT_BUTTON = document.querySelector('.popup-form-submit');
     const POPUP_EDIT_CLOSE = document.querySelector('.popup-exit');
 
@@ -121,19 +106,19 @@ function editPromise(event) {
         POPUP_EDIT_CLOSE.addEventListener('click', () => {
             resolve(false);
         });
+
     });
 }
+
 function editPopupHandler(event) {
-    editPromise(event).then(response => {
+    editTaskPromise(event).then(response => {
         if (!response) {
-            blurToggle();
-            clickInMainToggle();
+            popupToogle();
             removePopup();
         }
         else {
             updateTaskNode(response);
-            blurToggle();
-            clickInMainToggle();
+            popupToogle();
             removePopup();
             snapshotHandler(getCurrentKey());
         }
@@ -143,7 +128,7 @@ function editPopupHandler(event) {
 function deletePopUpPromise() {
     const BUTTON_DELETE_YES = document.querySelector('.yes');
     const BUTTON_DELETE_NO = document.querySelector('.no');
-
+    const POPUP_EDIT_CLOSE = document.querySelector('.popup-exit');
     return new Promise((resolve) => {
         BUTTON_DELETE_YES.addEventListener('click', () => {
             resolve(true);
@@ -151,59 +136,83 @@ function deletePopUpPromise() {
         BUTTON_DELETE_NO.addEventListener('click', () => {
             resolve(false);
         });
+        POPUP_EDIT_CLOSE.addEventListener('click', () => {
+            resolve(false);
+        });
     });
 }
 function deleteTaskHandler(event) {
-    blurToggle();
-    clickInMainToggle();
+    popupToogle();
     renderPopup('yesNo');
-    deletePopupHandler(event);
+    deleteTaskPopupHandler(event);
 }
-function deletePopupHandler(event) {
-    deletePopupEventsHandler();
+function deleteTaskPopupHandler(event) {
     deletePopUpPromise().then(response => {
         if (!response) {
-            blurToggle();
-            clickInMainToggle();
+            popupToogle();
             removePopup();
         } else {
             removeTaskNode(event);
             removeSpecificTask(getIdByEvent(event), getCurrentKey());
-            blurToggle();
-            clickInMainToggle();
+            popupToogle();
             removePopup();
         }
     });
 
 }
-function editListHandler() {
+
+function deleteListHandler() {
+    popupToogle();
+    renderPopup('yesNo');
+
+    deletePopUpPromise().then(response => {
+        if (!response) {
+            popupToogle();
+            removePopup();
+        } else {
+            removeSpecificList();
+            popupToogle();
+            removePopup();
+        }
+    })
+}
+
+function removeSpecificList() {
+    localStorage.removeItem(getCurrentKey());
+    updateMain();
+    renderListsOfKeys();
+    renderTasksArrayHandler(getTasksArray(localStorage.key(0)));
+}
+
+function addListHandler() {
+    renderPopup('addList');
     blurToggle();
     clickInMainToggle();
-    renderPopup('editList');
-    fillEditListInput();
-    editListPromise().then(response => {
+
+    addListPromise(event).then(response => {
         if (!response) {
             blurToggle();
             clickInMainToggle();
             removePopup();
         }
         else {
-            editKey(response);
+            renderOptionToSelect(response);
+            setTasksArray(response);
             blurToggle();
             clickInMainToggle();
             removePopup();
-
         }
     });
 }
 
-function editListPromise() {
+function addListPromise() {
     const POPUP_SUBMIT_BUTTON = document.querySelector('.popup-form-submit');
     const POPUP_EDIT_CLOSE = document.querySelector('.popup-exit');
+
     return new Promise((resolve) => {
-        POPUP_SUBMIT_BUTTON.addEventListener('click', (e) => {
-            e.preventDefault();
-            resolve(getPopUpTextInput());
+        POPUP_SUBMIT_BUTTON.addEventListener('click', (event) => {
+            event.preventDefault();
+            resolve(getEditTitle());
         });
         POPUP_EDIT_CLOSE.addEventListener('click', () => {
             resolve(false);
@@ -211,10 +220,11 @@ function editListPromise() {
     });
 }
 
+
 export {
-    firstTimeHandler, createTaskHandler,
-    notFirstTimeHandler, swapHandler,
+    newTaskHandler, swapHandler,
     sortTasksHandler, searchHandler,
     deleteTaskHandler, editTaskHandler,
-    renderTasksArrayHandler, editListHandler
+    renderTasksArrayHandler, deleteListHandler,
+    addListHandler
 }
