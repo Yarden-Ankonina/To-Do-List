@@ -1,24 +1,12 @@
 import Task from './task.js';
-import { PopupFactory } from './factory.js'
+import { popupFactory } from './factory.js'
 import { isStorageEmpty } from './storage.js'
 
-const MAIN_FORM = document.querySelector(".main-content-forms-todoForm");
-const FORM_SEARCH = document.querySelector(".main-content-forms-searchForm");
+
 const SELECT_CURRENT_LIST = document.querySelector(".main-content-todolist-select");
-const MAIN_HEADER_NAVBAR = document.querySelector(".main-header-navbar-menu");
 const INPUT_SEARCH_TEXT = document.querySelector("#search-input");
-const SORT_BUTTON = document.querySelector("#navbar-sort-button");
-const MENU_BUTTON = document.querySelector(".fa-bars");
-const SEARCH_BUTTON = document.querySelector(".fa-search");
-const ADD_FORM_BUTTON = document.querySelector(".fa-plus");
-const DRAGGABLE_ZONE = document.querySelector('ul');
 const MAIN_TODOLIST = document.querySelector(".main-content-todolist-list");
 
-const DELETE_LIST_BUTTON = document.querySelector('.fas.fa-trash.todo-select-icon');
-const ADD_LIST_BUTTON = document.querySelector('.fas.fa-plus.todo-select-icon');
-const THEME = document.querySelector(".fa-tint");
-const LIGHT = document.querySelector(".fa-lightbulb");
-const HTML = document.querySelector("html");
 
 function setDay() {
     const DATE_PLACEHOLDER = document.querySelector(".main-content-date-placeHolder");
@@ -46,7 +34,7 @@ function renderTask(taskObj) {
 }
 function renderPopup(type) {
     const placeHolder = document.querySelector('.popup-placeholder');
-    placeHolder.appendChild(new PopupFactory().create(type));
+    placeHolder.appendChild(popupFactory(type));
 }
 function removePopup() {
     const popup = document.querySelector('.popup');
@@ -191,25 +179,21 @@ function popupToogle() {
 }
 
 export {
-    renderListsOfKeys, setDay, renderTask,
-    getUlElement, getLiNodeList, getFilter,
-    getSpanFromLi, getTitleFromForm, getPriorityFromForm,
-    getCurrentKey, displayToogle, clearInputs,
-    removeTasksNodeList, removeTaskNode, updateTaskNode,
-    renderOptionToSelect, displayNode, hideNode,
-    getAllNotDragging, getIdByEvent, renderPopup,
-    removePopup, fillEditPopupInputs, getEditTitle,
-    getEditPriority, getPopUpTextInput, blurToggle,
     clickInMainToggle, fillEditListInput, updateListName,
+    getAllNotDragging, getIdByEvent, renderPopup,
+    getCurrentKey, displayToogle, clearInputs,
+    getEditPriority, getPopUpTextInput, blurToggle,
+    getSpanFromLi, getTitleFromForm, getPriorityFromForm,
+    getUlElement, getLiNodeList, getFilter,
+    removePopup, fillEditPopupInputs, getEditTitle,
+    removeTasksNodeList, removeTaskNode, updateTaskNode,
+    renderListsOfKeys, setDay, renderTask,
+    renderOptionToSelect, displayNode, hideNode,
     updateMain, popupToogle
+
 }
 
 export {
-    SELECT_CURRENT_LIST, MAIN_FORM,
-    INPUT_SEARCH_TEXT, SORT_BUTTON, MENU_BUTTON,
-    MAIN_HEADER_NAVBAR, SEARCH_BUTTON, FORM_SEARCH,
-    ADD_FORM_BUTTON, DRAGGABLE_ZONE, DELETE_LIST_BUTTON,
-    ADD_LIST_BUTTON, THEME, LIGHT, HTML,
-
+    INPUT_SEARCH_TEXT, SELECT_CURRENT_LIST
 }
 

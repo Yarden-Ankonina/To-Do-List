@@ -1,6 +1,7 @@
 import { snapshotHandler } from './storage.js';
-import { SELECT_CURRENT_LIST } from './DOM.js';
+import { getCurrentKey } from './DOM.js';
 import { deleteTaskHandler, editTaskHandler } from './handlers.js'
+
 export default class Task {
     constructor(title, priority, id = Date.parse(new Date())) {
         this.title = title;
@@ -37,7 +38,7 @@ export default class Task {
         });
         li.addEventListener("dragend", () => {
             li.classList.remove("dragging");
-            snapshotHandler(SELECT_CURRENT_LIST.value);
+            snapshotHandler(getCurrentKey());
         });
 
         li.firstElementChild.addEventListener("click", (event) => {

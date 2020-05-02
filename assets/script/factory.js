@@ -1,26 +1,9 @@
-const DUMMY = {
-    title: 'Text here',
-    label: 'Label here',
-    placeholder: 'Placeholder here'
-};
-const DELETE_TASK = { title: 'Are You Sure You Want To Delete?' };
-const EDIT_TASK = {
-    title: 'Text EDIT_TASK',
-    label: 'Label here',
-    placeholder: 'Placeholder here'
-}
-const EDIT_LIST = {
-    title: 'Text EDIT_LIST',
-    label: 'Label EDIT_LIST',
-    placeholder: 'Placeholder EDIT_LIST'
-}
-
 function PopupBase(object) {
-    this.HTML = createSection();
-    this.HTML.appendChild(createButton());
-    this.HTML.appendChild(createP(object.title));
-    this.HTML.style.display = 'flex';
-
+    const element = createSection();
+    element.appendChild(createButton());
+    element.appendChild(createP(object.title));
+    element.style.display = 'flex';
+    return element;
     function createSection() {
         const section = document.createElement('section');
         section.className = 'popup';
@@ -41,8 +24,8 @@ function PopupBase(object) {
 }
 
 function TextInputPopup(object) {
-    this.HTML = new PopupBase(object).HTML;
-    this.HTML.appendChild(createForm(object.label, object.placeholder));
+    const element = PopupBase(object);
+    element.appendChild(createForm(object.label, object.placeholder));
 
     function createForm(label, placeholder) {
         const form = document.createElement('form');
@@ -76,16 +59,17 @@ function TextInputPopup(object) {
         button.innerText = 'SAVE';
         return button;
     }
+    return element;
 }
 
 function SelectTextInputPopup(object) {
-    this.HTML = new TextInputPopup(object).HTML;
+    const element = TextInputPopup(object);
 
-    const parentNode = this.HTML.querySelector('.popup-form');
+    const parentNode = element.querySelector('.popup-form');
     const newNode = createSelect();
-    const referenceNode = this.HTML.querySelector('.popup-form-submit');
+    const referenceNode = element.querySelector('.popup-form-submit');
     parentNode.insertBefore(newNode, referenceNode);
-    // console.log('from SelectTextInputPopup', this.HTML);
+    return element;
 
     function createSelect() {
         const select = document.createElement('select');
@@ -105,9 +89,10 @@ function SelectTextInputPopup(object) {
 }
 
 function YesNoPopup(object) {
-    this.HTML = new PopupBase(object).HTML;
-    this.HTML.classList.add('delete-popup');
-    this.HTML.appendChild(createAnswers());
+    const element = PopupBase(object);
+    element.classList.add('delete-popup');
+    element.appendChild(createAnswers());
+    return element;
 
     function createAnswers() {
         const div = document.createElement('div');
@@ -124,28 +109,41 @@ function YesNoPopup(object) {
     }
 }
 
-function PopupFactory() {
-    this.create = (type) => {
-        switch (type) {
-            case 'yesNo':
-                return new YesNoPopup(DELETE_TASK).HTML;
-                break;
-            case 'editTask':
-                return new SelectTextInputPopup(EDIT_TASK).HTML;
-                break;
-            case 'firstTime':
-                return new TextInputPopup(DUMMY).HTML;
-                break;
-            case 'editList':
-                return new TextInputPopup(EDIT_LIST).HTML;
-                break;
-            case 'addList':
-                return new TextInputPopup(DUMMY).HTML;
-                break;
-        }
+function popupFactory(type) {
+    const DUMMY = {
+        title: 'Text here',
+        label: 'Label here',
+        placeholder: 'Placeholder here'
+    };
+    const DELETE_TASK = { title: 'Are You Sure You Want To Delete?' };
+    const EDIT_TASK = {
+        title: 'Text EDIT_TASK',
+        label: 'Label here',
+        placeholder: 'Placeholder here'
+    }
+    const EDIT_LIST = {
+        title: 'Text EDIT_LIST',
+        label: 'Label EDIT_LIST',
+        placeholder: 'Placeholder EDIT_LIST'
+    }
+    switch (type) {
+        case 'yesNo':
+            return YesNoPopup(DELETE_TASK);
+            break;
+        case 'editTask':
+            return SelectTextInputPopup(EDIT_TASK);
+            break;
+        case 'firstTime':
+            return TextInputPopup(DUMMY);
+            break;
+        case 'editList':
+            return TextInputPopup(EDIT_LIST);
+            break;
+        case 'addList':
+            return TextInputPopup(DUMMY);
+            break;
     }
 }
 
-export { PopupFactory };
+export { popupFactory };
 
-// [{"title":"שדגשדג","priority":"1","id":"1587456913000"},{"title":"2234Sס","priority":"3","id":"1587456936000"},{"title":"דד","priority":"2","id":"1587456933000"}]

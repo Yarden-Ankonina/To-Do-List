@@ -1,20 +1,21 @@
 import Task from './task.js';
 
 import {
-    getTasksArray, setTasksArray, snapshotHandler,
-    removeSpecificTask, addTaskToTasksArray,
+    addTaskToTasksArray, getTasksArray,
+    setTasksArray, snapshotHandler,
+    removeSpecificTask
 } from './storage.js';
 
 import {
-    renderListsOfKeys, removeTasksNodeList, getAllNotDragging,
-    displayNode, hideNode,
-    renderTask, getUlElement, getLiNodeList, getFilter, getSpanFromLi,
-    getCurrentKey, removeTaskNode,
-    renderPopup, removePopup, updateTaskNode, fillEditPopupInputs,
-    getEditTitle, getEditPriority, getIdByEvent,
-    getTitleFromForm, getPriorityFromForm, clearInputs,
     blurToggle, clickInMainToggle, updateMain,
-    renderOptionToSelect, popupToogle
+    displayNode, hideNode, getCurrentKey,
+    removeTaskNode, getEditTitle, getEditPriority,
+    getIdByEvent, getTitleFromForm, getPriorityFromForm,
+    clearInputs, renderListsOfKeys, removeTasksNodeList,
+    getAllNotDragging, renderOptionToSelect, popupToogle,
+    renderPopup, removePopup, updateTaskNode,
+    fillEditPopupInputs, renderTask, getUlElement,
+    getLiNodeList, getFilter, getSpanFromLi,
 
 } from './DOM.js'
 
@@ -63,7 +64,8 @@ function searchByFilter(nodeList, filter) {
     }
 }
 
-function swapHandler(draggableZone, event) {
+function swapHandler(event) {
+    const draggableZone = document.querySelector('ul');
     const afterElement = getDragAfterElement(draggableZone, event.clientY);
     const draggable = document.querySelector('.dragging');
     if (afterElement == null) {
@@ -222,9 +224,9 @@ function addListPromise() {
 
 
 export {
-    newTaskHandler, swapHandler,
-    sortTasksHandler, searchHandler,
-    deleteTaskHandler, editTaskHandler,
-    renderTasksArrayHandler, deleteListHandler,
-    addListHandler
+    addListHandler, deleteTaskHandler,
+    editTaskHandler, newTaskHandler,
+    swapHandler, renderTasksArrayHandler,
+    deleteListHandler, sortTasksHandler,
+    searchHandler,
 }

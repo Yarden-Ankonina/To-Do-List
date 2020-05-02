@@ -5,12 +5,8 @@ import {
 } from './DOM.js'
 
 import {
-    MAIN_FORM, INPUT_SEARCH_TEXT, SORT_BUTTON,
-    MENU_BUTTON, MAIN_HEADER_NAVBAR, ADD_FORM_BUTTON,
-    SELECT_CURRENT_LIST, DRAGGABLE_ZONE, SEARCH_BUTTON,
-    FORM_SEARCH, DELETE_LIST_BUTTON, ADD_LIST_BUTTON,
-    THEME, LIGHT, HTML,
-
+    INPUT_SEARCH_TEXT,
+    SELECT_CURRENT_LIST,
 } from './DOM.js'
 
 import {
@@ -26,6 +22,21 @@ import { setTasksArray, getTasksArray } from './storage.js'
 let hueCounter = 0;
 
 export function addEventsListenerHandler() {
+    const MAIN_FORM = document.querySelector(".main-content-forms-todoForm");
+    const MAIN_HEADER_NAVBAR = document.querySelector(".main-header-navbar-menu");
+    const FORM_SEARCH = document.querySelector(".main-content-forms-searchForm");
+    const SORT_BUTTON = document.querySelector("#navbar-sort-button");
+    const MENU_BUTTON = document.querySelector(".fa-bars");
+    const SEARCH_BUTTON = document.querySelector(".fa-search");
+    const ADD_FORM_BUTTON = document.querySelector(".fa-plus");
+    const DELETE_LIST_BUTTON = document.querySelector('.fas.fa-trash.todo-select-icon');
+    const ADD_LIST_BUTTON = document.querySelector('.fas.fa-plus.todo-select-icon');
+
+    const THEME = document.querySelector(".fa-tint");
+    const LIGHT = document.querySelector(".fa-lightbulb");
+    const HTML = document.querySelector("html");
+    const DRAGGABLE_ZONE = document.querySelector('ul');
+
     INPUT_SEARCH_TEXT.addEventListener('input', () => {
         searchHandler();
     });
@@ -60,7 +71,7 @@ export function addEventsListenerHandler() {
     })
 
     DRAGGABLE_ZONE.addEventListener('dragover', (event) => {
-        swapHandler(DRAGGABLE_ZONE, event);
+        swapHandler(event);
     })
 
     DELETE_LIST_BUTTON.addEventListener('click', (e) => {
