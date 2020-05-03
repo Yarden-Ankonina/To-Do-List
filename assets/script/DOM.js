@@ -33,7 +33,7 @@ function renderTask(taskObj) {
     MAIN_TODOLIST.appendChild(Task.createHTMLelement(taskObj));
 }
 function renderPopup(type) {
-    const placeHolder = document.querySelector('.popup-placeholder');
+    const placeHolder = document.querySelector('.popup-collection');
     placeHolder.appendChild(popupFactory(type));
 }
 function removePopup() {

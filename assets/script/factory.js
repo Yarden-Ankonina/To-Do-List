@@ -6,7 +6,7 @@ function PopupBase(object) {
     return element;
     function createSection() {
         const section = document.createElement('section');
-        section.className = 'popup';
+        section.className = `popup ${object.type}`;
         return section;
     }
     function createButton() {
@@ -113,19 +113,21 @@ function popupFactory(type) {
     const ADD_LIST = {
         title: 'Add Todo List',
         label: 'Create a new todo list category',
-        placeholder: 'Name your new todo list'
+        placeholder: 'Insert New List',
+        type : 'add-popup'
     };
     const DELETE_TASK = { title: 'Are You Sure You Want To Delete?' };
     const EDIT_TASK = {
-        title: 'Text EDIT_TASK',
-        label: 'Label here',
-        placeholder: 'Placeholder here'
+        title: 'Edit Task',
+        label: 'Change task name or priority',
+        placeholder: 'Rename task',
+        type : 'edit-popup'
     }
-    const EDIT_LIST = {
-        title: 'Text EDIT_LIST',
-        label: 'Label EDIT_LIST',
-        placeholder: 'Placeholder EDIT_LIST'
-    }
+    // const EDIT_LIST = {
+    //     title: 'Text EDIT_LIST',
+    //     label: 'Label EDIT_LIST',
+    //     placeholder: 'Placeholder EDIT_LIST'
+    // }
     switch (type) {
         case 'yesNo':
             return YesNoPopup(DELETE_TASK);
