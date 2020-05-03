@@ -817,6 +817,20 @@ button {
   }
 }
 
+@media (max-height: 600px) {
+  .popup {
+    top: 10%;
+    height: 80%;
+  }
+}
+
+@media (min-height: 800px) {
+  .popup {
+    top: 30%;
+    height: 45%;
+  }
+}
+
 .edit-popup {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
