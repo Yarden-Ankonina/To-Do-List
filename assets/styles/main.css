@@ -1,4 +1,3 @@
-@charset "UTF-8";
 html {
   --popup-bg-clr: hsl(150, 45%, 90%);
   --popup-clr: hsl(0, 10%, 10%);
@@ -778,15 +777,6 @@ button {
   color: #0e0f0a;
 }
 
-@media (max-width: 31.25‬em) and (max-width: 47.75em) {
-  .edit-popup, .add-popup {
-    top: 20%;
-    left: 5%;
-    height: 60%;
-    width: 90%;
-  }
-}
-
 @media (max-width: 47.8125em) {
   .popup {
     top: 20%;
@@ -829,7 +819,7 @@ button {
           justify-content: flex-start;
 }
 
-.first-popup {
+.landing-popup {
   width: 100%;
   height: 100%;
   left: 0;
@@ -838,7 +828,7 @@ button {
   border-radius: 0;
 }
 
-.first-popup .popup-form-submit {
+.landing-popup .popup-form-submit {
   margin-top: 2em;
 }
 

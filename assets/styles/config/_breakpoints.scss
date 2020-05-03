@@ -1,6 +1,7 @@
 
 //breakpoints
-$break0: "(max-width: 31.25‬em) and (max-width : 47.75em)"; // 0 to 754
+$break0: "(max-width: 31.25‬em)"; // 0 to 500
+$break0_1: "(min-width: 31.3125‬em) and (max-width : 47.8125em)";//6.25em = 100px => 765 * 0.0625     //765 mobile
 $break1: "(max-width : 47.8125em)";//6.25em = 100px => 765 * 0.0625     //765 mobile
 $break2: "(min-width: 47.875em) and (max-width: 74.9375em)";    //766 -1199 tablet
 $break3: "(min-width : 75em)";  //1200++    desktop
