@@ -956,7 +956,7 @@ button {
   50% {
     background-color: #2e7a1f;
   }
-  0% {
+  100% {
     background-color: #30382e;
   }
 }
@@ -968,7 +968,7 @@ button {
   50% {
     background-color: #2e7a1f;
   }
-  0% {
+  100% {
     background-color: #30382e;
   }
 }
@@ -1505,92 +1505,6 @@ button {
   -webkit-transform: scale(1.05);
           transform: scale(1.05);
   cursor: pointer;
-}
-
-.landing-page {
-  background: black;
-  position: fixed;
-  background-color: var(--land-pg-bg-clr);
-  width: 100%;
-  height: 100%;
-  z-index: 2;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  padding: 1em;
-  display: none;
-}
-
-.landing-page-title {
-  font-size: 2em;
-  padding: 0.5em 2em;
-  margin: 0.5em;
-  background-color: var(--land-pg-title-bg-clr);
-  color: #c6e9ec;
-  -webkit-box-shadow: 0px 8px 7px -8px #122121;
-          box-shadow: 0px 8px 7px -8px #122121;
-}
-
-.landing-page-form {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  margin-top: 10em;
-  padding: 2em;
-  background-color: #94ccd1;
-}
-
-.landing-page-form #landing-text-input {
-  line-height: 1.5em;
-  padding: 0.4em;
-  background-color: #244242;
-  border-radius: 0.2em;
-}
-
-.landing-page-form #landing-text-input::-webkit-input-placeholder {
-  color: #f2d9d9;
-}
-
-.landing-page-form #landing-text-input:-ms-input-placeholder {
-  color: #f2d9d9;
-}
-
-.landing-page-form #landing-text-input::-ms-input-placeholder {
-  color: #f2d9d9;
-}
-
-.landing-page-form #landing-text-input::placeholder {
-  color: #f2d9d9;
-}
-
-.landing-page-form #landing-text-input:focus {
-  font-weight: normal;
-  color: white;
-  -webkit-filter: brightness(1.4);
-          filter: brightness(1.4);
-}
-
-.landing-page-form #landing-submit-input {
-  margin: 0.3em;
-  padding: 0.4em;
-  border-radius: 0.5em;
-  background-color: #bddbdb;
-}
-
-.landing-page-form #landing-submit-input:hover {
-  cursor: pointer;
-  background-color: #b3e6e6;
 }
 
 html {

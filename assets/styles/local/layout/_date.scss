@@ -1,4 +1,3 @@
-//comon style
 .main-content-date {
   display: flex;
   align-items: center;
@@ -15,16 +14,4 @@
   &-placeHolder {
     padding-right: 0.5em;
   }
-}
-//only mobile
-
-@media #{$break1} {
-}
-//mobile and tablet
-
-//only tablet
-@media #{$break2} {
-}
-//only desktop
-@media #{$break3} {
 }

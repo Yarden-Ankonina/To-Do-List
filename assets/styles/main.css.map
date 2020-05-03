@@ -25,8 +25,7 @@
         "local/layout/_forms.scss",
         "local/layout/_main_todo.scss",
         "local/layout/_date.scss",
-        "local/layout/_footer.scss",
-        "local/layout/_landingPage.scss"
+        "local/layout/_footer.scss"
     ],
     "names": [],
     "file": "main.css"
