@@ -13,11 +13,14 @@ import {
     sortTasksHandler, searchHandler,
     newTaskHandler, swapHandler,
     renderTasksArrayHandler, deleteListHandler,
-    addListHandler
+    addListHandler, deleteTaskHandler,
+    editTaskHandler
 } from './handlers.js'
 
-
-import { setTasksArray, getTasksArray } from './storage.js'
+import {
+    setTasksArray, getTasksArray,
+    snapshotHandler
+} from './storage.js'
 
 let hueCounter = 0;
 
@@ -113,4 +116,24 @@ function firstTimePopupEventsHandler() {
     })
 }
 
-export { firstTimePopupEventsHandler }
+function liEventsHandler(li) {
+    li.addEventListener("dragstart", () => {
+        li.classList.add("dragging");
+    });
+    li.addEventListener("dragend", () => {
+        li.classList.remove("dragging");
+        snapshotHandler(getCurrentKey());
+    });
+
+    li.firstElementChild.addEventListener("click", (event) => {
+        event.preventDefault();
+        deleteTaskHandler(event);
+    });
+
+    li.lastElementChild.addEventListener("click", (event) => {
+        editTaskHandler(event);
+    });
+}
+
+
+export { firstTimePopupEventsHandler, liEventsHandler }
