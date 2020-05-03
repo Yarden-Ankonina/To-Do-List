@@ -51,10 +51,10 @@
     margin: 0.5em 0;
     
     &:focus{
-       color: hsl(150,15%, 10%);
-       font-size: 1.1em;
-       filter: contrast(2);
-       &::placeholder{
+    color: hsl(150,15%, 10%);
+    font-size: 1.1em;
+    filter: contrast(2);
+    &::placeholder{
         color: hsl(150,15%, 10%);
     }
 
@@ -109,8 +109,15 @@
                     color: hsl(80, 20%, 5%);
                 }
 }
-
 }
+
+.delete-popup{
+    height: 30%;
+    width: 50%;
+    top: 35%;
+    left: 25%;
+}
+
 
 @media #{$break1}{
     .popup{  
@@ -118,13 +125,12 @@
     left:7.5%;
     width: 85%;
     height: 45%;
-  
     .popup-form-submit{
         width: 30%;
         }
     }
 }
-@media (max-width:500px){
+@media #{$break0}{
     .edit-popup,.add-popup {
     top: 20%;
     left: 5%;
@@ -133,7 +139,7 @@
     }
 }
 
-@media (min-width:500px) and (max-width:765px){
+@media #{$break0} and #{break1}{
     .edit-popup,.add-popup{
     top: 20%;
     left: 20%;
@@ -160,21 +166,11 @@
     }
 }
 
-.blurBackground{
-    filter: grayscale(40%)blur(2px)brightness(0.8);
-}
 
 .edit-popup{
     justify-content: flex-start;  
 }
 
-.delete-popup{
-    height: 30%;
-    width: 50%;
-    top: 35%;
-    left: 25%;
-    
-}
 
 .first-popup{
     width: 100%;

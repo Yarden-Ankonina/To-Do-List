@@ -109,26 +109,27 @@ function YesNoPopup(object) {
     }
 }
 
-function popupFactory(type) {
+function popupFactory(string) {
     const ADD_LIST = {
         title: 'Add Todo List',
         label: 'Create a new todo list category',
         placeholder: 'Insert New List',
-        type : 'add-popup'
+        type: 'add-popup'
     };
     const DELETE_TASK = { title: 'Are You Sure You Want To Delete?' };
     const EDIT_TASK = {
         title: 'Edit Task',
         label: 'Change task name or priority',
         placeholder: 'Rename task',
-        type : 'edit-popup'
+        type: 'edit-popup'
     }
-    // const EDIT_LIST = {
-    //     title: 'Text EDIT_LIST',
-    //     label: 'Label EDIT_LIST',
-    //     placeholder: 'Placeholder EDIT_LIST'
-    // }
-    switch (type) {
+    const LANDING = {
+        title: 'Text EDIT_LIST',
+        label: 'Label EDIT_LIST',
+        placeholder: 'Placeholder EDIT_LIST',
+        type: 'first-popup'
+    }
+    switch (string) {
         case 'yesNo':
             return YesNoPopup(DELETE_TASK);
             break;
@@ -136,7 +137,7 @@ function popupFactory(type) {
             return SelectTextInputPopup(EDIT_TASK);
             break;
         case 'firstTime':
-            return TextInputPopup(DUMMY);
+            return TextInputPopup(LANDING);
             break;
         case 'editList':
             return TextInputPopup(EDIT_LIST);

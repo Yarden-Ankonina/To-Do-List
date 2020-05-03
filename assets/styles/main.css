@@ -867,8 +867,8 @@ button {
 }
 
 .dragging {
-  -webkit-box-shadow: 0px 0px 5px 2px white !important;
-          box-shadow: 0px 0px 5px 2px white !important;
+  -webkit-box-shadow: 0px 0px 5px 2px white;
+          box-shadow: 0px 0px 5px 2px white;
 }
 
 .priority-1:hover {
