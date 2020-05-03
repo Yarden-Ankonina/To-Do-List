@@ -48,7 +48,7 @@
     line-height: 1.8em;
     background-color: hsl(150, 45%, 80%);
     box-shadow: 0px 6px 6px -6px $black2;
-    margin: 0.5em 0;
+    margin: 2em 0;
     
     &:focus{
     color: hsl(150,15%, 10%);
@@ -93,7 +93,7 @@
     &-answer{
                 &-btn{
                     padding: 0.4em;
-                    margin: 1em;
+                    margin: 2em 0.5em;
                     &:hover{
                         cursor: pointer;
                         transform: scale(1.02);
@@ -111,29 +111,23 @@
 }
 }
 
+
+
+
+
 @media #{$break1}{
     .popup{  
     top:20%;
     left:7.5%;
     width: 85%;
-    height: 45%;
-    .popup-form-submit{
-        width: 30%;
+    height: 60%;
+    &-form{
+        &-submit{
+            width: 30%;
+            }
         }
     }
 }
-
-@media #{$break0}{
-    .edit-popup,.add-popup {
-    top: 20%;
-    left: 5%;
-    height: 60%;
-    width: 90%;
-    }
-}
-
-
-
 
 @media #{$break2}{
     .edit-popup,.add-popup{
@@ -142,8 +136,9 @@
     width: 60%;
     height: 60%;
     }
-    .popup-answer{
-        margin: 1.5em;
+    .popup-answer-btn{
+        margin: 2em;
+        transform: scale(1.2);
     }
 }
 
@@ -154,10 +149,12 @@
     width: 30%;
     height: 60%;
     }
-    .popup-answer{
+    .popup-answer-btn{
         margin: 2em;
+        transform: scale(1.4);
     }
 }
+
 
 
 .edit-popup{
@@ -172,8 +169,11 @@
     top: 0;
     z-index: 2;
     border-radius: 0;
-    .popup-form-submit{
-        margin-top: 2em;
+    .popup-form{
+        margin-top: 4em;
+        &-submit{
+            margin: 4em;
+        }
     }
 }
 
