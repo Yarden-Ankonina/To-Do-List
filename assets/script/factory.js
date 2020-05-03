@@ -74,6 +74,7 @@ function SelectTextInputPopup(object) {
     function createSelect() {
         const select = document.createElement('select');
         select.id = "todoForm-priority-select";
+        select.className = "popup-form-select";
         for (let i = 0; i < 3; i++) {
             select.appendChild(createOption(i + 1));
         }
@@ -127,7 +128,7 @@ function popupFactory(string) {
         title: 'Text EDIT_LIST',
         label: 'Label EDIT_LIST',
         placeholder: 'Placeholder EDIT_LIST',
-        type: 'first-popup'
+        type: 'landing-popup'
     }
     switch (string) {
         case 'yesNo':

@@ -101,6 +101,24 @@ function clickInMainToggle() {
         MAIN_FLEX.style.pointerEvents = "auto";
     }
 }
+function scrollBarToggle() {
+    const BODY = document.querySelector("body");
+    if (BODY.style.overflow != "hidden") {
+        BODY.style.overflow = "hidden";
+    } else {
+        BODY.style.overflow = "visible";
+    }
+}
+function selectToggle() {
+    const MAIN = document.querySelector('.main-flex');
+    if (MAIN.style.userSelect != 'none') {
+        MAIN.style.userSelect = 'none';
+    } else {
+        MAIN.style.userSelect = 'auto';
+    }
+}
+
+
 function displayNode(node) {
     node.style.display = "";
 }
@@ -176,6 +194,8 @@ function fillEditListInput() {
 function popupToogle() {
     blurToggle();
     clickInMainToggle();
+    scrollBarToggle();
+    selectToggle();
 }
 
 export {
