@@ -1403,7 +1403,7 @@ button {
           align-items: center;
   width: 50%;
   padding: 0.4em 0.7em;
-  margin: 0.5em;
+  margin: 0.2em;
   background-color: var(--list-item-bg-clr);
   color: var(--list-item-clr);
   opacity: 0.75;
