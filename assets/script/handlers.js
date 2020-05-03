@@ -29,7 +29,7 @@ function renderTasksArrayHandler(tasksArray) {
 }
 
 function newTaskHandler() {
-    const newTask = (new Task(getTitleFromForm(), getPriorityFromForm()));
+    const newTask = new Task(getTitleFromForm(), getPriorityFromForm());
     renderTask(newTask);
     addTaskToTasksArray(newTask, getCurrentKey());
     clearInputs();

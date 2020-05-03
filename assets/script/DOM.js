@@ -1,7 +1,6 @@
-import Task from './task.js';
 import { popupFactory } from './factory.js'
 import { isStorageEmpty } from './storage.js'
-
+import { liEventsHandler } from './events.js'
 
 const SELECT_CURRENT_LIST = document.querySelector(".main-content-todolist-select");
 const INPUT_SEARCH_TEXT = document.querySelector("#search-input");
@@ -15,7 +14,7 @@ function setDay() {
 }
 function renderListsOfKeys() {
     if (isStorageEmpty()) {
-        removeAllSelects();
+        removeAllSelects(); // change
     }
     for (let i = 0; i < localStorage.length; i++) {
         renderOptionToSelect(localStorage.key(i));
@@ -30,7 +29,7 @@ function renderOptionToSelect(name) {
     SELECT_CURRENT_LIST.appendChild(option);
 }
 function renderTask(taskObj) {
-    MAIN_TODOLIST.appendChild(Task.createHTMLelement(taskObj));
+    MAIN_TODOLIST.appendChild(createHTMLelement(taskObj));
 }
 function renderPopup(type) {
     const placeHolder = document.querySelector('.popup-collection');
@@ -198,6 +197,20 @@ function popupToogle() {
     selectToggle();
 }
 
+function createHTMLelement(taskObj) {
+    const li = document.createElement("li");
+    li.classList.add("main-content-todolist-list-item");
+    li.classList.add("draggable");
+    li.classList.add(`priority-${taskObj.priority}`);
+    li.setAttribute("draggable", "true");
+    li.id = `${taskObj.id}`;
+    li.innerHTML = `
+    <i class="fas fa-trash-alt todo-icon" aria-hidden="true"></i>
+    <span class="main-content-todolist-list-item-title">${taskObj.title}</span>
+    <i class="far fa-edit todo-icon" aria-hidden="true"></i>`;
+    liEventsHandler(li);
+    return li;
+}
 export {
     clickInMainToggle, fillEditListInput, updateListName,
     getAllNotDragging, getIdByEvent, renderPopup,
@@ -209,7 +222,7 @@ export {
     removeTasksNodeList, removeTaskNode, updateTaskNode,
     renderListsOfKeys, setDay, renderTask,
     renderOptionToSelect, displayNode, hideNode,
-    updateMain, popupToogle
+    updateMain, popupToogle, createHTMLelement
 
 }
 

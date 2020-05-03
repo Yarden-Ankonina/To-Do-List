@@ -11,6 +11,9 @@ import {
   addEventsListenerHandler, firstTimePopupEventsHandler,
 } from './events.js';
 
+
+onLoad();
+
 function onLoad() {
   if (isStorageEmpty()) {
     renderPopup('firstTime');
@@ -25,5 +28,4 @@ function onLoad() {
   addEventsListenerHandler();
 }
 
-onLoad();
 
