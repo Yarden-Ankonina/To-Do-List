@@ -93,7 +93,7 @@
     &-answer{
                 &-btn{
                     padding: 0.4em;
-                    margin: 0.6em;
+                    margin: 1em;
                     &:hover{
                         cursor: pointer;
                         transform: scale(1.02);
@@ -111,14 +111,15 @@
 }
 }
 
-.delete-popup{
-    height: 30%;
-    width: 50%;
-    top: 35%;
-    left: 25%;
+
+@media #{$break0}{
+    .edit-popup,.add-popup {
+    top: 20%;
+    left: 5%;
+    height: 60%;
+    width: 90%;
+    }
 }
-
-
 @media #{$break1}{
     .popup{  
     top:20%;
@@ -130,23 +131,7 @@
         }
     }
 }
-@media #{$break0}{
-    .edit-popup,.add-popup {
-    top: 20%;
-    left: 5%;
-    height: 60%;
-    width: 90%;
-    }
-}
 
-@media #{$break0} and #{break1}{
-    .edit-popup,.add-popup{
-    top: 20%;
-    left: 20%;
-    height: 60%;
-    width: 60%;
-    }
-}
 
 @media #{$break2}{
     .edit-popup,.add-popup{
@@ -154,6 +139,9 @@
     left: 20%;
     width: 60%;
     height: 60%;
+    }
+    .popup-answer{
+        margin: 1.5em;
     }
 }
 
@@ -163,6 +151,9 @@
     left: 35%;
     width: 30%;
     height: 60%;
+    }
+    .popup-answer{
+        margin: 2em;
     }
 }
 
@@ -182,8 +173,16 @@
     .popup-form-submit{
         margin-top: 2em;
     }
-    }
+}
 
+
+    .delete-popup{
+        height: 40%;
+        width: 50%;
+        top: 30%;
+        left: 25%;
+    }
+    
 .add-popup{
     justify-content: flex-start;  
 }
