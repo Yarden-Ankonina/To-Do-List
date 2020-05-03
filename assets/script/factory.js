@@ -110,10 +110,10 @@ function YesNoPopup(object) {
 }
 
 function popupFactory(type) {
-    const DUMMY = {
-        title: 'Text here',
-        label: 'Label here',
-        placeholder: 'Placeholder here'
+    const ADD_LIST = {
+        title: 'Add Todo List',
+        label: 'Create a new todo list category',
+        placeholder: 'Name your new todo list'
     };
     const DELETE_TASK = { title: 'Are You Sure You Want To Delete?' };
     const EDIT_TASK = {
@@ -140,7 +140,7 @@ function popupFactory(type) {
             return TextInputPopup(EDIT_LIST);
             break;
         case 'addList':
-            return TextInputPopup(DUMMY);
+            return TextInputPopup(ADD_LIST);
             break;
     }
 }
