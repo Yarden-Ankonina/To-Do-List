@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html {
   --popup-bg-clr: hsl(150, 45%, 90%);
   --popup-clr: hsl(0, 10%, 10%);
@@ -786,6 +787,15 @@ button {
   }
   .popup .popup-form-submit {
     width: 30%;
+  }
+}
+
+@media (max-width: 31.25‬em) {
+  .edit-popup, .add-popup {
+    top: 20%;
+    left: 5%;
+    height: 60%;
+    width: 90%;
   }
 }
 

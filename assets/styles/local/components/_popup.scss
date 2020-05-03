@@ -123,14 +123,14 @@
     }
 }
 
-// @media #{$break0}{
-//     .edit-popup,.add-popup {
-//     top: 20%;
-//     left: 5%;
-//     height: 60%;
-//     width: 90%;
-//     }
-// }
+@media #{$break0}{
+    .edit-popup,.add-popup {
+    top: 20%;
+    left: 5%;
+    height: 60%;
+    width: 90%;
+    }
+}
 
 
 
