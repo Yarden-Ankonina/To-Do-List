@@ -1,4 +1,3 @@
-@charset "UTF-8";
 html {
   --popup-bg-clr: hsl(150, 45%, 90%);
   --popup-clr: hsl(0, 10%, 10%);
@@ -694,7 +693,7 @@ button {
   background-color: #b5e3cc;
   -webkit-box-shadow: 0px 6px 6px -6px #4E4E50;
           box-shadow: 0px 6px 6px -6px #4E4E50;
-  margin: 0.5em 0;
+  margin: 2em 0;
 }
 
 .popup-form-input:focus {
@@ -757,7 +756,7 @@ button {
 
 .popup-answer-btn {
   padding: 0.4em;
-  margin: 1em;
+  margin: 2em 0.5em;
 }
 
 .popup-answer-btn:hover {
@@ -783,19 +782,10 @@ button {
     top: 20%;
     left: 7.5%;
     width: 85%;
-    height: 45%;
-  }
-  .popup .popup-form-submit {
-    width: 30%;
-  }
-}
-
-@media (max-width: 31.25‬em) {
-  .edit-popup, .add-popup {
-    top: 20%;
-    left: 5%;
     height: 60%;
-    width: 90%;
+  }
+  .popup-form-submit {
+    width: 30%;
   }
 }
 
@@ -806,8 +796,10 @@ button {
     width: 60%;
     height: 60%;
   }
-  .popup-answer {
-    margin: 1.5em;
+  .popup-answer-btn {
+    margin: 2em;
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
   }
 }
 
@@ -818,8 +810,10 @@ button {
     width: 30%;
     height: 60%;
   }
-  .popup-answer {
+  .popup-answer-btn {
     margin: 2em;
+    -webkit-transform: scale(1.4);
+            transform: scale(1.4);
   }
 }
 
@@ -838,8 +832,12 @@ button {
   border-radius: 0;
 }
 
+.landing-popup .popup-form {
+  margin-top: 4em;
+}
+
 .landing-popup .popup-form-submit {
-  margin-top: 2em;
+  margin: 4em;
 }
 
 .delete-popup {
