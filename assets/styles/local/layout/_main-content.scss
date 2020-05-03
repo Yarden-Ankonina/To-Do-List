@@ -10,11 +10,8 @@
   width: 100%;
   min-height: 100vh;
   height: 100%;
-  
 }
 
 .blurBackground{
   filter: grayscale(40%)blur(2px)brightness(0.8);
-  // user-select: none;
-  // cancel scroll
 }

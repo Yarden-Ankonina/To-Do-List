@@ -1,5 +1,3 @@
-//comon style
-
 .main-header {
   @include perfectCenteringFlex(column);
   position: sticky; width: 100%; top: 0;
@@ -7,14 +5,15 @@
   color: var(--header-text-clr);
   z-index: 1;
     &-navbar{
-    display: flex; flex-direction: row; justify-content: space-between; width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
       &-logo{
         display: flex; align-items: center;
         .fa-check-square {
-          // color: $red4; 
           color: var(--header-logo-clr); 
           padding-right: 0.5em;
-
         }
       }
       .header-icon{
@@ -28,7 +27,8 @@
       
     }
     &-navbar-menu {
-      justify-content: space-around; align-items: center;
+      justify-content: space-around;
+      align-items: center;
       width: 100%;
       background-color: var(--header-menu-bg-clr);
       box-shadow: 0px 7px 12px -8px $black1;
@@ -48,13 +48,6 @@
     }
 }
 
-
-
-//only mobile
-@media #{$break1} {
-}
-
-//only mobile and tablet
 @media  #{$break1}, #{$break2} {
   .main-header{
     &-navbar{
@@ -77,25 +70,21 @@
         padding: 1em;
         font-size: 1.2em;
       }
-     
     }
     &-navbar-menu{
       display: none;
       padding: 0.3em 0.2em;
     }
-    
-    
   }
 }
 
-//only desktop
 @media #{$break3} {
   .main-header{
       &-navbar{
       justify-content: flex-end;
       padding: 0.5em 0;
       .fa-bars{
-       display: none; 
+      display: none; 
       }
       &-logo{
         width: 52%;
@@ -116,8 +105,5 @@
       display: flex;
       padding: 0.3em 0.2em;
     }
-    
-    
   }
-
 }
