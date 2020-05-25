@@ -1,82 +1,60 @@
-import Task from './task.js';
+import { popupFactory } from './factory.js'
+import { isStorageEmpty } from './storage.js'
+import { liEventsHandler } from './events.js'
 
-
-
-const POPUP_EDIT = document.querySelector(".edit-popup");
-const POPUP_EDIT_TEXT_INPUT = document.querySelector('#edit-text-input');
-const POPUP_EDIT_PRIORITY_SELECT = document.querySelector('#edit-select-input');
-
-const POPUP_EDIT_CLOSE = document.getElementsByClassName("popup-exit")[2];
-const POPUP_EDITLIST_CLOSE = document.getElementsByClassName("popup-exit")[0];
-
-
-const POPUP_SUBMIT_BUTTON = document.querySelector(".popup-form-submit");
-const POPUP_LANDING = document.querySelector('.first-popup');
-const POPUP_DELETE = document.querySelector(".delete-popup");
-const POPUP_LANDING_TEXT_INPUT = document.querySelector('#first-text-input');
-const FORM_NEW_TITLE_INPUT = document.querySelector("#todoForm-title-input");
-const FORM_NEW_PRIORITY_SELECT = document.querySelector("#todoForm-priority-select");
-const FORM_NEW_TODO = document.querySelector(".main-content-forms-todoForm");
-const FORM_SEARCH = document.querySelector(".main-content-forms-searchForm");
-const BUTTON_DELETE_YES = document.querySelector(".yes");
-const BUTTON_DELETE_NO = document.querySelector(".no");
-const MAIN_HEADER_MENU = document.querySelector(".main-header-navbar-menu");
-const MAIN_FLEX = document.querySelector(".main-flex");
-const SELECT_TODOLIST = document.querySelector('.main-content-todolist-select');
-const SELECT_ADD_PRIORITY = document.querySelector("#todoForm-priority-select");
-const INPUT_ADD_TEXT = document.querySelector("#todoForm-title-input");
-const INPUT_SEARCH_TEXT = document.querySelector("#search-input");
-
-const DATE_PLACEHOLDER = document.querySelector(".main-content-date-placeHolder");
-const CURRENT_TODOLIST = document.querySelector(".main-content-todolist-list");
 const SELECT_CURRENT_LIST = document.querySelector(".main-content-todolist-select");
-const LANDING_FORM = document.querySelector('.popup-first-form');
-const SORT_BUTTON = document.querySelector("#navbar-sort-button");
-const MENU_BUTTON = document.querySelector(".fa-bars");
-const SEARCH_BUTTON = document.querySelector(".fa-search");
-const ADD_FORM_BUTTON = document.querySelector(".fa-plus");
-const DRAGGABLE_ZONE = document.querySelector('ul');
+const INPUT_SEARCH_TEXT = document.querySelector("#search-input");
+const MAIN_TODOLIST = document.querySelector(".main-content-todolist-list");
 
-const SELECT_TITLE = document.querySelector('.main-content-todolist-select');
 
 function setDay() {
+    const DATE_PLACEHOLDER = document.querySelector(".main-content-date-placeHolder");
     const today = new Date();
     DATE_PLACEHOLDER.innerText = today.toDateString();
 }
-function addListsOfTasks() {
+function renderListsOfKeys() {
+    if (isStorageEmpty()) {
+        removeAllSelects(); // change
+    }
     for (let i = 0; i < localStorage.length; i++) {
-        addOptiontoSelect(localStorage.key(i));
+        renderOptionToSelect(localStorage.key(i));
     }
 }
-function addOptiontoSelect(name) {
+function removeAllSelects() {
+    document.querySelector('.main-content-todolist-select').innerHTML = '';
+}
+
+function renderOptionToSelect(name) {
     const option = createOption(name);
     SELECT_CURRENT_LIST.appendChild(option);
 }
-function createOption(name) {
-    const option = document.createElement('option');
-    option.classList.add('popup-priority-select-option');
-    option.value = name;
-    option.innerText = name;
-    return option;
+function renderTask(taskObj) {
+    MAIN_TODOLIST.appendChild(createHTMLelement(taskObj));
 }
-
-function addTask(taskObj) {
-    CURRENT_TODOLIST.appendChild(Task.createHTMLelement(taskObj));
+function renderPopup(type) {
+    const placeHolder = document.querySelector('.popup-collection');
+    placeHolder.appendChild(popupFactory(type));
 }
-
-function removeAllTasks() {
+function removePopup() {
+    const popup = document.querySelector('.popup');
+    popup.remove();
+}
+function removeTasksNodeList() {
     const tasksArray = [...document.getElementsByClassName("main-content-todolist-list")[0].children,
     ];
     tasksArray.forEach(task => task.remove());
 }
 function removeTaskNode(event) {
+
     const element = event.target.parentNode;
+    console.log(event.target.parentNode);
+
     element.classList.add("deleted");
     setTimeout(() => {
         element.remove();
     }, 599);
 }
-function updateTask(taskObj) {
+function updateTaskNode(taskObj) {
     const tasksNodeList = document.querySelectorAll("li");
     tasksNodeList.forEach(task => {
         if (task.id == taskObj.id) {
@@ -85,17 +63,20 @@ function updateTask(taskObj) {
         }
     });
 }
-
-function fillEditPopupInputs(event) {
-    POPUP_EDIT_TEXT_INPUT.value = getTitleFromEvent(event);
-    POPUP_EDIT_PRIORITY_SELECT.value = getPriorityFromEvent(event);
-    event.target.parentElement.className.slice(-1);
+function updateListName(name) {
+    const nameList = document.querySelector('.popup-priority-select-option');
+    nameList.innerText = name;
+}
+function updateMain() {
+    MAIN_TODOLIST.innerHTML = '';
+    SELECT_CURRENT_LIST.innerHTML = '';
 }
 function clearInputs() {
-    FORM_NEW_TITLE_INPUT.value = "";
-    FORM_NEW_PRIORITY_SELECT.value = "1";
+    const MAIN_FORM_NEW_TITLE_INPUT = document.querySelector("#todoForm-title-input");
+    const MAIN_FORM_NEW_PRIORITY_SELECT = document.querySelector("#todoForm-priority-select");
+    MAIN_FORM_NEW_TITLE_INPUT.value = "";
+    MAIN_FORM_NEW_PRIORITY_SELECT.value = "1";
 }
-
 function displayToogle(domElement) {
     if (domElement.style.display != "flex") {
         domElement.style.display = "flex";
@@ -104,6 +85,7 @@ function displayToogle(domElement) {
     }
 }
 function blurToggle() {
+    const MAIN_FLEX = document.querySelector(".main-flex");
     if (!MAIN_FLEX.classList.contains('blurBackground')) {
         MAIN_FLEX.classList.add("blurBackground");
     } else {
@@ -111,65 +93,64 @@ function blurToggle() {
     }
 }
 function clickInMainToggle() {
+    const MAIN_FLEX = document.querySelector(".main-flex");
     if (MAIN_FLEX.style.pointerEvents != "none") {
         MAIN_FLEX.style.pointerEvents = "none";
     } else {
         MAIN_FLEX.style.pointerEvents = "auto";
     }
 }
+function scrollBarToggle() {
+    const BODY = document.querySelector("body");
+    if (BODY.style.overflow != "hidden") {
+        BODY.style.overflow = "hidden";
+    } else {
+        BODY.style.overflow = "visible";
+    }
+}
+function selectToggle() {
+    const MAIN = document.querySelector('.main-flex');
+    if (MAIN.style.userSelect != 'none') {
+        MAIN.style.userSelect = 'none';
+    } else {
+        MAIN.style.userSelect = 'auto';
+    }
+}
 
-function showDeletePopupHandler() {
-    displayToogle(POPUP_DELETE);
-    blurToggle();
-    clickInMainToggle();
-}
-function hideDeletePopupHandler() {
-    displayToogle(POPUP_DELETE);
-    blurToggle();
-    clickInMainToggle();
-}
-function showEditPopUphandler() {
-    displayToogle(POPUP_EDIT);
-    fillEditPopupInputs(event);
-    blurToggle();
-    clickInMainToggle();
-}
-function hideEditPopUphandler() {
-    console.log('here');
-    displayToogle(POPUP_EDIT);
-    blurToggle();
-    clickInMainToggle();
-}
+
 function displayNode(node) {
     node.style.display = "";
 }
 function hideNode(node) {
     node.style.display = "none";
 }
-
+function fillEditPopupInputs(event) {
+    const POPUP_TEXT_INPUT = document.querySelector('#form-input');
+    const POPUP_SELECT = document.querySelector('#todoForm-priority-select');
+    POPUP_TEXT_INPUT.value = getTitleFromEvent(event);
+    POPUP_SELECT.value = getPriorityFromEvent(event);
+}
+function createOption(name) {
+    const option = document.createElement('option');
+    option.classList.add('popup-priority-select-option');
+    option.value = name;
+    option.innerText = name;
+    return option;
+}
 function getTitleFromEvent(event) {
     return event.target.previousElementSibling.textContent;
 }
 function getPriorityFromEvent(event) {
     return event.target.parentElement.className.slice(-1);
 }
-function getEditTitle() {
-    const POPUP_EDIT_INPUT_VALUE = document.querySelector('#edit-text-input').value;
-    return POPUP_EDIT_INPUT_VALUE;
-}
-function getEditPriority() {
-    const POPUP_EDIT_PRIORITY = document.querySelector('#edit-select-input').value;
-    return POPUP_EDIT_PRIORITY;
-}
 function getAllNotDragging(list) {
     return [...list.querySelectorAll('.draggable:not(.dragging)')];
 }
-function getIdbyEvent(event) {
+function getIdByEvent(event) {
     return event.target.parentNode.id;
 }
 function getUlElement() {
-    const UL_TODOLIST = document.querySelector(".main-content-todolist-list");
-    return UL_TODOLIST;
+    return MAIN_TODOLIST;
 }
 function getLiNodeList(ul) {
     return ul.querySelectorAll("li");
@@ -177,43 +158,75 @@ function getLiNodeList(ul) {
 function getFilter() {
     return INPUT_SEARCH_TEXT.value.toUpperCase();
 }
-function getSpanFromli(li) {
+function getSpanFromLi(li) {
     return li.getElementsByTagName("span")[0];
 }
 function getTitleFromForm() {
+    const INPUT_ADD_TEXT = document.querySelector("#todoForm-title-input");
     return INPUT_ADD_TEXT.value;
 }
 
 function getPriorityFromForm() {
+    const SELECT_ADD_PRIORITY = document.querySelector("#todoForm-priority-select");
     return SELECT_ADD_PRIORITY.value;
 }
 function getCurrentKey() {
-    return SELECT_TODOLIST.value;
+    return SELECT_CURRENT_LIST.value;
 }
-function getPopUpLandingInput() {
-    return POPUP_LANDING_TEXT_INPUT.value;
+function getEditTitle() {
+    const POPUP_EDIT_INPUT_VALUE = document.querySelector('#form-input').value;
+    return POPUP_EDIT_INPUT_VALUE;
 }
-export {
-    getEditTitle, getEditPriority,
-    addListsOfTasks, setDay, addTask,
-    getIdbyEvent, getUlElement,
-    getLiNodeList, getFilter, getSpanFromli,
-    getTitleFromForm, getPriorityFromForm, getCurrentKey,
-    displayToogle, hideEditPopUphandler, showEditPopUphandler,
-    clearInputs, removeAllTasks,
-    removeTaskNode,
-    fillEditPopupInputs, updateTask, addOptiontoSelect,
-    displayNode, hideNode, getAllNotDragging, showDeletePopupHandler,
-    hideDeletePopupHandler, getPopUpLandingInput
+function getEditPriority() {
+    const POPUP_EDIT_PRIORITY = document.querySelector('#todoForm-priority-select').value;
+    return POPUP_EDIT_PRIORITY;
+}
+function getPopUpTextInput() {
+    const POPUP_EDIT_INPUT_VALUE = document.querySelector('#form-input').value;
+    return POPUP_EDIT_INPUT_VALUE;
+}
+function fillEditListInput() {
+    const input = document.querySelector('.popup-form-input');
+    input.value = getCurrentKey();
 }
 
+function popupToogle() {
+    blurToggle();
+    clickInMainToggle();
+    scrollBarToggle();
+    selectToggle();
+}
+
+function createHTMLelement(taskObj) {
+    const li = document.createElement("li");
+    li.classList.add("main-content-todolist-list-item");
+    li.classList.add("draggable");
+    li.classList.add(`priority-${taskObj.priority}`);
+    li.setAttribute("draggable", "true");
+    li.id = `${taskObj.id}`;
+    li.innerHTML = `
+    <i class="fas fa-trash-alt todo-icon" aria-hidden="true"></i>
+    <span class="main-content-todolist-list-item-title">${taskObj.title}</span>
+    <i class="far fa-edit todo-icon" aria-hidden="true"></i>`;
+    liEventsHandler(li);
+    return li;
+}
+export {
+    clickInMainToggle, fillEditListInput, updateListName,
+    getAllNotDragging, getIdByEvent, renderPopup,
+    getCurrentKey, displayToogle, clearInputs,
+    getEditPriority, getPopUpTextInput, blurToggle,
+    getSpanFromLi, getTitleFromForm, getPriorityFromForm,
+    getUlElement, getLiNodeList, getFilter,
+    removePopup, fillEditPopupInputs, getEditTitle,
+    removeTasksNodeList, removeTaskNode, updateTaskNode,
+    renderListsOfKeys, setDay, renderTask,
+    renderOptionToSelect, displayNode, hideNode,
+    updateMain, popupToogle, createHTMLelement
+
+}
 
 export {
-    INPUT_ADD_TEXT, SELECT_ADD_PRIORITY,
-    SELECT_TODOLIST, SELECT_CURRENT_LIST,
-    POPUP_EDIT_CLOSE, POPUP_SUBMIT_BUTTON, BUTTON_DELETE_YES,
-    BUTTON_DELETE_NO, POPUP_LANDING, POPUP_EDIT,
-    FORM_NEW_TODO, INPUT_SEARCH_TEXT, SORT_BUTTON, MENU_BUTTON,
-    MAIN_HEADER_MENU, SEARCH_BUTTON, FORM_SEARCH, ADD_FORM_BUTTON,
-    LANDING_FORM, POPUP_LANDING_TEXT_INPUT, DRAGGABLE_ZONE, SELECT_TITLE
+    INPUT_SEARCH_TEXT, SELECT_CURRENT_LIST
 }
+

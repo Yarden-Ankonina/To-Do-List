@@ -3,9 +3,7 @@
   display: flex;
   flex-direction: column;
   background-color: var(--form--bg-clr);
-
   padding-bottom: 1em;
-
   &-searchForm {
     @include perfectCenteringFlex(row);
     display: none;
@@ -82,10 +80,10 @@
           background-color: $black2;
           color: hsl(0,50%,85%);
         }
-       
       }
     
   }
+  
   #todoForm-submit-button {
     padding: 0.5em;
     margin: 0.5em;
@@ -98,34 +96,9 @@
     }
   }
 }
-//only mobile
-@media #{$break1} {
-  //mobile and tablet and desktop
-}
-
-// tablet and desktop
-@media #{$break2},#{$break3} {
-  
-}
-//only tablet
 
 @media #{$break2} {
   .main-content-forms-todoForm {
     border-bottom: 7px solid darken($red1, 2);
   }
 }
-
-//only desktop
-@media #{$break3} {
-}
-
-
-// input{
-//     text-align: center;
-//     outline: none;
-//     &:focus{
-//         font-size: 1em;
-//         color: $black2;
-//         font-weight: bold;
-//     }
-// }

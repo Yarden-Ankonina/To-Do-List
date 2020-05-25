@@ -5,92 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/assets/styles/main.css">
+    <link rel="icon" href="https://image.flaticon.com/icons/svg/2088/2088617.svg">
     <script src="https://kit.fontawesome.com/a05612df27.js" crossorigin="anonymous"></script>
     <script type="module" src="assets/script/app.js" defer></script>
-    <!-- <script src="assets/script/download.js" defer></script> -->
-    <script src="assets/script/theme.js" defer></script>
-
-
-
 
     <title>TO-DO</title>
 </head>
 
 <body>
     <div class="popup-collection">
-        <section class="popup editlist-popup" style="display: none;">
-            <button class="popup-exit">&times</button>
-            <p class="popup-title">Edit</p>
-            <form class="popup-form" autocomplete="off">
-                <label for='editlist-text-input'>Rename List</label>
-                <input type="text" id='editlist-text-input' class="popup-form-input" name="title" maxlength="20"
-                    placeholder="Insert News title" required>
-                <button class="popup-form-submit" type="submit">SAVE</button>
-            </form>
-        </section>
-        <section class="popup addlist-popup" style="display: none;">
-            <button class="popup-exit">&times</button>
-            <p class="popup-title">Edit</p>
-            <form class="popup-form" autocomplete="off">
-                <label for='addlist-text-input'>Rename List</label>
-                <input type="text" id='addlist-text-input' class="popup-form-input" name="title" maxlength="20"
-                    placeholder="Insert News title" required>
-                <button class="popup-form-submit" type="submit">SAVE</button>
-            </form>
-        </section>
-
-        <section class="popup edit-popup" style="display: none;">
-            <button class="popup-exit">&times</button>
-            <p class="popup-title">Edit</p>
-            <form class="popup-form" autocomplete="off">
-                <label for='edit-text-input'>Rename Title</label>
-                <input type="text" id='edit-text-input' class="popup-form-input" name="title" maxlength="20"
-                    placeholder="Insert News title" required>
-                <label for="edit-select-input">Change Priority</label>
-                <select id="edit-select-input" class="popup-form-select">
-                    <option class="popup-form-select-option" value="1">1</option>
-                    <option class="popup-form-select-option" value="2">2</option>
-                    <option class="popup-form-select-option" value="3">3</option>
-                </select>
-                <button class="popup-form-submit" type="submit">SAVE</button>
-            </form>
-        </section>
-
-        <section class="popup delete-popup" style="display: none;">
-            <button class="popup-exit" style="visibility: hidden;">&times</button>
-            <p class=" popup-question">Are You Sure You Want To Delete?</p>
-            <div class="popup-answer">
-                <button class="popup-answer-btn yes">Yes</button>
-                <button class="popup-answer-btn no">No</button>
-            </div>
-        </section>
-
-        <section class="popup first-popup" style="display: none;">
-            <button class="popup-exit" style="visibility: hidden;">&times</button>
-            <p class="popup-title"> <i class="fas fa-check-square header-icon"></i> Welcome To Todo-List</p>
-            <p class="popup-text">You can create with our app multiple todo lists.<br /> You can add/delete your
-                todo's.<br />You can search, sort, and download your list's.<br /><strong>Enjoy!!!</strong> <br /></p>
-            <form class="popup-form popup-first-form" autocomplete="off">
-                <label for='first-text-input'>Now Let's Create Your First List</br>Please enter your list name :
-                </label>
-                <input id="first-text-input" type="text" class="popup-form-input" name="title" maxlength="20"
-                    placeholder="Insert List Name" required>
-                <button class="popup-form-submit" type="submit">Start</button>
-            </form>
-        </section>
-
-        <section class="popup add-popup" style="display: none;">
-            <button class=" popup-exit">&times</button>
-            <p class="popup-title">Add A New List</p>
-            <form class="popup-form" autocomplete="off">
-                <label for='add-text-input'>Rename Title</label>
-                <input if="add-text-input" type="text" class="popup-form-input" name="title" maxlength="20"
-                    placeholder="Insert News title" required>
-                <button class="popup-form-submit" type="submit">SAVE</button>
-            </form>
-        </section>
     </div>
-
     <section class="main-flex">
         <header class="main-header">
             <div class="main-header-navbar">
@@ -110,10 +34,10 @@
                     <i class="fas fa-sort navbar-menu-icon"></i>
                     Sort by priority
                 </button>
-                <i class="fas fa-tint navbar-menu-icon"></i>
-                <i class="far fa-lightbulb navbar-menu-icon"></i>
-                <a id="downloadElement" class="navbar-menu-icon">
-                    <i class="fas fa-share"></i> Export</a>
+                <span>
+                    <i class="fas fa-tint navbar-menu-icon"></i>
+                    <i class="far fa-lightbulb navbar-menu-icon"></i>
+                </span>
             </div>
         </header>
 
@@ -151,11 +75,9 @@
 
             <div class="main-content-todolist">
                 <div class="main-content-todolist-select-container">
-                    <i class="fas fa-edit todo-select-icon placefiller"></i>
-                   <i class="fas fa-trash todo-select-icon"></i>
+                    <i class="fas fa-trash todo-select-icon deleteList"></i>
                     <select class="main-content-todolist-select"></select>
                     <i class="fas fa-plus todo-select-icon"></i>
-                    <i class="fas fa-edit todo-select-icon"></i>
                 </div>
                 <ul class="main-content-todolist-list">
                 </ul>
@@ -175,7 +97,6 @@
                 <span class="main-footer-text-info">
                     <a href="https://github.com/Yarden-Ankonina/To-Do-List" target="blank"> <i
                             class="fab fa-github footer-icon"></i></a>
-
                 </span>
             </div>
         </footer>

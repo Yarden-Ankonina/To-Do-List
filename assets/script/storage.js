@@ -51,4 +51,5 @@ function setTasksArray(key, taskArray = []) {
 export {
     isStorageEmpty, getTasksArray, setTasksArray,
     snapshotHandler, addTaskToTasksArray, removeSpecificTask,
+
 }

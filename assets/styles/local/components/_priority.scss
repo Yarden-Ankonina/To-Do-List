@@ -1,38 +1,14 @@
-//common style
-
-// .priority{
-//         &-1{
-//                 box-shadow: inset 0px 0px 1px 1px hsl(0, 100%, 50%); 
-//                 &:hover{
-//                         filter: saturate(2);
-//                 }
-//         }
-//         &-2{
-//                 box-shadow: inset 0px 0px 1px 1px hsl(50, 100%, 50%);
-//                 &:hover{
-//                 filter: saturate(2);
-//                 }
-//         }
-//         &-3{
-//                 box-shadow: inset 0px 0px 1px 1px hsl(120, 80%, 50%);
-//                 &:hover{
-//                 filter: saturate(2);
-//                 }
-//         }
-// }
-
 
 .priority{
         &-1{
                 &:hover{
-                      animation-name: priority1;
-                      animation-duration: 1s;
-                      @keyframes priority1{
+                        animation-name: priority1;
+                        animation-duration: 1s;
+                        @keyframes priority1{
                         0%{background-color: hsl(0, 80%, 20%);}
                         50%{background-color: hsl(0, 80%, 50%);}
                         100%{background-color: hsl(0, 80%, 20%);}
-
-                      }
+}
                 }
         }
         &-2{
@@ -40,13 +16,10 @@
                         animation-name: priority2;
                         animation-duration: 1s;
                         @keyframes priority2{
-                          0%{background-color: hsl(50, 10%, 20%);}
-                          50%{background-color: hsl(50, 100%, 30%); filter: saturate(3);}
-                          100%{background-color: hsl(50, 10%, 20%)}
-
+                                0%{background-color: hsl(50, 10%, 20%);}
+                                50%{background-color: hsl(50, 100%, 30%); filter: saturate(3);}
+                                100%{background-color: hsl(50, 10%, 20%)}
                         }
-                        
-                        
                 }
         }
         &-3{
@@ -54,10 +27,9 @@
                         animation-name: priority3;
                         animation-duration: 1s;
                         @keyframes priority3{
-                          0%{background-color: hsl(110, 10%, 20%);}
-                          50%{background-color: hsl(110, 60%, 30%);}
-                          0%{background-color: hsl(110, 10%, 20%);}
-
+                                0%{background-color: hsl(110, 10%, 20%);}
+                                50%{background-color: hsl(110, 60%, 30%);}
+                                100%{background-color: hsl(110, 10%, 20%);}
                         }
                 }
         }

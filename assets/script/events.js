@@ -1,69 +1,139 @@
 import {
-    displayToogle, addOptiontoSelect,
-    removeAllTasks, addTask, getPopUpLandingInput
+    displayToogle, removeTasksNodeList,
+    getCurrentKey, getPopUpTextInput, removePopup,
+    blurToggle, clickInMainToggle, renderOptionToSelect
 } from './DOM.js'
 
 import {
-    FORM_NEW_TODO, INPUT_SEARCH_TEXT, SORT_BUTTON,
-    MENU_BUTTON, MAIN_HEADER_MENU, SEARCH_BUTTON,
-    FORM_SEARCH, ADD_FORM_BUTTON, SELECT_CURRENT_LIST,
-    LANDING_FORM, POPUP_LANDING, DRAGGABLE_ZONE, SELECT_TITLE
+    INPUT_SEARCH_TEXT,
+    SELECT_CURRENT_LIST,
 } from './DOM.js'
 
 import {
     sortTasksHandler, searchHandler,
-    createTaskHandler, swapHandler
+    newTaskHandler, swapHandler,
+    renderTasksArrayHandler, deleteListHandler,
+    addListHandler, deleteTaskHandler,
+    editTaskHandler
 } from './handlers.js'
 
-import { setTasksArray, getTasksArray } from './storage.js'
+import {
+    setTasksArray, getTasksArray,
+    snapshotHandler
+} from './storage.js'
+
+let hueCounter = 0;
 
 export function addEventsListenerHandler() {
+    const MAIN_FORM = document.querySelector(".main-content-forms-todoForm");
+    const MAIN_HEADER_NAVBAR = document.querySelector(".main-header-navbar-menu");
+    const FORM_SEARCH = document.querySelector(".main-content-forms-searchForm");
+    const SORT_BUTTON = document.querySelector("#navbar-sort-button");
+    const MENU_BUTTON = document.querySelector(".fa-bars");
+    const SEARCH_BUTTON = document.querySelector(".fa-search");
+    const ADD_FORM_BUTTON = document.querySelector(".fa-plus");
+    const DELETE_LIST_BUTTON = document.querySelector('.fas.fa-trash.todo-select-icon');
+    const ADD_LIST_BUTTON = document.querySelector('.fas.fa-plus.todo-select-icon');
+
+    const THEME = document.querySelector(".fa-tint");
+    const LIGHT = document.querySelector(".fa-lightbulb");
+    const HTML = document.querySelector("html");
+    const DRAGGABLE_ZONE = document.querySelector('ul');
+
     INPUT_SEARCH_TEXT.addEventListener('input', () => {
         searchHandler();
     });
 
-    FORM_NEW_TODO.addEventListener("submit", (event) => {
+    MAIN_FORM.addEventListener("submit", (event) => {
         event.preventDefault();
-        createTaskHandler(event);
+        newTaskHandler();
     });
 
     SORT_BUTTON.addEventListener("click", (event) => {
         event.preventDefault();
-        sortTasksHandler(SELECT_TITLE.value);
+        sortTasksHandler(getCurrentKey());
     });
 
     MENU_BUTTON.addEventListener("click",
         () => {
-            displayToogle(MAIN_HEADER_MENU);
+            displayToogle(MAIN_HEADER_NAVBAR);
         });
 
     SEARCH_BUTTON.addEventListener("click", () => {
         displayToogle(FORM_SEARCH);
     });
 
-
     ADD_FORM_BUTTON.addEventListener("click", function (event) {
         event.preventDefault();
-        displayToogle(FORM_NEW_TODO);
+        displayToogle(MAIN_FORM);
     });
 
     SELECT_CURRENT_LIST.addEventListener('change', () => {
-        removeAllTasks();
-        const array = getTasksArray(SELECT_TITLE.value);
-        array.forEach(element => {
-            addTask(element)
-        })
-    })
-
-    LANDING_FORM.addEventListener('submit', (event) => {
-        event.preventDefault();
-        displayToogle(POPUP_LANDING);
-        const key = getPopUpLandingInput();
-        setTasksArray(key);
-        addOptiontoSelect(key);
+        removeTasksNodeList();
+        renderTasksArrayHandler(getTasksArray(getCurrentKey()));
     })
 
     DRAGGABLE_ZONE.addEventListener('dragover', (event) => {
-        swapHandler(DRAGGABLE_ZONE, event);
+        swapHandler(event);
+    })
+
+    DELETE_LIST_BUTTON.addEventListener('click', (e) => {
+        deleteListHandler();
+
+    })
+    ADD_LIST_BUTTON.addEventListener('click', (e) => {
+        addListHandler();
+    })
+    THEME.addEventListener('click', function () {
+        hueCounter += 30;
+        HTML.style.filter = "hue-rotate(" + hueCounter + "deg)";
+    });
+
+    LIGHT.addEventListener('click', function () {
+        if (HTML.hasAttribute('data-theme')) {
+            HTML.removeAttribute('data-theme', 'light');
+        }
+        else {
+            HTML.setAttribute('data-theme', 'light');
+        }
+        hueCounter = 0;
+        HTML.style.filter = "hue-rotate(" + hueCounter + "deg)";
+    });
+
+}
+
+
+function firstTimePopupEventsHandler() {
+    const POPUP_FORM = document.querySelector('.popup-form');
+    POPUP_FORM.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const key = getPopUpTextInput();
+        setTasksArray(key);
+        renderOptionToSelect(key);
+        blurToggle();
+        clickInMainToggle();
+        removePopup();
     })
 }
+
+function liEventsHandler(li) {
+    li.addEventListener("dragstart", () => {
+        li.classList.add("dragging");
+    });
+    li.addEventListener("dragend", () => {
+        li.classList.remove("dragging");
+        snapshotHandler(getCurrentKey());
+    });
+
+    li.firstElementChild.addEventListener("click", (event) => {
+        event.preventDefault();
+        deleteTaskHandler(event);
+    });
+
+    li.lastElementChild.addEventListener("click", (event) => {
+        editTaskHandler(event);
+    });
+}
+
+
+export { firstTimePopupEventsHandler, liEventsHandler }

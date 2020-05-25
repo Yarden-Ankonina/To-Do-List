@@ -1,18 +1,31 @@
-import { isStorageEmpty, } from './storage.js';
-import { firstTimeHandler, notFirstTimeHandler } from './handlers.js';
+import { isStorageEmpty, getTasksArray } from './storage.js';
 
+import { renderTasksArrayHandler } from './handlers.js';
 
-function onLoad() {
-  if (isStorageEmpty()) {
-    firstTimeHandler();
-  }
-  else {
-    notFirstTimeHandler();
-  }
-}
+import {
+  popupToogle, renderPopup,
+  renderListsOfKeys, setDay
+} from './DOM.js'
+
+import {
+  addEventsListenerHandler, firstTimePopupEventsHandler,
+} from './events.js';
+
 
 onLoad();
 
-
+function onLoad() {
+  if (isStorageEmpty()) {
+    renderPopup('firstTime');
+    popupToogle();
+    firstTimePopupEventsHandler();
+  }
+  else {
+    renderListsOfKeys();
+    renderTasksArrayHandler(getTasksArray(localStorage.key(0)));
+  }
+  setDay();
+  addEventsListenerHandler();
+}
 
 

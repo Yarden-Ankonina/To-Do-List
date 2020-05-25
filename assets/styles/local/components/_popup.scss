@@ -48,12 +48,13 @@
     line-height: 1.8em;
     background-color: hsl(150, 45%, 80%);
     box-shadow: 0px 6px 6px -6px $black2;
-    margin: 0.5em 0;
+    margin: 2em 0;
+    
     &:focus{
-       color: hsl(150,15%, 10%);
-       font-size: 1.1em;
-       filter: contrast(2);
-       &::placeholder{
+    color: hsl(150,15%, 10%);
+    font-size: 1.1em;
+    filter: contrast(2);
+    &::placeholder{
         color: hsl(150,15%, 10%);
     }
 
@@ -92,7 +93,7 @@
     &-answer{
                 &-btn{
                     padding: 0.4em;
-                    margin: 0.6em;
+                    margin: 2em 0.5em;
                     &:hover{
                         cursor: pointer;
                         transform: scale(1.02);
@@ -108,36 +109,23 @@
                     color: hsl(80, 20%, 5%);
                 }
 }
-
 }
+
+
+
+
 
 @media #{$break1}{
     .popup{  
     top:20%;
     left:7.5%;
     width: 85%;
-    height: 45%;
-  
-    .popup-form-submit{
-        width: 30%;
+    height: 60%;
+    &-form{
+        &-submit{
+            width: 30%;
+            }
         }
-    }
-}
-@media (max-width:500px){
-    .edit-popup,.add-popup {
-    top: 20%;
-    left: 5%;
-    height: 60%;
-    width: 90%;
-    }
-}
-
-@media (min-width:500px) and (max-width:765px){
-    .edit-popup,.add-popup{
-    top: 20%;
-    left: 20%;
-    height: 60%;
-    width: 60%;
     }
 }
 
@@ -146,7 +134,11 @@
     top: 20%;
     left: 20%;
     width: 60%;
-    height: 60%;
+    height: 45%;
+    }
+    .popup-answer-btn{
+        margin: 2em;
+        transform: scale(1.2);
     }
 }
 
@@ -155,38 +147,59 @@
     top: 20%;
     left: 35%;
     width: 30%;
-    height: 60%;
+    height: 45%;
+    }
+    .popup-answer-btn{
+        margin: 2em;
+        transform: scale(1.4);
     }
 }
 
-.blurBackground{
-    filter: grayscale(40%)blur(2px)brightness(0.8);
+//height media query
+
+@media (max-height : 600px){
+    .popup{
+        top: 10%;
+        height: 80%;
+    }
 }
+
+@media (min-height : 800px){
+    .popup{
+        top: 30%;
+        height: 45%;
+    }
+}
+
 
 .edit-popup{
     justify-content: flex-start;  
 }
 
-.delete-popup{
-    height: 30%;
-    width: 50%;
-    top: 35%;
-    left: 25%;
-    
-}
 
-.first-popup{
+.landing-popup{
     width: 100%;
     height: 100%;
     left: 0;
     top: 0;
     z-index: 2;
     border-radius: 0;
-    .popup-form-submit{
-        margin-top: 2em;
+    .popup-form{
+        margin-top: 4em;
+        &-submit{
+            margin: 4em;
+        }
     }
-    }
+}
 
+
+    .delete-popup{
+        height: 40%;
+        width: 50%;
+        top: 30%;
+        left: 25%;
+    }
+    
 .add-popup{
     justify-content: flex-start;  
 }
