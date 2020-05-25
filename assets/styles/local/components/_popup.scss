@@ -91,6 +91,10 @@
         margin: 0.7em;
     }
     &-answer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50%;
                 &-btn{
                     padding: 0.4em;
                     margin: 2em 0.5em;
