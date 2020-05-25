@@ -125,8 +125,8 @@ function popupFactory(string) {
         type: 'edit-popup'
     }
     const LANDING = {
-        title: 'WELCOME TO TODO LIST',
-        label: 'Please insert your new list name',
+        title: 'WELCOME TO TODO-LIST',
+        label: 'PLEASE ENTER A NAME FOR YOUR LIST : ',
         placeholder: 'List Name',
         type: 'landing-popup'
     }
